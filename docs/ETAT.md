@@ -87,6 +87,16 @@ floutée. Livré : `public/og.jpg` (câblé d'office via defaultOgImage), `publi
 homonyme chauffagiste local ; « Maillard » écarté, trop proche du concurrent réel Ets
 Paillard). En attente : validation Rémy du nom.
 
+**Contrôle CEO session Builder 2 : VALIDÉ (28/07/2026, poussé en c2e89b2)**. Conformité
+(tirets/RGE/chiffres) OK, build vert, captures examinées : section « Qui intervient chez
+vous », galerie « À quoi ressemble le travail », bandeau signature prestation, commune en
+16:10 avec légende. Les 2 arbitrages du Builder tranchés par le CEO : pirey.jpg et
+avanne-aveney.jpg régénérées pour fidélité au terrain (Pirey montrait Besançon même ;
+Avanne avait des falaises de reculée exagérées), contrôlées et validées. Persona maintenu
+HORS JSON-LD tant que le nom n'est pas validé par Rémy (à ajouter ensuite).
+Branche design/t3 complète poussée, preview à jour. RESTE : validation Rémy du nom du
+persona et de l'ensemble, puis blog (calendrier éditorial) côté Builder.
+
 ## Intégration persona, galerie et finitions visuelles (session Builder 2, `design/t3`)
 
 - **Persona intégré** dans `config/site.config.ts` (bloc `persona`, 7 marqueurs DEMO) :
