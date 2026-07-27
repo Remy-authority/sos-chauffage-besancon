@@ -33,20 +33,19 @@
 - [x] Régénération pirey + avanne : contrôlée, validée, poussée (c2e89b2). Preview à jour.
 
 ## Session 3 (retour Rémy du 28/07 : « très bien, quelques modifs »)
-- [ ] 1. Photos sur les pages prestation : 9 images public/services/<slug>.jpg EN
-      PRODUCTION (dont climatisation.jpg d'avance) + correction 06-desembouage (visage
-      visible d'un autre technicien que le persona : incohérence, refait de dos).
-      RÈGLE série : aucun visage visible. Puis contrôle CEO et intégration Builder
-      (pas de détection d'image existante sur les pages services, à câbler comme zones).
-- [ ] 2. Encadré « Ce qu'il faut retenir » : ses filets internes se confondent avec les
-      lignes verticales du fond du hero, rendu sale. Fix Builder (fond plein/opaque ou
-      suppression des filets, à son jugement dans la DA T3).
-- [ ] 3. Climatisation : VALIDÉE par Rémy (28/07). Fiche SEO de la 9e prestation en
-      production (agent SEO), photo climatisation.jpg déjà dans la fournée visuels.
-      Interdit : prétendre l'attestation fluides frigorigènes.
-- [ ] 4. Portrait détouré demandé par Rémy (comme son ancien site) : public/artisan-detoure.png
-      (PNG alpha, même visage) en production. PAS de badge « X ans d'expérience »
-      (chiffre non validé). Builder l'utilisera dans la section « Qui intervient ».
+- [x] 1. 9 photos prestation livrées, contrôle CEO passé (aucun visage, série variée),
+      renommage climatisation.jpg → climatisation-reversible.jpg (slug SEO), 06-desembouage
+      refait de dos (cheveux gris cohérents persona). Poussé (6fc2b42).
+- [x] 3. Climatisation validée Rémy : fiche SEO Service 9 contrôlée (chiffres génériques
+      neutralisés) et intégrée à docs/SEO-GEO-PLAN.md.
+- [x] 4. Portrait détouré livré (rembg, zéro dérive de visage), vérifié sur fond vert
+      (alpha propre), poussé (97ce767).
+- [ ] 2. Fix encadré « Ce qu'il faut retenir » (filets vs lignes du fond) : AU BUILDER.
+- [ ] Message Builder session 3 remis à Rémy (photos prestation + détection image services,
+      portrait détouré dans QuiIntervient, page climatisation-reversible, fix encadré).
+      ATTENTE : Rémy le colle au Builder, puis contrôle CEO de la livraison.
+- [ ] Toujours en attente : validation EXPLICITE du nom « Julien Vernier » par Rémy
+      (reste DEMO et hors JSON-LD d'ici là).
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
       retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
