@@ -21,11 +21,16 @@
       doublon de thise ; marchaux façon Ornans avec rivière inventée ; chatillon trop
       proche d'avanne et pas assez périurbain), 3 réalisations à régénérer (motif
       fenêtre-village répété sur 5/6), floutage plaque sur ecole-valentin.
-- [ ] Persona proposé à Rémy : « Julien Vernier », chauffagiste, ~45 ans (vérifié : aucun
-      homonyme chauffagiste à Besançon ; « Maillard » écarté, trop proche du concurrent
-      réel Ets Paillard). Intégration config/pages par le Builder après validation.
-- [ ] Message Builder à préparer : section persona (config + home + pages), section
-      réalisations, câblage des images.
+- [x] Persona « Julien Vernier » proposé (sans homonyme local) et INTÉGRÉ par le Builder
+      (commit c75f7d9) : bloc config en DEMO, section home « Qui intervient chez vous »,
+      bandeau signature sur les 8 prestations. Nom en attente de validation Rémy.
+- [x] Galerie réalisations sur la home + imageAlt et cadrage 16:10 des communes (Builder).
+- [x] Contrôle CEO session Builder 2 : conformité OK, build vert, captures examinées
+      (artisan, galerie, signature, commune) : VALIDÉ.
+- [x] Décision CEO sur les 2 arbitrages Builder : régénérer pirey.jpg (montrait Besançon
+      même) et avanne-aveney.jpg (falaises exagérées) pour fidélité au terrain. Validé
+      aussi : persona hors JSON-LD tant que le nom n'est pas arrêté par Rémy.
+- [ ] Régénération pirey + avanne EN COURS (agent visuel), contrôle CEO puis push.
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
       retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
