@@ -2,7 +2,6 @@
 
 > Brief préparé par le CEO (session 1, 28/07/2026). Le Builder travaille sur Opus.
 > À lire AVANT : `CLAUDE.md` du repo (règles), `docs/SEO-GEO-PLAN.md` (structure et contenus).
-> Statut : [EN ATTENTE DU PLAN SEO, section 7 à compléter]
 
 ## 1. Mission
 
@@ -77,7 +76,26 @@ Besançon INAUGURE T3. Tu conserves le socle technique, tu remplaces l'identité
 - `npm run build` doit passer avant toute demande de review.
 - Ne pas toucher à `.github/workflows/publish-article.yml` (autoblog, fonctionne tel quel).
 
-## 7. Structure détaillée des pages
+## 7. Structure détaillée des pages (source de vérité : docs/SEO-GEO-PLAN.md)
 
-[À COMPLÉTER : injecter ici le résumé du plan SEO une fois docs/SEO-GEO-PLAN.md livré,
-avec les slugs exacts des 8 services et des 12 communes.]
+- **8 services** (`content/services/*.json`, routes `/services/<slug>`) :
+  `depannage-chaudiere-gaz`, `depannage-chaudiere-fioul`, `entretien-annuel-chaudiere`,
+  `depannage-chauffage-electrique`, `depannage-pompe-chaleur`, `depannage-ballon-eau-chaude`,
+  `desembouage-chauffage`, `remplacement-chaudiere`.
+  Titles, metas, H1, angles et FAQ : section 2 du plan SEO.
+- **12 communes** (`content/zones/*.json`, routes `/zones/<slug>`), codes postaux et
+  populations vérifiés via geo.api.gouv.fr (section 3 du plan SEO) :
+  `saint-vit` (25410), `thise` (25220), `miserey-salines` (25480), `ecole-valentin` (25480),
+  `avanne-aveney` (25720), `pirey` (25480), `roche-lez-beaupre` (25220), `franois` (25770),
+  `serre-les-sapins` (25770), `mamirolle` (25620), `chatillon-le-duc` (25870),
+  `marchaux-chaudefontaine` (25640). ATTENTION aux positions géographiques exactes
+  (tableau du plan) : ne pas improviser la géographie.
+- **Blog** : `/conseils`, articles du calendrier (section 4 du plan) via l'autoblog,
+  `content/conseils/` vidé du contenu Metz.
+- **Schema JSON-LD** : type `HVACBusiness` (remplace Plumber), `Service`, `FAQPage`
+  partout, propriété `openingHoursSpecification` (section 5.3 du plan).
+- **llms.txt** : réécrit chauffage Besançon (section 5.2 du plan), sans mention RGE
+  ni données business internes.
+- Anciens contenus Metz (`content/services/`, `content/zones/`, `content/conseils/`,
+  `content/drafts/`, images `public/services/`, `public/zones/`, `public/conseils/`) :
+  à supprimer/remplacer intégralement (checklist étape 2 du PLAYBOOK).
