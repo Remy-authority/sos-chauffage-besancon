@@ -1,0 +1,44 @@
+{
+  "slug": "ecole-valentin",
+  "name": "École-Valentin",
+  "postalCode": "25480",
+  "orientation": "Nord",
+  "context": "Commune du nord de l'agglomération, sur l'axe de la RN57, où le résidentiel côtoie une importante zone de bureaux et de commerces.",
+  "metaTitle": "Dépannage chauffage à École-Valentin, urgence 24h/24",
+  "metaDescription": "Chauffagiste urgence à École-Valentin (25480) : dépannage de chaudière, chauffage de locaux professionnels, entretien annuel. Ligne ouverte 7j/7.",
+  "h1": "Chauffagiste urgence et dépannage à École-Valentin",
+  "intro": "Nous intervenons à École-Valentin (25480) pour le dépannage de chauffage et l'entretien annuel, aussi bien chez les particuliers que dans les locaux professionnels. Située au nord de Besançon le long de la RN57, la commune a la particularité d'associer un tissu résidentiel à une zone d'activité tertiaire et commerciale importante, deux univers qui n'ont ni les mêmes contraintes ni les mêmes urgences.",
+  "blocks": [
+    {
+      "heading": "Un local professionnel ne se dépanne pas comme un logement",
+      "body": "Dans un bureau, un commerce ou un cabinet, une panne de chauffage ne se traduit pas seulement par de l'inconfort : elle met en cause la capacité à recevoir du public et à faire travailler des salariés. L'urgence est donc réelle dès la première heure d'ouverture, y compris quand la température extérieure n'a rien d'exceptionnel. Les installations y sont aussi différentes de celles d'un logement, avec des puissances supérieures, des systèmes de régulation et de programmation horaire qui pilotent des plages d'occupation, et parfois des unités multiples. Nous intervenons sur ces installations et nous fournissons un compte rendu d'intervention, utile pour un bailleur ou un gestionnaire."
+    },
+    {
+      "heading": "La question du collectif et du privatif",
+      "body": "Sur le secteur résidentiel comme sur les surfaces tertiaires, une part des bâtiments fonctionne en chauffage collectif ou en installation partagée. La distinction est décisive avant même de déclencher une intervention : ce qui relève de la partie privative, radiateurs, robinets thermostatiques, éventuellement chaudière individuelle, vous concerne directement ; ce qui relève de la chaufferie, des colonnes ou de la régulation générale dépend du syndic ou du gestionnaire de l'immeuble. Le signal le plus fiable est la simultanéité : si plusieurs lots ont froid en même temps, la cause est en partie commune et nous vous le dirons plutôt que d'intervenir inutilement chez vous."
+    },
+    {
+      "heading": "Anticiper la remise en chauffe de l'automne",
+      "body": "Dans un bâtiment tertiaire, la remise en service du chauffage à l'automne révèle d'un coup tout ce qui n'a pas fonctionné pendant l'été : programmation horaire déréglée par une coupure, vannes grippées faute de sollicitation, circuit qui a perdu de la pression, sondes en défaut. Le décalage entre la première journée froide et la disponibilité d'un intervenant crée alors des journées de travail dans le froid. Faire vérifier l'installation en septembre, avant la première demande réelle, évite l'essentiel de ces situations et coûte le même prix qu'une visite faite en urgence trois semaines plus tard."
+    }
+  ],
+  "neighbours": ["Besançon", "Châtillon-le-Duc", "Miserey-Salines"],
+  "faq": [
+    {
+      "q": "Intervenez-vous dans les locaux professionnels à École-Valentin ?",
+      "a": "Oui, bureaux, commerces et cabinets, en dépannage comme en entretien. Nous fournissons un compte rendu d'intervention, ce qui est souvent nécessaire pour un bailleur, un gestionnaire ou une assurance. Précisez-nous au téléphone la puissance approximative de l'installation et le type de régulation en place, cela nous permet d'arriver équipés."
+    },
+    {
+      "q": "Le chauffage de mon immeuble est collectif, que pouvez-vous faire ?",
+      "a": "Nous intervenons sur ce qui relève de votre partie privative : radiateurs, robinets thermostatiques, purge et équilibrage de vos émetteurs. Quand le problème vient de la chaufferie, de la colonne ou de la régulation générale, la responsabilité est celle du syndic ou du gestionnaire, et c'est à lui de déclencher l'intervention. Si plusieurs logements ont froid en même temps, c'est le signe qu'on est dans ce second cas."
+    },
+    {
+      "q": "Quel est le délai d'intervention à École-Valentin ?",
+      "a": "La commune est immédiatement au nord de Besançon, le déplacement n'est jamais le facteur limitant : c'est le planning en cours qui détermine le créneau. Nous vous l'annonçons au téléphone. Pour un local professionnel dont l'ouverture est compromise, dites-le nous explicitement, cela change la priorité que nous attribuons à la demande."
+    },
+    {
+      "q": "Faites-vous l'entretien annuel pour un bailleur ou un gestionnaire ?",
+      "a": "Oui. L'entretien annuel des chaudières de 4 à 400 kilowatts est obligatoire et donne lieu à une attestation, que nous remettons systématiquement après la visite. Pour un parc de plusieurs lots, les visites peuvent être groupées sur une même période, ce qui simplifie la coordination et sécurise le respect de l'obligation avant l'hiver."
+    }
+  ]
+}

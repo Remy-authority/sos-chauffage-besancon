@@ -1,19 +1,37 @@
 import type { ReactNode } from 'react'
 
 /**
- * Pastille « ligne ouverte » : point vermillon qui pulse dans une puce arrondie.
- * Sert de marqueur de disponibilité dans le hero, le footer et les bandeaux CTA.
+ * Témoin « ligne ouverte » : une diode laiton qui respire dans une étiquette à
+ * coins courts. Marqueur de disponibilité du hero, du pied de page et des
+ * bandeaux d'appel. Le clignotement reprend la respiration lente du template
+ * (`animate-braise-douce`) plutôt qu'un ping nerveux.
  */
-export function LiveDot({ children, className = '' }: { children: ReactNode; className?: string }) {
+export function LiveDot({
+  children,
+  tone = 'dark',
+  className = '',
+}: {
+  children: ReactNode
+  /** `dark` : posé sur fond sombre. `light` : posé sur fond clair. */
+  tone?: 'dark' | 'light'
+  className?: string
+}) {
+  const sombre = tone === 'dark'
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-2 text-sm text-accent-300 backdrop-blur ${className}`}
+      className={`inline-flex items-center gap-2.5 rounded-module border px-3.5 py-2 text-legende font-medium ${
+        sombre
+          ? 'border-laiton-franc/35 bg-laiton-franc/10 text-laiton-clair'
+          : 'border-laiton-franc/40 bg-laiton-franc/10 text-laiton-patine'
+      } ${className}`}
     >
       <span className="relative flex h-2 w-2" aria-hidden="true">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
-        <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-400" />
+        <span className="absolute inline-flex h-full w-full animate-braise-douce rounded-jauge bg-laiton-franc" />
+        <span className="relative inline-flex h-2 w-2 rounded-jauge bg-laiton-clair" />
       </span>
       {children}
     </span>
   )
 }
+
+export default LiveDot

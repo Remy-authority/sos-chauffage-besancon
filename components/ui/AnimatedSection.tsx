@@ -2,7 +2,7 @@
 
 import { motion, type Variants } from 'framer-motion'
 import type { ElementType, ReactNode } from 'react'
-import { fadeInUp, viewportOnce } from '@/lib/motion'
+import { pose, vuUneFois } from '@/lib/motion'
 
 type Props = {
   children: ReactNode
@@ -16,32 +16,35 @@ type Props = {
 }
 
 /**
- * Enveloppe d'apparition au scroll. Une seule primitive pour tout le site : c'est
- * elle qui garantit que chaque bloc entre avec le même timing et la même courbe.
+ * Enveloppe d'apparition au scroll. Primitive unique du site : c'est elle qui
+ * garantit que chaque bloc se pose avec le même timing et la même courbe.
+ * Les états sont nommés `repos` / `actif` (vocabulaire T3, cf. lib/motion.ts).
  */
 export function AnimatedSection({
   children,
   className = '',
-  variants = fadeInUp,
+  variants = pose,
   delay = 0,
   as = 'div',
   id,
   ...rest
 }: Props) {
-  const MotionTag = motion[as as keyof typeof motion] as typeof motion.div
+  const Balise = motion[as as keyof typeof motion] as typeof motion.div
 
   return (
-    <MotionTag
+    <Balise
       id={id}
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewportOnce}
+      initial="repos"
+      whileInView="actif"
+      viewport={vuUneFois}
       variants={variants}
       transition={{ delay }}
       className={className}
       {...rest}
     >
       {children}
-    </MotionTag>
+    </Balise>
   )
 }
+
+export default AnimatedSection

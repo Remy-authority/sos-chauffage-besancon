@@ -4,7 +4,7 @@ import { siteConfig } from '@/config/site.config'
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.businessName,
-    short_name: siteConfig.city,
+    short_name: `SOS Chauffage ${siteConfig.city}`,
     description: `${siteConfig.trade} à ${siteConfig.city}`,
     start_url: '/',
     display: 'standalone',

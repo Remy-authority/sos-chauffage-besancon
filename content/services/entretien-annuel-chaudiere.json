@@ -1,0 +1,60 @@
+{
+  "slug": "entretien-annuel-chaudiere",
+  "order": 3,
+  "icon": "entretien",
+  "navTitle": "Entretien annuel chaudière",
+  "h1": "Entretien annuel légal de chaudière à Besançon",
+  "metaTitle": "Entretien chaudière gaz et fioul Besançon, révision légale",
+  "metaDescription": "Entretien annuel obligatoire de chaudière à Besançon. Révision légale, attestation remise, contrat annuel, garantie constructeur préservée.",
+  "intro": "L'entretien annuel d'une chaudière n'est pas une option de confort, c'est une obligation réglementaire française qui concerne les appareils de 4 à 400 kilowatts, soit la quasi-totalité des chaudières individuelles. Il est à la charge de l'occupant du logement, propriétaire ou locataire, et donne lieu à une attestation à conserver. À Besançon, la bonne fenêtre pour le programmer va d'août à octobre, avant que le chauffage ne tourne en continu.",
+  "bullets": [
+    "Obligation légale annuelle",
+    "Attestation remise après visite",
+    "Rendez-vous programmé hors urgence"
+  ],
+  "blocks": [
+    {
+      "heading": "Ce que dit la réglementation",
+      "body": "L'entretien annuel des chaudières dont la puissance nominale est comprise entre 4 et 400 kilowatts est encadré par l'arrêté du 15 septembre 2009. Il doit être réalisé chaque année par un professionnel qualifié, quel que soit le combustible, gaz, fioul ou bois. L'obligation pèse sur l'occupant du logement : en location, c'est donc au locataire de faire réaliser la visite, sauf clause contraire du bail ou contrat d'entretien souscrit par le propriétaire. À l'issue de la visite, une attestation d'entretien vous est remise. Conservez-la : c'est elle qui fait foi auprès de votre assurance et, le cas échéant, du constructeur de l'appareil."
+    },
+    {
+      "heading": "Ce que comprend réellement la visite",
+      "body": "Un entretien annuel sérieux ne se résume pas à un coup de chiffon sur la façade de l'appareil. Nous procédons au nettoyage du corps de chauffe et du brûleur, au contrôle de l'ensemble des organes de sécurité, à la vérification de la pression du circuit et du vase d'expansion, au contrôle du bon fonctionnement du circulateur et des vannes, à la mesure de la combustion et à la vérification de l'évacuation des fumées. Sur une chaudière fioul, s'y ajoutent le remplacement du gicleur et du filtre ainsi que le réglage du brûleur. Nous terminons par un point d'usure : les pièces qui approchent de leur fin de vie vous sont signalées avant qu'elles ne lâchent."
+    },
+    {
+      "heading": "Pourquoi la période compte autant que la visite",
+      "body": "Une chaudière révisée en février a passé toute la saison de chauffe sans contrôle, et la visite arrive après le pic de sollicitation plutôt qu'avant. Programmer l'entretien entre août et octobre change deux choses. D'abord, les défauts détectés sont corrigés avant que le froid n'arrive, donc avant que la panne n'immobilise votre chauffage. Ensuite, les délais sont courts : en décembre et janvier, les urgences passent forcément avant les visites d'entretien, et un rendez-vous se décale de plusieurs semaines. À Besançon, où la saison de chauffe est longue, cet écart de calendrier fait une vraie différence."
+    },
+    {
+      "heading": "Contrat annuel ou visite ponctuelle",
+      "body": "Les deux formules existent et se valent selon votre situation. La visite ponctuelle convient si vous préférez décider chaque année, notamment sur un appareil récent encore sous garantie. Le contrat annuel a trois avantages concrets : la visite est programmée sans que vous ayez à y penser, le tarif est stabilisé d'une année sur l'autre, et vous n'êtes pas dépendant des délais de la haute saison. Dans les deux cas, l'attestation vous est remise après la visite et le tarif est annoncé avant le rendez-vous."
+    }
+  ],
+  "relatedServices": ["depannage-chaudiere-gaz", "depannage-chaudiere-fioul"],
+  "faq": [
+    {
+      "q": "Est-ce vraiment obligatoire d'entretenir sa chaudière ?",
+      "a": "Oui. La réglementation française impose un entretien annuel pour les chaudières de 4 à 400 kilowatts, encadré par l'arrêté du 15 septembre 2009. L'obligation pèse sur l'occupant du logement. Au-delà de l'aspect légal, l'absence d'entretien peut faire tomber la garantie constructeur, dégrader le rendement de l'appareil et laisser passer un défaut de combustion, seule situation à l'origine d'un risque de monoxyde de carbone."
+    },
+    {
+      "q": "Quelle est la meilleure période pour faire entretenir sa chaudière ?",
+      "a": "Entre août et octobre. Le chauffage ne tourne pas encore en continu, les défauts repérés peuvent être corrigés avant l'hiver, et les délais de rendez-vous sont courts. En décembre et janvier, les urgences occupent les plannings et une visite d'entretien se décale facilement de plusieurs semaines."
+    },
+    {
+      "q": "Que comprend l'entretien annuel d'une chaudière ?",
+      "a": "Le nettoyage du corps de chauffe et du brûleur, le contrôle des organes de sécurité, la vérification de la pression du circuit et du vase d'expansion, le contrôle du circulateur et des vannes, la mesure de la combustion et la vérification de l'évacuation des fumées. Sur une chaudière fioul s'ajoutent le remplacement du gicleur et du filtre ainsi que le réglage du brûleur. Une attestation d'entretien vous est remise à l'issue de la visite."
+    },
+    {
+      "q": "Combien coûte un entretien de chaudière à Besançon ?",
+      "a": "Le tarif dépend du combustible, du type d'appareil et de son accessibilité : une chaudière gaz murale et une chaudière fioul au sol ne demandent ni le même temps ni les mêmes pièces d'usure. Nous l'annonçons au téléphone avant de fixer le rendez-vous. Un contrat annuel permet de stabiliser ce tarif d'une année sur l'autre."
+    },
+    {
+      "q": "Puis-je faire l'entretien de ma chaudière moi-même ?",
+      "a": "Non. La réglementation impose l'intervention d'un professionnel qualifié, et l'attestation d'entretien ne peut être établie que par lui. Au-delà de l'obligation, la mesure de combustion et le contrôle des organes de sécurité demandent un appareillage spécifique. Vous pouvez en revanche surveiller vous-même la pression du circuit et purger vos radiateurs en début de saison."
+    },
+    {
+      "q": "En location, qui doit payer l'entretien de la chaudière ?",
+      "a": "L'entretien courant de la chaudière fait partie des charges d'entretien qui incombent au locataire, sauf si le bail prévoit expressément autre chose ou si le propriétaire a souscrit un contrat d'entretien. En revanche, le remplacement de l'appareil et les réparations liées à sa vétusté restent à la charge du propriétaire. En cas de doute, l'attestation d'entretien et le bail sont les deux documents à regarder."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "serre-les-sapins",
+  "name": "Serre-les-Sapins",
+  "postalCode": "25770",
+  "orientation": "Ouest",
+  "context": "Commune résidentielle de l'ouest de l'agglomération, dans un secteur boisé où les hivers se font sentir plus tôt.",
+  "metaTitle": "Dépannage chauffage à Serre-les-Sapins, urgence",
+  "metaDescription": "Chauffagiste urgence à Serre-les-Sapins (25770) : dépannage de chaudière, pompe à chaleur, radiateurs froids, entretien annuel obligatoire.",
+  "h1": "Chauffagiste urgence à Serre-les-Sapins, dépannage",
+  "intro": "Nous intervenons à Serre-les-Sapins (25770) pour le dépannage de chauffage et l'entretien annuel de chaudière. À l'ouest de Besançon, dans un secteur résidentiel et boisé, la commune connaît des hivers qui se manifestent tôt et durent. C'est un contexte où une installation approximative se remarque immédiatement, et où l'anticipation vaut mieux que le dépannage.",
+  "blocks": [
+    {
+      "heading": "Une saison de chauffe qui commence tôt",
+      "body": "Dans un secteur boisé et un peu à l'écart de l'îlot de chaleur urbain de Besançon, la première mise en chauffe arrive plus tôt dans la saison et l'installation tourne plus longtemps chaque année. Deux effets concrets. Le premier est mécanique : plus d'heures de fonctionnement, c'est plus d'usure sur les pièces sollicitées, circulateur, vanne trois voies, brûleur, et un vieillissement plus rapide que la moyenne. Le second est calendaire : les premiers défauts apparaissent souvent en octobre, à un moment où les plannings ne sont pas encore saturés. C'est exactement la fenêtre où il faut réagir, plutôt que d'attendre le premier vrai coup de froid pour appeler en même temps que tout le monde."
+    },
+    {
+      "heading": "Pompe à chaleur et températures basses",
+      "body": "Les logements récents de la commune sont souvent équipés d'une pompe à chaleur. Il faut savoir ce que cette technologie fait par temps froid : son rendement diminue à mesure que la température extérieure baisse, puisqu'elle prélève sa chaleur dans l'air, et l'installation bascule alors sur son appoint, résistance électrique intégrée ou chaudière conservée en relève. Ce comportement est normal. Le vrai sujet est le réglage du basculement. Quand l'appoint se déclenche trop tard, le logement ne monte plus en température et l'occupant croit à une panne. Quand il est enclenché en permanence dès l'automne, la facture d'électricité grimpe sans qu'aucun défaut ne soit affiché. C'est un point que nous contrôlons systématiquement."
+    },
+    {
+      "heading": "L'environnement boisé, un facteur d'encrassement",
+      "body": "La proximité des arbres a une conséquence directe sur les installations extérieures. Sur une pompe à chaleur, feuilles, aiguilles et poussières végétales encrassent les ailettes de l'unité extérieure et dégradent son échange thermique : la machine force pour un résultat moindre, et finit par se mettre en sécurité. Le même phénomène affecte les grilles de ventilation et, sur certaines configurations, les prises d'air de chaudières à ventouse. Un nettoyage à l'automne, avant la sollicitation intensive, suffit à supprimer une bonne part de ces incidents. Nous l'intégrons au contrôle annuel lorsque l'installation le justifie."
+    }
+  ],
+  "neighbours": ["Besançon", "Franois", "Pirey"],
+  "faq": [
+    {
+      "q": "Fait-il plus froid à Serre-les-Sapins qu'au centre de Besançon ?",
+      "a": "Le secteur est boisé et à l'écart de la ville dense, un contexte où la saison de chauffe démarre plus tôt et se prolonge. En pratique, cela signifie surtout une installation davantage sollicitée sur l'année, donc une usure plus rapide des pièces mobiles et un intérêt renforcé à faire l'entretien annuel avant l'automne."
+    },
+    {
+      "q": "Ma pompe à chaleur suffit-elle par grand froid ?",
+      "a": "Une PAC voit son rendement diminuer quand la température extérieure baisse, et c'est l'appoint qui prend le relais : c'est prévu par la technologie. Ce qui compte, c'est le réglage du basculement. Un appoint déclenché trop tard laisse le logement sous la consigne, un appoint enclenché en permanence dès l'automne fait grimper la facture. Nous vérifions ce réglage lors du contrôle."
+    },
+    {
+      "q": "Faut-il nettoyer l'unité extérieure de sa pompe à chaleur ?",
+      "a": "Oui, particulièrement dans un environnement boisé. Feuilles, aiguilles et poussières végétales encrassent les ailettes et dégradent l'échange thermique, ce qui fait forcer la machine jusqu'à la mise en sécurité. Un nettoyage à l'automne, avant la période de sollicitation intensive, évite une bonne partie de ces arrêts. Coupez l'alimentation avant toute intervention, ou confiez-nous l'opération."
+    },
+    {
+      "q": "Intervenez-vous en urgence à Serre-les-Sapins ?",
+      "a": "Oui, notre ligne est ouverte 7j/7, week-ends et jours fériés compris. Nous priorisons les logements occupés qui ne sont plus chauffés du tout, en particulier pendant les épisodes de gel. Le créneau exact vous est annoncé au téléphone en fonction du planning réel du moment."
+    }
+  ]
+}

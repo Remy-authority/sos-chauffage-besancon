@@ -1,0 +1,44 @@
+{
+  "slug": "mamirolle",
+  "name": "Mamirolle",
+  "postalCode": "25620",
+  "orientation": "Sud-est",
+  "context": "Commune du sud-est, sur le premier plateau du Jura, où se mêlent habitat résidentiel et activité agricole.",
+  "metaTitle": "Chauffagiste à Mamirolle, dépannage chaudière urgence",
+  "metaDescription": "Dépannage urgence chauffage à Mamirolle (25620) : chaudière gaz ou fioul en panne, radiateurs froids, entretien annuel. Intervention 7j/7.",
+  "h1": "Dépannage urgence chauffage à Mamirolle",
+  "intro": "Nous intervenons à Mamirolle (25620) pour le dépannage de chauffage et l'entretien annuel de chaudière. Située au sud-est de Besançon sur le premier plateau du Jura, la commune associe habitat résidentiel et activité agricole, dans un environnement d'altitude où l'hiver est plus marqué que dans la vallée du Doubs. Le chauffage y est sollicité plus longtemps et plus fortement.",
+  "blocks": [
+    {
+      "heading": "L'altitude change les besoins réels",
+      "body": "Sur le premier plateau, la saison de chauffe commence plus tôt, se termine plus tard et comporte davantage de journées froides que dans l'agglomération en fond de vallée. Une installation calculée un peu juste tient l'essentiel de l'année, puis décroche au moment précis où le besoin est maximal : la chaudière tourne en continu, les émetteurs sont chauds, et pourtant la consigne n'est jamais atteinte. Ce n'est pas une panne, c'est un problème de dimensionnement ou de courbe de chauffe. Il se travaille par le réglage de la loi d'eau, l'équilibrage entre les pièces et, si nécessaire, le renfort des émetteurs dans les volumes les plus exposés. Un dépannage classique ne le corrigerait pas."
+    },
+    {
+      "heading": "Fioul, bois et gaz sur un même secteur",
+      "body": "Le réseau de gaz naturel ne dessert pas l'ensemble des communes du plateau, et cela se lit dans le parc d'appareils : les chaudières fioul y sont bien représentées, souvent en maison individuelle avec cuve, et le chauffage au bois est présent en appoint dans de nombreux logements. Nous intervenons sur les chaudières gaz et fioul, les pompes à chaleur, le chauffage électrique et la production d'eau chaude. En revanche, le ramonage des conduits et l'entretien des poêles et inserts à bois ne relèvent pas de notre périmètre : ce sont des prestations distinctes, avec leurs propres obligations réglementaires, et il faut vous adresser à un ramoneur."
+    },
+    {
+      "heading": "Anticiper avant que le plateau ne se refroidisse",
+      "body": "1. Programmez l'entretien annuel en août ou septembre plutôt qu'en octobre : sur le plateau, le chauffage démarre avant le reste de l'agglomération. 2. Surveillez le niveau de cuve si vous êtes au fioul, et faites remplir avant que la saison ne s'installe, pour ne jamais descendre dans la zone où les dépôts sont aspirés. 3. Faites tourner l'installation une journée complète en fin d'été pour identifier les émetteurs qui ne montent plus en température. 4. Vérifiez que les évacuations extérieures, condensats de chaudière à condensation ou de pompe à chaleur, ne sont pas exposées au gel sur leur parcours. 5. Contrôlez votre détecteur de monoxyde de carbone : ce gaz est inodore et seul un détecteur alerte, en particulier dans un logement combinant plusieurs modes de chauffage."
+    }
+  ],
+  "neighbours": ["Besançon", "Thise", "Roche-lez-Beaupré"],
+  "faq": [
+    {
+      "q": "Le chauffage est-il plus sollicité à Mamirolle qu'à Besançon ?",
+      "a": "Oui, la commune se trouve sur le premier plateau du Jura, où la saison de chauffe démarre plus tôt et se prolonge davantage que dans la vallée du Doubs. Une installation y accumule donc plus d'heures de fonctionnement chaque année, ce qui accélère l'usure des pièces sollicitées et rend l'entretien annuel d'autant plus utile avant l'automne."
+    },
+    {
+      "q": "Intervenez-vous sur les chaudières fioul à Mamirolle ?",
+      "a": "Oui. Le réseau de gaz ne dessert pas tout le secteur, et les chaudières fioul y sont bien représentées. Nous traitons la chaîne complète, du filtre et de la ligne d'aspiration au brûleur, au gicleur et au réglage de combustion, avec remise de l'attestation d'entretien lorsqu'il s'agit de la visite annuelle obligatoire."
+    },
+    {
+      "q": "Vous occupez-vous des poêles et inserts à bois ?",
+      "a": "Non, cela ne relève pas de notre périmètre. Le ramonage des conduits et l'entretien des appareils à bois sont des prestations distinctes, soumises à leurs propres obligations, et il faut vous adresser à un ramoneur. Nous intervenons sur la chaudière, la pompe à chaleur, le circuit de chauffage et la production d'eau chaude."
+    },
+    {
+      "q": "Mon chauffage n'atteint jamais la température voulue, que faire ?",
+      "a": "Si la chaudière tourne en continu et que les radiateurs sont chauds sans que le logement monte, il ne s'agit probablement pas d'une panne mais d'un problème de dimensionnement, de courbe de chauffe ou d'équilibrage, particulièrement fréquent en altitude. Nous relevons ces paramètres et vous disons ce qui peut se corriger par réglage et ce qui demanderait un renfort d'émetteurs."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { Clock, Mail, MapPin, PhoneCall } from 'lucide-react'
 import { siteConfig } from '@/config/site.config'
 import { buildMetadata } from '@/lib/seo'
 import { PageHeader } from '@/components/layout/PageHeader'
@@ -10,18 +10,23 @@ import { CtaBanner } from '@/components/ui/CtaBanner'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Contact et demande d’intervention',
-  description: `Contactez ${siteConfig.businessName} pour un débouchage de canalisation à ${siteConfig.city} et dans l'agglomération. Ligne ouverte 7j/7, prix annoncé avant intervention.`,
+  description: `Contactez ${siteConfig.businessName} pour un dépannage de chauffage ou un entretien de chaudière à ${siteConfig.city} et dans le Grand Besançon. Ligne ouverte 7j/7.`,
   path: '/contact',
 })
 
-const infos = [
-  { icon: Phone, label: 'Téléphone', value: siteConfig.phoneDisplay, href: `tel:${siteConfig.phone}` },
-  { icon: Mail, label: 'Email', value: siteConfig.email, href: `mailto:${siteConfig.email}` },
-  { icon: Clock, label: 'Disponibilité', value: siteConfig.availability },
+const COORDONNEES = [
   {
-    icon: MapPin,
-    label: 'Zone',
-    value: `${siteConfig.city} et environ ${siteConfig.serviceArea.radiusKm} km autour`,
+    icone: PhoneCall,
+    intitule: 'Téléphone',
+    valeur: siteConfig.phoneDisplay,
+    href: `tel:${siteConfig.phone}`,
+  },
+  { icone: Mail, intitule: 'Email', valeur: siteConfig.email, href: `mailto:${siteConfig.email}` },
+  { icone: Clock, intitule: 'Disponibilité', valeur: siteConfig.availability },
+  {
+    icone: MapPin,
+    intitule: 'Zone',
+    valeur: `${siteConfig.city} et les communes du Grand Besançon`,
   },
 ]
 
@@ -32,56 +37,60 @@ export default function ContactPage() {
         eyebrow="Contact"
         title={
           <>
-            Dites-nous ce qui
-            <span className="text-gradient-accent"> ne s&apos;écoule plus</span>
+            Dites-nous ce que
+            <br />
+            <span className="mot-laiton">fait votre installation</span>
           </>
         }
-        subtitle="Par téléphone pour une urgence, par le formulaire si ça peut attendre quelques heures."
+        subtitle="Par téléphone si le chauffage est à l’arrêt, par le formulaire si cela peut attendre quelques heures."
       />
 
-      <section className="bg-sand-50 py-16 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:px-10">
+      <section className="bg-calcaire-neige py-14 lg:py-20">
+        <div className="enceinte grid gap-12 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
             <AnimatedSection>
-              <h2 className="text-3xl">Nous joindre</h2>
-              <p className="mt-4 leading-relaxed text-sand-600">
-                Une canalisation qui refoule ne se décrit pas bien par écrit. Si l&apos;eau monte,
-                appelez : c&apos;est plus rapide et nous pouvons vous guider tout de suite sur les
-                gestes à faire en attendant.
+              <h2 className="text-titre-m">Nous joindre</h2>
+              <p className="mt-4 max-w-lecture text-lecture text-calcaire-basalte">
+                Une panne de chauffage se décrit mal par écrit. Si le logement est froid, appelez :
+                c’est plus rapide, et nous pouvons vous indiquer tout de suite ce qu’il faut
+                vérifier en attendant, code erreur, pression du circuit, position du thermostat.
               </p>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1} className="mt-8 space-y-3">
-              {infos.map(({ icon: Icon, label, value, href }) => (
-                <div
-                  key={label}
-                  className="flex items-start gap-4 rounded-card border border-sand-200 bg-white p-5"
-                >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-600/10 text-brand-600">
-                    <Icon size={20} />
+            <AnimatedSection
+              delay={0.08}
+              className="mt-8 divide-y divide-calcaire-pierre border-y border-calcaire-pierre"
+            >
+              {COORDONNEES.map(({ icone: Icone, intitule, valeur, href }) => (
+                <div key={intitule} className="flex items-start gap-4 py-4">
+                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-module border border-calcaire-brume text-jura-franc">
+                    <Icone size={18} strokeWidth={1.7} />
                   </span>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sand-500">
-                      {label}
-                    </p>
+                  <div className="min-w-0">
+                    <p className="surtitre text-calcaire-roche">{intitule}</p>
                     {href ? (
                       <a
                         href={href}
-                        className="mt-1 block break-all font-medium text-ink-950 transition-colors hover:text-brand-600"
+                        className="mt-1.5 block break-all font-medium text-fonte-abysse transition-colors hover:text-jura-dense"
                       >
-                        {value}
+                        {valeur}
                       </a>
                     ) : (
-                      <p className="mt-1 font-medium text-ink-950">{value}</p>
+                      <p className="mt-1.5 font-medium text-fonte-abysse">{valeur}</p>
                     )}
                   </div>
                 </div>
               ))}
             </AnimatedSection>
 
-            <AnimatedSection delay={0.2} className="mt-8">
-              <Button href={`tel:${siteConfig.phone}`} variant="accent" size="lg" className="w-full">
-                <Phone size={18} strokeWidth={2.5} />
+            <AnimatedSection delay={0.16} className="mt-8">
+              <Button
+                href={`tel:${siteConfig.phone}`}
+                variant="laiton"
+                size="ample"
+                className="w-full"
+              >
+                <PhoneCall size={18} strokeWidth={2.2} />
                 Appeler maintenant
               </Button>
             </AnimatedSection>

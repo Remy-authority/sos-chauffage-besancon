@@ -1,0 +1,44 @@
+{
+  "slug": "saint-vit",
+  "name": "Saint-Vit",
+  "postalCode": "25410",
+  "orientation": "Ouest",
+  "context": "Deuxième commune du Grand Besançon, à l'ouest sur l'axe de Dole, avec un habitat qui mélange bâti ancien, lotissements récents et petit collectif.",
+  "metaTitle": "Chauffagiste à Saint-Vit, dépannage chauffage urgence",
+  "metaDescription": "Dépannage de chauffage et de chaudière à Saint-Vit (25410). Panne de chaudière gaz ou fioul, radiateurs froids, entretien annuel. Ligne ouverte 7j/7.",
+  "h1": "Dépannage chauffage et chaudière à Saint-Vit",
+  "intro": "Nous intervenons à Saint-Vit (25410) pour le dépannage de chauffage, la remise en service de chaudière et l'entretien annuel obligatoire. Deuxième commune du Grand Besançon par sa population, Saint-Vit s'étend à l'ouest de l'agglomération le long de l'axe qui file vers Dole, avec un parc de logements très varié : maisons anciennes du bourg, lotissements pavillonnaires plus récents et quelques ensembles collectifs.",
+  "blocks": [
+    {
+      "heading": "Trois types d'habitat, trois types d'installations",
+      "body": "Le bourg ancien de Saint-Vit concentre des maisons de village dont les installations ont souvent été reprises par étapes : une chaudière remplacée à une date, des radiateurs conservés d'une génération antérieure, parfois un circuit partiellement refait. Ce type de montage produit une usure inégale, où l'appareil récent affiche un défaut causé en réalité par un circuit ancien resté embouté. Les lotissements pavillonnaires, plus récents, sont plutôt équipés de chaudières murales à condensation ou de pompes à chaleur, avec des pannes qui relèvent davantage de l'électronique et des sondes que de la mécanique. Les ensembles collectifs, enfin, posent la question du partage entre l'installation privative et la partie commune, qui ne relèvent pas du même interlocuteur."
+    },
+    {
+      "heading": "Ce qui déclenche les appels ici",
+      "body": "En saison de chauffe, la moitié des demandes que nous recevons depuis Saint-Vit concerne une chaudière qui se met en sécurité, souvent avec un code affiché, et une perte de pression du circuit. Viennent ensuite les radiateurs qui ne montent plus en température alors que la chaudière tourne, symptôme classique d'un circuit chargé en boues sur une installation ancienne. Hors saison, les demandes basculent sur l'entretien annuel et sur la préparation avant l'hiver, ce qui est le bon réflexe : un entretien programmé en septembre coûte le même prix qu'en janvier, mais il s'obtient dans des délais bien plus courts."
+    },
+    {
+      "heading": "Gaz, fioul et électrique à Saint-Vit",
+      "body": "Le réseau de gaz naturel dessert une partie de la commune, mais pas la totalité des rues, ce qui explique la présence persistante du fioul sur certains secteurs et de l'électrique dans les constructions les plus récentes. Nous intervenons sur les trois énergies, ainsi que sur les pompes à chaleur. Si vous ne savez pas avec certitude de quoi votre logement est équipé, notamment après un achat récent, indiquez-nous simplement ce que vous voyez, un brûleur et une cuve pour le fioul, un raccordement au compteur pour le gaz, une unité extérieure pour une pompe à chaleur, cela suffit à orienter le diagnostic au téléphone."
+    }
+  ],
+  "neighbours": ["Besançon", "Franois", "Serre-les-Sapins"],
+  "faq": [
+    {
+      "q": "Intervenez-vous en urgence à Saint-Vit le week-end ?",
+      "a": "Oui, notre ligne est ouverte 7j/7, week-ends et jours fériés compris, pour les pannes de chauffage à Saint-Vit et dans les communes voisines. Le créneau exact vous est annoncé au téléphone en fonction du planning en cours : nous préférons donner une heure réaliste plutôt qu'une promesse générique, en particulier pendant les pics de pannes de décembre et janvier."
+    },
+    {
+      "q": "Ma maison à Saint-Vit est au fioul, intervenez-vous aussi ?",
+      "a": "Oui. Le fioul reste présent sur les secteurs de la commune que le réseau de gaz ne dessert pas, et nous intervenons sur ces installations : brûleur, gicleur, filtre, ligne d'aspiration depuis la cuve et réglage de combustion. Pensez à vérifier le niveau de votre cuve avant d'appeler, une cuve trop basse laisse aspirer les dépôts et provoque des arrêts répétés."
+    },
+    {
+      "q": "Je viens d'acheter à Saint-Vit, que faut-il vérifier sur le chauffage ?",
+      "a": "Trois choses en priorité. La date du dernier entretien, qui doit vous avoir été transmise et qui conditionne la garantie constructeur. La pression du circuit, lisible sur le manomètre de la chaudière. Et le comportement des radiateurs les plus éloignés de la chaudière : s'ils restent tièdes alors que les autres chauffent, le circuit demande probablement un désembouage, indépendamment de l'état de l'appareil."
+    },
+    {
+      "q": "Faites-vous l'entretien annuel obligatoire à Saint-Vit ?",
+      "a": "Oui, sur chaudière gaz comme sur chaudière fioul, avec remise de l'attestation d'entretien à l'issue de la visite. La meilleure période va d'août à octobre : le chauffage ne tourne pas encore en continu, les défauts repérés peuvent être corrigés avant l'hiver et les délais de rendez-vous sont courts."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "depannage-pompe-chaleur",
+  "order": 5,
+  "icon": "pac",
+  "navTitle": "Dépannage pompe à chaleur",
+  "h1": "Dépannage urgence pompe à chaleur à Besançon",
+  "metaTitle": "Dépannage pompe à chaleur PAC à Besançon, urgence",
+  "metaDescription": "Pompe à chaleur en panne à Besançon. Dépannage d'urgence PAC air-air et air-eau, diagnostic et remise en service, 7j/7.",
+  "intro": "Une pompe à chaleur qui décroche en plein hiver comtois laisse le logement sans chauffage au moment où la demande est maximale. Nous intervenons sur les PAC air-eau et air-air à Besançon et dans le Grand Besançon, pour les vraies pannes comme pour les baisses de performance qui n'en sont pas. Car sur cette technologie, beaucoup d'appels concernent des comportements normaux mal interprétés.",
+  "bullets": [
+    "PAC air-eau et air-air",
+    "Comportement par grand froid",
+    "Diagnostic unité extérieure"
+  ],
+  "blocks": [
+    {
+      "heading": "Ce qui est normal, et ce qui ne l'est pas",
+      "body": "Une pompe à chaleur qui s'arrête plusieurs minutes, souffle de l'air froid par l'unité extérieure et laisse s'écouler de l'eau sous celle-ci n'est généralement pas en panne : elle dégivre. Ce cycle est normal par température basse et humidité élevée, deux conditions réunies une bonne partie de l'hiver dans la vallée du Doubs. De même, une PAC qui produit moins de chaleur quand il gèle fort ne dysfonctionne pas : son rendement baisse mécaniquement avec la température extérieure, et c'est l'appoint qui prend le relais. En revanche, un arrêt complet sans redémarrage, un code de défaut affiché, un cliquetis métallique franc, une unité extérieure prise dans un bloc de glace qui ne se résorbe pas, ou un appoint électrique qui tourne en permanence, sont de vraies anomalies."
+    },
+    {
+      "heading": "Les pannes que nous traitons le plus souvent",
+      "body": "Côté hydraulique sur une PAC air-eau, la perte de pression du circuit et le circulateur bloqué produisent les mêmes symptômes que sur une chaudière : la machine tourne, les émetteurs restent froids. Côté aéraulique, l'unité extérieure encrassée par les feuilles et les poussières perd son échange thermique et force la machine jusqu'à la mise en sécurité. Viennent ensuite les défauts de sonde, qui font lire une température incohérente, les cartes de régulation défaillantes, et les problèmes de dégivrage lorsque l'évacuation des condensats est obstruée ou gelée. Le manque de fluide frigorigène, souvent évoqué par les occupants, est en réalité moins fréquent : il signale une fuite sur le circuit et demande une intervention spécifique."
+    },
+    {
+      "heading": "Le dimensionnement de l'appoint, le point sensible ici",
+      "body": "En Franche-Comté, une pompe à chaleur affronte des périodes de froid soutenu. Sa performance décroît alors, et l'installation bascule sur son appoint, résistance électrique intégrée ou chaudière conservée en relève. Quand cet appoint est sous-dimensionné, ou quand la régulation le déclenche trop tard, le logement ne monte plus en température et l'occupant conclut à une panne. Quand il est surdimensionné ou mal réglé, il tourne en permanence et la facture d'électricité s'envole sans que rien ne signale l'anomalie. Nous vérifions systématiquement ce point sur une installation qui chauffe mal sans afficher de défaut : c'est souvent là que se trouve l'explication."
+    },
+    {
+      "heading": "Entretenir une PAC pour éviter l'arrêt d'hiver",
+      "body": "Une pompe à chaleur demande moins d'entretien qu'une chaudière, mais elle n'en demande pas zéro. Le contrôle annuel porte sur la propreté de l'unité extérieure et de ses ailettes, l'état et le dégagement de l'évacuation des condensats, la pression et la qualité de l'eau du circuit sur une air-eau, les filtres sur une air-air, les paramètres de régulation et le fonctionnement du dégivrage. Sur les installations contenant une quantité importante de fluide frigorigène, un contrôle d'étanchéité périodique est par ailleurs réglementairement prévu. La visite se programme idéalement à l'automne, avant la sollicitation continue."
+    }
+  ],
+  "relatedServices": ["depannage-chauffage-electrique", "remplacement-chaudiere"],
+  "faq": [
+    {
+      "q": "Ma pompe à chaleur s'arrête en hiver, est-ce une panne ?",
+      "a": "Pas nécessairement. Un arrêt de quelques minutes accompagné d'un souffle froid et d'un écoulement d'eau sous l'unité extérieure correspond à un cycle de dégivrage, parfaitement normal par temps froid et humide. En revanche, un arrêt complet sans redémarrage, un code de défaut affiché ou un bloc de glace persistant sur l'unité extérieure signalent une vraie anomalie qui demande une intervention."
+    },
+    {
+      "q": "Une pompe à chaleur est-elle moins efficace en hiver ?",
+      "a": "Oui, c'est inhérent à la technologie : le rendement d'une PAC air-eau ou air-air diminue à mesure que la température extérieure baisse, puisqu'elle prélève sa chaleur dans l'air. Dans une région où les épisodes de froid sont marqués comme ici, c'est l'appoint, résistance électrique ou chaudière en relève, qui prend le relais. Une installation correctement dimensionnée l'anticipe et le confort reste stable."
+    },
+    {
+      "q": "Ma PAC fait un bruit anormal, faut-il s'inquiéter ?",
+      "a": "Tout dépend du bruit. Un souffle plus fort au démarrage ou pendant un dégivrage est normal. Un bourdonnement continu qui n'existait pas auparavant oriente vers le circulateur ou le ventilateur. Un cliquetis métallique franc, un grincement ou une vibration qui fait résonner la structure demandent en revanche un contrôle rapide : sur ces machines, un défaut mécanique laissé en l'état se traduit vite par un arrêt complet."
+    },
+    {
+      "q": "Combien coûte l'entretien d'une pompe à chaleur ?",
+      "a": "Le tarif dépend du type de machine, air-air ou air-eau, de sa puissance et de l'accessibilité de l'unité extérieure. Nous l'annonçons au téléphone avant de fixer le rendez-vous. Sur les installations contenant une quantité importante de fluide frigorigène, un contrôle d'étanchéité réglementaire s'ajoute au contrôle courant : nous vous précisons si votre machine est concernée."
+    },
+    {
+      "q": "Une pompe à chaleur peut-elle remplacer une chaudière gaz ?",
+      "a": "Techniquement oui, à condition que le logement soit suffisamment isolé et que les émetteurs, radiateurs ou plancher chauffant, acceptent une température d'eau plus basse qu'une chaudière classique. Sur un logement ancien mal isolé équipé de radiateurs haute température, un remplacement direct sans autre travaux dégrade souvent le confort pendant les périodes de grand froid. C'est le point à vérifier avant tout le reste."
+    },
+    {
+      "q": "Faut-il vidanger le circuit d'une pompe à chaleur chaque année ?",
+      "a": "Non. Sur une PAC air-eau, le circuit de chauffage est fermé : il ne se vidange pas annuellement, et une vidange systématique introduit au contraire de l'oxygène qui favorise la corrosion. Ce qui se contrôle chaque année, c'est la pression du circuit, la qualité de l'eau et l'absence de boues, ainsi que la propreté de l'unité extérieure et de l'évacuation des condensats."
+    }
+  ]
+}

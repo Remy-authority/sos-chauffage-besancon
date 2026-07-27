@@ -1,0 +1,44 @@
+{
+  "slug": "pirey",
+  "name": "Pirey",
+  "postalCode": "25480",
+  "orientation": "Nord-ouest",
+  "context": "Commune du nord-ouest de l'agglomération, à l'habitat mixte, où le bâti ancien rénové côtoie des constructions plus récentes.",
+  "metaTitle": "Dépannage urgence chauffage à Pirey, chauffagiste",
+  "metaDescription": "Chauffagiste à Pirey (25480) : dépannage de chaudière gaz ou fioul, radiateurs froids, plus d'eau chaude, entretien annuel. Urgence 7j/7.",
+  "h1": "Chauffagiste à Pirey, dépannage urgence chauffage",
+  "intro": "Nous intervenons à Pirey (25480) pour le dépannage de chauffage et l'entretien annuel obligatoire. Au nord-ouest de Besançon, la commune présente un habitat mixte : des maisons anciennes dont beaucoup ont été rénovées par étapes, et des constructions plus récentes. Cette diversité produit des installations hybrides, où le neuf et l'ancien cohabitent sur le même circuit.",
+  "blocks": [
+    {
+      "heading": "Les installations composites, un cas fréquent ici",
+      "body": "La rénovation par étapes crée une configuration très répandue à Pirey : une chaudière récente à condensation raccordée à un circuit et à des émetteurs qui ont vingt ou trente ans de plus qu'elle. Sur le papier, tout fonctionne. En pratique, l'appareil moderne est conçu pour travailler à basse température de départ, alors que les anciens radiateurs ont été dimensionnés pour de l'eau beaucoup plus chaude. Résultat : soit la chaudière ne condense jamais et son rendement réel reste très en deçà de ce qui était attendu, soit le confort se dégrade dans les pièces les plus exposées. Ce n'est pas une panne, c'est un défaut d'adaptation, et il se corrige par le réglage de la loi d'eau et l'équilibrage du circuit."
+    },
+    {
+      "heading": "Ce que la rénovation partielle laisse derrière elle",
+      "body": "Quand seule une partie du circuit a été refaite, on trouve fréquemment sur un même réseau des tuyauteries en cuivre neuves raccordées à de l'acier ancien, parfois avec des radiateurs en fonte conservés. Ce mélange de métaux favorise la corrosion et accélère la formation de boues, précisément dans les zones de raccordement. Le symptôme apparaît des années plus tard, sous la forme de radiateurs qui ne montent plus en température, d'un circulateur qui force ou d'une eau de purge très foncée. Un désembouage, complété par un filtre magnétique qui capte les particules ferreuses en continu, règle durablement la question."
+    },
+    {
+      "heading": "Ce que nous contrôlons sur un bâti ancien",
+      "body": "1. La pression du circuit et le comportement du vase d'expansion, premiers responsables des arrêts répétés. 2. La circulation réelle, radiateur par radiateur, pour distinguer un embouage d'un simple défaut d'équilibrage. 3. La température de départ et la loi d'eau, pour vérifier que l'appareil travaille dans la plage pour laquelle il a été conçu. 4. L'état du conduit d'évacuation, en particulier lorsqu'une chaudière à condensation a été posée sur un conduit prévu pour un appareil ancien. 5. L'évacuation des condensats, dont l'obstruction met la chaudière en sécurité sans qu'aucun symptôme de chauffage ne le laisse prévoir."
+    }
+  ],
+  "neighbours": ["Besançon", "Miserey-Salines", "Serre-les-Sapins"],
+  "faq": [
+    {
+      "q": "Quel type de chauffage trouve-t-on à Pirey ?",
+      "a": "Le parc est mixte, à l'image de l'habitat : chaudières gaz sur les secteurs desservis par le réseau, fioul là où il ne l'est pas, chauffage électrique dans certaines constructions et quelques pompes à chaleur sur les logements les plus récents. Nous intervenons sur l'ensemble de ces énergies ainsi que sur la production d'eau chaude sanitaire associée."
+    },
+    {
+      "q": "J'ai une chaudière neuve mais mon confort n'a pas changé, est-ce normal ?",
+      "a": "C'est un cas fréquent sur une rénovation partielle. Une chaudière à condensation posée sur un circuit ancien conserve souvent des réglages de température de départ élevés, qui l'empêchent de condenser et donc de tenir ses performances. Le réglage de la loi d'eau et l'équilibrage des émetteurs corrigent généralement la situation sans toucher au matériel."
+    },
+    {
+      "q": "Intervenez-vous la nuit à Pirey en cas d'urgence ?",
+      "a": "Notre ligne est ouverte 7j/7, week-ends et jours fériés compris. Nous priorisons les logements occupés qui ne sont plus chauffés du tout, en particulier pendant les épisodes de gel. Pour une panne moins critique, nous convenons ensemble d'un créneau réaliste plutôt que d'annoncer une heure que le planning ne permettrait pas de tenir."
+    },
+    {
+      "q": "Une maison ancienne tombe-t-elle plus souvent en panne ?",
+      "a": "Pas l'appareil, mais le circuit. Sur un bâti ancien, l'essentiel des problèmes vient de la tuyauterie, des émetteurs et de l'équilibrage, pas de la chaudière elle-même. C'est pour cette raison que nous commençons toujours par un diagnostic de circulation : intervenir sur l'appareil seul laisserait la vraie cause en place."
+    }
+  ]
+}

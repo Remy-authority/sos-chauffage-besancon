@@ -1,0 +1,60 @@
+{
+  "slug": "remplacement-chaudiere",
+  "order": 8,
+  "icon": "remplacement",
+  "navTitle": "Remplacement de chaudière",
+  "h1": "Remplacement de chaudière à Besançon",
+  "metaTitle": "Remplacement de chaudière à Besançon, devis installation",
+  "metaDescription": "Remplacement de chaudière gaz ou fioul à Besançon. Étude de l'installation existante, choix de l'appareil, pose et mise en service.",
+  "intro": "Remplacer une chaudière est une décision qui engage quinze à vingt ans de confort et de consommation. Elle ne se prend pas dans l'urgence d'une panne de janvier, quand la pression pousse à choisir vite. Nous étudions l'installation existante, nous vous disons ce que votre logement permet réellement, et nous posons l'appareil qui correspond à cet usage plutôt qu'au catalogue du moment.",
+  "bullets": [
+    "Étude de l'installation existante",
+    "Appareil choisi selon le logement",
+    "Pose et mise en service"
+  ],
+  "blocks": [
+    {
+      "heading": "Réparer encore, ou remplacer maintenant",
+      "body": "Trois critères tranchent, et il faut les regarder ensemble. La disponibilité des pièces détachées : sur un appareil ancien, elles se raréfient, les délais d'approvisionnement s'allongent et chaque panne immobilise le chauffage plus longtemps. La fréquence des pannes : deux ou trois interventions dans la même saison de chauffe coûtent souvent davantage que la part annuelle d'un remplacement. Le rendement réel : une chaudière ancienne consomme sensiblement plus qu'un appareil à condensation pour le même confort, et cet écart se paie chaque hiver, particulièrement ici où la saison de chauffe est longue. Si un seul de ces critères est rouge, la réparation garde du sens. Si deux le sont, le calcul bascule."
+    },
+    {
+      "heading": "Ce que votre logement permet réellement",
+      "body": "Le choix d'un appareil ne part pas du catalogue mais de l'existant. Nous regardons la présence du réseau de gaz dans la rue, qui n'est pas acquise partout dans le Grand Besançon. Le conduit d'évacuation et sa compatibilité avec une chaudière à condensation, qui produit des fumées plus froides et des condensats à évacuer. Le type d'émetteurs en place, car des radiateurs haute température et un plancher chauffant n'appellent pas les mêmes températures de départ. L'isolation du logement, déterminante si une pompe à chaleur est envisagée. Et le volume d'eau chaude réellement consommé par le foyer, qui décide entre une chaudière mixte instantanée et une production par ballon."
+    },
+    {
+      "heading": "Le déroulé d'un remplacement",
+      "body": "1. Nous visitons l'installation existante et relevons les points contraignants, conduit, raccordements, évacuation des condensats, emplacement. 2. Nous vous présentons les options techniquement possibles chez vous, avec ce qui les distingue à l'usage, et le devis correspondant. 3. Une fois votre choix arrêté, nous convenons d'une date en tenant compte de la saison : un remplacement se planifie idéalement hors période de chauffe. 4. Le jour de la pose, l'ancien appareil est déposé et évacué, le nouveau raccordé, le circuit rincé si nécessaire. 5. Nous procédons à la mise en service, au réglage de la régulation et au contrôle de combustion, puis nous vous expliquons le fonctionnement de l'appareil et de sa programmation avant de repartir."
+    },
+    {
+      "heading": "Les aides publiques, ce qu'on peut en dire honnêtement",
+      "body": "Des dispositifs publics accompagnent le remplacement d'un appareil de chauffage : MaPrimeRénov', les certificats d'économies d'énergie et l'éco-prêt à taux zéro. Ils existent, ils sont réels, et leurs conditions évoluent régulièrement. Deux points méritent d'être dits clairement. D'une part, les montants et les critères d'éligibilité figurent sur les sites officiels de l'État, seule source à jour : nous ne les reproduisons pas ici pour ne pas afficher un chiffre périmé. D'autre part, l'accès à ces aides dépend notamment de la qualification de l'installateur retenu : renseignez-vous sur ce point avant d'engager un projet dont le financement en dépendrait."
+    }
+  ],
+  "relatedServices": ["depannage-chaudiere-gaz", "depannage-pompe-chaleur"],
+  "faq": [
+    {
+      "q": "Comment savoir si ma chaudière doit être remplacée ?",
+      "a": "Regardez trois choses ensemble : la disponibilité des pièces détachées, la fréquence des pannes sur les dernières saisons, et l'évolution de votre consommation à usage constant. Une chaudière qui tombe en panne plusieurs fois par hiver, dont les pièces deviennent difficiles à trouver et qui consomme davantage chaque année a atteint sa fin de vie économique, même si elle redémarre encore après chaque réparation."
+    },
+    {
+      "q": "Chaudière gaz, fioul ou pompe à chaleur, laquelle choisir ?",
+      "a": "Cela dépend d'abord de votre logement, pas des tendances. Le gaz suppose que le réseau dessert votre rue. Le fioul reste pertinent là où il n'y a pas de réseau et où une cuve existe déjà. La pompe à chaleur demande une isolation correcte et des émetteurs acceptant une eau moins chaude, sans quoi le confort se dégrade pendant les périodes de grand froid, fréquentes ici. Nous partons de l'existant pour vous dire ce qui est réellement possible."
+    },
+    {
+      "q": "Des aides existent-elles pour remplacer sa chaudière ?",
+      "a": "Oui : MaPrimeRénov', les certificats d'économies d'énergie et l'éco-prêt à taux zéro sont les principaux dispositifs. Leurs conditions et leurs montants évoluent régulièrement et figurent sur les sites officiels de l'État, qui sont la seule référence à jour. L'éligibilité dépend notamment de la qualification de l'installateur retenu : c'est un point à vérifier en amont de tout projet."
+    },
+    {
+      "q": "Combien de temps dure l'installation d'une chaudière neuve ?",
+      "a": "La durée dépend surtout de ce que le remplacement implique en plus de la pose : conservation ou reprise du conduit, adaptation des raccordements, création d'une évacuation de condensats, rinçage du circuit. Un remplacement à l'identique et un changement de technologie ne se déroulent pas dans le même temps. Nous vous donnons une durée précise après la visite, une fois ces points relevés."
+    },
+    {
+      "q": "Quelle garantie pour une chaudière neuve ?",
+      "a": "L'appareil bénéficie de la garantie de son constructeur, dont la durée et l'étendue varient selon la marque et le modèle : elle vous est communiquée avec le devis. Cette garantie est conditionnée à la réalisation de l'entretien annuel obligatoire, dont l'attestation sert de preuve. La pose, elle, relève des assurances de l'entreprise qui réalise les travaux."
+    },
+    {
+      "q": "Combien coûte l'installation d'une chaudière neuve à Besançon ?",
+      "a": "Le prix dépend de l'appareil retenu, de sa puissance et de tout ce que le remplacement entraîne sur l'installation existante, conduit, raccordements, évacuation des condensats, dépose et évacuation de l'ancien appareil. Il ne peut donc pas être annoncé sérieusement au téléphone : nous établissons un devis après visite, et ce devis fait foi."
+    }
+  ]
+}

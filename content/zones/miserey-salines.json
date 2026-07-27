@@ -1,0 +1,44 @@
+{
+  "slug": "miserey-salines",
+  "name": "Miserey-Salines",
+  "postalCode": "25480",
+  "orientation": "Nord-ouest",
+  "context": "Commune du nord-ouest de l'agglomération, marquée par un habitat récent et des équipements de chauffage de génération moderne.",
+  "metaTitle": "Chauffagiste à Miserey-Salines, dépannage urgent",
+  "metaDescription": "Dépannage urgence chauffage à Miserey-Salines (25480) : chaudière à condensation, pompe à chaleur, ballon d'eau chaude, entretien annuel obligatoire.",
+  "h1": "Dépannage urgence chauffage à Miserey-Salines",
+  "intro": "Nous intervenons à Miserey-Salines (25480) pour le dépannage de chauffage et l'entretien annuel. Au nord-ouest de Besançon, la commune s'est largement développée avec des programmes résidentiels récents : le parc d'appareils y est plus moderne que la moyenne de l'agglomération, avec beaucoup de chaudières à condensation et une part croissante de pompes à chaleur. Les pannes n'y ont donc pas le même visage qu'ailleurs.",
+  "blocks": [
+    {
+      "heading": "Des appareils récents, mais pas des appareils sans panne",
+      "body": "Une chaudière à condensation ou une pompe à chaleur récente tombe rarement en panne mécanique. En revanche, elle repose sur beaucoup plus d'électronique et de capteurs que les générations précédentes, et c'est là que se concentrent les défaillances : sonde de départ ou de retour qui dérive, pressostat, carte de régulation, vanne trois voies motorisée. Ces appareils affichent presque toujours un code d'erreur, et ce code est une vraie information : il désigne le capteur ou la sécurité qui a provoqué l'arrêt. Relevez-le avant d'appeler, il permet souvent d'arriver directement avec la pièce plutôt que de faire un premier passage de repérage."
+    },
+    {
+      "heading": "La condensation impose ses propres contrôles",
+      "body": "Une chaudière à condensation récupère la chaleur des fumées, ce qui produit des condensats acides évacués vers les eaux usées. Cette évacuation est un point de défaillance spécifique et méconnu : quand le siphon de condensats s'encrasse ou se bouche, la chaudière se met en sécurité alors que rien ne semble anormal côté chauffage. Le second point de vigilance est le conduit d'évacuation, dont les fumées plus froides sollicitent différemment le tubage. Ces deux contrôles font partie de l'entretien annuel, et ce sont eux qui évitent une bonne part des arrêts inexpliqués en pleine saison."
+    },
+    {
+      "heading": "Pompe à chaleur et grand froid, ce qu'il faut savoir ici",
+      "body": "Beaucoup de logements récents de Miserey-Salines sont équipés d'une pompe à chaleur. Cette technologie prélève sa chaleur dans l'air extérieur : son rendement baisse mécaniquement quand la température chute, et l'installation bascule alors sur son appoint. Ce comportement est normal, il ne signale pas une panne. Ce qui doit alerter, c'est un appoint qui tourne en permanence dès l'automne, signe d'un dimensionnement ou d'un réglage de régulation à revoir, ou une unité extérieure prise dans un bloc de glace qui ne se résorbe pas entre deux cycles. Nous vérifions systématiquement ces points sur une installation qui chauffe mal sans afficher de défaut."
+    }
+  ],
+  "neighbours": ["Besançon", "Pirey", "École-Valentin"],
+  "faq": [
+    {
+      "q": "Quel type de chauffage domine à Miserey-Salines ?",
+      "a": "Le parc est plus récent que la moyenne de l'agglomération, avec une nette présence de chaudières gaz à condensation et une part croissante de pompes à chaleur dans les constructions les plus récentes. Le chauffage électrique reste présent en appoint. Nous intervenons sur l'ensemble de ces technologies, ainsi que sur la production d'eau chaude associée."
+    },
+    {
+      "q": "Ma chaudière affiche un code erreur, que faut-il en faire ?",
+      "a": "Notez-le exactement tel qu'il apparaît et transmettez-le nous au téléphone avec la marque et l'âge approximatif de l'appareil. Sur les chaudières récentes, ce code désigne précisément la sécurité qui a déclenché l'arrêt. Vous pouvez tenter un réarmement, une fois. S'il faut réarmer trois fois de suite, arrêtez : le défaut est réel et l'insistance peut aggraver la situation."
+    },
+    {
+      "q": "Ma pompe à chaleur est-elle en panne quand elle souffle de l'air froid ?",
+      "a": "Généralement non. Un arrêt de quelques minutes accompagné d'un souffle froid par l'unité extérieure et d'un écoulement d'eau en dessous correspond à un cycle de dégivrage, normal par temps froid et humide comme ici. Ce qui n'est pas normal : un arrêt complet sans redémarrage, un code de défaut, ou une couche de glace qui persiste d'un cycle à l'autre."
+    },
+    {
+      "q": "L'entretien est-il obligatoire sur un appareil récent ?",
+      "a": "Oui. L'obligation d'entretien annuel s'applique aux chaudières de 4 à 400 kilowatts quel que soit leur âge, et elle conditionne le maintien de la garantie constructeur, ce qui compte particulièrement sur un appareil récent. Sur une pompe à chaleur, un contrôle annuel est également recommandé, avec un contrôle d'étanchéité réglementaire selon la quantité de fluide contenue dans la machine."
+    }
+  ]
+}

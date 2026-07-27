@@ -1,0 +1,44 @@
+{
+  "slug": "avanne-aveney",
+  "name": "Avanne-Aveney",
+  "postalCode": "25720",
+  "orientation": "Sud-ouest",
+  "context": "Commune du sud-ouest de l'agglomération, dans la vallée du Doubs, avec un habitat pavillonnaire majoritairement construit entre les années soixante-dix et quatre-vingt-dix.",
+  "metaTitle": "Chauffagiste à Avanne-Aveney, dépannage urgence",
+  "metaDescription": "Dépannage de chauffage urgent à Avanne-Aveney (25720) : chaudière en panne, radiateurs froids, circuit embouté, entretien annuel obligatoire.",
+  "h1": "Dépannage chauffage urgent à Avanne-Aveney",
+  "intro": "Nous intervenons à Avanne-Aveney (25720) pour le dépannage de chauffage, la remise en service de chaudière et l'entretien annuel obligatoire. Installée dans la vallée du Doubs au sud-ouest de Besançon, la commune présente un habitat pavillonnaire assez homogène en âge, essentiellement bâti entre les années soixante-dix et quatre-vingt-dix. Cette homogénéité se retrouve dans les pannes que nous y traitons.",
+  "blocks": [
+    {
+      "heading": "Des installations qui arrivent toutes au même stade",
+      "body": "Quand un secteur se construit sur une période resserrée, ses installations de chauffage vieillissent ensemble. Sur Avanne-Aveney, cela se traduit par un parc où les mêmes problèmes reviennent d'une maison à l'autre : circuits en acier qui ont eu le temps de s'emboutir, vases d'expansion qui ont perdu leur pression de gonflage, circulateurs en fin de course, robinets thermostatiques grippés faute d'avoir été manœuvrés. Ce sont des pannes de circuit plus que des pannes d'appareil, et c'est une bonne nouvelle : une chaudière remplacée sur un circuit resté embouté ne règle rien, alors qu'un circuit repris redonne du confort même sur un appareil déjà ancien."
+    },
+    {
+      "heading": "Le vase d'expansion, la panne qu'on attribue à tort à la chaudière",
+      "body": "Sur les installations de cette génération, la chute de pression répétée est le motif d'appel numéro un. Le réflexe habituel consiste à remettre de l'eau, ce qui fait repartir la chaudière quelques jours avant que le défaut ne revienne. Dans une bonne partie des cas, il n'y a aucune fuite : c'est le vase d'expansion qui a perdu sa pression d'azote et n'absorbe plus la dilatation de l'eau chaude. La soupape de sécurité évacue alors le surplus à chaque montée en température, la pression retombe, et le cycle recommence. Un indice se vérifie en dix secondes : si l'évacuation sous la soupape est humide en permanence, le vase est le premier suspect."
+    },
+    {
+      "heading": "La vallée, l'humidité et le chauffage",
+      "body": "La position en fond de vallée du Doubs crée un environnement plus humide que sur les plateaux voisins, ce qui a deux conséquences concrètes sur le chauffage. D'abord sur les pompes à chaleur : l'humidité favorise le givrage de l'unité extérieure, donc des cycles de dégivrage plus fréquents en hiver, un comportement normal mais souvent pris pour une panne. Ensuite sur le confort ressenti : dans un logement humide, une même température paraît plus froide, et la tentation est de monter la consigne plutôt que de traiter la cause. Nous vous le signalons quand nous le constatons, même si le traitement de l'humidité elle-même ne relève pas de notre métier."
+    }
+  ],
+  "neighbours": ["Besançon", "Franois", "Serre-les-Sapins"],
+  "faq": [
+    {
+      "q": "Ma chaudière perd de la pression toutes les semaines, est-ce grave ?",
+      "a": "Un circuit fermé ne consomme pas d'eau : si vous devez faire l'appoint chaque semaine, il y a une cause. Soit une fuite, sur un raccord, un radiateur ou le corps de chauffe, soit un vase d'expansion qui a perdu sa pression de gonflage. Regardez sous la soupape de sécurité : une évacuation humide en permanence désigne le vase. Dans les deux cas, remettre de l'eau ne fait que repousser l'arrêt."
+    },
+    {
+      "q": "Mes radiateurs chauffent mal alors que la chaudière fonctionne, pourquoi ?",
+      "a": "C'est le symptôme typique d'un circuit qui ne laisse plus circuler l'eau correctement, par embouage ou par défaut d'équilibrage. Sur un pavillon des années soixante-dix à quatre-vingt-dix équipé de radiateurs acier, l'embouage est la piste la plus probable. Un radiateur chaud en haut et froid en bas confirme la boue, l'inverse indique simplement de l'air à purger."
+    },
+    {
+      "q": "Intervenez-vous à Avanne-Aveney le soir et le week-end ?",
+      "a": "Oui, notre ligne est ouverte 7j/7, week-ends et jours fériés compris. Le créneau vous est annoncé au téléphone en fonction du planning réel, et les situations où un logement occupé n'est plus chauffé du tout passent en priorité pendant les épisodes de froid."
+    },
+    {
+      "q": "Faut-il remplacer une chaudière des années quatre-vingt-dix ?",
+      "a": "Pas nécessairement, et surtout pas sans avoir vérifié l'état du circuit. Une chaudière remplacée sur un circuit embouté donne un résultat décevant, parce que le problème de confort n'était pas dans l'appareil. Nous diagnostiquons d'abord la circulation, ensuite seulement nous parlons de remplacement, et nous vous disons si la réparation tient encore quelques saisons."
+    }
+  ]
+}

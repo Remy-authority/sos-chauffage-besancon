@@ -61,6 +61,12 @@ export interface Zone {
   postalCode: string
   /** Phrase de contexte courte (carte du hub /zones). Optionnel. */
   context?: string
+  /**
+   * Position réelle de la commune par rapport à Besançon (« Nord-est », « Ouest »…).
+   * Sert au regroupement par orientation de la section `CarteZones` et du hub
+   * /zones. Valeurs vérifiées, cf. docs/SEO-GEO-PLAN.md §3 : ne jamais improviser.
+   */
+  orientation?: string
   metaTitle: string
   metaDescription: string
   h1: string

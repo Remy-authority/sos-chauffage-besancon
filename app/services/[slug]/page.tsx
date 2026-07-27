@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { ArrowRight, Phone } from 'lucide-react'
+import { ArrowRight, PhoneCall } from 'lucide-react'
 import { getRelatedArticles, getService, getServices, getZones } from '@/lib/content'
 import { buildMetadata, jsonLdScript, serviceJsonLd } from '@/lib/seo'
 import { siteConfig } from '@/config/site.config'
@@ -14,6 +14,7 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
 import { ServiceQuickFacts } from '@/components/ui/ServiceQuickFacts'
 import { ServiceBlock } from '@/components/ui/ServiceBlock'
+import { HaloThermique } from '@/components/ui/HaloThermique'
 
 // 100 % SSG : une page statique par prestation.
 export const dynamicParams = false
@@ -23,13 +24,13 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const s = getService(params.slug)
-  if (!s) return {}
+  const service = getService(params.slug)
+  if (!service) return {}
   return buildMetadata({
-    title: s.metaTitle,
-    description: s.metaDescription,
-    path: `/services/${s.slug}`,
-    ogImage: s.image,
+    title: service.metaTitle,
+    description: service.metaDescription,
+    path: `/services/${service.slug}`,
+    ogImage: service.image,
   })
 }
 
@@ -37,10 +38,10 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
   const service = getService(params.slug)
   if (!service) notFound()
 
-  const related = getServices().filter((s) => service.relatedServices.includes(s.slug))
+  const liees = getServices().filter((s) => service.relatedServices.includes(s.slug))
   const articles = getRelatedArticles(service.slug)
-  const zones = getZones().slice(0, 6)
-  const firstImageIndex = service.blocks.findIndex((b) => b.image)
+  const communes = getZones().slice(0, 8)
+  const premiereImage = service.blocks.findIndex((b) => b.image)
 
   return (
     <>
@@ -57,71 +58,111 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         ]}
       />
 
-      {/* En-tête sombre de la prestation */}
-      <section className="noise-overlay relative overflow-hidden bg-gradient-to-b from-ink-950 via-ink-900 to-ink-950 py-16 lg:py-20">
-        <div aria-hidden="true" className="bg-grid absolute inset-0" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-12 lg:px-10">
+      {/* En-tête de la prestation */}
+      <section className="grain relative overflow-hidden bg-fonte-nuit py-14 lg:py-20">
+        <div aria-hidden="true" className="trame-graduee absolute inset-0 opacity-70" />
+        <HaloThermique className="-right-24 -top-16" teinte="jura" taille={440} />
+        <HaloThermique className="-bottom-20 left-1/4" teinte="laiton" taille={300} decalage={-8} />
+
+        <div className="enceinte relative grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500/15 text-brand-300 ring-1 ring-brand-400/25">
-              <ServiceIcon icon={service.icon} className="h-6 w-6" />
+            <span className="flex h-12 w-12 items-center justify-center rounded-module border border-laiton-franc/40 bg-laiton-franc/10 text-laiton-clair">
+              <ServiceIcon icon={service.icon} className="h-[1.35rem] w-[1.35rem]" />
             </span>
-            <h1 className="mt-6 text-4xl leading-[1.1] text-sand-50 md:text-5xl">{service.h1}</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand-200">{service.intro}</p>
+            <h1 className="mt-6 text-titre-l text-calcaire-neige md:text-titre-xl">{service.h1}</h1>
+            <p className="mt-5 max-w-lecture text-chapo text-calcaire-brume">{service.intro}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href={`tel:${siteConfig.phone}`} variant="accent" size="lg">
-                <Phone size={18} strokeWidth={2.5} />
+              <Button href={`tel:${siteConfig.phone}`} variant="laiton" size="ample">
+                <PhoneCall size={18} strokeWidth={2.2} />
                 {siteConfig.phoneDisplay}
               </Button>
-              <Button href="/contact#formulaire" variant="ghost" size="lg">
+              <Button href="/contact#formulaire" variant="verre" size="ample">
                 Décrire ma situation
-                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </div>
 
-          {service.image && (
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-panel border border-brand-400/20 shadow-card">
+          <div className="lg:col-span-5">
+            {service.image ? (
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-socle border border-calcaire-neige/10">
                 <Image
                   src={service.image}
                   alt={service.h1}
                   fill
                   priority
-                  sizes="(min-width: 1024px) 460px, 100vw"
+                  sizes="(min-width: 1024px) 440px, 100vw"
                   className="object-cover"
                 />
               </div>
-            </div>
-          )}
+            ) : (
+              /* Pas de visuel dédié : on remplit la colonne avec les repères de la
+                 prestation plutôt que de laisser un vide asymétrique. */
+              <div className="relative overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-abysse/45 p-7">
+                <div aria-hidden="true" className="trame-graduee-fine absolute inset-0 opacity-60" />
+                <div className="relative">
+                  <p className="surtitre text-calcaire-ombre">Ce qu’il faut retenir</p>
+                  <ol className="mt-5 border-t border-fonte-brut/70">
+                    {service.bullets.map((repere, i) => (
+                      <li
+                        key={repere}
+                        className="flex items-baseline gap-4 border-b border-fonte-brut/70 py-3.5"
+                      >
+                        <span className="chiffre shrink-0 font-titre text-legende text-laiton-patine">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <span className="font-titre text-[0.9375rem] font-medium text-calcaire-neige">
+                          {repere}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="mt-5 text-legende leading-relaxed text-calcaire-ombre">
+                    Sur {siteConfig.city} et les communes du Grand Besançon, ligne ouverte{' '}
+                    {siteConfig.availability}.
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
-      <article className="bg-sand-50 py-16 lg:py-24">
-        <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          <ServiceQuickFacts bullets={service.bullets} />
+      <article className="bg-calcaire-neige py-14 lg:py-20">
+        <div className="enceinte max-w-colonne">
+          {/* Les repères ne sont rappelés ici que si l'en-tête porte un visuel :
+              sinon ils occupent déjà la colonne de droite, inutile de les répéter. */}
+          {service.image && <ServiceQuickFacts bullets={service.bullets} />}
 
-          <div className="prose-content mt-12 space-y-10">
-            {service.blocks.map((b, i) => (
-              <ServiceBlock key={b.heading} block={b} eager={i === firstImageIndex} />
-            ))}
-          </div>
+          {service.blocks.length > 0 && (
+            <div className="corps-edito space-y-10">
+              {service.blocks.map((bloc, i) => (
+                <ServiceBlock key={bloc.heading} block={bloc} eager={i === premiereImage} />
+              ))}
+            </div>
+          )}
 
-          {related.length > 0 && (
+          {liees.length > 0 && (
             <AnimatedSection className="mt-16">
-              <h2 className="text-2xl">Prestations liées</h2>
-              <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-                {related.map((r) => (
-                  <li key={r.slug}>
+              <h2 className="text-titre-m">Prestations liées</h2>
+              <ul className="mt-5 border-t border-calcaire-pierre">
+                {liees.map((liee) => (
+                  <li key={liee.slug}>
                     <Link
-                      href={`/services/${r.slug}`}
-                      className="group flex items-center gap-3 rounded-card border border-sand-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-400/40 hover:shadow-card"
+                      href={`/services/${liee.slug}`}
+                      className="group flex items-center gap-4 border-b border-calcaire-pierre py-4 transition-colors hover:bg-calcaire-voile"
                     >
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-600/10 text-brand-600">
-                        <ServiceIcon icon={r.icon} className="h-5 w-5" />
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-module border border-calcaire-brume text-jura-franc transition-colors group-hover:border-laiton-franc/50 group-hover:text-laiton-patine">
+                        <ServiceIcon icon={liee.icon} className="h-[1.1rem] w-[1.1rem]" />
                       </span>
-                      <span className="font-medium text-ink-900 group-hover:text-brand-700">
-                        {r.navTitle}
+                      <span className="flex-1 font-titre font-medium text-fonte-nuit transition-colors group-hover:text-jura-dense">
+                        {liee.navTitle}
                       </span>
+                      <ArrowRight
+                        size={16}
+                        aria-hidden="true"
+                        className="shrink-0 text-calcaire-ombre transition-all duration-300 ease-thermique group-hover:translate-x-1 group-hover:text-laiton-patine"
+                      />
                     </Link>
                   </li>
                 ))}
@@ -130,22 +171,22 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           )}
 
           <AnimatedSection className="mt-14">
-            <h2 className="text-2xl">Cette prestation, près de chez vous</h2>
+            <h2 className="text-titre-m">Cette prestation, près de chez vous</h2>
             <ul className="mt-5 flex flex-wrap gap-2">
-              {zones.map((z) => (
-                <li key={z.slug}>
+              {communes.map((commune) => (
+                <li key={commune.slug}>
                   <Link
-                    href={`/zones/${z.slug}`}
-                    className="inline-flex rounded-full border border-sand-300 bg-white px-4 py-2 text-sm text-sand-700 transition-colors hover:border-brand-500 hover:text-brand-700"
+                    href={`/zones/${commune.slug}`}
+                    className="inline-flex rounded-module border border-calcaire-brume bg-calcaire-voile px-3.5 py-2 text-legende text-calcaire-basalte transition-colors hover:border-jura-franc hover:text-jura-dense"
                   >
-                    {z.name}
+                    {commune.name}
                   </Link>
                 </li>
               ))}
               <li>
                 <Link
                   href="/zones"
-                  className="inline-flex rounded-full border border-brand-600 bg-brand-600/5 px-4 py-2 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-600/10"
+                  className="inline-flex rounded-module border border-jura-franc bg-jura-franc/10 px-3.5 py-2 text-legende font-medium text-jura-dense transition-colors hover:bg-jura-franc/15"
                 >
                   Toutes les communes
                 </Link>
@@ -154,16 +195,16 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </AnimatedSection>
 
           {articles.length > 0 && (
-            <AnimatedSection className="mt-14 rounded-card border border-sand-200 bg-white p-8">
-              <h2 className="text-2xl">À lire aussi</h2>
+            <AnimatedSection className="mt-14 rounded-socle border border-calcaire-pierre bg-calcaire-voile p-7">
+              <h2 className="text-titre-s">À lire aussi</h2>
               <ul className="mt-4 space-y-2">
-                {articles.map((a) => (
-                  <li key={a.slug}>
+                {articles.map((article) => (
+                  <li key={article.slug}>
                     <Link
-                      href={`/conseils/${a.slug}`}
-                      className="font-medium text-brand-600 underline underline-offset-2 hover:text-brand-500"
+                      href={`/conseils/${article.slug}`}
+                      className="font-medium text-jura-dense underline decoration-jura-mousse underline-offset-4 hover:text-jura-franc"
                     >
-                      {a.title}
+                      {article.title}
                     </Link>
                   </li>
                 ))}

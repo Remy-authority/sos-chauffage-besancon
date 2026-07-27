@@ -1,16 +1,20 @@
 /**
- * lib/seo.ts, Metadata API helpers + JSON-LD builders (Lot 6 SEO infra).
+ * lib/seo.ts, helpers Metadata API + constructeurs JSON-LD.
  *
- * Règles NOU-33 :
- *  - Schema LocalBusiness → sous-type **Plumber**, avec `areaServed`.
+ * Règles du site (docs/SEO-GEO-PLAN.md §5) :
+ *  - Schema LocalBusiness → sous-type **HVACBusiness**, le type schema.org dédié
+ *    aux entreprises de chauffage et de climatisation. Avec `areaServed` couvrant
+ *    Besançon et les communes ayant une page.
  *  - **PAS d'`address`** par défaut (siteConfig.legal.showAddress=false) tant que
  *    Rémy n'a pas tranché l'adresse.
- *  - **Aucun `AggregateRating` / `Review`** (pas d'avis réels).
- *  - Canonical absolu partout ; preview => noindex via env (voir robots.ts / metadata).
+ *  - **Aucun `AggregateRating` / `Review`** : le site n'affiche pas d'avis.
+ *  - **Aucune certification déclarée** : rien dans le schema ne doit laisser
+ *    entendre une qualification que nous n'avons pas.
+ *  - Canonical absolu partout ; preview => noindex via env (voir robots.ts).
  */
 import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site.config'
-import { getServices } from '@/lib/content'
+import { getServices, getZones } from '@/lib/content'
 import type { Article, Service, Zone } from '@/lib/content'
 
 const BASE = siteConfig.seo.canonicalBase.replace(/\/$/, '')
@@ -22,13 +26,13 @@ export function absUrl(path = '/'): string {
 
 /**
  * Sur les previews Vercel (ou quand SEO_NOINDEX=1) on bloque l'indexation pour
- * ne jamais exposer un site non validé aux moteurs. En prod (Gate C) : indexable.
+ * ne jamais exposer un site non validé aux moteurs. En prod : indexable.
  */
 export const IS_NOINDEX =
   process.env.SEO_NOINDEX === '1' ||
   (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production')
 
-type BuildMetaArgs = {
+type ArgsMeta = {
   title: string
   description: string
   path: string
@@ -44,9 +48,9 @@ export function buildMetadata({
   path,
   noindex = false,
   ogImage,
-}: BuildMetaArgs): Metadata {
+}: ArgsMeta): Metadata {
   const url = absUrl(path)
-  const index = !noindex && !IS_NOINDEX
+  const indexable = !noindex && !IS_NOINDEX
   return {
     title,
     description,
@@ -61,62 +65,71 @@ export function buildMetadata({
       images: [{ url: absUrl(ogImage || siteConfig.seo.defaultOgImage) }],
     },
     robots: {
-      index,
+      index: indexable,
       follow: true, // toujours follow, même sur les pages noindex
-      googleBot: { index, follow: true },
+      googleBot: { index: indexable, follow: true },
     },
   }
 }
 
 /* ────────────────────────────── JSON-LD ────────────────────────────── */
 
-const ORG_ID = `${BASE}/#business`
+const ID_ENTREPRISE = `${BASE}/#business`
 
 /**
- * LocalBusiness du site (global, posé dans le layout).
+ * L'entreprise (nœud global, posé dans le layout).
  *
- * Choix du type (cf. docs/SEO-GEO-PLAN.md §3.5) : schema.org ne propose pas de
- * sous-type « débouchage / assainissement ». `Plumber` reste le plus proche parmi
- * les `HomeAndConstructionBusiness`, on le conserve mais on lève l'ambiguïté pour
- * les moteurs génératifs avec `additionalType` (concept Wikidata « débouchage de
- * canalisation ») et un `hasOfferCatalog` listant les prestations réelles.
- *
- * ⛔ Sans `address` par défaut, sans `aggregateRating`, sans `review`.
+ * Type `HVACBusiness` : schema.org propose un sous-type exact pour les métiers du
+ * chauffage et de la climatisation, on l'utilise plutôt qu'un type générique.
+ * `areaServed` est construit depuis le contenu (Besançon + communes publiées),
+ * jamais écrit en dur.
  */
 export function localBusinessJsonLd() {
-  const areaServed = [
-    siteConfig.serviceArea.base,
-    ...siteConfig.serviceArea.districts,
-  ]
-  const node: Record<string, unknown> = {
+  const zones = getZones()
+  const services = getServices()
+
+  const noeud: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': 'Plumber',
-    '@id': ORG_ID,
-    additionalType: 'https://www.wikidata.org/wiki/Q5304993',
+    '@type': 'HVACBusiness',
+    '@id': ID_ENTREPRISE,
     name: siteConfig.businessName,
-    description: `${siteConfig.trade} à ${siteConfig.city} et dans l'agglomération : débouchage de WC, évier, douche, colonne d'immeuble et regard, curage haute pression et inspection caméra.`,
+    description: `${siteConfig.trade} à ${siteConfig.city} et dans le Grand Besançon : dépannage de chaudière gaz et fioul, pompe à chaleur, ballon d'eau chaude, radiateurs, et entretien annuel obligatoire.`,
     url: BASE,
     telephone: siteConfig.phone,
     email: siteConfig.email,
     image: absUrl(siteConfig.seo.defaultOgImage),
     priceRange: '€€',
-    areaServed: areaServed.map((name) => ({ '@type': 'City', name })),
+    areaServed: [
+      { '@type': 'City', name: siteConfig.serviceArea.base },
+      ...zones.map((z) => ({
+        '@type': 'City',
+        name: z.name,
+        ...(z.postalCode ? { postalCode: z.postalCode } : {}),
+      })),
+    ],
+    // Nom de propriété correct pour les horaires (et non « hoursOfOperation »).
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: [
-          'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-          'Friday', 'Saturday', 'Sunday',
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday',
         ],
         opens: '00:00',
         closes: '23:59',
       },
     ],
-    knowsAbout: siteConfig.methods,
+    knowsAbout: siteConfig.appareils,
   }
+
   // address UNIQUEMENT si Rémy a tranché (showAddress=true).
   if (siteConfig.legal.showAddress) {
-    node.address = {
+    noeud.address = {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.legal.address.street,
       postalCode: siteConfig.legal.address.postalCode,
@@ -124,12 +137,12 @@ export function localBusinessJsonLd() {
       addressCountry: 'FR',
     }
   }
+
   // Catalogue de prestations : lu depuis content/services, jamais écrit en dur.
-  const services = getServices()
   if (services.length) {
-    node.hasOfferCatalog = {
+    noeud.hasOfferCatalog = {
       '@type': 'OfferCatalog',
-      name: `Prestations de ${siteConfig.trade.toLowerCase()} à ${siteConfig.city}`,
+      name: `Prestations de chauffage à ${siteConfig.city}`,
       itemListElement: services.map((s) => ({
         '@type': 'Offer',
         itemOffered: {
@@ -140,8 +153,9 @@ export function localBusinessJsonLd() {
       })),
     }
   }
+
   // ⛔ Aucun aggregateRating / review tant que features.reviews=false.
-  return node
+  return noeud
 }
 
 export function serviceJsonLd(service: Service) {
@@ -151,10 +165,32 @@ export function serviceJsonLd(service: Service) {
     name: service.h1,
     serviceType: service.navTitle,
     description: service.metaDescription,
-    provider: { '@id': ORG_ID },
-    areaServed: {
-      '@type': 'City',
-      name: siteConfig.serviceArea.base,
+    provider: { '@id': ID_ENTREPRISE },
+    areaServed: { '@type': 'City', name: siteConfig.serviceArea.base },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      servicePhone: {
+        '@type': 'ContactPoint',
+        telephone: siteConfig.phone,
+        contactType: 'Dépannage chauffage',
+        areaServed: 'FR',
+        availableLanguage: 'French',
+        hoursAvailable: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+            'Sunday',
+          ],
+          opens: '00:00',
+          closes: '23:59',
+        },
+      },
+      serviceUrl: absUrl('/contact'),
     },
     url: absUrl(`/services/${service.slug}`),
   }
@@ -191,9 +227,14 @@ export function zoneJsonLd(zone: Zone) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: zone.h1,
+    serviceType: siteConfig.trade,
     description: zone.metaDescription,
-    provider: { '@id': ORG_ID },
-    areaServed: { '@type': 'City', name: zone.name },
+    provider: { '@id': ID_ENTREPRISE },
+    areaServed: {
+      '@type': 'City',
+      name: zone.name,
+      ...(zone.postalCode ? { postalCode: zone.postalCode } : {}),
+    },
     url: absUrl(`/zones/${zone.slug}`),
   }
 }
@@ -207,7 +248,7 @@ export function articleJsonLd(article: Article) {
     datePublished: article.date,
     dateModified: article.date,
     author: { '@type': 'Organization', name: siteConfig.businessName },
-    publisher: { '@id': ORG_ID },
+    publisher: { '@id': ID_ENTREPRISE },
     mainEntityOfPage: absUrl(`/conseils/${article.slug}`),
     ...(article.cover ? { image: absUrl(article.cover) } : {}),
   }
@@ -215,6 +256,6 @@ export function articleJsonLd(article: Article) {
 
 /** Sérialise un ou plusieurs nœuds JSON-LD pour <script>. */
 export function jsonLdScript(...nodes: (object | null)[]): string {
-  const clean = nodes.filter(Boolean)
-  return JSON.stringify(clean.length === 1 ? clean[0] : clean)
+  const propres = nodes.filter(Boolean)
+  return JSON.stringify(propres.length === 1 ? propres[0] : propres)
 }

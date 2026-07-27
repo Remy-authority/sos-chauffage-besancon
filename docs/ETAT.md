@@ -28,12 +28,51 @@
 - [x] Plan SEO/GEO : docs/SEO-GEO-PLAN.md (agent SEO V2 + corrections CEO : géographie,
       RGE, chiffres DEMO ; 12 codes postaux revérifiés par le CEO via geo.api.gouv.fr).
 - [x] Brief Builder T3 : docs/BRIEF-BUILDER-T3.md. Message prêt à coller transmis à Rémy.
-- [ ] Build T3 (Builder sur Opus, branche design/t3) : EN ATTENTE lancement par Rémy.
+- [x] **Build T3 livré (Builder, branche `design/t3`)**, en attente du contrôle visuel CEO.
+- [x] package.json renommé « sos-chauffage-besancon ».
 - [ ] Redirection email contact@ (DNS OVH) : CEO-portefeuille, vérifier avant mise en ligne.
 - [ ] Numéro 09 Twilio : en file d'attente (portefeuille). config/site.config.ts garde le
-      numéro DEMO tant que non fourni.
+      numéro DEMO tant que non fourni (`phoneIsDemo: true`).
 - [ ] Infra leads avant mise en ligne (Resend + RESEND_FROM + lead de test, cf. CLAUDE.md §4).
-- [ ] package.json porte encore le nom « sos-fuite-angers » : au Builder de le renommer.
+- [ ] **Visuels à produire** (seul manque du build T3, voir ci-dessous).
+
+## Build T3, état livré par le Builder (28/07/2026, branche `design/t3`)
+
+**Identité (template T3, inaugurée par ce site)**
+- Palette « fonte et laiton », 4 familles nommées par matière avec des échelles en MOTS :
+  `fonte` (anthracite chaud), `calcaire` (neutres pierre de Besançon), `jura` (vert forestier
+  désaturé), `laiton` (or chaud, réservé à l'action). Aucun rouge d'urgence : l'or profond
+  porte les CTA, ce qui distingue T3 des 5 sites existants.
+- `tailwind.config.ts` restructuré : classes du type `bg-fonte-nuit`, `text-calcaire-neige`,
+  rayons courts (`plaque`, `module`, `bloc`, `socle`), échelle typo nommée (`titre-xl`,
+  `chapo`, `lecture`, `surtitre`), courbe `ease-thermique`. Signature de tokens sans aucun
+  recoupement avec le config partagé du cluster T2.
+- Typographie : **Bricolage Grotesque** (titres, axe optique poussé à 48) + **IBM Plex Sans**
+  (corps). Ni Inter ni Fraunces.
+- Composant signature : `JaugeThermique`, colonne graduée qui se remplit du vert Jura au
+  laiton, présente dans le hero.
+- Section signature : `DiagnosticThermique`, diagnostic par symptôme (6 plaintes réelles →
+  cause probable + geste avant appel + prestation liée).
+- Ordre de home inédit : Hero-triage → Diagnostic → Deux saisons → Prestations en relevé →
+  Parc d'appareils → Hiver comtois → Carte des communes → Formulaire → FAQ → Appel.
+
+**Contenu**
+- 100 % du contenu Metz supprimé (services, communes, conseils, images, config, llms.txt).
+- 8 prestations et 12 communes rédigées, FAQ sur chaque page, orientations géographiques
+  conformes au plan SEO. Aucun chiffre non validé, aucune certification, aucun tarif inventé.
+- Schema `HVACBusiness` (13 villes en `areaServed`, `openingHoursSpecification`, sans
+  `address` ni avis), `Service` avec `availableChannel`, `FAQPage` partout, llms.txt réécrit.
+
+**Vérifications faites** : `npm run build` OK (37 pages), robots en noindex confirmé,
+contrôle visuel Playwright desktop et mobile sur home, prestation, commune et hub
+(aucune erreur JS, aucun débordement horizontal, aucun bloc bloqué invisible).
+
+**Reste à produire (bloquant pour la mise en ligne, pas pour la validation du design)** :
+les visuels. `public/` a été vidé des images Metz. Sont attendus : `og.jpg`, les 12 images
+de tête de commune `public/zones/<slug>.jpg` (règle : une image UNIQUE par commune, pools
+partagés interdits) et, optionnellement, les visuels de prestation. En leur absence, les
+pages n'affichent aucune image cassée : les gabarits basculent sur une plaque graphique
+construite sur les données réelles de la page.
 
 ## Historique
 - 28/07/2026 : création du dossier, achat domaine, CLAUDE.md T3, journal initialisé
@@ -43,3 +82,9 @@
   l'agent a été refusé (meta « Metz », mention RGE, géographie fausse sur 7 communes,
   chiffres inventés) puis corrigé en V2 + relecture CEO. Prochaine étape : Rémy lance le
   Builder avec le message fourni.
+- 28/07/2026 (session Builder) : template T3 créé et contenu chauffage Besançon intégralement
+  rédigé, sur la branche `design/t3`. Build vert, contrôle visuel Playwright passé. Deux
+  défauts trouvés et corrigés en cours de route : opacités Tailwind hors échelle qui rendaient
+  le fond de l'en-tête invisible au scroll, et vide asymétrique à droite de l'en-tête des
+  pages prestation en l'absence de photo. En attente du contrôle visuel CEO avant de traiter
+  le blog et les visuels.

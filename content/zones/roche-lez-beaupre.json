@@ -1,0 +1,44 @@
+{
+  "slug": "roche-lez-beaupre",
+  "name": "Roche-lez-Beaupré",
+  "postalCode": "25220",
+  "orientation": "Nord-est",
+  "context": "Commune du nord-est de l'agglomération, installée dans la vallée du Doubs, à dominante de maisons individuelles.",
+  "metaTitle": "Chauffagiste à Roche-lez-Beaupré, dépannage 7j/7",
+  "metaDescription": "Dépannage de chauffage à Roche-lez-Beaupré (25220) : panne de chaudière, radiateurs froids, pompe à chaleur, entretien annuel obligatoire.",
+  "h1": "Dépannage chauffage à Roche-lez-Beaupré, urgence",
+  "intro": "Nous intervenons à Roche-lez-Beaupré (25220) pour le dépannage de chauffage et l'entretien annuel de chaudière. Située au nord-est de Besançon dans la vallée du Doubs, la commune est composée principalement de maisons individuelles, avec des installations dont le dimensionnement doit tenir compte d'un environnement de fond de vallée, plus froid et plus humide que les plateaux voisins.",
+  "blocks": [
+    {
+      "heading": "Le dimensionnement, un sujet réel en fond de vallée",
+      "body": "Une installation de chauffage se calcule pour une température extérieure de référence. Quand elle a été dimensionnée un peu juste, elle tient sans difficulté l'essentiel de la saison, puis décroche précisément pendant les épisodes de froid soutenu, au moment où l'on en a le plus besoin. Le symptôme est caractéristique : la chaudière tourne en continu sans jamais atteindre la consigne, les radiateurs sont chauds mais le logement ne monte pas. Ce n'est pas une panne, et un dépannage classique n'y changera rien. Ce qui se travaille, c'est la courbe de chauffe, l'équilibrage entre les pièces et, le cas échéant, le renfort des émetteurs dans les pièces les plus exposées."
+    },
+    {
+      "heading": "Humidité de vallée et pompes à chaleur",
+      "body": "L'air humide d'un fond de vallée givre plus facilement l'unité extérieure d'une pompe à chaleur. Les cycles de dégivrage sont donc plus fréquents ici qu'ailleurs dans l'agglomération, ce qui est normal et se traduit par des arrêts courts, un souffle d'air froid et un écoulement d'eau sous l'unité. Deux situations doivent en revanche alerter : une glace qui persiste d'un cycle à l'autre jusqu'à former un bloc, et une évacuation des condensats gelée, qui empêche l'eau de dégivrage de s'écouler et finit par mettre la machine en défaut. Le dégagement et la protection de cette évacuation font partie des points que nous vérifions systématiquement à l'automne."
+    },
+    {
+      "heading": "Ce qui protège une installation pendant un épisode de gel",
+      "body": "1. Ne coupez jamais complètement le chauffage en cas d'absence prolongée en hiver : utilisez la position hors gel, qui maintient une température minimale et protège le circuit. 2. Maintenez une circulation d'air minimale vers les pièces non chauffées plutôt que de fermer totalement leurs radiateurs. 3. Vérifiez que l'évacuation des condensats d'une chaudière à condensation ou d'une pompe à chaleur n'est pas exposée au gel sur son parcours extérieur. 4. Relevez la pression du circuit avant les premiers grands froids : une installation qui perd de la pression pendant une vague de froid s'arrête au pire moment. 5. Si le chauffage s'arrête et que le gel est annoncé, appelez sans attendre le lendemain matin : un logement se refroidit vite et le réseau d'eau devient vulnérable."
+    }
+  ],
+  "neighbours": ["Besançon", "Thise", "Marchaux-Chaudefontaine"],
+  "faq": [
+    {
+      "q": "Fait-il plus froid à Roche-lez-Beaupré qu'à Besançon ?",
+      "a": "La commune est en fond de vallée du Doubs, une configuration où l'air froid et l'humidité stagnent plus volontiers que sur les hauteurs. En pratique, cela se traduit surtout par un givrage plus fréquent des unités extérieures de pompes à chaleur et par des installations qui doivent être correctement dimensionnées pour les épisodes de froid soutenu."
+    },
+    {
+      "q": "Mon chauffage n'arrive pas à monter en température, est-ce une panne ?",
+      "a": "Pas forcément. Si la chaudière tourne en continu et que les radiateurs sont chauds sans que le logement atteigne la consigne, il s'agit plutôt d'un problème de dimensionnement, de courbe de chauffe ou d'équilibrage. Un dépannage classique ne le corrigera pas : c'est le réglage de l'installation, et parfois le renfort d'émetteurs dans les pièces les plus exposées, qui apportent la solution."
+    },
+    {
+      "q": "Chaudière gaz ou fioul à Roche-lez-Beaupré, sur quoi intervenez-vous ?",
+      "a": "Sur les deux, ainsi que sur les pompes à chaleur, le chauffage électrique et la production d'eau chaude sanitaire. Le réseau de gaz ne dessert pas toutes les rues de l'agglomération, et le fioul reste présent sur une partie des maisons individuelles du secteur. Précisez-nous simplement au téléphone ce que vous voyez chez vous, cela suffit à orienter le diagnostic."
+    },
+    {
+      "q": "Que faire si le chauffage s'arrête pendant une vague de froid ?",
+      "a": "Appelez sans attendre plutôt que de reporter au lendemain : un logement non chauffé se refroidit rapidement et le réseau d'eau devient vulnérable au gel. En attendant, fermez les pièces inutilisées, relevez le code affiché sur la chaudière et vérifiez la pression du circuit : ces deux informations nous font gagner un temps réel sur le diagnostic."
+    }
+  ]
+}

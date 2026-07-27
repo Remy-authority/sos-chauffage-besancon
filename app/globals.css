@@ -3,38 +3,38 @@
 @tailwind utilities;
 
 /**
- * Fallback des tokens de couleur.
- * Source de vérité : siteConfig.palette (config/site.config.ts), injectée en CSS
- * vars sur <html> par app/layout.tsx via lib/theme.ts. Les valeurs :root ci-dessous
- * ne sont qu'un filet de sécurité (mêmes hex) pour un rendu correct hors injection.
- * Format « r g b » (canaux) pour les modificateurs d'opacité Tailwind.
+ * Repli des tokens de couleur du template T3.
+ * Source de vérité : siteConfig.palette (config/site.config.ts), injectée en
+ * variables CSS sur <html> par app/layout.tsx via lib/theme.ts. Les valeurs
+ * :root ci-dessous ne sont qu'un filet de sécurité (mêmes hex) pour un rendu
+ * correct hors injection. Format « r g b » (canaux) pour les modificateurs
+ * d'opacité Tailwind.
  */
 :root {
-  --c-ink-600: 29 83 96;
-  --c-ink-700: 22 64 74;
-  --c-ink-800: 16 49 56;
-  --c-ink-900: 11 36 41;
-  --c-ink-950: 7 26 30;
+  --c-fonte-brut: 59 63 60;
+  --c-fonte-trempe: 44 48 45;
+  --c-fonte-coulee: 31 35 33;
+  --c-fonte-nuit: 21 24 22;
+  --c-fonte-abysse: 12 14 13;
 
-  --c-sand-50: 251 249 244;
-  --c-sand-100: 245 241 232;
-  --c-sand-200: 233 226 212;
-  --c-sand-300: 215 205 185;
-  --c-sand-400: 179 168 146;
-  --c-sand-500: 138 128 112;
-  --c-sand-600: 100 92 80;
-  --c-sand-700: 70 64 58;
+  --c-calcaire-neige: 250 249 246;
+  --c-calcaire-voile: 242 241 236;
+  --c-calcaire-pierre: 230 228 220;
+  --c-calcaire-brume: 210 207 196;
+  --c-calcaire-ombre: 168 164 151;
+  --c-calcaire-roche: 122 119 108;
+  --c-calcaire-basalte: 84 82 74;
 
-  --c-brand-300: 111 203 206;
-  --c-brand-400: 49 165 172;
-  --c-brand-500: 18 131 140;
-  --c-brand-600: 12 102 110;
-  --c-brand-700: 9 78 86;
+  --c-jura-mousse: 143 183 159;
+  --c-jura-tendre: 93 147 119;
+  --c-jura-franc: 58 115 87;
+  --c-jura-dense: 42 87 65;
+  --c-jura-sombre: 29 63 47;
 
-  --c-accent-300: 245 140 122;
-  --c-accent-400: 234 92 70;
-  --c-accent-500: 217 59 40;
-  --c-accent-600: 178 43 27;
+  --c-laiton-paille: 243 220 168;
+  --c-laiton-clair: 227 190 114;
+  --c-laiton-franc: 201 144 43;
+  --c-laiton-patine: 150 102 26;
 }
 
 @layer base {
@@ -42,28 +42,47 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
+
   body {
-    @apply bg-sand-50 font-sans text-sand-700 antialiased;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    @apply bg-calcaire-neige font-texte text-calcaire-basalte antialiased;
   }
-  /* Les titres passent en Fraunces (display) : graisse 500, interlettrage serré. */
-  h1, h2, h3, h4 {
-    @apply font-display font-medium tracking-tight text-ink-950;
+
+  /**
+   * Titres en Bricolage Grotesque. L'axe optique (`opsz`) est poussé haut : la
+   * fonte resserre alors ses contreformes et gagne le caractère qu'on attend
+   * d'un display, là où la valeur par défaut reste une grotesque de labeur.
+   */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-titre font-medium text-fonte-abysse;
+    font-variation-settings: 'opsz' 48;
   }
+
+  h5,
+  h6 {
+    @apply font-titre font-medium text-fonte-nuit;
+    font-variation-settings: 'opsz' 24;
+  }
+
   ::selection {
-    @apply bg-accent-300 text-ink-950;
+    @apply bg-laiton-clair text-fonte-abysse;
   }
-  /* Décalage d'ancre sous le header fixe. */
-  section[id], article[id] {
+
+  /* Décalage d'ancre sous l'en-tête fixe. */
+  section[id],
+  article[id] {
     scroll-margin-top: 6rem;
   }
+
   /* Cible tap ≥ 44px sur mobile (a11y). */
-  a, button {
+  a,
+  button {
     touch-action: manipulation;
   }
-  /* Un calque décoratif en position absolue (dégradé, grille, halo, photo
-     d'ambiance) ne doit JAMAIS intercepter un clic. Sans cette règle, la photo
-     de fond du hero volait le clic du bouton de menu mobile. */
+
+  /* Un calque décoratif absolu (trame, halo, dégradé) n'intercepte jamais un clic. */
   [aria-hidden='true'].absolute,
   [aria-hidden='true'].fixed {
     pointer-events: none;
@@ -71,167 +90,172 @@
 }
 
 @layer components {
-  .container-site {
-    @apply mx-auto w-full max-w-7xl px-6 lg:px-10;
+  /* ── Gabarit ──────────────────────────────────────────────────────── */
+  .enceinte {
+    @apply mx-auto w-full max-w-planche px-6 lg:px-10;
   }
-  /* Rythme vertical de référence PROTEC-DARD : sections amples, respiration forte. */
-  .section {
-    @apply py-24 lg:py-32;
+  /* Rythme vertical T3 : plus serré et plus régulier que les templates
+     précédents, pour une lecture d'appareillage technique. */
+  .plage {
+    @apply py-20 lg:py-28;
   }
-  .section-tight {
-    @apply py-16 lg:py-20;
+  .plage-courte {
+    @apply py-14 lg:py-20;
   }
 
-  /* ── Fonds de section ─────────────────────────────────────────────── */
-  /* Grille technique masquée en ellipse, posée sur les sections sombres. */
-  .bg-grid {
-    background-image:
-      linear-gradient(rgb(var(--c-brand-300) / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(var(--c-brand-300) / 0.06) 1px, transparent 1px);
-    background-size: 64px 64px;
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 72%);
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 72%);
+  /* ── Surtitre gravé ───────────────────────────────────────────────── */
+  .surtitre {
+    @apply font-texte text-surtitre font-semibold uppercase;
   }
-  .bg-grid-tight {
-    background-image:
-      linear-gradient(rgb(var(--c-brand-300) / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(var(--c-brand-300) / 0.05) 1px, transparent 1px);
-    background-size: 44px 44px;
+
+  /* ── Fonds et textures ────────────────────────────────────────────── */
+  /* Trame de graduations verticales : la règle graduée du thermomètre,
+     signature de fond des sections sombres du site. */
+  .trame-graduee {
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgb(var(--c-calcaire-neige) / 0.07) 0px,
+      rgb(var(--c-calcaire-neige) / 0.07) 1px,
+      transparent 1px,
+      transparent 2.75rem
+    );
   }
-  /* Filet dégradé horizontal, séparateur discret entre deux blocs sombres. */
-  .rule-glow {
+  /* Variante dense, pour les bandeaux courts. */
+  .trame-graduee-fine {
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgb(var(--c-calcaire-neige) / 0.055) 0px,
+      rgb(var(--c-calcaire-neige) / 0.055) 1px,
+      transparent 1px,
+      transparent 1.375rem
+    );
+  }
+  /* Trame croisée discrète pour les grands aplats sombres. */
+  .trame-atelier {
+    background-image:
+      linear-gradient(rgb(var(--c-jura-mousse) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-jura-mousse) / 0.05) 1px, transparent 1px);
+    background-size: 3.5rem 3.5rem;
+    -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 15%, transparent 68%);
+    mask-image: radial-gradient(ellipse at 50% 0%, black 15%, transparent 68%);
+  }
+  /* Filet horizontal laiton, séparateur entre deux blocs sombres. */
+  .filet-laiton {
     @apply h-px w-full;
     background-image: linear-gradient(
       90deg,
       transparent,
-      rgb(var(--c-brand-400) / 0.45),
+      rgb(var(--c-laiton-franc) / 0.55),
       transparent
     );
   }
-  /* Texture de bruit très légère, casse l'aplat des grands fonds sombres. */
-  .noise-overlay::after {
+  /* Grain minéral très léger, casse l'aplat des grands fonds sombres. */
+  .grain::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: 0.05;
     mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   }
 
-  /* ── Titres dégradés ──────────────────────────────────────────────── */
-  .text-gradient-accent {
-    background-image: linear-gradient(
-      110deg,
-      rgb(var(--c-accent-500)) 0%,
-      rgb(var(--c-accent-300)) 50%,
-      rgb(var(--c-accent-500)) 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shimmer 8s linear infinite;
+  /* ── Traitement typographique ─────────────────────────────────────── */
+  /* Titre « gravé » : le mot accentué passe en laiton avec une légère
+     ombre interne, comme une plaque signalétique frappée. */
+  .mot-laiton {
+    color: rgb(var(--c-laiton-clair));
+    text-shadow: 0 1px 0 rgb(var(--c-laiton-patine) / 0.45);
   }
-  .text-gradient-brand {
-    background-image: linear-gradient(
-      110deg,
-      rgb(var(--c-brand-400)) 0%,
-      rgb(var(--c-brand-300)) 50%,
-      rgb(var(--c-brand-400)) 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shimmer 9s linear infinite;
+  .mot-laiton-clair {
+    color: rgb(var(--c-laiton-patine));
   }
-  /* Variante pour fonds clairs : dégradé encre, souvent en italique. */
-  .text-gradient-ink {
-    background-image: linear-gradient(
-      135deg,
-      rgb(var(--c-ink-950)) 0%,
-      rgb(var(--c-brand-700)) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    display: inline-block;
-    padding-right: 0.12em;
-    padding-bottom: 0.12em;
-    margin-right: 0.08em;
-    margin-bottom: -0.12em;
+  /* Chiffre technique : chasse fixe et tabulaire pour les relevés et repères. */
+  .chiffre {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+    letter-spacing: -0.02em;
   }
 
   /* ── Champs de formulaire ─────────────────────────────────────────── */
-  .field {
-    @apply w-full rounded-2xl border border-sand-300 bg-white px-4 py-3.5 text-ink-950 placeholder-sand-400 transition-colors;
-    @apply focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/25;
+  .champ {
+    @apply w-full rounded-module border border-calcaire-brume bg-white px-4 py-3 text-fonte-abysse placeholder-calcaire-ombre transition-colors;
+    @apply focus:border-jura-franc focus:outline-none focus:ring-2 focus:ring-jura-franc/25;
   }
-  .field-label {
-    @apply mb-1.5 block text-sm font-medium text-ink-900;
+  .champ-etiquette {
+    @apply mb-1.5 block text-sm font-medium text-fonte-nuit;
   }
 
-  /* ── Prose (pages services / zones) ───────────────────────────────── */
-  .prose-content {
-    @apply leading-relaxed text-sand-700;
+  /* ── Corps éditorial (pages prestation / commune) ─────────────────── */
+  .corps-edito {
+    @apply text-calcaire-basalte;
   }
-  .prose-content h2 {
-    @apply mt-12 text-3xl leading-snug md:text-4xl;
+  .corps-edito h2 {
+    @apply mt-12 text-titre-m;
   }
-  .prose-content h3 {
-    @apply mt-8 text-xl;
+  .corps-edito h3 {
+    @apply mt-8 text-titre-s;
   }
-  .prose-content p {
-    @apply mt-5 text-[1.0625rem] leading-relaxed;
+  .corps-edito p {
+    @apply mt-5 text-lecture;
   }
-  .prose-content strong {
-    @apply font-semibold text-ink-950;
+  .corps-edito strong {
+    @apply font-semibold text-fonte-abysse;
   }
-  .prose-content a {
-    @apply font-medium text-brand-600 underline underline-offset-2 hover:text-brand-500;
+  .corps-edito a {
+    @apply font-medium text-jura-dense underline decoration-jura-mousse underline-offset-4 transition-colors hover:text-jura-franc;
   }
 
   /* ── Corps d'article de blog ──────────────────────────────────────── */
-  .article-prose {
-    @apply text-[1.0625rem] leading-[1.75] text-sand-700;
+  .corps-article {
+    @apply text-lecture text-calcaire-basalte;
   }
-  .article-prose h2 {
-    @apply mt-12 border-t border-sand-200 pt-8 text-3xl;
+  .corps-article h2 {
+    @apply mt-12 border-t border-calcaire-pierre pt-8 text-titre-m;
   }
-  .article-prose h3 {
-    @apply mt-9 text-xl;
+  .corps-article h3 {
+    @apply mt-9 text-titre-s;
   }
-  .article-prose p {
+  .corps-article p {
     @apply mt-5;
   }
-  .article-prose ul,
-  .article-prose ol {
+  .corps-article ul,
+  .corps-article ol {
     @apply mt-5 list-outside space-y-2 pl-6;
   }
-  .article-prose ul { @apply list-disc; }
-  .article-prose ol { @apply list-decimal; }
-  .article-prose li::marker { color: rgb(var(--c-accent-500)); }
-  .article-prose strong { @apply font-semibold text-ink-950; }
-  .article-prose a {
-    @apply font-medium text-brand-600 underline underline-offset-2 hover:text-brand-500;
+  .corps-article ul {
+    @apply list-disc;
   }
-  .article-prose blockquote {
-    @apply mt-6 rounded-r-2xl border-l-4 border-accent-500 bg-sand-100 px-6 py-4 font-display text-lg italic text-ink-900;
+  .corps-article ol {
+    @apply list-decimal;
   }
-  .article-prose img {
-    @apply mt-7 w-full rounded-card border border-sand-200 shadow-card;
+  .corps-article li::marker {
+    color: rgb(var(--c-laiton-patine));
+  }
+  .corps-article strong {
+    @apply font-semibold text-fonte-abysse;
+  }
+  .corps-article a {
+    @apply font-medium text-jura-dense underline decoration-jura-mousse underline-offset-4 hover:text-jura-franc;
+  }
+  .corps-article blockquote {
+    @apply mt-6 border-l-2 border-laiton-franc bg-calcaire-voile px-6 py-4 font-titre text-titre-s text-fonte-nuit;
+  }
+  .corps-article img {
+    @apply mt-7 w-full rounded-bloc border border-calcaire-pierre shadow-pose;
   }
   /* Légende = paragraphe en italique seul juste après l'image (`*légende*`). */
-  .article-prose p:has(> em:only-child) {
-    @apply mt-2 text-center text-sm not-italic text-sand-500;
+  .corps-article p:has(> em:only-child) {
+    @apply mt-2 text-legende not-italic text-calcaire-roche;
   }
 }
 
 /* Respect de prefers-reduced-motion, y compris pour les animations Framer Motion
    qui retombent sur des transitions CSS. */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

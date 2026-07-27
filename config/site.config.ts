@@ -2,18 +2,16 @@
  * ─────────────────────────────────────────────────────────────────────────────
  *  site.config.ts, LE fichier unique qui pilote l'identité du site.
  * ─────────────────────────────────────────────────────────────────────────────
- *  Coeur du template « site local N+1 ». Pour déployer un nouveau site (autre
- *  métier / ville / locataire) : on édite CE fichier + le logo + content/*.json,
- *  SANS toucher aux composants ni au SEO.
+ *  SOS Chauffage Besançon, site n°6 du portefeuille, template T3.
  *
  *  ⚠️ Garde-fous :
  *   - `palette` est la SOURCE UNIQUE des couleurs. lib/theme.ts la convertit en
- *     CSS variables (canaux RGB) posées sur <html>, tailwind.config.ts les lit.
- *     Changer la palette d'un site N+1 = éditer ce bloc, rien d'autre.
- *   - `features.reviews=false` tant qu'il n'y a pas d'avis réels (aucun faux avis).
- *   - `legal` = gabarit paramétrable : NE PAS inventer SIREN / éditeur.
- *   - `showAddress=false` par défaut : pas d'`address` dans le schema tant que
- *     Rémy n'a pas tranché (artisan mobile vs adresse physique exposée).
+ *     variables CSS (canaux RGB) posées sur <html>, tailwind.config.ts les lit.
+ *   - Les échelles T3 sont nommées par MOTS (brut, trempe, coulee, nuit, abysse…)
+ *     et non par nombres : la signature de tokens diffère volontairement des
+ *     autres templates du portefeuille.
+ *   - `features.reviews=false` : aucun avis, jamais.
+ *   - Aucune certification affichée. En particulier : PAS de mention RGE.
  *   - Tout ce qui est marqué DEMO attend une donnée réelle de Rémy.
  */
 
@@ -21,105 +19,133 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   /* ── Identité commerciale (louable / remplaçable par l'artisan locataire) ── */
-  businessName: 'SOS Débouchage Metz',
-  trade: 'Débouchage de canalisation',
-  tradeShort: 'Débouchage',
-  city: 'Metz',
-  region: 'Grand Est',
-  departmentName: 'Moselle',
-  department: '57',
+  businessName: 'SOS Chauffage Besançon',
+  trade: 'Dépannage chauffage et chaudière',
+  tradeShort: 'Chauffage',
+  city: 'Besançon',
+  region: 'Bourgogne-Franche-Comté',
+  departmentName: 'Doubs',
+  department: '25',
 
   /* ── Contact ── */
+  // DEMO – numéro hérité du socle. À remplacer par le 09 Twilio dédié au site
+  // (voir RENT & RANK/docs/INFRA-NOUVEAU-SITE.md) avant toute mise en ligne.
   phone: '+33939030513',
   phoneDisplay: '09 39 03 05 13',
-  phoneIsDemo: false,
-  // DEMO – domaine pas encore acheté.
-  email: 'contact@sos-debouchage-metz.fr',
+  phoneIsDemo: true,
+  email: 'contact@sos-chauffage-besancon.fr',
 
   /* ── Branding ── */
   logo: '/logo.svg',
 
   /**
-   * Palette du site. Quatre familles, chacune avec ses échelles :
-   *  - `ink`    : fonds sombres, bleu pétrole profond (sections sombres, footer)
-   *  - `sand`   : neutres chauds, écho à la pierre de Jaumont messine (sections claires)
-   *  - `brand`  : teal eau / canalisation (structure, icônes, liens, chrome)
-   *  - `accent` : vermillon (URGENCE et action uniquement : CTA, eyebrow, point vivant)
-   * Règle de composition : `brand` porte la structure, `accent` ne sert qu'à l'action.
+   * Palette T3, « fonte et laiton ».
+   *
+   * Direction : l'atelier du chauffagiste plutôt que la flamme. Le métier est
+   * porté par la MATIÈRE (fonte du radiateur, laiton des raccords, calcaire de
+   * la pierre bisontine, vert sourd du Jura) et par le contraste thermique
+   * froid/chaud, pas par un pictogramme de feu.
+   *
+   *  - `fonte`    : anthracite chaud, fonds sombres et chrome. Base du site.
+   *  - `calcaire` : neutres froids, écho à la pierre de Besançon. Sections claires.
+   *  - `jura`     : vert forestier désaturé. Structure, liens, états calmes.
+   *  - `laiton`   : or chaud. ACTION et chaleur uniquement (appel, devis, chiffres).
+   *
+   * Règle de composition : `jura` porte la structure, `laiton` ne sert qu'à
+   * l'action et aux marqueurs de chaleur. Volontairement aucun rouge d'urgence :
+   * les cinq autres sites du portefeuille en ont déjà un, l'or profond assure
+   * ici la même visibilité d'appel sans reprendre leur signature.
    */
   palette: {
-    ink: {
-      600: '#1D5360',
-      700: '#16404A',
-      800: '#103138',
-      900: '#0B2429',
-      950: '#071A1E',
+    fonte: {
+      brut: '#3B3F3C',
+      trempe: '#2C302D',
+      coulee: '#1F2321',
+      nuit: '#151816',
+      abysse: '#0C0E0D',
     },
-    sand: {
-      50: '#FBF9F4',
-      100: '#F5F1E8',
-      200: '#E9E2D4',
-      300: '#D7CDB9',
-      400: '#B3A892',
-      500: '#8A8070',
-      600: '#645C50',
-      700: '#46403A',
+    calcaire: {
+      neige: '#FAF9F6',
+      voile: '#F2F1EC',
+      pierre: '#E6E4DC',
+      brume: '#D2CFC4',
+      ombre: '#A8A497',
+      roche: '#7A776C',
+      basalte: '#54524A',
     },
-    brand: {
-      300: '#6FCBCE',
-      400: '#31A5AC',
-      500: '#12838C',
-      600: '#0C666E',
-      700: '#094E56',
+    jura: {
+      mousse: '#8FB79F',
+      tendre: '#5D9377',
+      franc: '#3A7357',
+      dense: '#2A5741',
+      sombre: '#1D3F2F',
     },
-    accent: {
-      300: '#F58C7A',
-      400: '#EA5C46',
-      500: '#D93B28',
-      600: '#B22B1B',
+    laiton: {
+      paille: '#F3DCA8',
+      clair: '#E3BE72',
+      franc: '#C9902B',
+      patine: '#96661A',
     },
   },
 
   /** Alias de compatibilité (manifest, thème navigateur, OG). */
   colors: {
-    primary: '#0C666E',
-    primaryDark: '#094E56',
-    accent: '#D93B28',
-    dark: '#071A1E',
-    light: '#FBF9F4',
+    primary: '#2A5741',
+    primaryDark: '#1D3F2F',
+    accent: '#C9902B',
+    dark: '#0C0E0D',
+    light: '#FAF9F6',
   },
 
   /* ── Réassurance / preuve ── */
   availability: '24h/24 · 7j/7',
-  responseTime: 'Intervention rapide sur Metz et son agglomération',
-  usps: ['Devis avant intervention', 'Sans casse', 'Artisan local', 'Urgence 7j/7'],
-  methods: [
-    'Furet électrique',
-    'Hydrocurage haute pression',
-    'Inspection vidéo par caméra',
-    'Pompage et curage',
+  responseTime: 'Intervention rapide sur Besançon et le Grand Besançon',
+  usps: [
+    'Devis avant intervention',
+    'Diagnostic dès l’appel',
+    'Chauffagiste local',
+    'Urgence 7j/7',
   ],
 
-  /* ── Zone d'intervention (schema areaServed + bloc zones) ── */
+  /** Appareils réellement pris en charge (sert au schema `knowsAbout` et à l'UI). */
+  appareils: [
+    'Chaudière gaz à condensation',
+    'Chaudière fioul',
+    'Pompe à chaleur air-eau et air-air',
+    'Ballon d’eau chaude et chauffe-eau',
+    'Radiateurs et circuit de chauffage central',
+    'Chauffage électrique et thermostats',
+  ],
+
+  /* ── Zone d'intervention (schema areaServed + section zones) ── */
   serviceArea: {
-    base: 'Metz',
-    radiusKm: 30,
-    // Quartiers de Metz cités pour la couverture géo fine (maillage, pas de page dédiée).
+    base: 'Besançon',
+    radiusKm: 25,
+    // Quartiers de Besançon cités pour la couverture géo fine (maillage, pas de page dédiée).
     districts: [
-      'Centre-ville', 'Sablon', 'Queuleu', 'Borny', 'Bellecroix',
-      'Devant-les-Ponts', 'Nouvelle Ville', 'Plantières', 'Magny',
-      'La Patrotte', 'Vallières', 'Les Îles',
+      'Centre-ville',
+      'Battant',
+      'La Boucle',
+      'Palente',
+      'Planoise',
+      'Saint-Ferjeux',
+      'Montrapon',
+      'Chaprais',
+      'Velotte',
+      'Les Clairs-Soleils',
+      'Bregille',
+      'Saint-Claude',
     ],
   },
 
   /* ── Leads / formulaire ── */
-  // Vide => l'API interne /api/contact gère le fallback (log + email tier gratuit).
+  // Vide => l'API interne /api/contact gère le fallback (log + email).
   formEndpoint: '',
 
   /* ── SEO global ── */
   seo: {
-    // NB : basculer sur le domaine final quand Rémy l'a acheté. Preview = URL Vercel.
-    canonicalBase: 'https://www.sos-debouchage-metz.fr',
+    // Preview = URL Vercel. Basculer sur le domaine final à la mise en ligne (Rémy).
+    canonicalBase: 'https://sos-chauffage-besancon.vercel.app',
     defaultOgImage: '/og.jpg',
     locale: 'fr_FR',
     lang: 'fr',
@@ -128,133 +154,146 @@ export const siteConfig = {
   /* ── Feature flags ── */
   features: {
     reviews: false, // ⛔ aucun avis affiché
-    gallery: true,
+    gallery: false, // ⛔ pas de galerie photo tant qu'aucun visuel réel n'existe
     blog: true,
   },
 
-  /* ── Persona artisan (DEMO, à remplacer par les infos du loueur) ── */
-  persona: {
-    // DEMO – à remplacer par les infos du loueur
-    name: 'Julien Kieffer',
-    // DEMO – portrait généré, remplaçable par une photo réelle
-    photo: '/persona.jpg',
-    // DEMO – à remplacer par les infos du loueur
-    title: 'Responsable des interventions canalisation',
-    // DEMO – à remplacer par les infos du loueur
-    quote:
-      'Un bouchon, ça se règle en une intervention quand on a le bon outil au bon endroit. On regarde avant de forcer.',
-  },
-
-  /* ── Bloc « à propos » ── */
-  about: {
-    eyebrow: 'Qui sommes-nous',
-    title: 'Le débouchage,\nnotre seul métier',
-    // DEMO – texte à valider avec le loueur
-    body: [
-      "SOS Débouchage Metz intervient sur les canalisations bouchées à Metz et dans les communes de l'agglomération. Évier qui refoule, WC bouché, colonne d'immeuble saturée, regard qui déborde : nous traitons l'urgence puis nous cherchons la cause.",
-      "Nous ne faisons pas de plomberie générale. Nous faisons du débouchage, du curage et de l'inspection de réseau, avec le matériel correspondant : furet électrique, camion hydrocureur haute pression et caméra d'inspection. Le devis est annoncé avant l'intervention.",
-    ],
-    highlight: 'Un métier, un outillage dédié',
-  },
-
-  /* ── Étapes d'intervention ── */
-  process: [
+  /**
+   * Symptômes du diagnostic d'accueil (composant signature `DiagnosticThermique`).
+   * Chaque entrée relie une plainte réelle d'appelant à une cause probable et à
+   * la prestation correspondante. Aucun chiffre, aucune promesse de délai.
+   */
+  symptomes: [
     {
-      icon: 'phone',
-      step: '01',
-      title: 'Votre appel',
-      desc: "Vous décrivez le symptôme : évier lent, WC qui refoule, odeurs, regard qui déborde. Nous identifions le type de bouchon et l'urgence.",
-      duration: 'Immédiat',
+      id: 'froid',
+      appareil: 'radiateur',
+      plainte: 'Mes radiateurs restent froids',
+      indice: 'La chaudière tourne mais rien ne chauffe',
+      cause:
+        'Le plus souvent, un manque de pression dans le circuit, un circulateur bloqué ou de l’air emprisonné dans les radiateurs. Quand seuls les radiateurs du haut chauffent, la piste est la circulation. Quand un radiateur est tiède en bas et froid en haut, c’est de l’air ou de la boue.',
+      geste:
+        'Relevez la pression au manomètre de la chaudière avant d’appeler : c’est la première question que nous poserons.',
+      service: 'desembouage-chauffage',
     },
     {
-      icon: 'search',
-      step: '02',
-      title: 'Diagnostic sur place',
-      desc: "Nous repérons les regards et les accès, nous testons l'écoulement et nous déterminons où se situe le bouchon sur le réseau.",
-      duration: 'Sur site',
+      id: 'securite',
+      appareil: 'chaudière',
+      plainte: 'Ma chaudière se met en sécurité',
+      indice: 'Un code d’erreur, un voyant, un arrêt qui revient',
+      cause:
+        'Une mise en sécurité est une protection, pas une panne en soi : la chaudière s’arrête parce qu’une valeur sort de sa plage. Défaut d’allumage, pressostat, sonde de température, évacuation des fumées obstruée. Le code affiché oriente le diagnostic.',
+      geste:
+        'Notez le code affiché et ne réarmez pas en boucle : trois réarmements de suite sur un défaut d’allumage ne sont pas anodins.',
+      service: 'depannage-chaudiere-gaz',
     },
     {
-      icon: 'tool',
-      step: '03',
-      title: 'Débouchage',
-      desc: "Furet électrique pour un bouchon localisé, hydrocurage haute pression pour un réseau encrassé ou des racines. Sans casse.",
-      duration: 'Jour J',
+      id: 'eau-chaude',
+      appareil: 'eau chaude',
+      plainte: 'Je n’ai plus d’eau chaude',
+      indice: 'Le chauffage fonctionne, mais l’eau reste froide ou tiède',
+      cause:
+        'Si le chauffage marche encore, la panne est côté production d’eau chaude : échangeur entartré sur une chaudière mixte, résistance ou thermostat hors service sur un ballon, vanne trois voies bloquée. L’eau tiède plutôt que froide oriente vers le thermostat.',
+      geste:
+        'Vérifiez que le mode été n’est pas resté enclenché et que le disjoncteur du ballon n’a pas sauté.',
+      service: 'depannage-ballon-eau-chaude',
     },
     {
-      icon: 'check',
-      step: '04',
-      title: 'Contrôle et conseil',
-      desc: "Nous vérifions l'écoulement, nous passons la caméra si la cause reste incertaine, et nous vous disons quoi faire pour éviter la récidive.",
-      duration: 'Avant de partir',
+      id: 'bruit',
+      appareil: 'circuit',
+      plainte: 'J’entends des bruits anormaux',
+      indice: 'Claquements, sifflements, bourdonnement continu',
+      cause:
+        'Des claquements secs dans un ballon signalent presque toujours du tartre sur la résistance. Un sifflement dans les tuyaux vient d’un débit trop élevé ou d’une vanne mal ouverte. Un bourdonnement continu pointe le circulateur. Sur une pompe à chaleur, le bruit du dégivrage est normal, un cliquetis métallique ne l’est pas.',
+      geste:
+        'Repérez d’où vient le bruit, chaudière, ballon ou radiateur, et à quel moment il apparaît.',
+      service: 'depannage-pompe-chaleur',
+    },
+    {
+      id: 'pression',
+      appareil: 'chaudière',
+      plainte: 'La pression chute sans arrêt',
+      indice: 'Je dois remettre de l’eau toutes les semaines',
+      cause:
+        'Un circuit fermé ne consomme pas d’eau. Si la pression retombe, il y a une fuite quelque part, sur un raccord, un corps de chauffe ou une soupape de sécurité qui goutte, ou le vase d’expansion a perdu sa pression de gonflage.',
+      geste:
+        'Regardez sous la soupape de sécurité : une évacuation humide en permanence désigne le vase d’expansion.',
+      service: 'depannage-chaudiere-gaz',
+    },
+    {
+      id: 'odeur',
+      appareil: 'sécurité',
+      plainte: 'Je sens une odeur inhabituelle',
+      indice: 'Odeur de gaz, de brûlé, de fioul',
+      cause:
+        'Une odeur de gaz impose de couper l’arrivée, de ne toucher à aucun interrupteur, d’aérer et de sortir avant d’appeler. Une odeur de fioul signale une fuite sur la ligne ou le brûleur. Le monoxyde de carbone, lui, est inodore : c’est le détecteur qui alerte, jamais le nez.',
+      geste:
+        'Odeur de gaz : coupez au compteur, aérez, sortez, appelez GRDF au 0 800 47 33 33 puis nous.',
+      service: 'entretien-annuel-chaudiere',
     },
   ],
 
   /**
-   * Chiffres affichés. Règle : uniquement des données vérifiables sur le site lui-même
-   * (disponibilité annoncée, rayon d'intervention, nombre de prestations et de communes).
-   * ⛔ Aucun chiffre d'activité inventé (interventions réalisées, années d'expérience).
+   * Les deux parcours du métier, cœur de la section `DeuxSaisons`.
+   * L'urgence porte le trafic d'hiver, l'entretien tient l'été.
    */
-  stats: [
-    { value: 24, suffix: 'h/24', label: 'Ligne urgence' },
-    { value: 7, suffix: 'j/7', label: 'Week-ends et fériés' },
-    { value: 30, suffix: ' km', label: 'Rayon autour de Metz' },
-    { value: 8, suffix: '', label: 'Prestations canalisation' },
-  ],
-
-  whyUs: [
-    {
-      icon: 'shield',
-      title: 'On regarde avant de forcer',
-      desc: "Un bouchon mal identifié se déplace ou revient. Nous localisons la zone concernée avant de choisir la méthode, pour ne pas abîmer le réseau.",
+  parcours: {
+    urgence: {
+      cle: 'urgence',
+      titre: 'La panne',
+      sousTitre: 'Il fait froid maintenant',
+      texte:
+        'Une chaudière qui s’arrête en janvier à Besançon ne se planifie pas. Vous appelez, vous décrivez ce que fait l’appareil, nous identifions la famille de panne au téléphone et nous vous donnons le tarif de l’intervention avant de venir.',
+      points: [
+        'Ligne ouverte week-ends et jours fériés',
+        'Diagnostic engagé dès l’appel',
+        'Tarif annoncé avant le déplacement',
+      ],
     },
-    {
-      icon: 'clock',
-      title: 'Une ligne ouverte 7j/7',
-      desc: "Refoulement, WC bouché, odeurs : ces situations ne choisissent pas leur horaire. Vous nous joignez le week-end et les jours fériés.",
+    entretien: {
+      cle: 'entretien',
+      titre: 'L’entretien',
+      sousTitre: 'Avant que le froid revienne',
+      texte:
+        'L’entretien annuel d’une chaudière est une obligation légale en France, et c’est aussi ce qui évite l’arrêt en pleine vague de froid. La bonne fenêtre va d’août à octobre, quand le chauffage ne tourne pas encore.',
+      points: [
+        'Obligation légale annuelle',
+        'Attestation remise après passage',
+        'Rendez-vous choisi, pas subi',
+      ],
     },
-    {
-      icon: 'euro',
-      title: 'Le prix annoncé avant',
-      desc: "Vous savez ce que coûte l'intervention avant qu'elle commence. Pas de supplément découvert une fois le camion sur place.",
-    },
-    {
-      icon: 'star',
-      title: 'Artisan local, pas une plateforme',
-      desc: "Vous parlez à la personne qui intervient. Pas de centrale d'appel qui revend votre demande au premier disponible.",
-    },
-  ],
+  },
 
   /* ── FAQ accueil ── */
   homeFaq: [
     {
-      q: 'Combien coûte un débouchage de canalisation à Metz ?',
-      a: "Le prix dépend de la prestation : un débouchage au furet sur un évier ou un WC n'a pas le même coût qu'un hydrocurage de colonne ou qu'une inspection caméra. Nous annonçons le tarif au téléphone en fonction de ce que vous décrivez, puis nous le confirmons sur place avant de commencer. Aucun travail n'est lancé sans votre accord.",
+      q: 'Intervenez-vous en urgence le soir, le week-end et les jours fériés à Besançon ?',
+      a: "Oui. Une chaudière à l'arrêt en plein hiver dans un logement occupé ne peut pas attendre le lundi, surtout avec les températures de Franche-Comté. Notre ligne est ouverte 7j/7, week-ends et jours fériés compris, pour Besançon et les communes du Grand Besançon. Le créneau vous est annoncé au téléphone en fonction du planning réel du moment.",
     },
     {
-      q: 'Intervenez-vous en urgence le soir, le week-end et les jours fériés ?',
-      a: "Oui. Un refoulement d'eaux usées ou des WC bouchés dans un logement occupé ne peuvent pas attendre le lundi. Notre ligne est ouverte 7j/7 pour les urgences sur Metz et les communes de l'agglomération dans un rayon d'environ 30 km.",
+      q: "L'entretien annuel de la chaudière est-il vraiment obligatoire ?",
+      a: "Oui. La réglementation française impose un entretien annuel des chaudières dont la puissance est comprise entre 4 et 400 kilowatts, ce qui couvre la quasi-totalité des chaudières individuelles, qu'elles soient au gaz, au fioul ou au bois. L'entretien est à la charge de l'occupant, propriétaire ou locataire, et donne lieu à une attestation à conserver. Au-delà de l'obligation, c'est ce qui préserve la garantie constructeur et limite le risque de panne au pire moment.",
     },
     {
-      q: 'Faut-il casser un mur ou creuser pour déboucher une canalisation ?',
-      a: "Dans la très grande majorité des cas, non. Le débouchage se fait par les accès existants : siphon, regard de visite, tampon de dégorgement, WC. Le furet et l'hydrocureur passent par ces ouvertures. Nous ne proposons une ouverture du réseau que si l'inspection caméra montre une canalisation cassée ou effondrée, et jamais sans vous l'expliquer avant.",
+      q: 'Combien coûte un dépannage de chauffage à Besançon ?',
+      a: "Le prix dépend de la prestation, pas de l'heure de l'appel : un remplacement de sonde, un désembouage de circuit et une intervention sur une pompe à chaleur ne se facturent pas de la même façon. Nous annonçons le tarif au téléphone à partir de ce que vous décrivez, puis nous le confirmons sur place avant de commencer. Si ce que nous trouvons change la prestation nécessaire, vous le savez avant l'intervention, pas au moment de la facture.",
     },
     {
-      q: 'Les produits déboucheurs du commerce sont-ils une bonne solution ?',
-      a: "Ils peuvent aider sur un ralentissement léger dû aux graisses ou aux cheveux. Sur un bouchon compact, ils restent stagnants au-dessus de l'obstacle et attaquent la canalisation, surtout sur du PVC ancien ou du plomb. Ils sont aussi dangereux pour l'intervenant qui ouvrira le siphon ensuite. Si l'eau ne s'écoule plus du tout, arrêtez les produits et appelez.",
+      q: 'Ma chaudière affiche un code erreur, que dois-je faire avant votre arrivée ?',
+      a: "Notez le code exactement tel qu'il s'affiche et transmettez-le nous au téléphone : sur la plupart des marques, il oriente déjà le diagnostic et permet d'arriver avec la bonne pièce. Vous pouvez tenter un réarmement, une fois. S'il faut réarmer trois fois de suite, arrêtez : le défaut est réel et l'insistance peut aggraver la situation, en particulier sur un défaut d'allumage.",
     },
     {
-      q: "Qui paie le débouchage en location, le locataire ou le propriétaire ?",
-      a: "Le décret n° 87-712 place l'entretien courant des canalisations, dont le dégorgement, à la charge du locataire. En revanche, si le bouchon vient d'un défaut de la canalisation elle-même (vétusté, rupture, mauvaise pente, racines), la réparation revient au propriétaire. L'inspection caméra sert précisément à trancher : le rapport identifie la cause.",
+      q: 'Que faire si je sens une odeur de gaz chez moi ?',
+      a: "Coupez l'arrivée de gaz au compteur, n'actionnez aucun interrupteur ni appareil électrique, ouvrez les fenêtres, sortez du logement et appelez le numéro d'urgence sécurité gaz de GRDF, le 0 800 47 33 33, joignable en permanence et gratuit. C'est le préalable à tout. Nous intervenons ensuite sur l'appareil, une fois la sécurité du réseau traitée.",
     },
     {
-      q: "Qui appeler quand c'est la colonne de l'immeuble qui est bouchée ?",
-      a: "Quand plusieurs logements refoulent en même temps, le problème est sur la colonne ou le collecteur : c'est une partie commune, donc du ressort du syndic. Prévenez le syndic ou le gardien. Nous intervenons aussi bien pour un syndic ou un bailleur que pour un particulier, avec un compte rendu d'intervention.",
+      q: 'Faut-il remplacer une chaudière ancienne ou continuer à la réparer ?',
+      a: "La question se tranche sur trois éléments : la disponibilité des pièces détachées, la fréquence des pannes et le rendement réel de l'appareil. Une chaudière qui tombe en panne plusieurs fois par saison et dont les pièces se raréfient coûte plus cher entretenue que remplacée. Des aides publiques existent pour le remplacement, MaPrimeRénov', les certificats d'économies d'énergie et l'éco-prêt à taux zéro : leurs conditions figurent sur les sites officiels de l'État, et elles dépendent de l'installateur retenu.",
     },
   ],
 
   /* ── Légal (GABARIT, à compléter par Rémy avant prod) ── */
   legal: {
     showAddress: false, // false => schema SANS address
-    address: { street: '', postalCode: '57000', city: 'Metz' },
+    address: { street: '', postalCode: '25000', city: 'Besançon' },
   },
 } as const

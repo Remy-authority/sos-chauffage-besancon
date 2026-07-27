@@ -4,32 +4,38 @@ import { extractNumberedSteps } from '@/lib/text'
 import type { ContentBlock } from '@/lib/content'
 
 /**
- * Bloc de contenu d'une page service ou zone.
+ * Bloc de contenu d'une page prestation ou commune.
  *
- * Si le corps contient une liste numérotée rédigée en prose (« 1. … 2. … »), elle
- * est rendue en checklist visuelle plutôt qu'en pavé : le texte SEO reste identique,
- * seule sa mise en forme change.
+ * Si le corps contient une liste numérotée rédigée en prose (« 1. … 2. … »),
+ * elle est rendue en séquence d'étapes plutôt qu'en pavé : le texte reste
+ * strictement identique, seule sa mise en forme change.
+ *
+ * Traitement T3 : les étapes sont des lignes numérotées reliées par un filet
+ * vertical, pas des cartes empilées.
  */
 export function ServiceBlock({ block, eager = false }: { block: ContentBlock; eager?: boolean }) {
-  const steps = extractNumberedSteps(block.body)
+  const etapes = extractNumberedSteps(block.body)
 
   return (
     <AnimatedSection as="section" className="scroll-mt-28">
       <h2>{block.heading}</h2>
 
-      {steps ? (
+      {etapes ? (
         <>
-          {steps.lead && <p>{steps.lead}</p>}
-          <ol className="mt-6 space-y-3">
-            {steps.steps.map((s, i) => (
-              <li
-                key={s.slice(0, 32)}
-                className="flex gap-4 rounded-card border border-sand-200 bg-white p-5 shadow-card"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-500 font-display text-sm font-medium text-white">
+          {etapes.lead && <p>{etapes.lead}</p>}
+          <ol className="mt-7 space-y-0">
+            {etapes.steps.map((etape, i) => (
+              <li key={etape.slice(0, 32)} className="relative flex gap-5 pb-7 last:pb-0">
+                {i < etapes.steps.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-[0.9375rem] top-8 h-[calc(100%-1.5rem)] w-px bg-calcaire-pierre"
+                  />
+                )}
+                <span className="chiffre relative z-[1] flex h-8 w-8 shrink-0 items-center justify-center rounded-plaque border border-laiton-franc/40 bg-laiton-franc/10 font-titre text-sm font-semibold text-laiton-patine">
                   {i + 1}
                 </span>
-                <span className="leading-relaxed text-sand-700">{s}</span>
+                <span className="pt-1 text-lecture text-calcaire-basalte">{etape}</span>
               </li>
             ))}
           </ol>
@@ -40,18 +46,20 @@ export function ServiceBlock({ block, eager = false }: { block: ContentBlock; ea
 
       {block.image && (
         <figure className="mt-8">
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-card border border-sand-200 shadow-card">
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-bloc border border-calcaire-pierre shadow-pose">
             <Image
               src={block.image}
               alt={block.imageAlt || block.heading}
               fill
-              sizes="(min-width: 768px) 768px, 100vw"
+              sizes="(min-width: 768px) 704px, 100vw"
               className="object-cover"
               loading={eager ? 'eager' : 'lazy'}
             />
           </div>
           {block.imageCaption && (
-            <figcaption className="mt-3 text-sm text-sand-500">{block.imageCaption}</figcaption>
+            <figcaption className="mt-3 text-legende text-calcaire-roche">
+              {block.imageCaption}
+            </figcaption>
           )}
         </figure>
       )}

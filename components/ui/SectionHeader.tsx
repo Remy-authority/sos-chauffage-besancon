@@ -2,9 +2,12 @@ import type { ReactNode } from 'react'
 import { AnimatedSection } from './AnimatedSection'
 
 /**
- * En-tête de section : eyebrow en capitales espacées, titre display en Fraunces,
- * sous-titre en corps large. Toutes les sections du site passent par ici, c'est ce
- * qui donne au rythme éditorial sa régularité.
+ * En-tête de section, template T3.
+ *
+ * Signature typographique du site : le surtitre est précédé d'un trait de
+ * graduation en laiton, le titre est aligné à gauche par défaut (le centrage
+ * reste possible mais n'est plus la norme, contrairement aux templates
+ * précédents), et le chapô est tenu dans une largeur de lecture stricte.
  */
 type Props = {
   eyebrow?: string
@@ -14,41 +17,50 @@ type Props = {
   variant?: 'light' | 'dark'
   as?: 'h1' | 'h2'
   id?: string
+  className?: string
 }
 
 export function SectionHeader({
   eyebrow,
   title,
   subtitle,
-  align = 'center',
+  align = 'left',
   variant = 'light',
-  as: Tag = 'h2',
+  as: Balise = 'h2',
   id,
+  className = '',
 }: Props) {
-  const dark = variant === 'dark'
+  const sombre = variant === 'dark'
+  const centre = align === 'center'
+
   return (
-    <AnimatedSection className={`max-w-3xl ${align === 'center' ? 'mx-auto text-center' : 'text-left'}`}>
+    <AnimatedSection
+      className={`max-w-colonne ${centre ? 'mx-auto text-center' : 'text-left'} ${className}`}
+    >
       {eyebrow && (
         <p
-          className={`mb-4 text-sm font-semibold uppercase tracking-[0.2em] ${
-            dark ? 'text-accent-400' : 'text-accent-600'
-          }`}
+          className={`surtitre mb-5 flex items-center gap-3 ${
+            centre ? 'justify-center' : ''
+          } ${sombre ? 'text-laiton-clair' : 'text-laiton-patine'}`}
         >
+          <span aria-hidden="true" className="h-px w-8 bg-laiton-franc" />
           {eyebrow}
         </p>
       )}
-      <Tag
+
+      <Balise
         id={id}
-        className={`text-4xl leading-[1.1] md:text-5xl lg:text-[3.5rem] ${
-          dark ? 'text-sand-50' : 'text-ink-950'
+        className={`text-titre-l md:text-titre-xl ${
+          sombre ? 'text-calcaire-neige' : 'text-fonte-abysse'
         }`}
       >
         {title}
-      </Tag>
+      </Balise>
+
       {subtitle && (
         <p
-          className={`mt-6 text-lg leading-relaxed md:text-xl ${
-            dark ? 'text-sand-200' : 'text-sand-600'
+          className={`mt-5 max-w-lecture text-chapo ${centre ? 'mx-auto' : ''} ${
+            sombre ? 'text-calcaire-brume' : 'text-calcaire-basalte'
           }`}
         >
           {subtitle}
@@ -57,3 +69,5 @@ export function SectionHeader({
     </AnimatedSection>
   )
 }
+
+export default SectionHeader

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { notFound } from 'next/navigation'
-import { MapPin, Phone } from 'lucide-react'
+import { ArrowRight, MapPin, PhoneCall } from 'lucide-react'
 import { getServices, getZone, getZones } from '@/lib/content'
 import { buildMetadata, jsonLdScript, zoneJsonLd } from '@/lib/seo'
 import { siteConfig } from '@/config/site.config'
@@ -15,6 +15,7 @@ import { CtaBanner } from '@/components/ui/CtaBanner'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { ServiceBlock } from '@/components/ui/ServiceBlock'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
+import { HaloThermique } from '@/components/ui/HaloThermique'
 
 export const dynamicParams = false
 
@@ -23,67 +24,48 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const z = getZone(params.slug)
-  if (!z) return {}
+  const zone = getZone(params.slug)
+  if (!zone) return {}
   return buildMetadata({
-    title: z.metaTitle,
-    description: z.metaDescription,
-    path: `/zones/${z.slug}`,
+    title: zone.metaTitle,
+    description: zone.metaDescription,
+    path: `/zones/${zone.slug}`,
   })
 }
 
 /**
- * Image de tête : UNIQUE par commune, câblée sur son slug (public/zones/<slug>.jpg).
- * Repli générique (logique template N+1) : si le visuel dédié n'a pas encore été
- * produit pour une nouvelle commune, on retombe sur une image de secours existante
- * plutôt que d'afficher une image cassée au build.
+ * Visuel de tête d'une commune.
+ *
+ * Règle permanente du projet : l'image de tête est UNIQUE par commune, câblée
+ * sur son slug (`public/zones/<slug>.jpg`). Les pools d'images partagées entre
+ * plusieurs communes sont interdits, ils produisent des pages jumelles.
+ *
+ * Tant que le visuel dédié n'a pas été produit, on n'emprunte donc RIEN à une
+ * autre commune : la page affiche à la place une plaque graphique construite sur
+ * les données réelles de la commune (nom, code postal, orientation). Aucune
+ * image cassée, aucun doublon visuel.
  */
-const HERO_FALLBACK = '/zones/zone-rue.jpg'
-
-function getHeroSrc(slug: string): string {
-  const dedicated = `/zones/${slug}.jpg`
-  const existsOnDisk = existsSync(join(process.cwd(), 'public', 'zones', `${slug}.jpg`))
-  return existsOnDisk ? dedicated : HERO_FALLBACK
+function imageDediee(slug: string): string | null {
+  return existsSync(join(process.cwd(), 'public', 'zones', `${slug}.jpg`))
+    ? `/zones/${slug}.jpg`
+    : null
 }
-
-const BODY_POOL = [
-  {
-    src: '/zones/zone-regard.jpg',
-    alt: 'Regard de visite ouvert dans une allée, flexible de curage engagé',
-    caption: "Le regard de visite, premier point d'accès au réseau enterré.",
-  },
-  {
-    src: '/zones/zone-siphon.jpg',
-    alt: 'Siphon de lavabo démonté au-dessus d’un seau',
-    caption: 'Sur un bouchon proche, le démontage du siphon suffit souvent.',
-  },
-  {
-    src: '/zones/zone-camera.jpg',
-    alt: "Écran d'inspection caméra montrant l'intérieur d'une canalisation",
-    caption: "La caméra tranche entre bouchon d'usage et défaut de canalisation.",
-  },
-]
 
 export default function ZonePage({ params }: { params: { slug: string } }) {
   const zone = getZone(params.slug)
   if (!zone) notFound()
 
-  const zones = getZones()
-  const idx = Math.max(
-    0,
-    zones.findIndex((z) => z.slug === zone.slug),
-  )
-  const hero = getHeroSrc(zone.slug)
-  const body = BODY_POOL[(idx + 1) % BODY_POOL.length]
+  const communes = getZones()
+  const visuel = imageDediee(zone.slug)
 
-  // Maillage : les prestations les plus probables sur une commune résidentielle.
-  const mainServices = getServices()
+  // Maillage : les prestations les plus demandées sur une commune résidentielle.
+  const prestations = getServices()
     .filter((s) =>
       [
-        'urgence-debouchage-canalisation',
-        'debouchage-wc-toilettes-bouchees',
-        'debouchage-evier-lavabo-douche',
-        'debouchage-canalisation-enterree-regard',
+        'depannage-chaudiere-gaz',
+        'depannage-chaudiere-fioul',
+        'entretien-annuel-chaudiere',
+        'depannage-ballon-eau-chaude',
       ].includes(s.slug),
     )
     .slice(0, 4)
@@ -98,84 +80,108 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
       <Breadcrumbs
         items={[
           { name: 'Accueil', path: '/' },
-          { name: "Zones d'intervention", path: '/zones' },
+          { name: 'Communes', path: '/zones' },
           { name: zone.name, path: `/zones/${zone.slug}` },
         ]}
       />
 
-      <section className="noise-overlay relative overflow-hidden bg-gradient-to-b from-ink-950 via-ink-900 to-ink-950 py-16 lg:py-20">
-        <div aria-hidden="true" className="bg-grid absolute inset-0" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-12 lg:px-10">
+      <section className="grain relative overflow-hidden bg-fonte-nuit py-14 lg:py-20">
+        <div aria-hidden="true" className="trame-graduee absolute inset-0 opacity-70" />
+        <HaloThermique className="-right-24 -top-16" teinte="jura" taille={440} />
+        <HaloThermique className="-bottom-20 left-1/4" teinte="laiton" taille={300} decalage={-8} />
+
+        <div className="enceinte relative grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-accent-400">
-              <MapPin size={16} />
-              {zone.name} · {zone.postalCode}
+            <p className="surtitre flex items-center gap-2.5 text-laiton-clair">
+              <MapPin size={15} aria-hidden="true" />
+              <span className="chiffre">
+                {zone.name} · {zone.postalCode}
+              </span>
             </p>
-            <h1 className="mt-5 text-4xl leading-[1.1] text-sand-50 md:text-5xl">{zone.h1}</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand-200">{zone.intro}</p>
+            <h1 className="mt-5 text-titre-l text-calcaire-neige md:text-titre-xl">{zone.h1}</h1>
+            <p className="mt-5 max-w-lecture text-chapo text-calcaire-brume">{zone.intro}</p>
             <div className="mt-8">
-              <Button href={`tel:${siteConfig.phone}`} variant="accent" size="lg">
-                <Phone size={18} strokeWidth={2.5} />
+              <Button href={`tel:${siteConfig.phone}`} variant="laiton" size="ample">
+                <PhoneCall size={18} strokeWidth={2.2} />
                 {siteConfig.phoneDisplay}
               </Button>
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-panel border border-brand-400/20 shadow-card">
-              <Image
-                src={hero}
-                alt={`${siteConfig.trade} à ${zone.name}`}
-                fill
-                priority
-                sizes="(min-width: 1024px) 460px, 100vw"
-                className="object-cover"
-              />
-            </div>
+            {visuel ? (
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-socle border border-calcaire-neige/10">
+                <Image
+                  src={visuel}
+                  alt={`Dépannage chauffage à ${zone.name}`}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 440px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              /* Plaque de repérage, en attendant le visuel dédié de la commune. */
+              <div className="relative flex aspect-[4/3] w-full flex-col justify-between overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-abysse/60 p-7">
+                <div aria-hidden="true" className="trame-graduee-fine absolute inset-0 opacity-60" />
+                <div className="relative">
+                  <p className="surtitre text-calcaire-ombre">Commune desservie</p>
+                  <p className="mt-3 font-titre text-titre-l font-semibold text-calcaire-neige">
+                    {zone.name}
+                  </p>
+                </div>
+                <dl className="relative grid grid-cols-2 gap-4 border-t border-fonte-brut/70 pt-5 text-legende">
+                  <div>
+                    <dt className="text-calcaire-roche">Code postal</dt>
+                    <dd className="chiffre mt-1 font-medium text-laiton-clair">
+                      {zone.postalCode}
+                    </dd>
+                  </div>
+                  {zone.orientation && (
+                    <div>
+                      <dt className="text-calcaire-roche">Position</dt>
+                      <dd className="mt-1 font-medium text-calcaire-neige">
+                        {zone.orientation} de {siteConfig.city}
+                      </dd>
+                    </div>
+                  )}
+                </dl>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <article className="bg-sand-50 py-16 lg:py-24">
-        <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          <div className="prose-content space-y-10">
-            {zone.blocks.map((b, i) => (
-              <div key={b.heading}>
-                <ServiceBlock block={b} />
-                {i === 0 && (
-                  <figure className="mt-8">
-                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-card border border-sand-200 shadow-card">
-                      <Image
-                        src={body.src}
-                        alt={body.alt}
-                        fill
-                        sizes="(min-width: 768px) 768px, 100vw"
-                        className="object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    <figcaption className="mt-3 text-sm text-sand-500">{body.caption}</figcaption>
-                  </figure>
-                )}
-              </div>
-            ))}
-          </div>
+      <article className="bg-calcaire-neige py-14 lg:py-20">
+        <div className="enceinte max-w-colonne">
+          {zone.blocks.length > 0 && (
+            <div className="corps-edito space-y-10">
+              {zone.blocks.map((bloc) => (
+                <ServiceBlock key={bloc.heading} block={bloc} />
+              ))}
+            </div>
+          )}
 
-          <AnimatedSection className="mt-16">
-            <h2 className="text-2xl">Nos prestations à {zone.name}</h2>
-            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-              {mainServices.map((s) => (
-                <li key={s.slug}>
+          <AnimatedSection className="mt-14">
+            <h2 className="text-titre-m">Nos prestations à {zone.name}</h2>
+            <ul className="mt-5 border-t border-calcaire-pierre">
+              {prestations.map((prestation) => (
+                <li key={prestation.slug}>
                   <Link
-                    href={`/services/${s.slug}`}
-                    className="group flex items-center gap-3 rounded-card border border-sand-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-400/40 hover:shadow-card"
+                    href={`/services/${prestation.slug}`}
+                    className="group flex items-center gap-4 border-b border-calcaire-pierre py-4 transition-colors hover:bg-calcaire-voile"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-600/10 text-brand-600">
-                      <ServiceIcon icon={s.icon} className="h-5 w-5" />
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-module border border-calcaire-brume text-jura-franc transition-colors group-hover:border-laiton-franc/50 group-hover:text-laiton-patine">
+                      <ServiceIcon icon={prestation.icon} className="h-[1.1rem] w-[1.1rem]" />
                     </span>
-                    <span className="font-medium text-ink-900 group-hover:text-brand-700">
-                      {s.navTitle}
+                    <span className="flex-1 font-titre font-medium text-fonte-nuit transition-colors group-hover:text-jura-dense">
+                      {prestation.navTitle}
                     </span>
+                    <ArrowRight
+                      size={16}
+                      aria-hidden="true"
+                      className="shrink-0 text-calcaire-ombre transition-all duration-300 ease-thermique group-hover:translate-x-1 group-hover:text-laiton-patine"
+                    />
                   </Link>
                 </li>
               ))}
@@ -184,22 +190,22 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
 
           {zone.neighbours.length > 0 && (
             <AnimatedSection className="mt-14">
-              <h2 className="text-2xl">Communes limitrophes desservies</h2>
+              <h2 className="text-titre-m">Autres communes desservies dans le secteur</h2>
               <ul className="mt-5 flex flex-wrap gap-2">
-                {zone.neighbours.map((n) => {
-                  const match = zones.find((z) => z.name === n)
+                {zone.neighbours.map((voisine) => {
+                  const page = communes.find((c) => c.name === voisine)
                   return (
-                    <li key={n}>
-                      {match ? (
+                    <li key={voisine}>
+                      {page ? (
                         <Link
-                          href={`/zones/${match.slug}`}
-                          className="inline-flex rounded-full border border-sand-300 bg-white px-4 py-2 text-sm text-sand-700 transition-colors hover:border-brand-500 hover:text-brand-700"
+                          href={`/zones/${page.slug}`}
+                          className="inline-flex rounded-module border border-calcaire-brume bg-calcaire-voile px-3.5 py-2 text-legende text-calcaire-basalte transition-colors hover:border-jura-franc hover:text-jura-dense"
                         >
-                          {n}
+                          {voisine}
                         </Link>
                       ) : (
-                        <span className="inline-flex rounded-full border border-sand-200 bg-sand-100 px-4 py-2 text-sm text-sand-600">
-                          {n}
+                        <span className="inline-flex rounded-module border border-calcaire-pierre bg-calcaire-voile px-3.5 py-2 text-legende text-calcaire-roche">
+                          {voisine}
                         </span>
                       )}
                     </li>
@@ -214,8 +220,8 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
       <Faq items={zone.faq} eyebrow={zone.name} />
 
       <CtaBanner
-        title={`Canalisation bouchée à ${zone.name} ?`}
-        subtitle={`Nous intervenons à ${zone.name} et dans les communes voisines. Appelez, nous vous donnons le tarif et un créneau réaliste.`}
+        title={`Panne de chauffage à ${zone.name} ?`}
+        subtitle={`Nous intervenons à ${zone.name} et dans les communes voisines. Appelez, nous vous donnons la piste, le tarif et un créneau réaliste.`}
       />
     </>
   )

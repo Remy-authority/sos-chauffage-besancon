@@ -1,0 +1,44 @@
+{
+  "slug": "franois",
+  "name": "Franois",
+  "postalCode": "25770",
+  "orientation": "Ouest",
+  "context": "Commune de l'ouest de l'agglomération, à l'habitat dispersé et au passé rural, où le fioul reste bien représenté.",
+  "metaTitle": "Dépannage chauffage à Franois, chauffagiste urgence",
+  "metaDescription": "Chauffagiste à Franois (25770) : dépannage de chaudière fioul et gaz, radiateurs froids, entretien annuel obligatoire. Intervention 7j/7.",
+  "h1": "Chauffagiste dépannage urgence à Franois",
+  "intro": "Nous intervenons à Franois (25770) pour le dépannage de chauffage et l'entretien annuel de chaudière. À l'ouest de Besançon, la commune conserve la trace de son passé rural dans son habitat dispersé et dans son parc d'équipements, où les chaudières fioul restent nettement plus présentes que dans le reste de l'agglomération. C'est une compétence spécifique, et nous la traitons comme telle.",
+  "blocks": [
+    {
+      "heading": "Le fioul demande un autre diagnostic",
+      "body": "Sur une chaudière fioul, la panne se situe rarement dans le corps de chauffe : elle vient de la chaîne d'alimentation, depuis la cuve jusqu'au brûleur. La cause la plus banale reste la cuve descendue trop bas, dont la crépine aspire les dépôts accumulés au fond ; le filtre s'obstrue, la pompe perd sa pression et le brûleur se met en sécurité. Viennent ensuite le gicleur usé, qui dégrade la pulvérisation, la cellule photorésistante encrassée, qui ne détecte plus la flamme et coupe par sécurité, et sur les installations anciennes une prise d'air sur la ligne d'aspiration, responsable d'arrêts intermittents difficiles à cerner sans mesure. Un dépannage fioul sérieux se termine toujours par un contrôle de combustion, pas par un simple redémarrage."
+    },
+    {
+      "heading": "L'habitat dispersé et l'anticipation",
+      "body": "Sur une commune où les habitations sont éloignées les unes des autres et parfois situées à l'écart du bourg, la panne de chauffage a une conséquence particulière : il n'y a pas de solution de repli immédiate, et le logement reste froid le temps de l'intervention. C'est ce qui rend l'anticipation plus rentable ici qu'ailleurs. Deux gestes suffisent à supprimer l'essentiel du risque : faire réaliser l'entretien annuel entre septembre et novembre, et surveiller le niveau de la cuve pour ne jamais descendre dans la zone où les dépôts sont aspirés. La panne de fin d'hiver sur cuve basse est la plus fréquente, et la plus évitable."
+    },
+    {
+      "heading": "Changer d'énergie, ce que permet réellement le secteur",
+      "body": "La question du remplacement du fioul revient souvent, et la réponse dépend d'abord de la desserte : le réseau de gaz naturel n'atteint pas toutes les rues de la commune, et sans raccordement possible l'option ne se pose pas. Restent alors la pompe à chaleur, qui suppose une isolation correcte et des émetteurs acceptant une eau moins chaude, faute de quoi le confort se dégrade pendant les périodes de grand froid, et le remplacement par une chaudière fioul plus récente, nettement plus performante que les modèles anciens. Des aides publiques accompagnent ces travaux, MaPrimeRénov', les certificats d'économies d'énergie et l'éco-prêt à taux zéro : leurs conditions figurent sur les sites officiels de l'État et dépendent notamment de l'installateur retenu."
+    }
+  ],
+  "neighbours": ["Besançon", "Serre-les-Sapins", "Saint-Vit"],
+  "faq": [
+    {
+      "q": "Intervenez-vous sur les chaudières fioul à Franois ?",
+      "a": "Oui, c'est même une part importante de notre activité sur ce secteur. Nous traitons l'ensemble de la chaîne : brûleur, gicleur, électrodes, cellule photorésistante, filtre, ligne d'aspiration et réglage de combustion. Avant d'appeler, vérifiez le niveau de votre cuve : une cuve trop basse est la première cause d'arrêt en fin d'hiver."
+    },
+    {
+      "q": "Puis-je passer du fioul au gaz à Franois ?",
+      "a": "Uniquement si le réseau de gaz naturel dessert votre rue, ce qui n'est pas le cas partout sur la commune. Le raccordement, la neutralisation ou le retrait de la cuve et l'adaptation du conduit d'évacuation sont à prévoir. C'est un projet qui se planifie hors saison de chauffe, pas une décision à prendre dans l'urgence d'une panne de janvier."
+    },
+    {
+      "q": "À quelle période faire entretenir une chaudière fioul ?",
+      "a": "Entre septembre et novembre, avant la sollicitation continue. L'entretien annuel est obligatoire pour les chaudières de 4 à 400 kilowatts et donne lieu à une attestation. Sur le fioul, la visite comprend notamment le remplacement du gicleur et du filtre ainsi que le réglage du brûleur, trois opérations qui suppriment la majorité des pannes de la saison suivante."
+    },
+    {
+      "q": "Le délai est-il plus long à Franois qu'à Besançon ?",
+      "a": "Non. La commune est à quelques minutes de Besançon et le déplacement n'est pas le facteur limitant : c'est le planning en cours qui détermine le créneau, et nous vous l'annonçons au téléphone. Les logements occupés totalement privés de chauffage passent en priorité pendant les épisodes de froid."
+    }
+  ]
+}

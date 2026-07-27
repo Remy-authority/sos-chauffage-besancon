@@ -1,0 +1,56 @@
+{
+  "slug": "depannage-chauffage-electrique",
+  "order": 4,
+  "icon": "electrique",
+  "navTitle": "Dépannage chauffage électrique",
+  "h1": "Dépannage radiateur et chauffage électrique à Besançon",
+  "metaTitle": "Réparation chauffage électrique et radiateurs Besançon",
+  "metaDescription": "Radiateur électrique en panne à Besançon. Dépannage de chauffage électrique, thermostat, résistance et fil pilote, intervention rapide.",
+  "intro": "Un radiateur électrique qui ne chauffe plus se répare le plus souvent sans remplacer l'appareil : la panne vient du thermostat, de la résistance, du fil pilote ou de l'alimentation, rarement du corps de chauffe lui-même. Nous intervenons à Besançon et dans le Grand Besançon sur les convecteurs, les panneaux rayonnants et les radiateurs à inertie, en chauffage principal comme en appoint.",
+  "bullets": [
+    "Convecteur, rayonnant, inertie",
+    "Thermostat et fil pilote",
+    "Diagnostic avant remplacement"
+  ],
+  "blocks": [
+    {
+      "heading": "Un seul radiateur en panne, ou tous",
+      "body": "La première question à se poser est celle du nombre. Si un seul appareil est concerné et que les autres chauffent normalement, la panne est dans l'appareil : résistance coupée, thermostat hors service, carte électronique défaillante sur un modèle programmable. Si plusieurs radiateurs s'arrêtent en même temps, la cause est en amont : disjoncteur divisionnaire déclenché, fil pilote coupé ou gestionnaire d'énergie qui impose un délestage. Cette distinction change complètement le diagnostic, et vous pouvez la faire vous-même avant de nous appeler : c'est autant de temps gagné."
+    },
+    {
+      "heading": "Le fil pilote, la panne qu'on ne soupçonne pas",
+      "body": "Sur une installation pilotée, chaque radiateur reçoit un ordre par un fil dédié : confort, éco, hors gel, arrêt. Quand ce fil est coupé, mal raccordé ou que le programmateur central se dérègle, les radiateurs restent en position éco ou hors gel en permanence. Ils fonctionnent, ils ne sont pas en panne, mais ils ne chauffent jamais vraiment. Le symptôme typique est un logement tiède malgré des consignes réglées au maximum sur les appareils. C'est une cause fréquente et rarement identifiée par les occupants, qui concluent souvent à tort que leurs radiateurs sont usés."
+    },
+    {
+      "heading": "Préparer ses radiateurs électriques avant l'hiver",
+      "body": "1. Dépoussiérez les grilles et les ailettes avant la première mise en route : la poussière accumulée pendant l'été dégrade la diffusion et produit l'odeur de brûlé caractéristique du premier allumage. 2. Faites tourner chaque appareil quelques heures en septembre, à pleine consigne, pour repérer ceux qui ne montent pas en température avant que le froid n'arrive. 3. Vérifiez les consignes et la programmation, en particulier après une coupure de courant qui a pu réinitialiser un programmateur. 4. Contrôlez que rien n'obstrue la circulation d'air devant les appareils, un meuble ou un rideau suffisant à dégrader nettement le rendement. 5. Repérez les pièces qui chauffent moins bien que les autres : c'est souvent le premier signe d'un appareil sous-dimensionné plutôt qu'en panne."
+    }
+  ],
+  "relatedServices": ["depannage-pompe-chaleur", "depannage-ballon-eau-chaude"],
+  "faq": [
+    {
+      "q": "Mon radiateur électrique ne chauffe plus, pourquoi ?",
+      "a": "Les causes habituelles sont une résistance coupée, un thermostat hors service, une carte électronique défaillante sur un modèle programmable, ou un ordre de fil pilote qui maintient l'appareil en éco ou hors gel. Commencez par vérifier si les autres radiateurs fonctionnent : si oui, la panne est dans l'appareil, si non, elle est en amont, sur le tableau ou le programmateur."
+    },
+    {
+      "q": "Un seul radiateur ne marche pas, les autres chauffent, que faire ?",
+      "a": "Vérifiez d'abord la consigne de l'appareil et sa position de programmation, puis contrôlez qu'aucun objet n'obstrue sa grille. Si l'appareil reste froid alors qu'il est alimenté et réglé au maximum, la piste la plus probable est la résistance ou le thermostat. Sur la plupart des modèles, ces pièces se remplacent : il n'est pas systématiquement nécessaire de changer le radiateur."
+    },
+    {
+      "q": "Quelle est la durée de vie d'un radiateur électrique ?",
+      "a": "Elle varie fortement selon la technologie et l'usage : un convecteur simple, un panneau rayonnant et un radiateur à inertie ne vieillissent pas au même rythme. Plutôt qu'une durée théorique, regardez les signaux concrets : montée en température qui s'allonge, thermostat qui ne tient plus la consigne, bruits de dilatation devenus permanents, pièces détachées introuvables. Ce sont eux qui indiquent qu'un remplacement devient plus rentable qu'une réparation."
+    },
+    {
+      "q": "Radiateur électrique ou chaudière gaz, que choisir à Besançon ?",
+      "a": "Le radiateur électrique s'installe simplement, ne demande ni conduit ni circuit d'eau et convient bien en appoint ou dans un logement bien isolé de petite surface. La chaudière gaz reste plus adaptée aux grandes surfaces et aux logements où la saison de chauffe est longue, ce qui est le cas ici. Le bon arbitrage dépend surtout de l'isolation du logement et de la présence du réseau de gaz dans la rue."
+    },
+    {
+      "q": "Peut-on combiner radiateurs électriques et chaudière gaz ?",
+      "a": "Oui, et c'est une configuration courante : la chaudière alimente le circuit principal, des radiateurs électriques couvrent une extension, une véranda, une salle de bains ou une pièce peu utilisée. L'intérêt est de ne pas surdimensionner le circuit central pour quelques mètres carrés. Le point de vigilance porte sur le tableau électrique, qui doit supporter la charge ajoutée."
+    },
+    {
+      "q": "Mon radiateur sent le brûlé à la première mise en route, est-ce normal ?",
+      "a": "Le plus souvent oui : c'est la poussière accumulée sur la résistance pendant l'été qui se consume, l'odeur disparaît après quelques heures de fonctionnement. Elle ne doit en revanche pas persister au-delà, ni s'accompagner d'un crépitement, d'une odeur de plastique chaud ou d'une trace de chaleur sur la prise. Dans ce cas, coupez l'appareil au disjoncteur et faites-le contrôler."
+    }
+  ]
+}

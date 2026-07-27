@@ -5,15 +5,15 @@ import { faqJsonLd, jsonLdScript } from '@/lib/seo'
 import type { FaqItem } from '@/lib/content'
 
 /**
- * Bloc FAQ : accordéon animé + données structurées FAQPage.
+ * Bloc FAQ : accordéon + données structurées FAQPage.
  *
- * Levier GEO central du site (cf. docs/SEO-GEO-PLAN.md §3) : chaque réponse doit
+ * Levier GEO central du site (docs/SEO-GEO-PLAN.md §5) : chaque réponse doit
  * rester compréhensible citée seule, hors du contexte de la page.
  */
 export function Faq({
   items,
   title,
-  eyebrow = 'FAQ',
+  eyebrow = 'Questions fréquentes',
   subtitle,
 }: {
   items: FaqItem[]
@@ -24,30 +24,21 @@ export function Faq({
   if (!items?.length) return null
 
   return (
-    <section
-      id="faq"
-      className="relative bg-gradient-to-b from-sand-50 to-sand-100 py-24 lg:py-32"
-      aria-labelledby="faq-title"
-    >
+    <section id="faq" className="plage bg-calcaire-neige" aria-labelledby="faq-title">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(faqJsonLd(items)) }}
       />
-      <div className="mx-auto max-w-4xl px-6 lg:px-10">
-        <SectionHeader
-          id="faq-title"
-          eyebrow={eyebrow}
-          title={
-            title ?? (
-              <>
-                Questions
-                <span className="text-gradient-ink ml-3 italic">fréquentes</span>
-              </>
-            )
-          }
-          subtitle={subtitle}
-        />
-        <FaqAccordion items={items} />
+      <div className="enceinte">
+        <div className="max-w-colonne">
+          <SectionHeader
+            id="faq-title"
+            eyebrow={eyebrow}
+            title={title ?? <>Ce qu’on nous demande le plus souvent</>}
+            subtitle={subtitle}
+          />
+          <FaqAccordion items={items} />
+        </div>
       </div>
     </section>
   )

@@ -1,0 +1,60 @@
+{
+  "slug": "depannage-chaudiere-gaz",
+  "order": 1,
+  "icon": "chaudiere-gaz",
+  "navTitle": "Dépannage chaudière gaz",
+  "h1": "Dépannage urgence chaudière gaz à Besançon",
+  "metaTitle": "Dépannage chaudière gaz à Besançon, intervention urgence",
+  "metaDescription": "Panne de chaudière gaz à Besançon. Diagnostic, devis transparent, intervention rapide. Chauffagiste disponible 24h/24 et 7j/7.",
+  "intro": "Une chaudière gaz qui s'arrête en hiver à Besançon est une urgence : sans elle, le logement perd son chauffage et souvent son eau chaude en même temps. Nous intervenons à Besançon et dans les communes du Grand Besançon, week-ends et jours fériés compris. Vous décrivez ce que fait l'appareil et le code affiché, nous identifions la famille de panne au téléphone et nous annonçons le tarif avant de nous déplacer.",
+  "bullets": [
+    "Ligne ouverte 7j/7",
+    "Diagnostic engagé dès l'appel",
+    "Tarif annoncé avant l'intervention"
+  ],
+  "blocks": [
+    {
+      "heading": "Les pannes de chaudière gaz que nous traitons le plus souvent",
+      "body": "Quatre familles couvrent la grande majorité des appels. La perte de pression : le manomètre descend sous la plage de fonctionnement, la chaudière se met en défaut et le circuit ne chauffe plus correctement. Si vous devez remettre de l'eau chaque semaine, il y a une fuite ou un vase d'expansion à bout de souffle, et le simple réappoint ne règle rien. Le défaut d'allumage : la chaudière tente d'allumer, n'y parvient pas et se verrouille. L'électrode d'allumage encrassée, le pressostat de fumées et la vanne gaz sont les pistes habituelles. Le défaut de sonde : la chaudière lit une température incohérente et se protège en s'arrêtant, souvent une sonde de départ ou de retour à remplacer. La panne de circulateur enfin : la chaudière chauffe mais l'eau ne circule plus, les radiateurs restent froids alors que l'appareil semble fonctionner normalement."
+    },
+    {
+      "heading": "Ce que le code erreur nous apprend avant même de venir",
+      "body": "Presque toutes les chaudières murales récentes affichent un code lorsqu'elles se verrouillent. Ce code n'est pas décoratif : il désigne le capteur ou la sécurité qui a déclenché l'arrêt, et il diffère d'une marque à l'autre. Nous vous le demandons systématiquement au téléphone, avec la marque et l'âge approximatif de l'appareil. Trois informations qui permettent d'arriver avec la bonne pièce plutôt que de faire un premier passage de repérage. Vous pouvez tenter un réarmement, une fois. Si le défaut revient au troisième essai, arrêtez : sur un défaut d'allumage en particulier, l'insistance envoie du gaz dans une chambre de combustion qui ne s'allume pas."
+    },
+    {
+      "heading": "Comment se déroule l'intervention",
+      "body": "1. Au téléphone, nous relevons le symptôme, le code affiché, la marque et l'ancienneté de l'appareil, puis nous vous annonçons le tarif de l'intervention. 2. Sur place, nous contrôlons la pression du circuit, l'alimentation gaz et électrique, l'évacuation des fumées et l'état de la chambre de combustion avant de toucher à quoi que ce soit. 3. Nous confirmons le diagnostic et, si la prestation nécessaire n'est plus celle annoncée au téléphone, vous le savez à ce moment-là, pas à la facture. 4. Nous procédons au remplacement de la pièce ou au réglage, puis nous relançons l'installation. 5. Nous vérifions la remise en chauffe et la production d'eau chaude devant vous, et nous vous disons ce qui peut être anticipé pour éviter que la panne se reproduise."
+    },
+    {
+      "heading": "Réparer ou remplacer, comment nous tranchons",
+      "body": "Une chaudière gaz correctement entretenue tient longtemps, mais elle finit par atteindre un point où la réparation n'a plus de sens. Trois éléments décident : la disponibilité des pièces détachées, qui se raréfient sur les modèles anciens et allongent les délais d'immobilisation ; la fréquence des pannes, car plusieurs arrêts par saison coûtent vite plus cher qu'un remplacement étalé ; et le rendement réel de l'appareil, une chaudière ancienne consommant sensiblement plus qu'un modèle à condensation pour le même confort. Nous vous donnons notre avis franchement, y compris quand il consiste à dire qu'une réparation tiendra encore plusieurs saisons."
+    }
+  ],
+  "relatedServices": ["entretien-annuel-chaudiere", "remplacement-chaudiere"],
+  "faq": [
+    {
+      "q": "Pourquoi ma chaudière gaz ne s'allume plus ?",
+      "a": "Les causes les plus fréquentes sont une pression du circuit tombée sous la plage de fonctionnement, un thermostat d'ambiance qui ne transmet plus la demande, une électrode d'allumage encrassée ou un filtre et un pressostat de fumées obstrués. Le code affiché sur la chaudière permet de trancher entre ces pistes avant même le déplacement : relevez-le et transmettez-le nous au téléphone."
+    },
+    {
+      "q": "Combien coûte un dépannage de chaudière gaz à Besançon ?",
+      "a": "Le prix dépend de la prestation réellement nécessaire, pas de l'heure de l'appel. Un réglage ou un remplacement de sonde, un changement de circulateur et une reprise de fuite sur circuit ne se facturent pas de la même façon. Nous annonçons le tarif au téléphone à partir de votre description, puis nous le confirmons sur place avant de commencer. Aucune intervention n'est lancée sans votre accord."
+    },
+    {
+      "q": "L'entretien annuel de la chaudière est-il obligatoire ?",
+      "a": "Oui. La réglementation française impose un entretien annuel pour les chaudières dont la puissance est comprise entre 4 et 400 kilowatts, ce qui couvre la quasi-totalité des chaudières individuelles. Il est à la charge de l'occupant du logement, propriétaire ou locataire, et donne lieu à une attestation à conserver. Au-delà de l'obligation, l'absence d'entretien peut faire tomber la garantie constructeur et laisse passer des défauts qui deviennent des pannes en pleine saison de chauffe."
+    },
+    {
+      "q": "Ma chaudière fuit, est-ce grave ?",
+      "a": "Une fuite fait chuter la pression du circuit, ce qui déclenche la mise en sécurité de la chaudière et arrête le chauffage. Tant que la fuite n'est pas traitée, remettre de l'eau ne fait que repousser l'arrêt de quelques jours. Certaines fuites sont bénignes et se reprennent sur un raccord, d'autres viennent du corps de chauffe et posent la question du remplacement. Coupez l'alimentation en eau de la chaudière si l'écoulement est important et appelez-nous."
+    },
+    {
+      "q": "Comment reconnaître une chaudière en fin de vie ?",
+      "a": "Quatre signaux se recoupent : des bruits inhabituels et persistants, un rendement qui baisse alors que la consommation augmente, des pièces détachées de plus en plus difficiles à trouver, et des pannes qui reviennent plusieurs fois dans la même saison. Pris isolément, chacun peut se traiter. Réunis, ils indiquent qu'un remplacement coûtera moins cher sur la durée que la succession des réparations."
+    },
+    {
+      "q": "Chaudière gaz et monoxyde de carbone, quel est le risque réel ?",
+      "a": "Le monoxyde de carbone est un gaz inodore et incolore : il ne se détecte ni au nez ni à l'œil, seul un détecteur alerte. Il se forme quand la combustion est incomplète ou quand l'évacuation des fumées est entravée. C'est précisément ce que contrôle l'entretien annuel, qui vérifie la combustion et le tirage. Un détecteur de monoxyde installé dans le logement reste vivement recommandé en complément, jamais en remplacement de l'entretien."
+    }
+  ]
+}

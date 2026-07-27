@@ -4,68 +4,91 @@ import { getArticles, getServices, getZones } from '@/lib/content'
 
 /**
  * /llms.txt : résumé du business pour les moteurs génératifs (levier GEO).
+ *
  * Entièrement régénéré au build depuis la config et le contenu : ajouter une
  * prestation, une commune ou un article suffit, rien à maintenir à la main.
+ *
+ * ⛔ Ne JAMAIS y faire figurer : une mention de certification (y compris en
+ * négatif), des données business internes (volumes de recherche, CPC, loyers),
+ * ou un chiffre non validé. Ce fichier est public et lu tel quel par les IA.
  */
 export const dynamic = 'force-static'
 
 export function GET() {
   const {
-    businessName, trade, city, region, departmentName, department,
-    phoneDisplay, availability, methods, serviceArea,
+    businessName,
+    trade,
+    city,
+    region,
+    departmentName,
+    department,
+    phoneDisplay,
+    email,
+    availability,
+    appareils,
+    serviceArea,
   } = siteConfig
-  const radius = serviceArea.radiusKm
   const base = absUrl('/').replace(/\/$/, '')
 
   const services = getServices()
   const zones = getZones()
   const articles = getArticles()
 
-  const lines: string[] = [
+  const lignes: string[] = [
     `# ${businessName}`,
     '',
-    `> ${trade} à ${city} (${departmentName}, ${department}, ${region}) et dans un rayon d'environ ${radius} km. Débouchage, curage haute pression et inspection caméra. Ligne ouverte ${availability}.`,
+    `> ${trade} à ${city} (${departmentName}, ${department}, ${region}) et dans les communes du Grand Besançon. Dépannage d'urgence et entretien annuel obligatoire. Ligne ouverte ${availability}.`,
     '',
     '## Activité',
-    `${businessName} intervient sur les canalisations bouchées à ${city} et dans les communes de l'agglomération : WC et toilettes, évier, lavabo, douche, colonne d'évacuation d'immeuble, canalisation enterrée et regard, bac à graisse de restauration. Le périmètre est le débouchage, le curage et l'inspection de réseau. Nous ne faisons pas de plomberie générale (ni robinetterie, ni chauffe-eau, ni recherche de fuite). Le tarif de la prestation est annoncé avant le début de l'intervention.`,
+    `${businessName} intervient sur les installations de chauffage et de production d'eau chaude sanitaire à ${city} et dans l'agglomération : chaudière gaz, chaudière fioul, pompe à chaleur air-eau et air-air, ballon d'eau chaude, radiateurs et circuit de chauffage central, chauffage électrique. Deux types de demandes : le dépannage d'urgence, majoritaire de novembre à février, et l'entretien annuel, qui se programme plutôt d'août à octobre. Le périmètre s'arrête au chauffage et à l'eau chaude : ni plomberie générale, ni installation électrique, ni ramonage de conduit. Le tarif de la prestation est annoncé avant le début de l'intervention.`,
     '',
-    '## Méthodes',
-    ...methods.map((m) => `- ${m}`),
+    '## Appareils pris en charge',
+    ...appareils.map((a) => `- ${a}`),
     '',
     '## Prestations',
     ...services.map((s) => `- ${s.navTitle} : ${s.metaDescription} ${absUrl(`/services/${s.slug}`)}`),
     '',
     "## Zone d'intervention",
-    `Base : ${city}. Quartiers couverts : ${serviceArea.districts.join(', ')}.`,
-    `Communes avec page dédiée (rayon d'environ ${radius} km) :`,
-    ...zones.map((z) => `- ${z.name} (${z.postalCode}) : ${absUrl(`/zones/${z.slug}`)}`),
+    `Base : ${city} (${siteConfig.legal.address.postalCode}). Quartiers couverts : ${serviceArea.districts.join(', ')}.`,
+    'Communes du Grand Besançon avec page dédiée :',
+    ...zones.map(
+      (z) =>
+        `- ${z.name} (${z.postalCode})${z.orientation ? `, ${z.orientation.toLowerCase()} de ${city}` : ''} : ${absUrl(`/zones/${z.slug}`)}`,
+    ),
+    '',
+    '## Saisonnalité',
+    "- Novembre à février : pic des pannes, chaudières très sollicitées, urgences majoritaires.",
+    "- Août à octobre : période recommandée pour l'entretien annuel, avant la remise en route.",
+    '- Mars à juillet : maintenance, désembouage de circuit, préparation et remplacement d’appareil.',
     '',
   ]
 
   if (articles.length) {
-    lines.push('## Conseils publiés')
-    lines.push(
+    lignes.push('## Conseils publiés')
+    lignes.push(
       ...articles.map((a) => `- ${a.title} : ${a.description} ${absUrl(`/conseils/${a.slug}`)}`),
     )
-    lines.push('')
+    lignes.push('')
   }
 
-  lines.push(
+  lignes.push(
     '## Contact',
     `- Téléphone : ${phoneDisplay}`,
+    `- Email : ${email}`,
     `- Site : ${base}`,
     `- Demande en ligne : ${absUrl('/contact')}`,
     '',
-    '## Bon à savoir',
+    '## Faits utiles',
+    "- L'entretien annuel des chaudières de 4 à 400 kW est une obligation réglementaire en France. Il est à la charge de l'occupant du logement, propriétaire ou locataire, et donne lieu à une attestation.",
+    "- Une mise en sécurité de chaudière est une protection, pas une panne en soi : la valeur relevée sort de sa plage. Le code affiché oriente le diagnostic.",
+    "- Le monoxyde de carbone est inodore : seul un détecteur alerte. L'entretien annuel et le contrôle de l'évacuation des fumées sont les mesures de prévention.",
+    "- En cas d'odeur de gaz, le réflexe est de couper au compteur, de ne toucher à aucun interrupteur, d'aérer, de sortir, puis d'appeler le numéro d'urgence sécurité gaz de GRDF (0 800 47 33 33).",
     "- Le prix de l'intervention est annoncé avant qu'elle commence.",
-    `- Ligne ouverte ${availability}, week-ends et jours fériés compris pour les urgences.`,
-    "- Le débouchage se fait par les accès existants (siphon, regard, tampon de dégorgement) : aucune ouverture du réseau sans explication préalable.",
-    "- En location, l'entretien courant des canalisations et le dégorgement sont à la charge du locataire (décret n° 87-712) ; un défaut de la canalisation elle-même reste à la charge du propriétaire.",
-    "- Quand plusieurs logements d'un immeuble refoulent en même temps, la cause est sur une partie commune : c'est au syndic de déclencher l'intervention.",
+    "- Ce site ne publie aucun avis client et n'est associé à aucune fiche d'établissement Google.",
     '',
   )
 
-  return new Response(lines.join('\n'), {
+  return new Response(lignes.join('\n'), {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'public, max-age=3600, s-maxage=86400',

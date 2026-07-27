@@ -11,20 +11,30 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { CtaBanner } from '@/components/ui/CtaBanner'
 
 export const metadata: Metadata = buildMetadata({
-  title: `Conseils canalisations, ${siteConfig.city} et Moselle`,
-  description: `Guides pratiques sur les canalisations bouchées : gestes à faire, causes, entretien préventif, curage et inspection caméra à ${siteConfig.city}.`,
+  title: `Conseils chauffage et chaudière, ${siteConfig.city} et le Doubs`,
+  description: `Guides pratiques sur le chauffage : entretien annuel obligatoire, pannes de chaudière, préparation de l'hiver, désembouage et pompe à chaleur à ${siteConfig.city}.`,
   path: '/conseils',
 })
 
 const MOIS = [
-  'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
-  'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre',
+  'janvier',
+  'février',
+  'mars',
+  'avril',
+  'mai',
+  'juin',
+  'juillet',
+  'août',
+  'septembre',
+  'octobre',
+  'novembre',
+  'décembre',
 ]
 
 function formatDateFr(iso: string): string {
-  const [y, m, d] = iso.split('-').map(Number)
-  if (!y || !m || !d || m < 1 || m > 12) return iso
-  return `${d} ${MOIS[m - 1]} ${y}`
+  const [a, m, j] = iso.split('-').map(Number)
+  if (!a || !m || !j || m < 1 || m > 12) return iso
+  return `${j} ${MOIS[m - 1]} ${a}`
 }
 
 export default function ConseilsListing() {
@@ -38,67 +48,77 @@ export default function ConseilsListing() {
         title={
           <>
             Comprendre
-            <span className="text-gradient-accent"> ses canalisations</span>
+            <br />
+            <span className="mot-laiton">son chauffage</span>
           </>
         }
-        subtitle="Ce qu'il faut faire, ce qu'il ne faut surtout pas faire, et comment éviter que le bouchon revienne."
+        subtitle="Ce qu’il faut vérifier avant d’appeler, ce qu’il ne faut surtout pas faire, et comment traverser l’hiver comtois sans se retrouver sans chauffage."
       />
 
-      <section className="bg-gradient-to-b from-sand-50 to-sand-100 py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <section className="bg-calcaire-neige py-14 lg:py-20">
+        <div className="enceinte">
           {articles.length === 0 ? (
-            <AnimatedSection className="mx-auto max-w-xl rounded-card border border-sand-200 bg-white p-10 text-center">
-              <p className="font-display text-2xl font-medium text-ink-950">
-                Les premiers articles arrivent bientôt
+            <AnimatedSection className="max-w-colonne rounded-socle border-l-2 border-laiton-franc bg-calcaire-voile p-8">
+              <p className="font-titre text-titre-m text-fonte-abysse">
+                Les premiers conseils arrivent bientôt
               </p>
-              <p className="mt-4 leading-relaxed text-sand-600">
-                En attendant, une question sur une canalisation qui s&apos;écoule mal&nbsp;? Appelez,
-                on vous répond directement.
+              <p className="mt-4 max-w-lecture text-lecture text-calcaire-basalte">
+                En attendant, une question sur une chaudière qui se met en sécurité ou sur des
+                radiateurs qui ne chauffent plus ? Appelez, nous répondons directement, sans passer
+                par un formulaire.
               </p>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="mt-6 inline-flex items-center gap-2 font-medium text-accent-600 transition-colors hover:text-accent-500"
+                className="chiffre group mt-6 inline-flex items-center gap-2.5 font-titre text-titre-s font-medium text-jura-dense transition-colors hover:text-jura-franc"
               >
                 {siteConfig.phoneDisplay}
-                <ArrowRight size={16} />
+                <ArrowRight
+                  size={17}
+                  className="transition-transform duration-300 ease-thermique group-hover:translate-x-1"
+                />
               </a>
             </AnimatedSection>
           ) : (
-            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {articles.map((a, idx) => (
-                <AnimatedSection key={a.slug} delay={(idx % 3) * 0.07} as="li">
+            <ul className="grid gap-px overflow-hidden rounded-socle border border-calcaire-pierre bg-calcaire-pierre md:grid-cols-2 lg:grid-cols-3">
+              {articles.map((article, i) => (
+                <AnimatedSection
+                  key={article.slug}
+                  delay={Math.min(i, 5) * 0.04}
+                  as="li"
+                  className="bg-calcaire-neige"
+                >
                   <Link
-                    href={`/conseils/${a.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-card border border-sand-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                    href={`/conseils/${article.slug}`}
+                    className="group flex h-full flex-col transition-colors duration-300 ease-thermique hover:bg-calcaire-voile"
                   >
-                    {a.cover && (
-                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-sand-100">
+                    {article.cover && (
+                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-calcaire-voile">
                         <Image
-                          src={a.cover}
+                          src={article.cover}
                           alt=""
                           fill
                           sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover transition-transform duration-500 ease-thermique group-hover:scale-105"
                         />
                       </div>
                     )}
                     <div className="flex flex-1 flex-col p-7">
-                      <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-wider text-sand-500">
-                        <time dateTime={a.date}>{formatDateFr(a.date)}</time>
-                        <span className="inline-flex items-center gap-1">
-                          <Clock size={13} />
-                          {readingTimeMinutes(a.content)} min
+                      <div className="surtitre flex items-center gap-3 text-calcaire-roche">
+                        <time dateTime={article.date}>{formatDateFr(article.date)}</time>
+                        <span className="inline-flex items-center gap-1.5">
+                          <Clock size={12} aria-hidden="true" />
+                          {readingTimeMinutes(article.content)} min
                         </span>
                       </div>
-                      <h2 className="mt-3 font-display text-xl font-medium leading-snug text-ink-950 transition-colors group-hover:text-brand-700">
-                        {a.title}
+                      <h2 className="mt-3.5 font-titre text-titre-s font-medium text-fonte-abysse transition-colors group-hover:text-jura-dense">
+                        {article.title}
                       </h2>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-sand-600">
-                        {a.description}
+                      <p className="mt-3 flex-1 text-legende leading-relaxed text-calcaire-roche">
+                        {article.description}
                       </p>
-                      <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent-600 transition-all group-hover:gap-3">
-                        Lire l&apos;article
-                        <ArrowRight size={16} />
+                      <span className="mt-6 inline-flex items-center gap-2 text-legende font-medium text-jura-dense transition-all duration-300 ease-thermique group-hover:gap-3">
+                        Lire l’article
+                        <ArrowRight size={15} />
                       </span>
                     </div>
                   </Link>

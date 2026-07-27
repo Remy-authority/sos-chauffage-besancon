@@ -5,22 +5,22 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowLeft,
   ArrowRight,
-  Building2,
+  Bath,
   CircleAlert,
-  Droplets,
-  Shovel,
-  ShowerHead,
-  Toilet,
-  TriangleAlert,
-  UtensilsCrossed,
+  Fan,
+  Flame,
+  Fuel,
+  Gauge,
+  ThermometerSnowflake,
+  Zap,
   type LucideIcon,
 } from 'lucide-react'
-import { EASE } from '@/lib/motion'
+import { COURBE } from '@/lib/motion'
 import { siteConfig } from '@/config/site.config'
 
-type Step = 1 | 2 | 3
+type Etape = 1 | 2 | 3
 
-interface Fields {
+interface Champs {
   probleme: string
   ville: string
   urgence: string
@@ -30,51 +30,57 @@ interface Fields {
   message: string
 }
 
-/** Les huit situations qui couvrent la quasi-totalité des appels débouchage. */
-const TYPES: { id: string; label: string; Icon: LucideIcon }[] = [
-  { id: 'WC ou toilettes bouchés', label: 'WC, toilettes', Icon: Toilet },
-  { id: 'Évier ou lavabo bouché', label: 'Évier, lavabo', Icon: Droplets },
-  { id: 'Douche ou baignoire bouchée', label: 'Douche, baignoire', Icon: ShowerHead },
-  { id: 'Odeurs ou refoulement', label: 'Odeurs, refoulement', Icon: TriangleAlert },
-  { id: 'Canalisation enterrée ou regard', label: 'Regard, enterré', Icon: Shovel },
-  { id: "Colonne d'immeuble ou copropriété", label: "Colonne d'immeuble", Icon: Building2 },
-  { id: 'Bac à graisse (professionnel)', label: 'Bac à graisse', Icon: UtensilsCrossed },
-  { id: 'Autre', label: 'Autre situation', Icon: CircleAlert },
+/** Les huit situations qui couvrent la quasi-totalité des appels chauffage. */
+const SITUATIONS: { id: string; label: string; Icone: LucideIcon }[] = [
+  { id: 'Chaudière gaz en panne', label: 'Chaudière gaz', Icone: Flame },
+  { id: 'Chaudière fioul en panne', label: 'Chaudière fioul', Icone: Fuel },
+  { id: 'Radiateurs froids', label: 'Radiateurs froids', Icone: ThermometerSnowflake },
+  { id: "Plus d'eau chaude", label: 'Plus d’eau chaude', Icone: Bath },
+  { id: 'Pompe à chaleur en panne', label: 'Pompe à chaleur', Icone: Fan },
+  { id: 'Chauffage électrique', label: 'Chauffage électrique', Icone: Zap },
+  { id: 'Entretien annuel à programmer', label: 'Entretien annuel', Icone: Gauge },
+  { id: 'Autre situation', label: 'Autre situation', Icone: CircleAlert },
 ]
 
-function ProgressBar({ step }: { step: Step }) {
+const URGENCES = ['C’est urgent', 'Dans la journée', 'Cette semaine', 'Je planifie']
+
+function Jauge({ etape }: { etape: Etape }) {
   return (
-    <div className="flex items-center justify-between gap-4">
-      <div className="flex flex-1 gap-2">
-        {([1, 2, 3] as Step[]).map((s) => (
+    <div className="flex items-center gap-4">
+      <div className="flex flex-1 gap-1.5">
+        {([1, 2, 3] as Etape[]).map((e) => (
           <span
-            key={s}
-            className={`h-1 flex-1 rounded-full transition-all duration-500 ${
-              s < step ? 'bg-accent-500/60' : s === step ? 'bg-accent-500' : 'bg-white/15'
+            key={e}
+            className={`h-1 flex-1 rounded-jauge transition-all duration-500 ease-thermique ${
+              e < etape
+                ? 'bg-laiton-patine'
+                : e === etape
+                  ? 'bg-laiton-franc'
+                  : 'bg-calcaire-neige/15'
             }`}
           />
         ))}
       </div>
-      <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.18em] text-sand-400">
-        Étape {step} sur 3
+      <span className="surtitre chiffre shrink-0 text-calcaire-ombre">
+        {etape} / 3
       </span>
     </div>
   )
 }
 
-const inputClass =
-  'w-full rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-3.5 text-sand-50 placeholder:text-sand-500 transition-colors focus:border-accent-400 focus:outline-none focus:ring-2 focus:ring-accent-500/25'
-const labelClass = 'mb-1.5 block text-sm font-medium text-sand-200'
+const classeChamp =
+  'w-full rounded-module border border-calcaire-neige/15 bg-calcaire-neige/[0.05] px-4 py-3 text-calcaire-neige placeholder:text-calcaire-roche transition-colors focus:border-laiton-franc focus:outline-none focus:ring-2 focus:ring-laiton-franc/25'
+const classeEtiquette = 'mb-1.5 block text-legende font-medium text-calcaire-brume'
 
-const stepVariants = {
-  enter: { opacity: 0, x: 24 },
-  center: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -24 },
+const variantesEtape = {
+  entree: { opacity: 0, x: 16 },
+  centre: { opacity: 1, x: 0 },
+  sortie: { opacity: 0, x: -16 },
 }
 
 export function LeadForm() {
-  const [step, setStep] = useState<Step>(1)
-  const [fields, setFields] = useState<Fields>({
+  const [etape, setEtape] = useState<Etape>(1)
+  const [champs, setChamps] = useState<Champs>({
     probleme: '',
     ville: '',
     urgence: '',
@@ -83,37 +89,37 @@ export function LeadForm() {
     email: '',
     message: '',
   })
-  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle')
+  const [statut, setStatut] = useState<'repos' | 'envoi' | 'erreur'>('repos')
 
-  function set<K extends keyof Fields>(key: K, value: Fields[K]) {
-    setFields((prev) => ({ ...prev, [key]: value }))
+  function definir<K extends keyof Champs>(cle: K, valeur: Champs[K]) {
+    setChamps((prec) => ({ ...prec, [cle]: valeur }))
   }
 
-  async function submit() {
-    setStatus('sending')
+  async function envoyer() {
+    setStatut('envoi')
     try {
-      const res = await fetch('/api/contact', {
+      const reponse = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...fields, company: '' }),
+        body: JSON.stringify({ ...champs, company: '' }),
       })
-      if (!res.ok) throw new Error()
+      if (!reponse.ok) throw new Error()
       window.location.href = '/merci'
     } catch {
-      setStatus('error')
+      setStatut('erreur')
     }
   }
 
+  const boutonSuivant =
+    'inline-flex min-h-[48px] items-center gap-2 rounded-module px-6 text-sm font-semibold transition-all duration-300 ease-thermique'
+
   return (
     <div
-      className="noise-overlay relative overflow-hidden rounded-panel border border-brand-400/20 bg-gradient-to-br from-ink-900 to-ink-950 p-6 md:p-9"
+      className="grain relative overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-coulee p-6 shadow-releve md:p-9"
       role="region"
       aria-label="Formulaire de demande"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgb(var(--c-brand-500)/0.2),transparent_58%)]"
-      />
+      <div aria-hidden="true" className="trame-graduee-fine absolute inset-0 opacity-60" />
 
       <div className="relative">
         {/* Piège à robots, invisible pour les humains. */}
@@ -121,41 +127,43 @@ export function LeadForm() {
           <input type="text" name="company" tabIndex={-1} autoComplete="off" readOnly />
         </div>
 
-        <ProgressBar step={step} />
+        <Jauge etape={etape} />
 
         <AnimatePresence mode="wait">
-          {step === 1 && (
+          {etape === 1 && (
             <motion.div
-              key="step1"
-              variants={stepVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.3, ease: EASE }}
+              key="etape1"
+              variants={variantesEtape}
+              initial="entree"
+              animate="centre"
+              exit="sortie"
+              transition={{ duration: 0.28, ease: COURBE }}
             >
-              <h2 className="mt-6 text-2xl text-sand-50 md:text-3xl">Qu&apos;est-ce qui est bouché ?</h2>
-              <p className="mt-2 text-sm text-sand-400">
+              <h2 className="mt-7 text-titre-m text-calcaire-neige">
+                Qu’est-ce qui ne chauffe plus ?
+              </h2>
+              <p className="mt-2 text-legende text-calcaire-ombre">
                 Choisissez la situation la plus proche de la vôtre.
               </p>
 
-              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {TYPES.map(({ id, label, Icon }) => {
-                  const selected = fields.probleme === id
+              <div className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+                {SITUATIONS.map(({ id, label, Icone }) => {
+                  const choisi = champs.probleme === id
                   return (
                     <button
                       key={id}
                       type="button"
-                      onClick={() => set('probleme', id)}
-                      aria-pressed={selected}
-                      className={`flex min-h-[96px] flex-col items-center justify-center gap-2.5 rounded-2xl border p-3 text-center text-xs font-medium leading-tight transition-all duration-200 ${
-                        selected
-                          ? 'border-accent-400 bg-accent-500/20 text-sand-50'
-                          : 'border-white/10 bg-white/[0.04] text-sand-300 hover:border-white/25 hover:bg-white/[0.08] hover:text-sand-50'
+                      onClick={() => definir('probleme', id)}
+                      aria-pressed={choisi}
+                      className={`flex min-h-[94px] flex-col items-start justify-between gap-3 rounded-module border p-3.5 text-left text-legende font-medium leading-tight transition-all duration-300 ease-thermique ${
+                        choisi
+                          ? 'border-laiton-franc bg-laiton-franc/15 text-calcaire-neige'
+                          : 'border-calcaire-neige/10 bg-calcaire-neige/[0.03] text-calcaire-brume hover:border-calcaire-neige/25 hover:bg-calcaire-neige/[0.07]'
                       }`}
                     >
-                      <Icon
-                        className={`h-6 w-6 ${selected ? 'text-accent-400' : 'text-brand-300'}`}
-                        strokeWidth={1.9}
+                      <Icone
+                        className={`h-5 w-5 ${choisi ? 'text-laiton-clair' : 'text-jura-mousse'}`}
+                        strokeWidth={1.7}
                         aria-hidden="true"
                       />
                       {label}
@@ -167,38 +175,40 @@ export function LeadForm() {
               <div className="mt-7 flex justify-end">
                 <button
                   type="button"
-                  onClick={() => setStep(2)}
-                  disabled={!fields.probleme}
-                  className={`inline-flex min-h-[48px] items-center gap-2 rounded-full px-7 text-sm font-semibold transition-all ${
-                    fields.probleme
-                      ? 'bg-accent-500 text-white hover:bg-accent-400'
-                      : 'cursor-not-allowed bg-white/10 text-sand-500'
+                  onClick={() => setEtape(2)}
+                  disabled={!champs.probleme}
+                  className={`${boutonSuivant} ${
+                    champs.probleme
+                      ? 'bg-laiton-franc text-fonte-abysse hover:bg-laiton-clair'
+                      : 'cursor-not-allowed bg-calcaire-neige/10 text-calcaire-roche'
                   }`}
                 >
                   Continuer
-                  <ArrowRight size={16} strokeWidth={2.5} />
+                  <ArrowRight size={16} strokeWidth={2.4} />
                 </button>
               </div>
             </motion.div>
           )}
 
-          {step === 2 && (
+          {etape === 2 && (
             <motion.div
-              key="step2"
-              variants={stepVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.3, ease: EASE }}
+              key="etape2"
+              variants={variantesEtape}
+              initial="entree"
+              animate="centre"
+              exit="sortie"
+              transition={{ duration: 0.28, ease: COURBE }}
             >
-              <h2 className="mt-6 text-2xl text-sand-50 md:text-3xl">Où, et à quel point c&apos;est pressé ?</h2>
-              <p className="mt-2 text-sm text-sand-400">
-                Cela nous permet de vous situer dans notre planning.
+              <h2 className="mt-7 text-titre-m text-calcaire-neige">
+                Où, et à quel point c’est pressé ?
+              </h2>
+              <p className="mt-2 text-legende text-calcaire-ombre">
+                Cela nous permet de vous situer dans le planning en cours.
               </p>
 
               <div className="mt-6 space-y-5">
                 <div>
-                  <label htmlFor="ville" className={labelClass}>
+                  <label htmlFor="ville" className={classeEtiquette}>
                     Commune ou code postal
                   </label>
                   <input
@@ -206,29 +216,29 @@ export function LeadForm() {
                     name="ville"
                     type="text"
                     autoComplete="postal-code"
-                    placeholder="Metz, Montigny-lès-Metz, 57000…"
-                    value={fields.ville}
-                    onChange={(e) => set('ville', e.target.value)}
-                    className={inputClass}
+                    placeholder="Besançon, Saint-Vit, 25000…"
+                    value={champs.ville}
+                    onChange={(e) => definir('ville', e.target.value)}
+                    className={classeChamp}
                   />
                 </div>
 
                 <fieldset>
-                  <legend className={labelClass}>Degré d&apos;urgence</legend>
-                  <div className="flex flex-wrap gap-3">
-                    {["C'est urgent", 'Dans la journée', 'Cette semaine'].map((value) => (
+                  <legend className={classeEtiquette}>Degré d’urgence</legend>
+                  <div className="flex flex-wrap gap-2.5">
+                    {URGENCES.map((valeur) => (
                       <button
-                        key={value}
+                        key={valeur}
                         type="button"
-                        onClick={() => set('urgence', value)}
-                        aria-pressed={fields.urgence === value}
-                        className={`min-h-[44px] rounded-full border px-5 text-sm font-semibold transition-all ${
-                          fields.urgence === value
-                            ? 'border-accent-400 bg-accent-500 text-white'
-                            : 'border-white/20 text-sand-300 hover:border-white/40 hover:text-sand-50'
+                        onClick={() => definir('urgence', valeur)}
+                        aria-pressed={champs.urgence === valeur}
+                        className={`min-h-[44px] rounded-module border px-4 text-legende font-semibold transition-all duration-300 ease-thermique ${
+                          champs.urgence === valeur
+                            ? 'border-laiton-franc bg-laiton-franc text-fonte-abysse'
+                            : 'border-calcaire-neige/20 text-calcaire-brume hover:border-calcaire-neige/40 hover:text-calcaire-neige'
                         }`}
                       >
-                        {value}
+                        {valeur}
                       </button>
                     ))}
                   </div>
@@ -238,49 +248,48 @@ export function LeadForm() {
               <div className="mt-7 flex items-center justify-between">
                 <button
                   type="button"
-                  onClick={() => setStep(1)}
-                  className="inline-flex min-h-[44px] items-center gap-1.5 text-sm text-sand-400 transition-colors hover:text-sand-50"
+                  onClick={() => setEtape(1)}
+                  className="inline-flex min-h-[44px] items-center gap-1.5 text-legende text-calcaire-ombre transition-colors hover:text-calcaire-neige"
                 >
-                  <ArrowLeft size={16} strokeWidth={2.5} />
+                  <ArrowLeft size={16} strokeWidth={2.4} />
                   Retour
                 </button>
                 <button
                   type="button"
-                  onClick={() => setStep(3)}
-                  disabled={!fields.ville || !fields.urgence}
-                  className={`inline-flex min-h-[48px] items-center gap-2 rounded-full px-7 text-sm font-semibold transition-all ${
-                    fields.ville && fields.urgence
-                      ? 'bg-accent-500 text-white hover:bg-accent-400'
-                      : 'cursor-not-allowed bg-white/10 text-sand-500'
+                  onClick={() => setEtape(3)}
+                  disabled={!champs.ville || !champs.urgence}
+                  className={`${boutonSuivant} ${
+                    champs.ville && champs.urgence
+                      ? 'bg-laiton-franc text-fonte-abysse hover:bg-laiton-clair'
+                      : 'cursor-not-allowed bg-calcaire-neige/10 text-calcaire-roche'
                   }`}
                 >
                   Continuer
-                  <ArrowRight size={16} strokeWidth={2.5} />
+                  <ArrowRight size={16} strokeWidth={2.4} />
                 </button>
               </div>
             </motion.div>
           )}
 
-          {step === 3 && (
+          {etape === 3 && (
             <motion.div
-              key="step3"
-              variants={stepVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.3, ease: EASE }}
+              key="etape3"
+              variants={variantesEtape}
+              initial="entree"
+              animate="centre"
+              exit="sortie"
+              transition={{ duration: 0.28, ease: COURBE }}
             >
-              <h2 className="mt-6 text-2xl text-sand-50 md:text-3xl">Comment vous joindre ?</h2>
-              <p className="mt-2 text-sm text-sand-400">
-                Nous vous rappelons dès que possible. Pour une urgence, l&apos;appel reste le plus
-                rapide.
+              <h2 className="mt-7 text-titre-m text-calcaire-neige">Comment vous joindre ?</h2>
+              <p className="mt-2 text-legende text-calcaire-ombre">
+                Nous vous rappelons dès que possible. Pour une urgence, l’appel reste le plus rapide.
               </p>
 
               <div className="mt-6 space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="nom" className={labelClass}>
-                      Nom <span className="text-accent-400">*</span>
+                    <label htmlFor="nom" className={classeEtiquette}>
+                      Nom <span className="text-laiton-clair">*</span>
                     </label>
                     <input
                       id="nom"
@@ -289,14 +298,14 @@ export function LeadForm() {
                       required
                       autoComplete="name"
                       placeholder="Votre nom"
-                      value={fields.nom}
-                      onChange={(e) => set('nom', e.target.value)}
-                      className={inputClass}
+                      value={champs.nom}
+                      onChange={(e) => definir('nom', e.target.value)}
+                      className={classeChamp}
                     />
                   </div>
                   <div>
-                    <label htmlFor="telephone" className={labelClass}>
-                      Téléphone <span className="text-accent-400">*</span>
+                    <label htmlFor="telephone" className={classeEtiquette}>
+                      Téléphone <span className="text-laiton-clair">*</span>
                     </label>
                     <input
                       id="telephone"
@@ -306,16 +315,16 @@ export function LeadForm() {
                       autoComplete="tel"
                       inputMode="tel"
                       placeholder="06 00 00 00 00"
-                      value={fields.telephone}
-                      onChange={(e) => set('telephone', e.target.value)}
-                      className={inputClass}
+                      value={champs.telephone}
+                      onChange={(e) => definir('telephone', e.target.value)}
+                      className={classeChamp}
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className={labelClass}>
-                    Email <span className="text-xs font-normal text-sand-500">(optionnel)</span>
+                  <label htmlFor="email" className={classeEtiquette}>
+                    Email <span className="text-calcaire-roche">(optionnel)</span>
                   </label>
                   <input
                     id="email"
@@ -323,66 +332,66 @@ export function LeadForm() {
                     type="email"
                     autoComplete="email"
                     placeholder="vous@exemple.fr"
-                    value={fields.email}
-                    onChange={(e) => set('email', e.target.value)}
-                    className={inputClass}
+                    value={champs.email}
+                    onChange={(e) => definir('email', e.target.value)}
+                    className={classeChamp}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className={labelClass}>
-                    Précisions <span className="text-xs font-normal text-sand-500">(optionnel)</span>
+                  <label htmlFor="message" className={classeEtiquette}>
+                    Précisions <span className="text-calcaire-roche">(optionnel)</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={3}
-                    placeholder="Depuis quand, quels appareils sont touchés, maison ou appartement…"
-                    value={fields.message}
-                    onChange={(e) => set('message', e.target.value)}
-                    className={`${inputClass} resize-none`}
+                    placeholder="Marque et âge de l’appareil, code erreur affiché, maison ou appartement…"
+                    value={champs.message}
+                    onChange={(e) => definir('message', e.target.value)}
+                    className={`${classeChamp} resize-none`}
                   />
                 </div>
               </div>
 
-              <p className="mt-4 text-xs leading-relaxed text-sand-500">
-                En envoyant ce formulaire, vous acceptez d&apos;être recontacté au sujet de votre
+              <p className="mt-4 text-legende leading-relaxed text-calcaire-roche">
+                En envoyant ce formulaire, vous acceptez d’être recontacté au sujet de votre
                 demande. Vos données ne sont pas revendues, voir notre{' '}
                 <a
                   href="/politique-confidentialite"
-                  className="underline transition-colors hover:text-sand-300"
+                  className="underline underline-offset-4 transition-colors hover:text-calcaire-brume"
                 >
                   politique de confidentialité
                 </a>
                 .
               </p>
 
-              {status === 'error' && (
-                <p role="alert" className="mt-4 text-sm font-medium text-accent-300">
-                  L&apos;envoi a échoué. Appelez-nous directement au {siteConfig.phoneDisplay}.
+              {statut === 'erreur' && (
+                <p role="alert" className="mt-4 text-legende font-medium text-laiton-clair">
+                  L’envoi a échoué. Appelez-nous directement au {siteConfig.phoneDisplay}.
                 </p>
               )}
 
               <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <button
                   type="button"
-                  onClick={() => setStep(2)}
-                  className="inline-flex min-h-[44px] items-center justify-center gap-1.5 text-sm text-sand-400 transition-colors hover:text-sand-50 sm:justify-start"
+                  onClick={() => setEtape(2)}
+                  className="inline-flex min-h-[44px] items-center justify-center gap-1.5 text-legende text-calcaire-ombre transition-colors hover:text-calcaire-neige sm:justify-start"
                 >
-                  <ArrowLeft size={16} strokeWidth={2.5} />
+                  <ArrowLeft size={16} strokeWidth={2.4} />
                   Retour
                 </button>
                 <button
                   type="button"
-                  onClick={submit}
-                  disabled={!fields.nom || !fields.telephone || status === 'sending'}
-                  className={`inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full px-8 font-semibold transition-all sm:w-auto ${
-                    !fields.nom || !fields.telephone || status === 'sending'
-                      ? 'cursor-not-allowed bg-white/10 text-sand-500'
-                      : 'bg-accent-500 text-white hover:bg-accent-400 hover:shadow-glow'
+                  onClick={envoyer}
+                  disabled={!champs.nom || !champs.telephone || statut === 'envoi'}
+                  className={`inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-module px-8 font-semibold transition-all duration-300 ease-thermique sm:w-auto ${
+                    !champs.nom || !champs.telephone || statut === 'envoi'
+                      ? 'cursor-not-allowed bg-calcaire-neige/10 text-calcaire-roche'
+                      : 'bg-laiton-franc text-fonte-abysse shadow-halo-laiton hover:bg-laiton-clair'
                   }`}
                 >
-                  {status === 'sending' ? 'Envoi en cours…' : 'Envoyer ma demande'}
+                  {statut === 'envoi' ? 'Envoi en cours…' : 'Envoyer ma demande'}
                 </button>
               </div>
             </motion.div>

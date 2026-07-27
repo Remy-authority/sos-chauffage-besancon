@@ -1,36 +1,50 @@
 import { siteConfig } from '@/config/site.config'
 
 /**
- * Identité visuelle du site : un pictogramme de siphon (le coude en U sous chaque
- * évier) traversé par un filet de vermillon qui figure l'écoulement retrouvé.
- * Le bloc-marque teal reste lisible aussi bien sur le crème clair que sur le
- * pétrole sombre : un seul jeu de couleurs pour tous les fonds.
+ * Marque du site, template T3.
  *
- * Le pictogramme est en SVG, le nom en HTML : la typographie Fraunces du site
- * s'applique donc réellement au mot-symbole (pas de police système figée).
+ * Pictogramme : un cadran gradué dont l'aiguille est montée en température,
+ * posé dans une plaque à coins courts. Deux lectures superposées, le thermostat
+ * du chauffagiste et le cadran horloger de Besançon, capitale du temps. Aucune
+ * flamme : la chaleur est dite par l'aiguille et le laiton, pas par le feu.
+ *
+ * Le pictogramme est en SVG, le nom en HTML : la typographie du site s'applique
+ * donc réellement au mot-symbole.
  */
-export function LogoMark({ className = 'h-11 w-11' }: { className?: string }) {
+export function LogoMark({ className = 'h-10 w-10' }: { className?: string }) {
   return (
     <svg viewBox="0 0 48 48" className={className} aria-hidden="true" focusable="false">
-      <rect width="48" height="48" rx="14" className="fill-brand-600" />
-      {/* Siphon : descente, coude en U, remontée. */}
+      <rect width="48" height="48" rx="6" className="fill-jura-sombre" />
+
+      {/* Arc du cadran */}
       <path
-        d="M14 12 V25 a10 10 0 0 0 20 0 V16"
+        d="M10.8 25.2 A14 14 0 0 1 37.2 25.2"
         fill="none"
-        strokeWidth="5"
+        strokeWidth="1.6"
         strokeLinecap="round"
-        className="stroke-sand-50"
+        className="stroke-calcaire-neige/45"
       />
-      {/* Filet d'écoulement qui entre dans le siphon. */}
+
+      {/* Graduations */}
+      <g strokeWidth="1.8" strokeLinecap="round" className="stroke-calcaire-neige/70">
+        <path d="M10.8 25.2 L14.6 26.6" />
+        <path d="M15.0 19.3 L17.6 22.3" />
+        <path d="M24 16 L24 20" />
+      </g>
+      <g strokeWidth="1.8" strokeLinecap="round" className="stroke-laiton-clair">
+        <path d="M33.0 19.3 L30.4 22.3" />
+        <path d="M37.2 25.2 L33.4 26.6" />
+      </g>
+
+      {/* Aiguille montée en température */}
       <path
-        d="M14 11 V18"
+        d="M24 30 L30.3 21"
         fill="none"
-        strokeWidth="5"
+        strokeWidth="2.6"
         strokeLinecap="round"
-        className="stroke-accent-400"
+        className="stroke-laiton-clair"
       />
-      {/* Sortie côté évacuation. */}
-      <circle cx="34" cy="16" r="2.6" className="fill-accent-400" />
+      <circle cx="24" cy="30" r="2.4" className="fill-laiton-franc" />
     </svg>
   )
 }
@@ -39,25 +53,25 @@ export function Logo({
   tone = 'dark',
   className = '',
 }: {
-  /** `dark` : texte encre sur fond clair. `light` : texte crème sur fond sombre. */
+  /** `dark` : texte fonte sur fond clair. `light` : texte calcaire sur fond sombre. */
   tone?: 'dark' | 'light'
   className?: string
 }) {
-  const light = tone === 'light'
+  const clair = tone === 'light'
   return (
     <span className={`flex items-center gap-3 ${className}`}>
-      <LogoMark className="h-11 w-11 shrink-0" />
+      <LogoMark className="h-10 w-10 shrink-0" />
       <span className="flex flex-col leading-none">
         <span
-          className={`font-display text-[1.0625rem] font-medium tracking-tight ${
-            light ? 'text-sand-50' : 'text-ink-950'
+          className={`font-titre text-[1.0625rem] font-semibold tracking-tight ${
+            clair ? 'text-calcaire-neige' : 'text-fonte-abysse'
           }`}
         >
-          SOS Débouchage
+          SOS Chauffage
         </span>
         <span
-          className={`mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] ${
-            light ? 'text-accent-300' : 'text-accent-600'
+          className={`surtitre mt-1.5 ${
+            clair ? 'text-laiton-clair' : 'text-laiton-patine'
           }`}
         >
           {siteConfig.city} · {siteConfig.departmentName}

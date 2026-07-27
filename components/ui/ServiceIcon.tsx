@@ -1,63 +1,67 @@
 import {
   BadgeCheck,
-  Building2,
-  Camera,
-  Clock,
-  Euro,
+  Bath,
+  Fan,
+  Flame,
+  Fuel,
   Gauge,
-  Phone,
-  Search,
-  ShieldCheck,
-  ShowerHead,
-  Shovel,
-  Star,
-  Toilet,
-  TriangleAlert,
-  UtensilsCrossed,
+  Hammer,
+  PhoneCall,
+  Radiation,
+  Snowflake,
+  Stethoscope,
+  Thermometer,
+  ThermometerSnowflake,
+  Timer,
   Waves,
   Wrench,
+  Zap,
   type LucideIcon,
 } from 'lucide-react'
 
 /**
- * Table de correspondance entre les clés `icon` du contenu JSON / de la config et
- * les pictogrammes. Le contenu ne connaît jamais lucide-react : un site N+1 change
- * de métier en changeant cette table, pas les fichiers de contenu.
+ * Correspondance entre les clés `icon` du contenu JSON / de la config et les
+ * pictogrammes. Le contenu ne connaît jamais lucide-react : la table est le seul
+ * point de contact entre le vocabulaire métier et la bibliothèque d'icônes.
  */
-const ICONS: Record<string, LucideIcon> = {
-  // Services
-  alert: TriangleAlert,
-  wc: Toilet,
-  shower: ShowerHead,
-  pressure: Gauge,
-  camera: Camera,
-  buried: Shovel,
-  grease: UtensilsCrossed,
-  building: Building2,
-  // Étapes et arguments
-  phone: Phone,
-  search: Search,
-  tool: Wrench,
-  check: BadgeCheck,
-  shield: ShieldCheck,
-  clock: Clock,
-  euro: Euro,
-  star: Star,
+const PICTOGRAMMES: Record<string, LucideIcon> = {
+  // Prestations
+  'chaudiere-gaz': Flame,
+  'chaudiere-fioul': Fuel,
+  entretien: BadgeCheck,
+  electrique: Zap,
+  pac: Fan,
+  ballon: Bath,
+  desembouage: Waves,
+  remplacement: Hammer,
+  // Symptômes et repères
+  froid: ThermometerSnowflake,
+  securite: Radiation,
+  bruit: Waves,
+  pression: Gauge,
+  odeur: Stethoscope,
+  thermometre: Thermometer,
+  gel: Snowflake,
+  appel: PhoneCall,
+  outil: Wrench,
+  delai: Timer,
 }
 
 export function resolveIcon(icon: string): LucideIcon {
-  return ICONS[icon] ?? Waves
+  return PICTOGRAMMES[icon] ?? Thermometer
 }
 
 export function ServiceIcon({
   icon,
   className = 'h-6 w-6',
-  strokeWidth = 1.9,
+  strokeWidth = 1.6,
 }: {
   icon: string
   className?: string
   strokeWidth?: number
 }) {
-  const Icon = resolveIcon(icon)
-  return <Icon className={className} strokeWidth={strokeWidth} aria-hidden="true" />
+  const Icone = resolveIcon(icon)
+  return <Icone className={className} strokeWidth={strokeWidth} aria-hidden="true" />
 }
+
+export default ServiceIcon

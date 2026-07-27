@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react'
-import { GradientBlob } from '@/components/ui/GradientBlob'
+import { HaloThermique } from '@/components/ui/HaloThermique'
 
 /**
- * Bandeau d'en-tête sombre des pages internes. Reprend le traitement du hero
- * (fond pétrole, grille masquée, halo animé) en version courte : c'est ce qui fait
- * qu'une page zone ou un article restent visuellement dans le même monde que
- * l'accueil, au lieu de repartir sur une page blanche générique.
+ * En-tête sombre des pages internes. Reprend le traitement du hero (fonte,
+ * trame graduée, halo) en version courte : une page commune ou un article
+ * restent dans le même monde visuel que l'accueil, au lieu de repartir sur une
+ * page neutre. Alignement à gauche par défaut, comme le reste du template.
  */
 export function PageHeader({
   eyebrow,
   title,
   subtitle,
-  align = 'center',
+  align = 'left',
   children,
 }: {
   eyebrow?: string
@@ -20,34 +20,42 @@ export function PageHeader({
   align?: 'left' | 'center'
   children?: ReactNode
 }) {
-  return (
-    <section className="noise-overlay relative overflow-hidden bg-gradient-to-b from-ink-950 via-ink-900 to-ink-950 pb-20 pt-32 lg:pb-24 lg:pt-40">
-      <div aria-hidden="true" className="bg-grid absolute inset-0" />
-      <GradientBlob className="-right-32 -top-24" color="brand" size={520} intensity="normal" duration={20} />
-      <GradientBlob className="-bottom-20 -left-40" color="accent" size={380} intensity="subtle" duration={16} />
+  const centre = align === 'center'
 
-      <div
-        className={`relative mx-auto max-w-4xl px-6 lg:px-10 ${
-          align === 'center' ? 'text-center' : 'text-left'
-        }`}
-      >
-        {eyebrow && (
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent-400">
-            {eyebrow}
-          </p>
-        )}
-        <h1 className="text-4xl leading-[1.1] text-sand-50 md:text-5xl lg:text-6xl">{title}</h1>
-        {subtitle && (
-          <p
-            className={`mt-6 text-lg leading-relaxed text-sand-200 md:text-xl ${
-              align === 'center' ? 'mx-auto max-w-2xl' : 'max-w-2xl'
-            }`}
-          >
-            {subtitle}
-          </p>
-        )}
-        {children}
+  return (
+    <section className="grain relative overflow-hidden bg-fonte-nuit pb-16 pt-32 lg:pb-20 lg:pt-40">
+      <div aria-hidden="true" className="trame-graduee absolute inset-0 opacity-70" />
+      <div aria-hidden="true" className="trame-atelier absolute inset-0" />
+      <HaloThermique className="-right-24 -top-20" teinte="jura" taille={480} />
+      <HaloThermique className="-bottom-24 left-0" teinte="laiton" taille={340} decalage={-11} />
+
+      <div className={`enceinte relative ${centre ? 'text-center' : 'text-left'}`}>
+        <div className={`max-w-colonne ${centre ? 'mx-auto' : ''}`}>
+          {eyebrow && (
+            <p
+              className={`surtitre mb-5 flex items-center gap-3 text-laiton-clair ${
+                centre ? 'justify-center' : ''
+              }`}
+            >
+              <span aria-hidden="true" className="h-px w-8 bg-laiton-franc" />
+              {eyebrow}
+            </p>
+          )}
+          <h1 className="text-titre-l text-calcaire-neige md:text-titre-xl">{title}</h1>
+          {subtitle && (
+            <p
+              className={`mt-5 max-w-lecture text-chapo text-calcaire-brume ${
+                centre ? 'mx-auto' : ''
+              }`}
+            >
+              {subtitle}
+            </p>
+          )}
+          {children}
+        </div>
       </div>
     </section>
   )
 }
+
+export default PageHeader

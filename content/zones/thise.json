@@ -1,0 +1,44 @@
+{
+  "slug": "thise",
+  "name": "Thise",
+  "postalCode": "25220",
+  "orientation": "Nord-est",
+  "context": "Commune du nord-est de l'agglomération, connue pour son aérodrome, avec une nette dominante de maisons individuelles.",
+  "metaTitle": "Dépannage chauffage à Thise, chauffagiste urgence",
+  "metaDescription": "Chauffagiste à Thise (25220) : dépannage de chaudière, radiateurs froids, plus d'eau chaude, entretien annuel. Intervention 7j/7 sur le Grand Besançon.",
+  "h1": "Chauffagiste dépannage à Thise, urgence chauffage",
+  "intro": "Nous intervenons à Thise (25220) pour toutes les pannes de chauffage et de production d'eau chaude, ainsi que pour l'entretien annuel obligatoire. Située au nord-est de Besançon, la commune est largement composée de maisons individuelles, avec un parc d'installations dont une partie a plusieurs décennies de service. C'est ce qui explique la nature des demandes que nous y recevons.",
+  "blocks": [
+    {
+      "heading": "Un parc de chaudières qui arrive à maturité",
+      "body": "Beaucoup de pavillons de Thise ont été construits ou équipés à une époque où l'on posait des chaudières prévues pour durer, et une part d'entre elles est toujours en service. Ces appareils tiennent, mais ils entrent dans la zone où trois difficultés se cumulent : les pièces détachées se raréfient et allongent les délais d'immobilisation, le rendement décroche par rapport aux appareils actuels, et les pannes se rapprochent d'une saison à l'autre. Nous les dépannons volontiers, mais nous vous disons aussi franchement quand la succession des réparations commence à coûter plus cher que le remplacement, y compris quand la réponse est qu'il reste encore plusieurs bonnes saisons."
+    },
+    {
+      "heading": "La maison individuelle change le diagnostic",
+      "body": "Dans un pavillon, l'ensemble du circuit vous appartient, de la chaudière au dernier radiateur : il n'y a pas de partie commune, donc pas d'interlocuteur intermédiaire, et le diagnostic peut porter d'emblée sur toute l'installation. C'est un avantage. Le revers est que les défauts de circulation s'y installent sans que personne ne les signale, contrairement à un immeuble où plusieurs occupants remontent le même symptôme. Le point à surveiller est le comportement des radiateurs éloignés de la chaudière, souvent à l'étage ou en bout de circuit : quand ils cessent de monter en température, c'est l'équilibrage ou l'embouage qui est en cause, pas l'appareil."
+    },
+    {
+      "heading": "Préparer l'hiver avant qu'il commence",
+      "body": "1. Faites réaliser l'entretien annuel entre août et octobre, avant que la chaudière ne tourne en continu. 2. Relevez la pression du circuit sur le manomètre de la chaudière et notez la valeur : c'est votre point de référence pour repérer une fuite lente. 3. Purgez les radiateurs qui gargouillent ou qui restent froids en partie haute, avant la première mise en chauffe. 4. Faites tourner l'installation une journée complète en septembre, à consigne normale, pour repérer les émetteurs qui ne suivent pas. 5. Vérifiez que votre détecteur de monoxyde de carbone fonctionne, et posez-en un si vous n'en avez pas : ce gaz est inodore, aucun symptôme ne le signale avant l'intoxication."
+    }
+  ],
+  "neighbours": ["Besançon", "Roche-lez-Beaupré", "Marchaux-Chaudefontaine"],
+  "faq": [
+    {
+      "q": "Combien de temps faut-il pour intervenir à Thise ?",
+      "a": "Le délai dépend du planning en cours, pas de la distance : Thise est à quelques minutes de Besançon. Nous vous annonçons un créneau réaliste au moment de l'appel plutôt qu'une promesse générique. En pleine vague de froid, les urgences avec logement non chauffé passent en priorité, ce que nous vous disons clairement si votre situation peut attendre."
+    },
+    {
+      "q": "Ma chaudière a plus de vingt ans, faut-il la remplacer ?",
+      "a": "Pas automatiquement. Regardez trois choses : la disponibilité des pièces détachées, le nombre de pannes sur les deux dernières saisons de chauffe, et l'évolution de votre consommation à usage constant. Une chaudière ancienne bien entretenue et sans panne récurrente peut encore servir plusieurs années. C'est le cumul des trois signaux qui fait basculer le calcul."
+    },
+    {
+      "q": "Mes radiateurs à l'étage chauffent moins que ceux du bas, pourquoi ?",
+      "a": "Deux causes possibles, et elles se distinguent au toucher. Si le radiateur est chaud en bas et froid en haut, c'est de l'air : une purge suffit. S'il est chaud en haut et froid en bas, ce sont des boues déposées par gravité, et il faut désembouer le circuit. Un défaut d'équilibrage entre les étages peut aussi produire ce symptôme, il se corrige par un réglage des robinets."
+    },
+    {
+      "q": "Intervenez-vous à Thise sur les pompes à chaleur ?",
+      "a": "Oui, sur les pompes à chaleur air-eau comme air-air. Attention à un point : une PAC qui s'arrête quelques minutes en soufflant de l'air froid et en laissant s'écouler de l'eau sous l'unité extérieure est en train de dégivrer, ce qui est normal par temps froid et humide. C'est l'arrêt complet sans redémarrage, le code de défaut ou le bloc de glace persistant qui signalent une vraie panne."
+    }
+  ]
+}

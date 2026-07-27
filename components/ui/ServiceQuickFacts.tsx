@@ -1,21 +1,26 @@
-import { Check } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 
-/** Trois points clés d'une prestation, en bandeau juste sous la réponse courte. */
+/**
+ * Repères d'une prestation, en bandeau juste sous la réponse courte.
+ * Traitement T3 : une rangée de colonnes séparées par des filets, façon plaque
+ * signalétique, plutôt que des cartes indépendantes.
+ */
 export function ServiceQuickFacts({ bullets }: { bullets: string[] }) {
   if (!bullets?.length) return null
 
   return (
-    <AnimatedSection delay={0.1} className="mt-6 grid gap-3 sm:grid-cols-3">
-      {bullets.map((b) => (
-        <div
-          key={b}
-          className="flex items-start gap-3 rounded-card border border-sand-200 bg-white px-5 py-4 shadow-card"
-        >
-          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white">
-            <Check size={12} strokeWidth={3.5} aria-hidden="true" />
+    <AnimatedSection
+      delay={0.08}
+      className="grid divide-y divide-calcaire-pierre border-y border-calcaire-pierre sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+    >
+      {bullets.map((repere, i) => (
+        <div key={repere} className="px-1 py-5 sm:px-5 sm:first:pl-0 sm:last:pr-0">
+          <span className="chiffre block font-titre text-legende text-laiton-patine">
+            {String(i + 1).padStart(2, '0')}
           </span>
-          <span className="text-sm font-medium leading-snug text-ink-900">{b}</span>
+          <span className="mt-1.5 block text-[0.9375rem] font-medium leading-snug text-fonte-nuit">
+            {repere}
+          </span>
         </div>
       ))}
     </AnimatedSection>

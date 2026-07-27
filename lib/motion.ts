@@ -1,50 +1,66 @@
 /**
- * lib/motion.ts, vocabulaire de mouvement du site.
+ * lib/motion.ts, vocabulaire de mouvement du template T3.
  *
- * Transposé du code source de la référence PROTEC-DARD : même courbe d'accélération
- * (`[0.22, 1, 0.36, 1]`, un ease-out expressif), mêmes durées et mêmes distances de
- * translation. C'est ce fichier qui donne au site sa « patte » de motion : tout
- * composant animé doit consommer ces variants plutôt que d'inventer les siens.
+ * Parti pris : un mouvement d'appareillage, pas un mouvement d'affiche. Les
+ * blocs se posent (translation courte, détente longue), ils ne glissent pas sur
+ * de grandes distances. La courbe attaque plus franchement et se stabilise plus
+ * lentement que celle des templates précédents du portefeuille, et les distances
+ * de translation sont volontairement réduites de moitié.
+ *
+ * Tout composant animé consomme ces variants plutôt que d'inventer les siens :
+ * c'est ce fichier qui tient la cohérence du rythme sur l'ensemble du site.
  */
 import type { Variants } from 'framer-motion'
 
-/** Courbe maison, présente sur quasi toutes les transitions du site. */
-export const EASE = [0.22, 1, 0.36, 1] as const
+/** Courbe thermique maison : montée franche, stabilisation lente. */
+export const COURBE = [0.16, 1, 0.3, 1] as const
 
-export const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+/** Durées de référence, en secondes. */
+export const DUREE = {
+  vive: 0.24,
+  pose: 0.48,
+  ample: 0.7,
+} as const
+
+/** Apparition standard : le bloc se pose de 12 px, sans changement d'échelle. */
+export const pose: Variants = {
+  repos: { opacity: 0, y: 12 },
+  actif: { opacity: 1, y: 0, transition: { duration: DUREE.pose, ease: COURBE } },
 }
 
-export const fadeIn: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.7, ease: 'easeOut' } },
+/** Apparition sans déplacement, pour les grands aplats et les visuels. */
+export const revele: Variants = {
+  repos: { opacity: 0 },
+  actif: { opacity: 1, transition: { duration: DUREE.ample, ease: 'easeOut' } },
 }
 
-export const slideInLeft: Variants = {
-  hidden: { opacity: 0, x: -32 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: EASE } },
+/** Entrée latérale courte, réservée aux colonnes appariées. */
+export const depuisGauche: Variants = {
+  repos: { opacity: 0, x: -18 },
+  actif: { opacity: 1, x: 0, transition: { duration: DUREE.ample, ease: COURBE } },
 }
 
-export const slideInRight: Variants = {
-  hidden: { opacity: 0, x: 32 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: EASE } },
+export const depuisDroite: Variants = {
+  repos: { opacity: 0, x: 18 },
+  actif: { opacity: 1, x: 0, transition: { duration: DUREE.ample, ease: COURBE } },
 }
 
-export const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 0.94 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: EASE } },
+/** Montée d'une colonne graduée : l'animation signature du site. */
+export const monteeThermique: Variants = {
+  repos: { scaleY: 0, opacity: 0 },
+  actif: { scaleY: 1, opacity: 1, transition: { duration: 1.1, ease: COURBE } },
 }
 
-export const staggerContainer: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+/** Cadence d'une série : les éléments s'allument l'un après l'autre. */
+export const cadence: Variants = {
+  repos: {},
+  actif: { transition: { staggerChildren: 0.07, delayChildren: 0.04 } },
 }
 
-export const staggerFast: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.06 } },
+export const cadenceRapide: Variants = {
+  repos: {},
+  actif: { transition: { staggerChildren: 0.04 } },
 }
 
 /** Déclenchement au scroll : une seule fois, à 20 % de visibilité. */
-export const viewportOnce = { once: true, amount: 0.2 } as const
+export const vuUneFois = { once: true, amount: 0.2 } as const

@@ -17,7 +17,7 @@ export const metadata: Metadata = buildMetadata({
 
 function V({ children }: { children?: string }) {
   const val = (children || '').trim()
-  return val ? <>{val}</> : <em className="not-italic text-accent-600">À compléter</em>
+  return val ? <>{val}</> : <em className="not-italic text-laiton-patine">À compléter</em>
 }
 
 export default function MentionsLegales() {
@@ -57,7 +57,7 @@ export default function MentionsLegales() {
         <h2>Prestataire des interventions</h2>
         <p>
           L&apos;éditeur du site n&apos;est pas l&apos;entreprise qui réalise les interventions de
-          débouchage. Les coordonnées, l&apos;assurance et les qualifications de l&apos;artisan
+          chauffage. Les coordonnées, l&apos;assurance et les qualifications de l&apos;artisan
           prestataire sont publiées ici dès la mise en service commerciale du site.
         </p>
       </section>
