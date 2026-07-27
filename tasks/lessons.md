@@ -10,6 +10,8 @@
 - [28/07/2026] | Une capture Playwright `fullPage` montrait la moitié des sections vides | Ce sont les apparitions `whileInView` de framer-motion qui n'avaient pas encore été déclenchées. Toujours faire défiler la page par paliers AVANT de juger un rendu, sinon on corrige un défaut qui n'existe pas.
 - [28/07/2026] | Grille `lg:grid-cols-12` avec une seule colonne remplie quand la photo manque : la page prestation ouvrait sur un vide asymétrique à droite | Un gabarit dont un visuel est optionnel doit prévoir le repli, jamais laisser la colonne vide. Ici : plaque graphique construite sur les données réelles de la page (repères, code postal, orientation).
 
+- [28/07/2026] | Preview Vercel en échec (« No Output Directory named "public" found ») alors que le build local passait : un projet créé par `vercel project add` en CLI n'a AUCUN framework preset, Vercel le traite en site statique. Le tout premier déploiement de main était « READY » mais servait en réalité le dossier public/ tel quel (d'où l'alias en 404) | Après création d'un projet Vercel en CLI, TOUJOURS poser le preset : PATCH /v9/projects/<id> {"framework":"nextjs"}, puis vérifier qu'une page du site répond vraiment (pas seulement l'état READY du déploiement).
+
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
 - [héritée] | Sites indexés trop tôt | SEO_NOINDEX=1 dès le tout premier déploiement, levé uniquement sur validation Rémy.
