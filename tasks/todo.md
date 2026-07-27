@@ -13,10 +13,19 @@
 - [x] Branche design/t3 poussée → preview Vercel (protégée + noindex).
 - [ ] Validation Rémy sur la preview (design T3).
 - [ ] Après validation : Builder reprend pour le blog (calendrier éditorial) et finitions.
-- [ ] Visuels à produire : og.jpg + 12 images de tête de commune public/zones/<slug>.jpg
-      (uniques par commune) + visuels prestations optionnels. Candidat : agent
-      visual-asset-generator, à cadrer (décors réellement différenciés, règles images du
-      PLAYBOOK : pas de texte/logo, pas de visage, cohérence physique, décor local).
+- [ ] Retour Rémy sur la preview : design validé sur le fond, MAIS manque l'humain et la
+      preuve : photos de réalisations, portrait de l'artisan, identité inventée, images.
+- [x] Visuels générés (20 images) + contrôle CEO sur planches-contact : portrait et og
+      VALIDÉS, 12 zones et 6 réalisations globalement belles.
+- [ ] Corrections visuels EN COURS (2e agent) : 3 zones à régénérer (roche-lez-beaupre
+      doublon de thise ; marchaux façon Ornans avec rivière inventée ; chatillon trop
+      proche d'avanne et pas assez périurbain), 3 réalisations à régénérer (motif
+      fenêtre-village répété sur 5/6), floutage plaque sur ecole-valentin.
+- [ ] Persona proposé à Rémy : « Julien Vernier », chauffagiste, ~45 ans (vérifié : aucun
+      homonyme chauffagiste à Besançon ; « Maillard » écarté, trop proche du concurrent
+      réel Ets Paillard). Intégration config/pages par le Builder après validation.
+- [ ] Message Builder à préparer : section persona (config + home + pages), section
+      réalisations, câblage des images.
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
       retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
