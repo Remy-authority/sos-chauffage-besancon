@@ -160,6 +160,36 @@ corps éditorial, FAQ (4-6 questions) avec JSON-LD FAQPage.
   5. Quelle garantie pour une chaudière neuve ? (garantie constructeur selon marque)
   6. Combien coûte une installation de chaudière neuve ? [DEMO : à valider par Rémy]
 
+### Service 9 : Climatisation réversible PAC air-air (ajout validé par Rémy le 28/07/2026)
+- **Slug** : `/services/climatisation-reversible`
+- **Title** : « Climatisation PAC air-air Besançon, installation réversible »
+- **Meta** : « Installation climatisation réversible PAC air-air à Besançon. Chauffage en hiver, rafraîchissement en été. Entretien, dépannage, devis transparent. »
+- **H1** : « Installation climatisation réversible PAC air-air à Besançon »
+- **Angle** : système 2-en-1 (chauffe l'hiver, rafraîchit l'été), cœur de la stratégie
+  anti-saisonnalité du site. S'ajoute au chauffage existant sans travaux lourds, pertinent
+  pour les logements bisontins qui gardent la chaleur l'été. Entretien périodique
+  obligatoire (inspection légale des circuits, tous les deux ans selon la réglementation
+  en vigueur, à sourcer par le Builder). JAMAIS de mention d'attestation fluides
+  frigorigènes ni de RGE. Pas de rendement chiffré ni de décibels : formulations
+  qualitatives (« restitue plus d'énergie qu'elle n'en consomme », « unités intérieures
+  discrètes »), tout chiffre devrait être validé par Rémy.
+- **Mots-clés** : climatisation besançon, climatisation réversible besançon, PAC air-air
+  besançon, installation climatisation besançon ; secondaires : dépannage climatisation
+  besançon, entretien climatisation, climatisation maison ancienne.
+- **FAQ** (résumé) :
+  1. Différence clim classique / clim réversible ? (la réversible chauffe aussi, 2-en-1)
+  2. Installer une clim réversible dans une maison ancienne ? (oui, en complément du chauffage existant, sans gros travaux)
+  3. L'entretien est-il obligatoire ? (inspection périodique légale, entretien recommandé pour le rendement)
+  4. Consomme-t-elle beaucoup en chauffage l'hiver ? (non, restitue plus d'énergie qu'elle n'en consomme ; appoint utile lors des pics de froid comtois)
+  5. Est-ce bruyant ? (unités intérieures discrètes, emplacement de l'unité extérieure étudié ; qualitatif, pas de décibels)
+  6. Meilleur moment pour installer ? (printemps, avant les premières chaleurs)
+- **Distinction anti-cannibalisation** avec `/services/depannage-pompe-chaleur` : la page
+  PAC = dépannage du chauffage central air-eau ; la page clim = confort air-air réversible.
+  Paragraphe de distinction et liens croisés entre les deux pages.
+- **Calendrier éditorial, ajouts** : mai 2027 « Climatisation PAC air-air réversible,
+  préparez l'été et l'hiver prochain » ; juin 2027, renforcer l'article PAC réversible
+  existant avec l'angle « moins dépendre de la chaudière ».
+
 ---
 
 ## 3. LES 12 COMMUNES (pages zones)

@@ -30,7 +30,23 @@
 - [x] Décision CEO sur les 2 arbitrages Builder : régénérer pirey.jpg (montrait Besançon
       même) et avanne-aveney.jpg (falaises exagérées) pour fidélité au terrain. Validé
       aussi : persona hors JSON-LD tant que le nom n'est pas arrêté par Rémy.
-- [ ] Régénération pirey + avanne EN COURS (agent visuel), contrôle CEO puis push.
+- [x] Régénération pirey + avanne : contrôlée, validée, poussée (c2e89b2). Preview à jour.
+
+## Session 3 (retour Rémy du 28/07 : « très bien, quelques modifs »)
+- [ ] 1. Photos sur les pages prestation : 9 images public/services/<slug>.jpg EN
+      PRODUCTION (dont climatisation.jpg d'avance) + correction 06-desembouage (visage
+      visible d'un autre technicien que le persona : incohérence, refait de dos).
+      RÈGLE série : aucun visage visible. Puis contrôle CEO et intégration Builder
+      (pas de détection d'image existante sur les pages services, à câbler comme zones).
+- [ ] 2. Encadré « Ce qu'il faut retenir » : ses filets internes se confondent avec les
+      lignes verticales du fond du hero, rendu sale. Fix Builder (fond plein/opaque ou
+      suppression des filets, à son jugement dans la DA T3).
+- [ ] 3. Climatisation : VALIDÉE par Rémy (28/07). Fiche SEO de la 9e prestation en
+      production (agent SEO), photo climatisation.jpg déjà dans la fournée visuels.
+      Interdit : prétendre l'attestation fluides frigorigènes.
+- [ ] 4. Portrait détouré demandé par Rémy (comme son ancien site) : public/artisan-detoure.png
+      (PNG alpha, même visage) en production. PAS de badge « X ans d'expérience »
+      (chiffre non validé). Builder l'utilisera dans la section « Qui intervient ».
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
       retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
