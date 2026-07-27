@@ -28,7 +28,14 @@
 - [x] Plan SEO/GEO : docs/SEO-GEO-PLAN.md (agent SEO V2 + corrections CEO : géographie,
       RGE, chiffres DEMO ; 12 codes postaux revérifiés par le CEO via geo.api.gouv.fr).
 - [x] Brief Builder T3 : docs/BRIEF-BUILDER-T3.md. Message prêt à coller transmis à Rémy.
-- [x] **Build T3 livré (Builder, branche `design/t3`)**, en attente du contrôle visuel CEO.
+- [x] **Build T3 livré (Builder, branche `design/t3`)**.
+- [x] **Contrôle visuel CEO : VALIDÉ (28/07/2026)**. Audit de conformité passé (zéro reste
+      Metz, zéro RGE hors commentaire de règle, zéro tiret cadratin), build vert re-vérifié
+      par le CEO, captures Playwright desktop + mobile examinées (home, prestation gaz,
+      zone saint-vit, hub zones) : aucune erreur JS, aucun débordement, en-tête sticky OK
+      au scroll (le chevauchement vu sur les captures fullPage est un artefact Playwright,
+      vérifié par captures viewport). Branche `design/t3` poussée pour preview Vercel
+      (protégée + noindex). EN ATTENTE : validation Rémy sur la preview.
 - [x] package.json renommé « sos-chauffage-besancon ».
 - [ ] Redirection email contact@ (DNS OVH) : CEO-portefeuille, vérifier avant mise en ligne.
 - [ ] Numéro 09 Twilio : en file d'attente (portefeuille). config/site.config.ts garde le
