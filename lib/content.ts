@@ -67,6 +67,12 @@ export interface Zone {
    * /zones. Valeurs vérifiées, cf. docs/SEO-GEO-PLAN.md §3 : ne jamais improviser.
    */
   orientation?: string
+  /**
+   * Texte alternatif de l'image de tête de la commune. Décrit le DÉCOR réellement
+   * photographié (rue, bâti, relief, saison), jamais une liste de mots-clés :
+   * l'alt sert d'abord les lecteurs d'écran, il n'est pas un emplacement SEO.
+   */
+  imageAlt?: string
   metaTitle: string
   metaDescription: string
   h1: string

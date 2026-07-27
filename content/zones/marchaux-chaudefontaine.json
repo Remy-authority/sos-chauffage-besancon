@@ -3,6 +3,7 @@
   "name": "Marchaux-Chaudefontaine",
   "postalCode": "25640",
   "orientation": "Nord-est",
+  "imageAlt": "Village groupé autour de son clocher à bulbe, entouré de champs enneigés",
   "context": "Commune nouvelle du nord-est de l'agglomération, à l'habitat dispersé, où le fioul reste répandu et la desserte en gaz partielle.",
   "metaTitle": "Chauffagiste à Marchaux-Chaudefontaine, dépannage",
   "metaDescription": "Dépannage de chauffage à Marchaux-Chaudefontaine (25640) : chaudière fioul et gaz, radiateurs froids, entretien annuel obligatoire. Urgence 7j/7.",
@@ -22,7 +23,11 @@
       "body": "Sur une commune étendue avec des habitations éloignées, la panne de chauffage n'a pas de solution de repli : le logement reste froid jusqu'à l'intervention, et aucun voisinage immédiat ne compense. C'est ce qui rend l'anticipation nettement plus rentable ici qu'en secteur dense. Faire réaliser l'entretien annuel entre septembre et novembre, contrôler la pression du circuit avant les premiers grands froids et surveiller le niveau de la cuve sont trois gestes qui suppriment la majorité des interventions d'urgence. Nous programmons volontiers ces visites en fin d'été, quand les créneaux sont larges et le rendez-vous choisi plutôt que subi."
     }
   ],
-  "neighbours": ["Besançon", "Thise", "Roche-lez-Beaupré"],
+  "neighbours": [
+    "Besançon",
+    "Thise",
+    "Roche-lez-Beaupré"
+  ],
   "faq": [
     {
       "q": "Ma commune n'est pas desservie en gaz, sur quoi intervenez-vous ?",

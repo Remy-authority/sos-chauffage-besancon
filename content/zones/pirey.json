@@ -3,6 +3,7 @@
   "name": "Pirey",
   "postalCode": "25480",
   "orientation": "Nord-ouest",
+  "imageAlt": "Toits anciens et clochers du centre de Besançon dominés par la citadelle, un matin de gel",
   "context": "Commune du nord-ouest de l'agglomération, à l'habitat mixte, où le bâti ancien rénové côtoie des constructions plus récentes.",
   "metaTitle": "Dépannage urgence chauffage à Pirey, chauffagiste",
   "metaDescription": "Chauffagiste à Pirey (25480) : dépannage de chaudière gaz ou fioul, radiateurs froids, plus d'eau chaude, entretien annuel. Urgence 7j/7.",
@@ -22,7 +23,11 @@
       "body": "1. La pression du circuit et le comportement du vase d'expansion, premiers responsables des arrêts répétés. 2. La circulation réelle, radiateur par radiateur, pour distinguer un embouage d'un simple défaut d'équilibrage. 3. La température de départ et la loi d'eau, pour vérifier que l'appareil travaille dans la plage pour laquelle il a été conçu. 4. L'état du conduit d'évacuation, en particulier lorsqu'une chaudière à condensation a été posée sur un conduit prévu pour un appareil ancien. 5. L'évacuation des condensats, dont l'obstruction met la chaudière en sécurité sans qu'aucun symptôme de chauffage ne le laisse prévoir."
     }
   ],
-  "neighbours": ["Besançon", "Miserey-Salines", "Serre-les-Sapins"],
+  "neighbours": [
+    "Besançon",
+    "Miserey-Salines",
+    "Serre-les-Sapins"
+  ],
   "faq": [
     {
       "q": "Quel type de chauffage trouve-t-on à Pirey ?",

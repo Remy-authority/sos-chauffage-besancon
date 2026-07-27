@@ -3,6 +3,7 @@
   "name": "École-Valentin",
   "postalCode": "25480",
   "orientation": "Nord",
+  "imageAlt": "Rue de village un jour de pluie, voitures stationnées, maisons en pierre et petit collectif au pied d’un coteau boisé",
   "context": "Commune du nord de l'agglomération, sur l'axe de la RN57, où le résidentiel côtoie une importante zone de bureaux et de commerces.",
   "metaTitle": "Dépannage chauffage à École-Valentin, urgence 24h/24",
   "metaDescription": "Chauffagiste urgence à École-Valentin (25480) : dépannage de chaudière, chauffage de locaux professionnels, entretien annuel. Ligne ouverte 7j/7.",
@@ -22,7 +23,11 @@
       "body": "Dans un bâtiment tertiaire, la remise en service du chauffage à l'automne révèle d'un coup tout ce qui n'a pas fonctionné pendant l'été : programmation horaire déréglée par une coupure, vannes grippées faute de sollicitation, circuit qui a perdu de la pression, sondes en défaut. Le décalage entre la première journée froide et la disponibilité d'un intervenant crée alors des journées de travail dans le froid. Faire vérifier l'installation en septembre, avant la première demande réelle, évite l'essentiel de ces situations et coûte le même prix qu'une visite faite en urgence trois semaines plus tard."
     }
   ],
-  "neighbours": ["Besançon", "Châtillon-le-Duc", "Miserey-Salines"],
+  "neighbours": [
+    "Besançon",
+    "Châtillon-le-Duc",
+    "Miserey-Salines"
+  ],
   "faq": [
     {
       "q": "Intervenez-vous dans les locaux professionnels à École-Valentin ?",

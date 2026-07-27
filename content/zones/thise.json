@@ -3,6 +3,7 @@
   "name": "Thise",
   "postalCode": "25220",
   "orientation": "Nord-est",
+  "imageAlt": "Village aux toits de tuiles au bord d’une rivière, barques amarrées et brume accrochée aux coteaux boisés",
   "context": "Commune du nord-est de l'agglomération, connue pour son aérodrome, avec une nette dominante de maisons individuelles.",
   "metaTitle": "Dépannage chauffage à Thise, chauffagiste urgence",
   "metaDescription": "Chauffagiste à Thise (25220) : dépannage de chaudière, radiateurs froids, plus d'eau chaude, entretien annuel. Intervention 7j/7 sur le Grand Besançon.",
@@ -22,7 +23,11 @@
       "body": "1. Faites réaliser l'entretien annuel entre août et octobre, avant que la chaudière ne tourne en continu. 2. Relevez la pression du circuit sur le manomètre de la chaudière et notez la valeur : c'est votre point de référence pour repérer une fuite lente. 3. Purgez les radiateurs qui gargouillent ou qui restent froids en partie haute, avant la première mise en chauffe. 4. Faites tourner l'installation une journée complète en septembre, à consigne normale, pour repérer les émetteurs qui ne suivent pas. 5. Vérifiez que votre détecteur de monoxyde de carbone fonctionne, et posez-en un si vous n'en avez pas : ce gaz est inodore, aucun symptôme ne le signale avant l'intoxication."
     }
   ],
-  "neighbours": ["Besançon", "Roche-lez-Beaupré", "Marchaux-Chaudefontaine"],
+  "neighbours": [
+    "Besançon",
+    "Roche-lez-Beaupré",
+    "Marchaux-Chaudefontaine"
+  ],
   "faq": [
     {
       "q": "Combien de temps faut-il pour intervenir à Thise ?",

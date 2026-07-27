@@ -85,8 +85,45 @@ floutée. Livré : `public/og.jpg` (câblé d'office via defaultOgImage), `publi
 (détectées automatiquement par les pages zones).
 **Persona proposé par le CEO : « Julien Vernier », chauffagiste, ~45 ans** (vérifié sans
 homonyme chauffagiste local ; « Maillard » écarté, trop proche du concurrent réel Ets
-Paillard). En attente : validation Rémy du nom + intégration Builder (config, section
-« qui intervient », galerie réalisations).
+Paillard). En attente : validation Rémy du nom.
+
+## Intégration persona, galerie et finitions visuelles (session Builder 2, `design/t3`)
+
+- **Persona intégré** dans `config/site.config.ts` (bloc `persona`, 7 marqueurs DEMO) :
+  nom, rôle, portrait, accroche, citation, parcours en 3 étapes et 3 engagements.
+  Parcours raconté en ÉTAPES et jamais en années, aucune certification, aucun chiffre.
+- **Section `QuiIntervient`** sur la home (fond calcaire, entre l'hiver comtois et la carte
+  des communes) : portrait en plaque 4:5 avec cartouche d'identité en débord, citation,
+  parcours numéroté, téléphone et engagements.
+- **Section `Realisations`** sur la home (fond fonte, juste après les prestations) :
+  les 6 photos en grille 4:3, `loading="lazy"`, alt descriptifs, légendes par TYPE
+  d'intervention. Aucun client, aucune commune, aucune date sous une photo.
+- **`SignatureArtisan`** sur les 8 pages prestation : bandeau compact en fin de corps
+  éditorial (vignette, une phrase, lien vers la section d'accueil, bouton d'appel).
+  Volontairement sans récit ni citation, pour que le persona ne prenne pas le pas sur
+  le contenu utile.
+- **Communes** : champ `imageAlt` ajouté aux 12 fiches, chaque alt décrivant le décor
+  réellement photographié. Cadrage passé de 4:3 à **16:10**, le format natif des visuels
+  livrés (le 4:3 rognait environ 17 % de la largeur), et légende d'orientation sous
+  l'image. La plaque de repli suit le même format.
+
+**Vérifications** : `npm run build` vert (37 pages). Contrôle Playwright sur 14 pages
+(home, prestation, les 12 communes) en desktop ET mobile : aucune erreur JS, aucun
+débordement horizontal, **toutes les images chargées et toutes pourvues d'un alt**, aucun
+bloc bloqué invisible. Aucun texte n'est posé sur une image, la question du contraste
+sur photo ne se pose donc nulle part.
+
+**⚠️ Deux visuels de commune à revoir (décision CEO)** :
+- `public/zones/pirey.jpg` montre le centre de Besançon dominé par la citadelle, ce n'est
+  pas Pirey. Un habitant du secteur le verra immédiatement.
+- `public/zones/avanne-aveney.jpg` montre un village encaissé sous de hautes falaises
+  calcaires, plus proche d'une reculée jurassienne que de la vallée du Doubs à Avanne.
+Les alt écrits décrivent honnêtement ce qui est visible, sans affirmer la localisation.
+Le Builder n'a pas remplacé ces images de sa propre initiative.
+
+**Non fait volontairement** : le persona n'est PAS injecté dans le JSON-LD (pas de
+`employee` ni de `founder` sur `HVACBusiness`). Tant que le nom n'est pas validé par Rémy,
+il n'a rien à faire dans des données structurées lues par les moteurs.
 
 ## Historique
 - 28/07/2026 : création du dossier, achat domaine, CLAUDE.md T3, journal initialisé

@@ -14,6 +14,7 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
 import { ServiceQuickFacts } from '@/components/ui/ServiceQuickFacts'
 import { ServiceBlock } from '@/components/ui/ServiceBlock'
+import { SignatureArtisan } from '@/components/ui/SignatureArtisan'
 import { HaloThermique } from '@/components/ui/HaloThermique'
 
 // 100 % SSG : une page statique par prestation.
@@ -141,6 +142,8 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               ))}
             </div>
           )}
+
+          <SignatureArtisan prestation={service.navTitle} />
 
           {liees.length > 0 && (
             <AnimatedSection className="mt-16">

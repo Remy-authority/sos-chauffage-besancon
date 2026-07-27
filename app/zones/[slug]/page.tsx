@@ -110,19 +110,27 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
 
           <div className="lg:col-span-5">
             {visuel ? (
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-socle border border-calcaire-neige/10">
-                <Image
-                  src={visuel}
-                  alt={`Dépannage chauffage à ${zone.name}`}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 440px, 100vw"
-                  className="object-cover"
-                />
-              </div>
+              <figure className="relative">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-socle border border-calcaire-neige/10">
+                  <Image
+                    src={visuel}
+                    alt={zone.imageAlt ?? `${zone.name} (${zone.postalCode}), commune du Grand Besançon`}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 460px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 flex items-center gap-2.5 text-legende text-calcaire-ombre">
+                  <span aria-hidden="true" className="h-px w-5 shrink-0 bg-laiton-franc" />
+                  {zone.orientation
+                    ? `${zone.name}, ${zone.orientation.toLowerCase()} de ${siteConfig.city}`
+                    : `${zone.name}, Grand Besançon`}
+                </figcaption>
+              </figure>
             ) : (
               /* Plaque de repérage, en attendant le visuel dédié de la commune. */
-              <div className="relative flex aspect-[4/3] w-full flex-col justify-between overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-abysse/60 p-7">
+              <div className="relative flex aspect-[16/10] w-full flex-col justify-between overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-abysse/60 p-7">
                 <div aria-hidden="true" className="trame-graduee-fine absolute inset-0 opacity-60" />
                 <div className="relative">
                   <p className="surtitre text-calcaire-ombre">Commune desservie</p>

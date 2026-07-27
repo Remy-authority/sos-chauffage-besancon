@@ -3,6 +3,7 @@
   "name": "Avanne-Aveney",
   "postalCode": "25720",
   "orientation": "Sud-ouest",
+  "imageAlt": "Village de pierre étagé au-dessus d’une rivière, falaises calcaires et versants boisés en surplomb",
   "context": "Commune du sud-ouest de l'agglomération, dans la vallée du Doubs, avec un habitat pavillonnaire majoritairement construit entre les années soixante-dix et quatre-vingt-dix.",
   "metaTitle": "Chauffagiste à Avanne-Aveney, dépannage urgence",
   "metaDescription": "Dépannage de chauffage urgent à Avanne-Aveney (25720) : chaudière en panne, radiateurs froids, circuit embouté, entretien annuel obligatoire.",
@@ -22,7 +23,11 @@
       "body": "La position en fond de vallée du Doubs crée un environnement plus humide que sur les plateaux voisins, ce qui a deux conséquences concrètes sur le chauffage. D'abord sur les pompes à chaleur : l'humidité favorise le givrage de l'unité extérieure, donc des cycles de dégivrage plus fréquents en hiver, un comportement normal mais souvent pris pour une panne. Ensuite sur le confort ressenti : dans un logement humide, une même température paraît plus froide, et la tentation est de monter la consigne plutôt que de traiter la cause. Nous vous le signalons quand nous le constatons, même si le traitement de l'humidité elle-même ne relève pas de notre métier."
     }
   ],
-  "neighbours": ["Besançon", "Franois", "Serre-les-Sapins"],
+  "neighbours": [
+    "Besançon",
+    "Franois",
+    "Serre-les-Sapins"
+  ],
   "faq": [
     {
       "q": "Ma chaudière perd de la pression toutes les semaines, est-ce grave ?",

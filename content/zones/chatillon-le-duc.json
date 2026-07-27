@@ -3,6 +3,7 @@
   "name": "Châtillon-le-Duc",
   "postalCode": "25870",
   "orientation": "Nord",
+  "imageAlt": "Route en courbe desservant des maisons récentes et de petits collectifs à flanc de coteau boisé",
   "context": "Commune du nord de l'agglomération, proche des grands axes A36 et RN57, où maisons individuelles et petit collectif se côtoient.",
   "metaTitle": "Dépannage chauffage à Châtillon-le-Duc, urgence 24h/24",
   "metaDescription": "Chauffagiste urgence à Châtillon-le-Duc (25870) : panne de chaudière, chauffage collectif, radiateurs froids, entretien annuel obligatoire.",
@@ -22,7 +23,11 @@
       "body": "Sur les secteurs pavillonnaires de la commune, le diagnostic est plus direct : il n'y a ni partie commune ni interlocuteur intermédiaire, et l'intervention peut porter d'emblée sur l'ensemble de l'installation, de la chaudière au dernier émetteur. Le revers est qu'aucun voisin ne signale un défaut naissant à votre place. Les deux points à surveiller sont la pression du circuit, dont la baisse répétée trahit une fuite ou un vase d'expansion fatigué, et le comportement des radiateurs en bout de circuit, souvent les premiers à décrocher quand la circulation se dégrade. Relever ces deux éléments avant d'appeler fait gagner un temps réel sur le diagnostic."
     }
   ],
-  "neighbours": ["Besançon", "École-Valentin", "Miserey-Salines"],
+  "neighbours": [
+    "Besançon",
+    "École-Valentin",
+    "Miserey-Salines"
+  ],
   "faq": [
     {
       "q": "Mon chauffage est collectif, pouvez-vous intervenir chez moi ?",

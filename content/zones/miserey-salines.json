@@ -3,6 +3,7 @@
   "name": "Miserey-Salines",
   "postalCode": "25480",
   "orientation": "Nord-ouest",
+  "imageAlt": "Rue résidentielle bordée de maisons récentes en crépi clair, clocher du village et collines à l’arrière-plan",
   "context": "Commune du nord-ouest de l'agglomération, marquée par un habitat récent et des équipements de chauffage de génération moderne.",
   "metaTitle": "Chauffagiste à Miserey-Salines, dépannage urgent",
   "metaDescription": "Dépannage urgence chauffage à Miserey-Salines (25480) : chaudière à condensation, pompe à chaleur, ballon d'eau chaude, entretien annuel obligatoire.",
@@ -22,7 +23,11 @@
       "body": "Beaucoup de logements récents de Miserey-Salines sont équipés d'une pompe à chaleur. Cette technologie prélève sa chaleur dans l'air extérieur : son rendement baisse mécaniquement quand la température chute, et l'installation bascule alors sur son appoint. Ce comportement est normal, il ne signale pas une panne. Ce qui doit alerter, c'est un appoint qui tourne en permanence dès l'automne, signe d'un dimensionnement ou d'un réglage de régulation à revoir, ou une unité extérieure prise dans un bloc de glace qui ne se résorbe pas entre deux cycles. Nous vérifions systématiquement ces points sur une installation qui chauffe mal sans afficher de défaut."
     }
   ],
-  "neighbours": ["Besançon", "Pirey", "École-Valentin"],
+  "neighbours": [
+    "Besançon",
+    "Pirey",
+    "École-Valentin"
+  ],
   "faq": [
     {
       "q": "Quel type de chauffage domine à Miserey-Salines ?",

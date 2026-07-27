@@ -233,6 +233,96 @@ export const siteConfig = {
   ],
 
   /**
+   * L'artisan qui incarne le site.
+   *
+   * ⚠️ DEMO : identité proposée par le CEO, en attente de validation de Rémy, et
+   * destinée à être remplacée par les informations réelles du loueur à la mise en
+   * location. Règles de rédaction, non négociables :
+   *  - AUCUN chiffre d'expérience (« X ans de métier », « X interventions »).
+   *  - AUCUNE certification, AUCUN label, AUCUNE qualification déclarée.
+   *  - Un parcours raconté par étapes, pas par dates.
+   */
+  persona: {
+    // DEMO – nom à valider par Rémy, puis à remplacer par celui du loueur.
+    nom: 'Julien Vernier',
+    // DEMO – intitulé à ajuster avec le loueur.
+    role: 'Chauffagiste',
+    // DEMO – portrait à remplacer par une photo réelle du loueur.
+    photo: '/artisan.jpg',
+    photoAlt:
+      'Chauffagiste en veste de travail, bras croisés, devant une chaudière et un réseau de tuyauterie cuivre dans une chaufferie aux murs de pierre',
+    // Tenu court : sert de première ligne de titre, deux lignes équilibrées.
+    accroche: 'Un seul interlocuteur',
+    /** Parcours en étapes. Jamais de durée, jamais de date. */
+    parcours: [
+      {
+        titre: 'Formé à Besançon',
+        texte:
+          'Apprentissage puis premières années sur le terrain dans l’agglomération, sur des installations de toutes générations.',
+      },
+      {
+        titre: 'Les chaudières fioul du Haut-Doubs',
+        texte:
+          'Des débuts sur des chaufferies isolées, en altitude, là où une panne au cœur de l’hiver ne peut pas attendre le lendemain.',
+      },
+      {
+        titre: 'Le gaz à condensation et les pompes à chaleur',
+        texte:
+          'Spécialisation ensuite sur les deux technologies qui équipent aujourd’hui la majorité des logements du Grand Besançon.',
+      },
+    ],
+    // DEMO – propos à valider avec le loueur.
+    citation:
+      'Une panne de chauffage se raconte mal par écrit. Au téléphone, en trois questions, je sais déjà si je viens avec la pièce ou avec la caisse à outils.',
+    /** Engagements factuels, vérifiables sur le site lui-même. */
+    engagements: [
+      'Un seul interlocuteur, au téléphone comme sur le chantier',
+      'Le tarif annoncé avant l’intervention',
+      'Ce qui a été fait, expliqué avant de repartir',
+    ],
+  },
+
+  /**
+   * Galerie de réalisations.
+   *
+   * ⚠️ Les légendes désignent un TYPE d'intervention, jamais un client, jamais une
+   * commune, jamais une date : rien de ce qui n'est pas vérifiable ne doit être
+   * écrit sous une photo.
+   */
+  realisations: [
+    {
+      image: '/realisations/01-chaudiere-gaz.jpg',
+      legende: 'Remplacement d’une chaudière murale gaz à condensation',
+      alt: 'Chaudière murale gaz neuve raccordée en cuivre, avec tubage d’évacuation inox, dans un logement ancien',
+    },
+    {
+      image: '/realisations/02-chaufferie-fioul.jpg',
+      legende: 'Entretien d’une chaufferie fioul',
+      alt: 'Chaudière fioul au sol et cuve de stockage dans une cave aux murs de pierre, tuyauterie cuivre et circulateur',
+    },
+    {
+      image: '/realisations/03-pac.jpg',
+      legende: 'Mise en service d’une pompe à chaleur air-eau',
+      alt: 'Unité extérieure de pompe à chaleur posée sur un socle béton contre le mur en pierre d’une maison de village',
+    },
+    {
+      image: '/realisations/04-radiateur.jpg',
+      legende: 'Remplacement d’un radiateur et pose d’un robinet thermostatique',
+      alt: 'Radiateur panneau acier blanc neuf équipé d’un robinet thermostatique et raccordé en cuivre, au-dessus d’un parquet ancien',
+    },
+    {
+      image: '/realisations/05-ballon.jpg',
+      legende: 'Remplacement d’un ballon d’eau chaude',
+      alt: 'Ballon d’eau chaude vertical raccordé en cuivre avec son groupe de sécurité, dans une cave en pierre',
+    },
+    {
+      image: '/realisations/06-desembouage.jpg',
+      legende: 'Désembouage d’un circuit de radiateurs',
+      alt: 'Machine de désembouage raccordée par deux flexibles à un radiateur en fonte, bâche de protection étalée au sol',
+    },
+  ],
+
+  /**
    * Les deux parcours du métier, cœur de la section `DeuxSaisons`.
    * L'urgence porte le trafic d'hiver, l'entretien tient l'été.
    */

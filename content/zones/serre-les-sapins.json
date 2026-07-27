@@ -3,6 +3,7 @@
   "name": "Serre-les-Sapins",
   "postalCode": "25770",
   "orientation": "Ouest",
+  "imageAlt": "Maisons de pierre en lisière d’une forêt de sapins givrée, fumée aux cheminées un matin d’hiver",
   "context": "Commune résidentielle de l'ouest de l'agglomération, dans un secteur boisé où les hivers se font sentir plus tôt.",
   "metaTitle": "Dépannage chauffage à Serre-les-Sapins, urgence",
   "metaDescription": "Chauffagiste urgence à Serre-les-Sapins (25770) : dépannage de chaudière, pompe à chaleur, radiateurs froids, entretien annuel obligatoire.",
@@ -22,7 +23,11 @@
       "body": "La proximité des arbres a une conséquence directe sur les installations extérieures. Sur une pompe à chaleur, feuilles, aiguilles et poussières végétales encrassent les ailettes de l'unité extérieure et dégradent son échange thermique : la machine force pour un résultat moindre, et finit par se mettre en sécurité. Le même phénomène affecte les grilles de ventilation et, sur certaines configurations, les prises d'air de chaudières à ventouse. Un nettoyage à l'automne, avant la sollicitation intensive, suffit à supprimer une bonne part de ces incidents. Nous l'intégrons au contrôle annuel lorsque l'installation le justifie."
     }
   ],
-  "neighbours": ["Besançon", "Franois", "Pirey"],
+  "neighbours": [
+    "Besançon",
+    "Franois",
+    "Pirey"
+  ],
   "faq": [
     {
       "q": "Fait-il plus froid à Serre-les-Sapins qu'au centre de Besançon ?",

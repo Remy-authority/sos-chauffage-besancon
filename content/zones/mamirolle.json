@@ -3,6 +3,7 @@
   "name": "Mamirolle",
   "postalCode": "25620",
   "orientation": "Sud-est",
+  "imageAlt": "Ferme comtoise isolée sous la neige sur le plateau, moutons au pré et clocher du village au loin",
   "context": "Commune du sud-est, sur le premier plateau du Jura, où se mêlent habitat résidentiel et activité agricole.",
   "metaTitle": "Chauffagiste à Mamirolle, dépannage chaudière urgence",
   "metaDescription": "Dépannage urgence chauffage à Mamirolle (25620) : chaudière gaz ou fioul en panne, radiateurs froids, entretien annuel. Intervention 7j/7.",
@@ -22,7 +23,11 @@
       "body": "1. Programmez l'entretien annuel en août ou septembre plutôt qu'en octobre : sur le plateau, le chauffage démarre avant le reste de l'agglomération. 2. Surveillez le niveau de cuve si vous êtes au fioul, et faites remplir avant que la saison ne s'installe, pour ne jamais descendre dans la zone où les dépôts sont aspirés. 3. Faites tourner l'installation une journée complète en fin d'été pour identifier les émetteurs qui ne montent plus en température. 4. Vérifiez que les évacuations extérieures, condensats de chaudière à condensation ou de pompe à chaleur, ne sont pas exposées au gel sur leur parcours. 5. Contrôlez votre détecteur de monoxyde de carbone : ce gaz est inodore et seul un détecteur alerte, en particulier dans un logement combinant plusieurs modes de chauffage."
     }
   ],
-  "neighbours": ["Besançon", "Thise", "Roche-lez-Beaupré"],
+  "neighbours": [
+    "Besançon",
+    "Thise",
+    "Roche-lez-Beaupré"
+  ],
   "faq": [
     {
       "q": "Le chauffage est-il plus sollicité à Mamirolle qu'à Besançon ?",

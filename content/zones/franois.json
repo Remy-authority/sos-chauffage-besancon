@@ -3,6 +3,7 @@
   "name": "Franois",
   "postalCode": "25770",
   "orientation": "Ouest",
+  "imageAlt": "Grande ferme comtoise en pierre à l’entrée d’un village, bois de chauffage empilé et charrette contre le mur",
   "context": "Commune de l'ouest de l'agglomération, à l'habitat dispersé et au passé rural, où le fioul reste bien représenté.",
   "metaTitle": "Dépannage chauffage à Franois, chauffagiste urgence",
   "metaDescription": "Chauffagiste à Franois (25770) : dépannage de chaudière fioul et gaz, radiateurs froids, entretien annuel obligatoire. Intervention 7j/7.",
@@ -22,7 +23,11 @@
       "body": "La question du remplacement du fioul revient souvent, et la réponse dépend d'abord de la desserte : le réseau de gaz naturel n'atteint pas toutes les rues de la commune, et sans raccordement possible l'option ne se pose pas. Restent alors la pompe à chaleur, qui suppose une isolation correcte et des émetteurs acceptant une eau moins chaude, faute de quoi le confort se dégrade pendant les périodes de grand froid, et le remplacement par une chaudière fioul plus récente, nettement plus performante que les modèles anciens. Des aides publiques accompagnent ces travaux, MaPrimeRénov', les certificats d'économies d'énergie et l'éco-prêt à taux zéro : leurs conditions figurent sur les sites officiels de l'État et dépendent notamment de l'installateur retenu."
     }
   ],
-  "neighbours": ["Besançon", "Serre-les-Sapins", "Saint-Vit"],
+  "neighbours": [
+    "Besançon",
+    "Serre-les-Sapins",
+    "Saint-Vit"
+  ],
   "faq": [
     {
       "q": "Intervenez-vous sur les chaudières fioul à Franois ?",

@@ -6,8 +6,10 @@ import { HeroChauffe } from '@/components/sections/HeroChauffe'
 import { DiagnosticThermique } from '@/components/sections/DiagnosticThermique'
 import { DeuxSaisons } from '@/components/sections/DeuxSaisons'
 import { PrestationsReleve } from '@/components/sections/PrestationsReleve'
+import { Realisations } from '@/components/sections/Realisations'
 import { ParcAppareils } from '@/components/sections/ParcAppareils'
 import { HiverComtois } from '@/components/sections/HiverComtois'
+import { QuiIntervient } from '@/components/sections/QuiIntervient'
 import { CarteZones } from '@/components/sections/CarteZones'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { LeadForm } from '@/components/ui/LeadForm'
@@ -31,6 +33,11 @@ export const metadata: Metadata = buildMetadata({
  * entretien), on enchaîne sur le DIAGNOSTIC par symptôme, puis seulement après
  * viennent les prestations. L'ancrage local (hiver comtois, bâti bisontin) est
  * traité en section pleine, pas en encart.
+ *
+ * La preuve arrive en deux temps : les RÉALISATIONS juste après les prestations
+ * (ce que donne le travail), puis QUI INTERVIENT après l'ancrage local (à qui on
+ * confie sa chaudière). Les deux sections sombres de la page, réalisations et
+ * hiver comtois, restent séparées par une section claire.
  */
 export default function HomePage() {
   const services = getServices()
@@ -43,8 +50,10 @@ export default function HomePage() {
       <DiagnosticThermique services={navServices} />
       <DeuxSaisons />
       <PrestationsReleve services={services} />
+      <Realisations />
       <ParcAppareils />
       <HiverComtois />
+      <QuiIntervient />
       <CarteZones zones={zones} />
 
       <section id="devis" className="plage bg-calcaire-neige" aria-labelledby="devis-titre">

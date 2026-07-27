@@ -3,6 +3,7 @@
   "name": "Saint-Vit",
   "postalCode": "25410",
   "orientation": "Ouest",
+  "imageAlt": "Rue en pente d’un bourg comtois bordée de maisons en pierre, ouverte sur les champs et les collines boisées",
   "context": "Deuxième commune du Grand Besançon, à l'ouest sur l'axe de Dole, avec un habitat qui mélange bâti ancien, lotissements récents et petit collectif.",
   "metaTitle": "Chauffagiste à Saint-Vit, dépannage chauffage urgence",
   "metaDescription": "Dépannage de chauffage et de chaudière à Saint-Vit (25410). Panne de chaudière gaz ou fioul, radiateurs froids, entretien annuel. Ligne ouverte 7j/7.",
@@ -22,7 +23,11 @@
       "body": "Le réseau de gaz naturel dessert une partie de la commune, mais pas la totalité des rues, ce qui explique la présence persistante du fioul sur certains secteurs et de l'électrique dans les constructions les plus récentes. Nous intervenons sur les trois énergies, ainsi que sur les pompes à chaleur. Si vous ne savez pas avec certitude de quoi votre logement est équipé, notamment après un achat récent, indiquez-nous simplement ce que vous voyez, un brûleur et une cuve pour le fioul, un raccordement au compteur pour le gaz, une unité extérieure pour une pompe à chaleur, cela suffit à orienter le diagnostic au téléphone."
     }
   ],
-  "neighbours": ["Besançon", "Franois", "Serre-les-Sapins"],
+  "neighbours": [
+    "Besançon",
+    "Franois",
+    "Serre-les-Sapins"
+  ],
   "faq": [
     {
       "q": "Intervenez-vous en urgence à Saint-Vit le week-end ?",

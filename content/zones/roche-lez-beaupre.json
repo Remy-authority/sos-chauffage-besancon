@@ -3,6 +3,7 @@
   "name": "Roche-lez-Beaupré",
   "postalCode": "25220",
   "orientation": "Nord-est",
+  "imageAlt": "Rue principale d’un village comtois bordée de maisons en pierre, coteau boisé fermant la perspective",
   "context": "Commune du nord-est de l'agglomération, installée dans la vallée du Doubs, à dominante de maisons individuelles.",
   "metaTitle": "Chauffagiste à Roche-lez-Beaupré, dépannage 7j/7",
   "metaDescription": "Dépannage de chauffage à Roche-lez-Beaupré (25220) : panne de chaudière, radiateurs froids, pompe à chaleur, entretien annuel obligatoire.",
@@ -22,7 +23,11 @@
       "body": "1. Ne coupez jamais complètement le chauffage en cas d'absence prolongée en hiver : utilisez la position hors gel, qui maintient une température minimale et protège le circuit. 2. Maintenez une circulation d'air minimale vers les pièces non chauffées plutôt que de fermer totalement leurs radiateurs. 3. Vérifiez que l'évacuation des condensats d'une chaudière à condensation ou d'une pompe à chaleur n'est pas exposée au gel sur son parcours extérieur. 4. Relevez la pression du circuit avant les premiers grands froids : une installation qui perd de la pression pendant une vague de froid s'arrête au pire moment. 5. Si le chauffage s'arrête et que le gel est annoncé, appelez sans attendre le lendemain matin : un logement se refroidit vite et le réseau d'eau devient vulnérable."
     }
   ],
-  "neighbours": ["Besançon", "Thise", "Marchaux-Chaudefontaine"],
+  "neighbours": [
+    "Besançon",
+    "Thise",
+    "Marchaux-Chaudefontaine"
+  ],
   "faq": [
     {
       "q": "Fait-il plus froid à Roche-lez-Beaupré qu'à Besançon ?",
