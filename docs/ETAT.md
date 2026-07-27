@@ -74,12 +74,19 @@
 contrôle visuel Playwright desktop et mobile sur home, prestation, commune et hub
 (aucune erreur JS, aucun débordement horizontal, aucun bloc bloqué invisible).
 
-**Reste à produire (bloquant pour la mise en ligne, pas pour la validation du design)** :
-les visuels. `public/` a été vidé des images Metz. Sont attendus : `og.jpg`, les 12 images
-de tête de commune `public/zones/<slug>.jpg` (règle : une image UNIQUE par commune, pools
-partagés interdits) et, optionnellement, les visuels de prestation. En leur absence, les
-pages n'affichent aucune image cassée : les gabarits basculent sur une plaque graphique
-construite sur les données réelles de la page.
+**Visuels : PRODUITS et contrôlés (28/07/2026, commit c317a89 sur design/t3)**.
+Retour Rémy sur la preview : design validé sur le fond mais manque d'humain et de preuve
+(photos, artisan, identité). Réponse : 20 images générées (agent visual-asset-generator,
+Nano Banana 2 via API Gemini), contrôle CEO comparatif sur planches-contact, 6 images
+refusées et régénérées (3 zones en doublon d'archétype ou infidèles au terrain, 3
+réalisations qui répétaient le même motif fenêtre-village), 1 plaque d'immatriculation
+floutée. Livré : `public/og.jpg` (câblé d'office via defaultOgImage), `public/artisan.jpg`
+(portrait persona), `public/realisations/01-06.jpg`, `public/zones/<slug>.jpg` x12
+(détectées automatiquement par les pages zones).
+**Persona proposé par le CEO : « Julien Vernier », chauffagiste, ~45 ans** (vérifié sans
+homonyme chauffagiste local ; « Maillard » écarté, trop proche du concurrent réel Ets
+Paillard). En attente : validation Rémy du nom + intégration Builder (config, section
+« qui intervient », galerie réalisations).
 
 ## Historique
 - 28/07/2026 : création du dossier, achat domaine, CLAUDE.md T3, journal initialisé
