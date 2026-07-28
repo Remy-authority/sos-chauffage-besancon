@@ -242,3 +242,15 @@ aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le
   docs/RUNBOOK-MISE-EN-LIGNE.md créé (préconditions + séquence jour J en 12 étapes,
   piège domaine/protection documenté). Bloquants restants hors périmètre site : zone DNS
   (→ redirection email + re-test formulaire) et numéro 09.
+- 29/07/2026 (suite, dotation éditoriale) : règle permanente Rémy enregistrée (CLAUDE.md
+  site §3, CLAUDE.md portefeuille, mémoire CEO) : 11 articles publiés au lancement + 78
+  brouillons autoblog (6 mois à 3/semaine) constitués AVANT mise en ligne. Exécution par
+  l'agent autoblog en conversation, par lots, contrôle CEO entre chaque : lot 2 (007-018,
+  nov-jan) VALIDÉ ; lot 3 (8 articles publiés, site à 11) VALIDÉ ; lot 4 (019-033, cœur
+  de l'hiver) VALIDÉ ; lot 5 (034-048, grand froid) VALIDÉ ; lot 6 (049-063, sortie
+  d'hiver) VALIDÉ. EN COURS : lot 7 (064-078, printemps), dernier lot, message remis à
+  Rémy, contrôle CEO à faire à la livraison. Après lot 7 : dotation complète (11 + 78).
+  Méthode de contrôle CEO éprouvée sur chaque lot : scans (tirets, RGE/fluides, prix/%),
+  unicité des sujets, liens uniquement vers publiés ou préfixes inférieurs, lecture de
+  fond des articles sensibles (sécurité gaz, dégel, technique), build vert, brouillons
+  invisibles (11 pages articles rendues), push après validation.
