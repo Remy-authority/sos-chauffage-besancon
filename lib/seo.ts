@@ -107,6 +107,13 @@ export function localBusinessJsonLd() {
         ...(z.postalCode ? { postalCode: z.postalCode } : {}),
       })),
     ],
+    // Persona validé par Rémy (28/07/2026) : Person minimale, name + jobTitle
+    // UNIQUEMENT. Ne jamais y ajouter de date, diplôme ou qualification.
+    employee: {
+      '@type': 'Person',
+      name: siteConfig.persona.nom,
+      jobTitle: siteConfig.persona.role,
+    },
     // Nom de propriété correct pour les horaires (et non « hoursOfOperation »).
     openingHoursSpecification: [
       {

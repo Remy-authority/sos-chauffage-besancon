@@ -41,6 +41,18 @@ export default function ConseilsListing() {
   if (!siteConfig.features.blog) notFound()
   const articles = getArticles()
 
+  // La grille à filets ne doit JAMAIS montrer de cellule vide (règle du projet :
+  // pas de trou asymétrique), or l'autoblog fait varier le nombre d'articles à
+  // chaque publication. La dernière carte s'étire donc pour compléter sa rangée,
+  // à chaque point de rupture (2 colonnes en md, 3 en lg).
+  const n = articles.length
+  const etirementDerniere = [
+    n % 2 === 1 ? 'md:col-span-2' : '',
+    n % 3 === 1 ? 'lg:col-span-3' : n % 3 === 2 ? 'lg:col-span-2' : 'lg:col-span-1',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
     <>
       <PageHeader
@@ -85,7 +97,7 @@ export default function ConseilsListing() {
                   key={article.slug}
                   delay={Math.min(i, 5) * 0.04}
                   as="li"
-                  className="bg-calcaire-neige"
+                  className={`bg-calcaire-neige ${i === n - 1 ? etirementDerniere : ''}`}
                 >
                   <Link
                     href={`/conseils/${article.slug}`}

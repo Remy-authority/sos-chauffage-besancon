@@ -172,6 +172,35 @@ desktop + mobile sur home, clim, gaz, désembouage (repli), Pirey (repli), Saint
 aucune erreur JS, aucun débordement, aucune image cassée, tous les alt présents.
 Persona toujours DEMO et HORS JSON-LD. Variables Vercel et autoblog non touchés.
 
+## Session Builder 4 (28/07/2026, branche `design/t3`) : persona définitif + blog
+
+**Livré, EN ATTENTE du contrôle CEO :**
+
+1. **Persona définitif.** « Julien Vernier » validé par Rémy : marqueurs DEMO retirés du
+   bloc persona de `config/site.config.ts` (le téléphone RESTE DEMO tant que le 09 Twilio
+   n'est pas fourni). JSON-LD : propriété `employee` ajoutée au `HVACBusiness`
+   (Person minimale : name + jobTitle, RIEN d'autre, vérifiée dans le DOM rendu).
+2. **Hub /conseils contrôlé en DA T3** aux trois formats (1440 / iPad 820 / mobile 390),
+   états vide ET rempli. Un défaut trouvé et corrigé : la grille à filets montrait une
+   cellule vide grise quand le nombre de cartes ne remplissait pas la rangée (trou
+   asymétrique interdit). Correction pérenne : la dernière carte s'étire (col-span calculé
+   par breakpoint), robuste aux publications autoblog. Même correction sur la grille
+   « À lire aussi » des articles. Leçon consignée dans tasks/lessons.md.
+3. **3 premiers articles publiés** dans `content/conseils/` (dates échelonnées 15/22/28
+   juillet 2026, signés Julien Vernier, FAQ + liens internes vers les prestations) :
+   obligation-entretien-annuel-chaudiere, preparer-chauffage-hiver,
+   desembouage-circuit-chauffage.
+4. **6 drafts autoblog** dans `content/drafts/` (format exact de l'Action vérifié dans
+   scripts/publish-next-draft.mjs : préfixe NNN- retiré, date réécrite au jour de
+   publication) : 001 signes de panne, 002 monoxyde de carbone, 003 qui appeler,
+   004 gaz/fioul/PAC froid comtois, 005 grand froid, 006 gestes de premier secours.
+   L'Action publish-article n'a PAS été modifiée.
+
+**Vérifications** : zéro tiret cadratin, zéro RGE/fluides/certification, aucun prix ni
+pourcentage (seuls chiffres : 4-400 kW déjà validés, numéros publics GRDF 0 800 47 33 33
+et 112, décennies), build vert (40 pages), Playwright 3 formats sur hub + article :
+aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le téléphone.
+
 ## Historique
 - 28/07/2026 : création du dossier, achat domaine, CLAUDE.md T3, journal initialisé
   (session CEO-portefeuille).

@@ -71,6 +71,16 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const aLireAussi = getRelatedConseils(article, 3)
   const minutes = readingTimeMinutes(article.content)
 
+  // Même règle que sur le hub : la grille « À lire aussi » (1 à 3 cartes) ne
+  // doit jamais montrer de cellule vide, la dernière carte complète sa rangée.
+  const nAutres = aLireAussi.length
+  const etirementDerniere = [
+    nAutres % 2 === 1 ? 'sm:col-span-2' : '',
+    nAutres % 3 === 1 ? 'lg:col-span-3' : nAutres % 3 === 2 ? 'lg:col-span-2' : 'lg:col-span-1',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
     <>
       <script
@@ -176,7 +186,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   key={autre.slug}
                   delay={Math.min(i, 3) * 0.05}
                   as="li"
-                  className="bg-calcaire-neige"
+                  className={`bg-calcaire-neige ${i === nAutres - 1 ? etirementDerniere : ''}`}
                 >
                   <Link
                     href={`/conseils/${autre.slug}`}

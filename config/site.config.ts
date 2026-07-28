@@ -236,25 +236,23 @@ export const siteConfig = {
   /**
    * L'artisan qui incarne le site.
    *
-   * ⚠️ DEMO : identité proposée par le CEO, en attente de validation de Rémy, et
-   * destinée à être remplacée par les informations réelles du loueur à la mise en
-   * location. Règles de rédaction, non négociables :
+   * Identité « Julien Vernier » VALIDÉE par Rémy (28/07/2026), présente aussi dans
+   * le JSON-LD (`employee` sur HVACBusiness). À la mise en location, remplacer
+   * l'ensemble du bloc par les informations réelles du loueur. Règles de
+   * rédaction, non négociables :
    *  - AUCUN chiffre d'expérience (« X ans de métier », « X interventions »).
    *  - AUCUNE certification, AUCUN label, AUCUNE qualification déclarée.
    *  - Un parcours raconté par étapes, pas par dates.
    */
   persona: {
-    // DEMO – nom à valider par Rémy, puis à remplacer par celui du loueur.
     nom: 'Julien Vernier',
-    // DEMO – intitulé à ajuster avec le loueur.
     role: 'Chauffagiste',
-    // DEMO – portrait à remplacer par une photo réelle du loueur.
     photo: '/artisan.jpg',
     photoAlt:
       'Chauffagiste en veste de travail, bras croisés, devant une chaudière et un réseau de tuyauterie cuivre dans une chaufferie aux murs de pierre',
-    // DEMO – même sujet, détouré (PNG alpha) : posé sur un fond de la palette T3
-    // dans la section « Qui intervient chez vous ». L'alt ne décrit que le sujet,
-    // le décor d'origine ayant été retiré.
+    // Même sujet, détouré (PNG alpha) : posé sur un fond de la palette T3 dans la
+    // section « Qui intervient chez vous ». L'alt ne décrit que le sujet, le
+    // décor d'origine ayant été retiré.
     photoDetouree: '/artisan-detoure.png',
     photoDetoureeAlt:
       'Portrait d’un chauffagiste souriant en veste de travail, bras croisés',
@@ -278,7 +276,6 @@ export const siteConfig = {
           'Spécialisation ensuite sur les deux technologies qui équipent aujourd’hui la majorité des logements du Grand Besançon.',
       },
     ],
-    // DEMO – propos à valider avec le loueur.
     citation:
       'Une panne de chauffage se raconte mal par écrit. Au téléphone, en trois questions, je sais déjà si je viens avec la pièce ou avec la caisse à outils.',
     /** Engagements factuels, vérifiables sur le site lui-même. */
