@@ -14,6 +14,8 @@
 
 - [28/07/2026] | Les contrôles visuels étaient surtout desktop + mobile, jamais tablette ; Rémy signale que les formats intermédiaires sont souvent les moins soignés (centrage, grilles) | Règle permanente (ajoutée au CLAUDE.md §2) : tout contrôle visuel couvre desktop + mobile ~390px + iPad portrait ~820px, avec vérification du centrage et des grilles intermédiaires. À proposer au CEO-portefeuille pour généralisation aux autres sites.
 
+- [28/07/2026] | Rémy a repéré TROIS mains sur la photo de la prestation chauffage électrique, validée par le CEO sans zoom anatomique | Règle permanente (CLAUDE.md §2 du site + CLAUDE.md portefeuille + mémoire CEO) : toute image générée montrant mains ou personnes est contrôlée EN ZOOM avant intégration, comptage mains/doigts sur crops, et contrainte anatomique explicite dans les prompts (« une seule main visible » = plus sûr).
+
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
 - [héritée] | Sites indexés trop tôt | SEO_NOINDEX=1 dès le tout premier déploiement, levé uniquement sur validation Rémy.

@@ -61,6 +61,13 @@
   mobile (~390 px) et tablette iPad portrait (~820 px). Vérifier : centrage, débordements
   horizontaux, grilles intermédiaires (2 colonnes tablette), sections vides ou décalées.
   Rien n'est présenté à Rémy sans ces trois passes.
+- **Contrôle ANATOMIQUE des images générées (règle permanente, décision Rémy 28/07/2026)** :
+  toute image générée montrant des mains ou des personnes est examinée EN ZOOM avant
+  intégration : compter les mains (2 max par personne), les doigts (5), vérifier pouces et
+  rattachement des membres. Les générateurs produisent régulièrement des membres
+  surnuméraires ; le contrôle se fait sur crops zoomés, jamais sur vignettes. Dans les
+  prompts de génération, imposer une contrainte anatomique explicite (« une seule main
+  visible » est l'option la plus sûre).
 
 ---
 
