@@ -54,12 +54,24 @@
       « Julien Vernier » (affiché sur toutes les captures validées) ; Rémy peut infirmer.
 
 ## Session 4 : blog (dernier chantier de contenu)
-- [ ] Message Builder session 4 remis à Rémy : persona hors DEMO + JSON-LD, hub /conseils,
-      3 premiers articles publiés (août-sept), lot drafts oct-déc pour l'autoblog (actif,
-      vérifié le 28/07). Contrôle CEO au retour (3 formats).
-- [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
-      retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy explicite.
-- [ ] Merge design/t3 → main : PAS FAIT, attendra le sign-off explicite de mise en ligne.
+- [x] Session Builder 4 livrée (7c8316c) et CONTRÔLE CEO VALIDÉ (28/07) : persona hors
+      DEMO (sauf téléphone, attend Twilio) + employee Person minimal dans le JSON-LD,
+      hub /conseils avec fix col-span des grilles incomplètes, 3 articles publiés
+      (qualité vérifiée : juridiquement justes, locaux, zéro chiffre inventé, seuls
+      numéros publics GRDF/112 et plage légale 4-400 kW), 6 drafts autoblog 001-006.
+      Conformité re-scannée (tirets/RGE/fluides/prix : zéro), build vert 41 pages,
+      contrôle trois formats hub + article : zéro débordement, grilles pleines.
+- [x] Photo chauffage électrique régénérée après signalement Rémy (3 mains) : une seule
+      main vérifiée en zoom par le CEO. Règles anatomie + trois formats gravées
+      (CLAUDE.md site, CLAUDE.md portefeuille, mémoire CEO, lessons.md).
+
+## SITE COMPLET. Reste avant mise en ligne (fin septembre)
+- [ ] Infra portefeuille : Twilio 09 (+ remplacer le numéro DEMO dans site.config.ts via
+      Builder), Resend actif + lead de test reçu, redirection email contact@, cockpit.
+- [ ] Sign-off Rémy EXPLICITE de mise en ligne, puis dans l'ordre : merge design/t3 → main
+      (déclenchera la 1re publication autoblog, comportement attendu), domaine sur Vercel,
+      DNS OVH, retrait protection Vercel, canonicalBase, SEO_NOINDEX retiré, Search Console.
+- [ ] Rien de tout cela sans validation explicite de Rémy.
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
       retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
