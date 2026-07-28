@@ -12,6 +12,8 @@
 
 - [28/07/2026] | Preview Vercel en échec (« No Output Directory named "public" found ») alors que le build local passait : un projet créé par `vercel project add` en CLI n'a AUCUN framework preset, Vercel le traite en site statique. Le tout premier déploiement de main était « READY » mais servait en réalité le dossier public/ tel quel (d'où l'alias en 404) | Après création d'un projet Vercel en CLI, TOUJOURS poser le preset : PATCH /v9/projects/<id> {"framework":"nextjs"}, puis vérifier qu'une page du site répond vraiment (pas seulement l'état READY du déploiement).
 
+- [28/07/2026] | Les contrôles visuels étaient surtout desktop + mobile, jamais tablette ; Rémy signale que les formats intermédiaires sont souvent les moins soignés (centrage, grilles) | Règle permanente (ajoutée au CLAUDE.md §2) : tout contrôle visuel couvre desktop + mobile ~390px + iPad portrait ~820px, avec vérification du centrage et des grilles intermédiaires. À proposer au CEO-portefeuille pour généralisation aux autres sites.
+
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
 - [héritée] | Sites indexés trop tôt | SEO_NOINDEX=1 dès le tout premier déploiement, levé uniquement sur validation Rémy.

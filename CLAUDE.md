@@ -56,6 +56,11 @@
   page de commune a SA propre image de tête (`public/zones/<slug>.jpg`), décor réellement
   différencié. Interdiction des pools d'images partagées. Contrôle visuel CEO comparatif.
 - **Typographie — INTERDIT : le tiret cadratin « — ».** Virgule ou point à la place.
+- **Contrôle visuel TROIS FORMATS (règle permanente, décision Rémy 28/07/2026)** : tout
+  contrôle visuel (Builder avant livraison ET CEO avant validation) couvre desktop,
+  mobile (~390 px) et tablette iPad portrait (~820 px). Vérifier : centrage, débordements
+  horizontaux, grilles intermédiaires (2 colonnes tablette), sections vides ou décalées.
+  Rien n'est présenté à Rémy sans ces trois passes.
 
 ---
 
