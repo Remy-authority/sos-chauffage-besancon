@@ -84,8 +84,9 @@
       fioul figé exact, discipline de liens vers préfixes inférieurs), poussé. 33 brouillons.
 - [x] Lot 5 (034-048, grand froid) : contrôle CEO passé (dégel sans flamme, vidange
       équilibrée), poussé. 48 brouillons.
-- [ ] Lot 6 (049-063, sortie d'hiver) : message remis à Rémy.
-- [ ] Lot 7 (064-078, printemps) : dernier lot, total 78.
+- [x] Lot 6 (049-063, sortie d'hiver) : contrôle CEO passé (frontières purge/désembouage/
+      équilibrage nettes, liens intra-lot ordonnés), poussé. 63 brouillons.
+- [ ] Lot 7 (064-078, printemps) : DERNIER lot, message remis à Rémy. Total visé 78.
 
 - [ ] Re-test formulaire de bout en bout après activation DNS + redirection contact@.
 - [ ] Twilio 09 → Builder remplace le numéro DEMO dans site.config.ts.
