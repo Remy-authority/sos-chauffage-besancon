@@ -65,13 +65,20 @@
       main vérifiée en zoom par le CEO. Règles anatomie + trois formats gravées
       (CLAUDE.md site, CLAUDE.md portefeuille, mémoire CEO, lessons.md).
 
-## SITE COMPLET. Reste avant mise en ligne (fin septembre)
-- [ ] Infra portefeuille : Twilio 09 (+ remplacer le numéro DEMO dans site.config.ts via
-      Builder), Resend actif + lead de test reçu, redirection email contact@, cockpit.
-- [ ] Sign-off Rémy EXPLICITE de mise en ligne, puis dans l'ordre : merge design/t3 → main
-      (déclenchera la 1re publication autoblog, comportement attendu), domaine sur Vercel,
-      DNS OVH, retrait protection Vercel, canonicalBase, SEO_NOINDEX retiré, Search Console.
-- [ ] Rien de tout cela sans validation explicite de Rémy.
+## SITE COMPLET. Phase infra (état 29/07/2026, matin)
+- [x] Point de situation 29/07 : zone DNS toujours en attente AFNIC, Twilio toujours en
+      file (cockpit phone=null), MAIS Resend posé par le CEO-portefeuille le 28/07 06:09
+      (RESEND_API_KEY + RESEND_FROM, production, sensitive).
+- [x] Chaîne Resend TESTÉE par le CEO site (29/07) : envoi réel via l'API avec la clé du
+      portefeuille (leadcatch/.env.local, procédure INFRA-NOUVEAU-SITE.md), expéditeur
+      SOS Leads <leads@voltapro.io> → remy@remyzaoui.com. Accusé Resend reçu.
+      ⏳ ATTENTE : confirmation de réception par Rémy dans sa boîte.
+- [x] docs/RUNBOOK-MISE-EN-LIGNE.md créé : préconditions P1-P8 + séquence jour J en 12
+      étapes (dont piège identifié : ne PAS ajouter le domaine avant le merge, sinon la
+      protection all_except_custom_domains laisserait l'ancien déploiement accessible).
+- [ ] Re-test formulaire de bout en bout après activation DNS + redirection contact@.
+- [ ] Twilio 09 → Builder remplace le numéro DEMO dans site.config.ts.
+- [ ] Sign-off Rémy EXPLICITE puis dérouler le RUNBOOK dans l'ordre. Rien sans lui.
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
       retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.

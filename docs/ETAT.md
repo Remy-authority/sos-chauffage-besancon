@@ -234,3 +234,11 @@ aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le
   email contact@. Puis sign-off Rémy explicite avant : merge main (déclenchera la 1re
   publication autoblog), domaine + DNS OVH, retrait protection Vercel, canonicalBase,
   levée du noindex EN DERNIER. Rien sans validation explicite de Rémy.
+- 29/07/2026 (session CEO, phase infra) : point de situation. Zone DNS toujours en
+  enregistrement AFNIC (NS muets), Twilio toujours en file d'attente (cockpit phone null).
+  Resend posé par le CEO-portefeuille le 28/07 à 06:09 (production, sensitive) : chaîne
+  d'envoi TESTÉE par le CEO site (envoi réel API Resend, expéditeur leads@voltapro.io,
+  vers remy@remyzaoui.com, accusé reçu ; confirmation de réception Rémy en attente).
+  docs/RUNBOOK-MISE-EN-LIGNE.md créé (préconditions + séquence jour J en 12 étapes,
+  piège domaine/protection documenté). Bloquants restants hors périmètre site : zone DNS
+  (→ redirection email + re-test formulaire) et numéro 09.
