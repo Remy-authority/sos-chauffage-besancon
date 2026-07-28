@@ -80,8 +80,10 @@
 - [x] Lot 2 autoblog (007-018) livré, contrôle CEO passé, poussé. État : 3 publiés + 18 brouillons.
 - [x] Lot 3 : 8 articles publiés livrés, contrôle CEO passé (dates hebdomadaires 04/08-16/09,
       zéro lien mort, doctrine clim respectée), poussé. Site à 11 articles publiés.
-- [ ] Lots 4+ : 60 brouillons supplémentaires (total 78 = 6 mois à 3/semaine), par lots de
-      15 avec contrôle CEO entre chaque.
+- [x] Lot 4 (019-033, cœur de l'hiver) : contrôle CEO passé (sécurité gaz irréprochable,
+      fioul figé exact, discipline de liens vers préfixes inférieurs), poussé. 33 brouillons.
+- [ ] Lot 5 (034-048, grand froid janvier-février) : message remis à Rémy.
+- [ ] Lot 6 (049-063, sortie d'hiver) puis lot 7 (064-078, printemps) : total 78.
 
 - [ ] Re-test formulaire de bout en bout après activation DNS + redirection contact@.
 - [ ] Twilio 09 → Builder remplace le numéro DEMO dans site.config.ts.
