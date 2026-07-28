@@ -129,16 +129,18 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
                 </figcaption>
               </figure>
             ) : (
-              /* Plaque de repérage, en attendant le visuel dédié de la commune. */
-              <div className="relative flex aspect-[16/10] w-full flex-col justify-between overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-abysse/60 p-7">
-                <div aria-hidden="true" className="trame-graduee-fine absolute inset-0 opacity-60" />
-                <div className="relative">
+              /* Plaque de repérage, en attendant le visuel dédié de la commune.
+                 Fond OPAQUE et sans trame interne : en semi-transparence, les
+                 filets de la plaque se mélangeaient aux graduations verticales
+                 du hero (retour Rémy, session 3). */
+              <div className="flex aspect-[16/10] w-full flex-col justify-between rounded-socle border border-calcaire-neige/10 bg-fonte-abysse p-7">
+                <div>
                   <p className="surtitre text-calcaire-ombre">Commune desservie</p>
                   <p className="mt-3 font-titre text-titre-l font-semibold text-calcaire-neige">
                     {zone.name}
                   </p>
                 </div>
-                <dl className="relative grid grid-cols-2 gap-4 border-t border-fonte-brut/70 pt-5 text-legende">
+                <dl className="grid grid-cols-2 gap-4 border-t border-fonte-brut/60 pt-5 text-legende">
                   <div>
                     <dt className="text-calcaire-roche">Code postal</dt>
                     <dd className="chiffre mt-1 font-medium text-laiton-clair">

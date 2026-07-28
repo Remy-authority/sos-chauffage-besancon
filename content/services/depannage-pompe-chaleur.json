@@ -6,7 +6,8 @@
   "h1": "Dépannage urgence pompe à chaleur à Besançon",
   "metaTitle": "Dépannage pompe à chaleur PAC à Besançon, urgence",
   "metaDescription": "Pompe à chaleur en panne à Besançon. Dépannage d'urgence PAC air-air et air-eau, diagnostic et remise en service, 7j/7.",
-  "intro": "Une pompe à chaleur qui décroche en plein hiver comtois laisse le logement sans chauffage au moment où la demande est maximale. Nous intervenons sur les PAC air-eau et air-air à Besançon et dans le Grand Besançon, pour les vraies pannes comme pour les baisses de performance qui n'en sont pas. Car sur cette technologie, beaucoup d'appels concernent des comportements normaux mal interprétés.",
+  "imageAlt": "Technicien accroupi devant une pompe à chaleur ouverte, manomètres de contrôle raccordés au circuit, un matin de gel entre deux maisons",
+  "intro": "Une pompe à chaleur qui décroche en plein hiver comtois laisse le logement sans chauffage au moment où la demande est maximale. Nous intervenons sur les PAC air-eau et air-air à Besançon et dans le Grand Besançon, pour les vraies pannes comme pour les baisses de performance qui n'en sont pas. Car sur cette technologie, beaucoup d'appels concernent des comportements normaux mal interprétés. Cette page traite le dépannage du chauffage ; pour l'installation ou l'entretien d'une climatisation réversible air-air, voyez la page dédiée.",
   "bullets": [
     "PAC air-eau et air-air",
     "Comportement par grand froid",
@@ -30,7 +31,11 @@
       "body": "Une pompe à chaleur demande moins d'entretien qu'une chaudière, mais elle n'en demande pas zéro. Le contrôle annuel porte sur la propreté de l'unité extérieure et de ses ailettes, l'état et le dégagement de l'évacuation des condensats, la pression et la qualité de l'eau du circuit sur une air-eau, les filtres sur une air-air, les paramètres de régulation et le fonctionnement du dégivrage. Sur les installations contenant une quantité importante de fluide frigorigène, un contrôle d'étanchéité périodique est par ailleurs réglementairement prévu. La visite se programme idéalement à l'automne, avant la sollicitation continue."
     }
   ],
-  "relatedServices": ["depannage-chauffage-electrique", "remplacement-chaudiere"],
+  "relatedServices": [
+    "climatisation-reversible",
+    "depannage-chauffage-electrique",
+    "remplacement-chaudiere"
+  ],
   "faq": [
     {
       "q": "Ma pompe à chaleur s'arrête en hiver, est-ce une panne ?",

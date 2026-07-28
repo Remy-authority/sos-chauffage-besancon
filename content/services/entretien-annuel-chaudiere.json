@@ -6,6 +6,7 @@
   "h1": "Entretien annuel légal de chaudière à Besançon",
   "metaTitle": "Entretien chaudière gaz et fioul Besançon, révision légale",
   "metaDescription": "Entretien annuel obligatoire de chaudière à Besançon. Révision légale, attestation remise, contrat annuel, garantie constructeur préservée.",
+  "imageAlt": "Analyseur de combustion tenu en main, sonde engagée dans le conduit de fumées d'une chaudière, lors d'un entretien annuel",
   "intro": "L'entretien annuel d'une chaudière n'est pas une option de confort, c'est une obligation réglementaire française qui concerne les appareils de 4 à 400 kilowatts, soit la quasi-totalité des chaudières individuelles. Il est à la charge de l'occupant du logement, propriétaire ou locataire, et donne lieu à une attestation à conserver. À Besançon, la bonne fenêtre pour le programmer va d'août à octobre, avant que le chauffage ne tourne en continu.",
   "bullets": [
     "Obligation légale annuelle",
@@ -30,7 +31,10 @@
       "body": "Les deux formules existent et se valent selon votre situation. La visite ponctuelle convient si vous préférez décider chaque année, notamment sur un appareil récent encore sous garantie. Le contrat annuel a trois avantages concrets : la visite est programmée sans que vous ayez à y penser, le tarif est stabilisé d'une année sur l'autre, et vous n'êtes pas dépendant des délais de la haute saison. Dans les deux cas, l'attestation vous est remise après la visite et le tarif est annoncé avant le rendez-vous."
     }
   ],
-  "relatedServices": ["depannage-chaudiere-gaz", "depannage-chaudiere-fioul"],
+  "relatedServices": [
+    "depannage-chaudiere-gaz",
+    "depannage-chaudiere-fioul"
+  ],
   "faq": [
     {
       "q": "Est-ce vraiment obligatoire d'entretenir sa chaudière ?",

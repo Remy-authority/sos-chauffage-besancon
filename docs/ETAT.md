@@ -135,6 +135,43 @@ Le Builder n'a pas remplacé ces images de sa propre initiative.
 `employee` ni de `founder` sur `HVACBusiness`). Tant que le nom n'est pas validé par Rémy,
 il n'a rien à faire dans des données structurées lues par les moteurs.
 
+## Session Builder 3 (28/07/2026, branche `design/t3`) : photos prestation, encadré, clim, portrait
+
+**Livré, EN ATTENTE du contrôle visuel CEO :**
+
+1. **Photos sur les 9 pages prestation.** Détection au build sur le modèle des communes
+   (`existsSync` sur `public/services/<slug>.jpg`), photo en tête de page dans la colonne
+   droite du hero, cadrée en **16:10 natif** (leçon des communes), avec légende filet
+   laiton. `imageAlt` ajouté aux 9 fiches JSON : chaque alt décrit le GESTE réellement
+   photographié (vérifié image par image par le Builder). L'OG image de chaque prestation
+   reprend sa photo. La plaque de repères reste le repli si un fichier disparaît.
+2. **Encadré « Ce qu'il faut retenir » assaini** (retour Rémy) : les repères vivent
+   désormais en bandeau titré dans le corps clair (`ServiceQuickFacts`, plus rien ne les
+   concurrence), et les plaques de repli (prestations ET communes) sont passées en fond
+   **opaque** sans trame interne : les filets horizontaux ne se mélangent plus aux
+   graduations verticales du hero. Vérifié par captures en masquant temporairement deux
+   visuels (désembouage, Pirey) pour forcer les replis.
+3. **Page climatisation réversible** (`/services/climatisation-reversible`, Service 9 du
+   plan SEO) : title/meta/H1/FAQ conformes à la spec, AUCUNE mention RGE ni attestation
+   fluides, aucun rendement chiffré ni décibel (qualitatif). Bloc de distinction et liens
+   croisés avec la page dépannage PAC (relatedServices dans les deux sens + phrase de
+   renvoi dans l'intro PAC). Icône `clim` (AirVent). Menu, schema (`serviceType` via
+   `serviceJsonLd`, OfferCatalog, `knowsAbout` : « Climatisation réversible air-air »),
+   sitemap et **llms.txt vérifiés** (la page y figure ; paragraphe Activité et
+   saisonnalité mis à jour). `PrestationsReleve` passe à « Neuf interventions » et ne
+   dit plus « ni climatisation seule ». Section « Deux saisons » : le bloc été mentionne
+   la clim posée au printemps + lien secondaire vers la page.
+4. **Portrait détouré** dans « Qui intervient chez vous » : `artisan-detoure.png`
+   (alpha réel vérifié : 72 % transparent) posé sur un dégradé de fonte + trame graduée +
+   halo laiton, cartouche d'identité conservé, alt propre au sujet détouré. AUCUN badge,
+   aucun chiffre. `artisan.jpg` reste sur la vignette du bandeau signature.
+
+**Vérifications** : zéro tiret cadratin, zéro RGE/fluides/décibels sur la nouvelle page,
+JSON valides, `npm run build` vert (38 pages dont la nouvelle), contrôle Playwright
+desktop + mobile sur home, clim, gaz, désembouage (repli), Pirey (repli), Saint-Vit :
+aucune erreur JS, aucun débordement, aucune image cassée, tous les alt présents.
+Persona toujours DEMO et HORS JSON-LD. Variables Vercel et autoblog non touchés.
+
 ## Historique
 - 28/07/2026 : création du dossier, achat domaine, CLAUDE.md T3, journal initialisé
   (session CEO-portefeuille).
@@ -143,6 +180,10 @@ il n'a rien à faire dans des données structurées lues par les moteurs.
   l'agent a été refusé (meta « Metz », mention RGE, géographie fausse sur 7 communes,
   chiffres inventés) puis corrigé en V2 + relecture CEO. Prochaine étape : Rémy lance le
   Builder avec le message fourni.
+- 28/07/2026 (session Builder 3) : photos câblées sur les 9 pages prestation, encadré
+  « Ce qu'il faut retenir » corrigé (retour Rémy), page climatisation réversible créée
+  (menu, schema, llms.txt), portrait détouré intégré. Build vert, contrôle Playwright
+  passé. En attente du contrôle visuel CEO.
 - 28/07/2026 (session Builder) : template T3 créé et contenu chauffage Besançon intégralement
   rédigé, sur la branche `design/t3`. Build vert, contrôle visuel Playwright passé. Deux
   défauts trouvés et corrigés en cours de route : opacités Tailwind hors échelle qui rendaient

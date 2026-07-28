@@ -2,17 +2,19 @@ import Image from 'next/image'
 import { PhoneCall } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { HaloThermique } from '@/components/ui/HaloThermique'
 import { siteConfig } from '@/config/site.config'
 import { depuisGauche } from '@/lib/motion'
 
 /**
  * « Qui intervient chez vous », l'artisan derrière le site.
  *
- * Le portrait est traité comme une plaque : cadre net, coins courts, filet
- * laiton en débord, à l'opposé du portrait rond détouré des sites de service.
- * Le parcours est raconté en étapes numérotées, jamais en années : la règle du
- * projet interdit tout chiffre d'expérience, et le récit par étapes dit la même
- * chose sans rien avancer d'invérifiable.
+ * Le portrait est le sujet DÉTOURÉ (PNG alpha), posé sur un dégradé de fonte
+ * réchauffé par un halo laiton : la personne se détache de la matière du site
+ * lui-même plutôt que d'un décor de chaufferie. Le format 4:5 du fichier est
+ * respecté tel quel. Le parcours est raconté en étapes numérotées, jamais en
+ * années : la règle du projet interdit tout chiffre d'expérience, et le récit
+ * par étapes dit la même chose sans rien avancer d'invérifiable.
  */
 export function QuiIntervient() {
   const { persona, phone, phoneDisplay, city } = siteConfig
@@ -22,16 +24,22 @@ export function QuiIntervient() {
     <section id="artisan" className="plage bg-calcaire-neige" aria-labelledby="artisan-titre">
       <div className="enceinte">
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Portrait */}
+          {/* Portrait détouré sur aplat T3 */}
           <AnimatedSection variants={depuisGauche} className="lg:col-span-5">
             <div className="relative">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-socle border border-calcaire-pierre bg-calcaire-voile">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-socle border border-calcaire-pierre bg-gradient-to-b from-fonte-brut via-fonte-trempe to-fonte-nuit">
+                <div aria-hidden="true" className="trame-graduee absolute inset-0 opacity-50" />
+                <HaloThermique
+                  className="-top-16 left-1/2 -translate-x-1/2"
+                  teinte="laiton"
+                  taille={380}
+                />
                 <Image
-                  src={persona.photo}
-                  alt={persona.photoAlt}
+                  src={persona.photoDetouree}
+                  alt={persona.photoDetoureeAlt}
                   fill
                   sizes="(min-width: 1024px) 420px, 100vw"
-                  className="object-cover"
+                  className="object-contain object-bottom"
                   loading="lazy"
                 />
               </div>

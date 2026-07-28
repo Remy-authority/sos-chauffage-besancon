@@ -40,7 +40,7 @@ export function GET() {
     `> ${trade} à ${city} (${departmentName}, ${department}, ${region}) et dans les communes du Grand Besançon. Dépannage d'urgence et entretien annuel obligatoire. Ligne ouverte ${availability}.`,
     '',
     '## Activité',
-    `${businessName} intervient sur les installations de chauffage et de production d'eau chaude sanitaire à ${city} et dans l'agglomération : chaudière gaz, chaudière fioul, pompe à chaleur air-eau et air-air, ballon d'eau chaude, radiateurs et circuit de chauffage central, chauffage électrique. Deux types de demandes : le dépannage d'urgence, majoritaire de novembre à février, et l'entretien annuel, qui se programme plutôt d'août à octobre. Le périmètre s'arrête au chauffage et à l'eau chaude : ni plomberie générale, ni installation électrique, ni ramonage de conduit. Le tarif de la prestation est annoncé avant le début de l'intervention.`,
+    `${businessName} intervient sur les installations de chauffage et de production d'eau chaude sanitaire à ${city} et dans l'agglomération : chaudière gaz, chaudière fioul, pompe à chaleur air-eau et air-air, ballon d'eau chaude, radiateurs et circuit de chauffage central, chauffage électrique, climatisation réversible air-air (installation, entretien, dépannage). Deux types de demandes : le dépannage d'urgence, majoritaire de novembre à février, et les interventions programmées, entretien annuel d'août à octobre et pose de climatisation réversible au printemps. Le périmètre s'arrête au chauffage, à l'eau chaude et à la climatisation réversible : ni plomberie générale, ni installation électrique, ni ramonage de conduit. Le tarif de la prestation est annoncé avant le début de l'intervention.`,
     '',
     '## Appareils pris en charge',
     ...appareils.map((a) => `- ${a}`),
@@ -59,7 +59,7 @@ export function GET() {
     '## Saisonnalité',
     "- Novembre à février : pic des pannes, chaudières très sollicitées, urgences majoritaires.",
     "- Août à octobre : période recommandée pour l'entretien annuel, avant la remise en route.",
-    '- Mars à juillet : maintenance, désembouage de circuit, préparation et remplacement d’appareil.',
+    "- Mars à juillet : maintenance, désembouage de circuit, remplacement d'appareil, installation de climatisation réversible avant les premières chaleurs.",
     '',
   ]
 

@@ -6,6 +6,7 @@
   "h1": "Dépannage radiateur et chauffage électrique à Besançon",
   "metaTitle": "Réparation chauffage électrique et radiateurs Besançon",
   "metaDescription": "Radiateur électrique en panne à Besançon. Dépannage de chauffage électrique, thermostat, résistance et fil pilote, intervention rapide.",
+  "imageAlt": "Contrôle au multimètre du bornier de raccordement d'un convecteur électrique mural, capot ouvert et conducteurs apparents",
   "intro": "Un radiateur électrique qui ne chauffe plus se répare le plus souvent sans remplacer l'appareil : la panne vient du thermostat, de la résistance, du fil pilote ou de l'alimentation, rarement du corps de chauffe lui-même. Nous intervenons à Besançon et dans le Grand Besançon sur les convecteurs, les panneaux rayonnants et les radiateurs à inertie, en chauffage principal comme en appoint.",
   "bullets": [
     "Convecteur, rayonnant, inertie",
@@ -26,7 +27,10 @@
       "body": "1. Dépoussiérez les grilles et les ailettes avant la première mise en route : la poussière accumulée pendant l'été dégrade la diffusion et produit l'odeur de brûlé caractéristique du premier allumage. 2. Faites tourner chaque appareil quelques heures en septembre, à pleine consigne, pour repérer ceux qui ne montent pas en température avant que le froid n'arrive. 3. Vérifiez les consignes et la programmation, en particulier après une coupure de courant qui a pu réinitialiser un programmateur. 4. Contrôlez que rien n'obstrue la circulation d'air devant les appareils, un meuble ou un rideau suffisant à dégrader nettement le rendement. 5. Repérez les pièces qui chauffent moins bien que les autres : c'est souvent le premier signe d'un appareil sous-dimensionné plutôt qu'en panne."
     }
   ],
-  "relatedServices": ["depannage-pompe-chaleur", "depannage-ballon-eau-chaude"],
+  "relatedServices": [
+    "depannage-pompe-chaleur",
+    "depannage-ballon-eau-chaude"
+  ],
   "faq": [
     {
       "q": "Mon radiateur électrique ne chauffe plus, pourquoi ?",

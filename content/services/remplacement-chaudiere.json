@@ -6,6 +6,7 @@
   "h1": "Remplacement de chaudière à Besançon",
   "metaTitle": "Remplacement de chaudière à Besançon, devis installation",
   "metaDescription": "Remplacement de chaudière gaz ou fioul à Besançon. Étude de l'installation existante, choix de l'appareil, pose et mise en service.",
+  "imageAlt": "Ancienne chaudière déposée au sol sur une bâche et chaudière neuve encore emballée sur un diable, raccords cuivre en attente au mur d'une cuisine",
   "intro": "Remplacer une chaudière est une décision qui engage quinze à vingt ans de confort et de consommation. Elle ne se prend pas dans l'urgence d'une panne de janvier, quand la pression pousse à choisir vite. Nous étudions l'installation existante, nous vous disons ce que votre logement permet réellement, et nous posons l'appareil qui correspond à cet usage plutôt qu'au catalogue du moment.",
   "bullets": [
     "Étude de l'installation existante",
@@ -30,7 +31,10 @@
       "body": "Des dispositifs publics accompagnent le remplacement d'un appareil de chauffage : MaPrimeRénov', les certificats d'économies d'énergie et l'éco-prêt à taux zéro. Ils existent, ils sont réels, et leurs conditions évoluent régulièrement. Deux points méritent d'être dits clairement. D'une part, les montants et les critères d'éligibilité figurent sur les sites officiels de l'État, seule source à jour : nous ne les reproduisons pas ici pour ne pas afficher un chiffre périmé. D'autre part, l'accès à ces aides dépend notamment de la qualification de l'installateur retenu : renseignez-vous sur ce point avant d'engager un projet dont le financement en dépendrait."
     }
   ],
-  "relatedServices": ["depannage-chaudiere-gaz", "depannage-pompe-chaleur"],
+  "relatedServices": [
+    "depannage-chaudiere-gaz",
+    "depannage-pompe-chaleur"
+  ],
   "faq": [
     {
       "q": "Comment savoir si ma chaudière doit être remplacée ?",

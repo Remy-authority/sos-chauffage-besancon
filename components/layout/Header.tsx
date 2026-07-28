@@ -17,7 +17,7 @@ export type NavService = { slug: string; navTitle: string }
  *
  * Deux états : transparent sur les en-têtes sombres, puis « posé » au scroll,
  * avec un filet laiton qui se dessine sous la barre. Le menu des prestations
- * s'ouvre en panneau plein-largeur (et non en petite liste flottante) : les huit
+ * s'ouvre en panneau plein-largeur (et non en petite liste flottante) : les neuf
  * prestations tiennent en deux colonnes, avec le numéro d'ordre en repère.
  */
 export function Header({ services }: { services: NavService[] }) {

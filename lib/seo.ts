@@ -93,7 +93,7 @@ export function localBusinessJsonLd() {
     '@type': 'HVACBusiness',
     '@id': ID_ENTREPRISE,
     name: siteConfig.businessName,
-    description: `${siteConfig.trade} à ${siteConfig.city} et dans le Grand Besançon : dépannage de chaudière gaz et fioul, pompe à chaleur, ballon d'eau chaude, radiateurs, et entretien annuel obligatoire.`,
+    description: `${siteConfig.trade} à ${siteConfig.city} et dans le Grand Besançon : dépannage de chaudière gaz et fioul, pompe à chaleur, ballon d'eau chaude, radiateurs, entretien annuel obligatoire et climatisation réversible air-air.`,
     url: BASE,
     telephone: siteConfig.phone,
     email: siteConfig.email,

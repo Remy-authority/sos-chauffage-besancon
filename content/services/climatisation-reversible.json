@@ -1,0 +1,61 @@
+{
+  "slug": "climatisation-reversible",
+  "order": 9,
+  "icon": "clim",
+  "navTitle": "Climatisation réversible",
+  "h1": "Installation climatisation réversible PAC air-air à Besançon",
+  "metaTitle": "Climatisation PAC air-air Besançon, installation réversible",
+  "metaDescription": "Installation climatisation réversible PAC air-air à Besançon. Chauffage en hiver, rafraîchissement en été. Entretien, dépannage, devis transparent.",
+  "imageAlt": "Nettoyage au chiffon des filtres d'une unité intérieure de climatisation réversible murale, volet relevé, dans une pièce lumineuse",
+  "intro": "La climatisation réversible, ou pompe à chaleur air-air, est le seul appareil de la maison qui travaille dans les deux sens : elle rafraîchit le logement l'été et le chauffe à l'intersaison comme en hiver. À Besançon, où les logements en pierre gardent la chaleur pendant les épisodes chauds et où la saison de chauffe reste longue, elle s'ajoute à l'installation existante sans gros travaux. Nous installons, entretenons et dépannons ces systèmes sur Besançon et le Grand Besançon.",
+  "bullets": [
+    "Rafraîchit l'été, chauffe l'hiver",
+    "Pose sans gros travaux",
+    "Entretien et dépannage assurés"
+  ],
+  "blocks": [
+    {
+      "heading": "Un seul appareil pour les deux saisons",
+      "body": "Une climatisation réversible fonctionne comme une pompe à chaleur : elle ne produit pas de froid ou de chaud à partir de rien, elle déplace des calories entre l'intérieur et l'extérieur. L'été, elle évacue la chaleur du logement vers dehors. L'hiver, elle inverse son cycle et va chercher la chaleur de l'air extérieur pour la souffler dans les pièces, en restituant plus d'énergie qu'elle n'en consomme. C'est ce qui en fait un vrai équipement quatre saisons, et non un simple confort de canicule : à l'intersaison, elle chauffe le logement sans allumer la chaudière, et lors des pics de froid comtois, elle épaule le chauffage principal, qui reste maître du jeu."
+    },
+    {
+      "heading": "Climatisation réversible ou pompe à chaleur air-eau, ne confondons pas",
+      "body": "Les deux technologies portent le nom de pompe à chaleur, mais elles ne rendent pas le même service. La pompe à chaleur air-eau alimente le chauffage central : elle chauffe l'eau des radiateurs ou du plancher chauffant et remplace la chaudière ; son dépannage relève de notre prestation dédiée au dépannage de pompe à chaleur. La climatisation réversible, elle, est une pompe à chaleur air-air : elle souffle directement l'air traité dans les pièces par une ou plusieurs unités intérieures, sans toucher au circuit d'eau. Elle ne remplace pas le chauffage central, elle le complète, en apportant ce que lui ne sait pas faire : rafraîchir l'été. Cette page couvre l'installation, l'entretien et le dépannage de l'air-air ; pour une panne sur une installation air-eau raccordée aux radiateurs, consultez la page dépannage pompe à chaleur."
+    },
+    {
+      "heading": "L'installation, sans gros travaux, y compris dans l'ancien",
+      "body": "Une installation air-air se compose d'une unité extérieure et d'une ou plusieurs unités intérieures, reliées par une liaison frigorifique qui traverse le mur par un simple percement. Pas de circuit d'eau à créer, pas de radiateurs à remplacer : c'est ce qui la rend pertinente dans les logements bisontins anciens, où les murs épais gardent la fraîcheur une partie de l'été puis restituent la chaleur accumulée au moment des nuits chaudes. Les unités intérieures actuelles sont discrètes, murales ou en console, et se choisissent pièce par pièce selon l'usage réel, chambre, séjour ou bureau. L'emplacement de l'unité extérieure est étudié avec vous avant la pose : orientation, distance des fenêtres et du voisinage, écoulement des condensats, accessibilité pour l'entretien."
+    },
+    {
+      "heading": "L'entretien, une obligation réglementaire et le meilleur garant de la durée",
+      "body": "Comme les pompes à chaleur, les climatisations des logements sont soumises à un entretien périodique obligatoire, à faire réaliser par un professionnel au moins tous les deux ans selon la réglementation en vigueur. Entre deux visites, le geste utile revient à l'occupant : nettoyer régulièrement les filtres des unités intérieures, surtout après l'été, car un filtre encrassé fait perdre à l'appareil une partie de sa capacité et dégrade l'air soufflé. Lors de la visite d'entretien, nous contrôlons les échangeurs, l'écoulement des condensats, les températures de soufflage et le fonctionnement du cycle réversible, avant la saison où l'appareil sera le plus sollicité. Et quand une machine s'arrête ou affiche un défaut, nous intervenons en dépannage comme sur le reste du parc."
+    }
+  ],
+  "relatedServices": ["depannage-pompe-chaleur", "depannage-chauffage-electrique"],
+  "faq": [
+    {
+      "q": "Quelle est la différence entre une climatisation classique et une climatisation réversible ?",
+      "a": "Une climatisation classique ne fait que refroidir. Une climatisation réversible sait inverser son cycle : elle rafraîchit l'été et chauffe l'hiver avec le même appareil. C'est une pompe à chaleur air-air. À l'achat, l'écart de prix est devenu faible, et la version réversible rend service toute l'année au lieu de quelques semaines : c'est aujourd'hui le choix par défaut dans la région."
+    },
+    {
+      "q": "Peut-on installer une climatisation réversible dans une maison ancienne de Besançon ?",
+      "a": "Oui, et c'est même un cas fréquent. L'installation ne demande pas de circuit d'eau ni de gros travaux : une liaison frigorifique traverse le mur pour relier l'unité extérieure aux unités intérieures. Le chauffage existant reste en place, la climatisation réversible vient en complément. Dans le bâti ancien, le point qui demande de l'attention est le passage de la liaison et l'emplacement de l'unité extérieure, que nous étudions sur place avant tout devis."
+    },
+    {
+      "q": "L'entretien d'une climatisation est-il obligatoire ?",
+      "a": "Oui. La réglementation impose un entretien périodique par un professionnel, au moins tous les deux ans, pour les climatisations et pompes à chaleur des logements. Au quotidien, le nettoyage régulier des filtres des unités intérieures revient à l'occupant : c'est simple, et c'est ce qui préserve la capacité de l'appareil et la qualité de l'air soufflé entre deux visites."
+    },
+    {
+      "q": "Une climatisation réversible consomme-t-elle beaucoup en chauffage l'hiver ?",
+      "a": "Non, c'est même son intérêt : comme toute pompe à chaleur, elle restitue plus d'énergie qu'elle n'en consomme, puisqu'elle prélève des calories dans l'air extérieur au lieu de produire toute la chaleur elle-même. Sa performance diminue quand la température chute fortement, ce qui arrive à Besançon en plein hiver : elle sert alors d'appoint et le chauffage principal prend le relais. Sur l'intersaison, elle chauffe souvent seule, chaudière éteinte."
+    },
+    {
+      "q": "Est-ce que c'est bruyant ?",
+      "a": "Les unités intérieures actuelles sont discrètes, au point de s'oublier en fonctionnement normal, et la plupart disposent d'un mode nuit encore plus silencieux. Le point de vigilance est l'unité extérieure : son emplacement s'étudie avant la pose, à distance des fenêtres de chambre et du voisinage, sur des supports qui absorbent les vibrations. C'est un critère d'implantation à part entière, pas un détail."
+    },
+    {
+      "q": "Quel est le meilleur moment pour faire installer une climatisation réversible ?",
+      "a": "Le printemps. Les plannings sont plus souples qu'en période de canicule, où les demandes affluent d'un coup, et l'appareil est en place avant les premières chaleurs. L'installation de printemps permet aussi de profiter du mode chauffage dès l'automne suivant. Attendre la première vague chaude de l'été, c'est s'exposer aux délais les plus longs de l'année."
+    }
+  ]
+}

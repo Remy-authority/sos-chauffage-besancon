@@ -6,6 +6,7 @@
   "h1": "Dépannage de ballon d'eau chaude à Besançon",
   "metaTitle": "Réparation ballon d'eau chaude et chauffe-eau Besançon",
   "metaDescription": "Ballon d'eau chaude en panne à Besançon. Réparation de chauffe-eau, thermostat, résistance et anode, détartrage et remplacement.",
+  "imageAlt": "Vidange d'un ballon d'eau chaude au flexible dans un seau, résistance entartrée déposée sur un linge au sol",
   "intro": "Perdre l'eau chaude n'immobilise pas le chauffage, mais cela rend un logement difficilement habitable au quotidien. La panne vient presque toujours de trois pièces : le thermostat, la résistance et l'anode. Nous intervenons à Besançon et dans le Grand Besançon sur les chauffe-eau électriques, les ballons thermodynamiques et la production d'eau chaude intégrée aux chaudières.",
   "bullets": [
     "Thermostat, résistance, anode",
@@ -30,7 +31,10 @@
       "body": "Un thermostat, une résistance et une anode se remplacent : ces interventions sont courantes et redonnent plusieurs années de service à un appareil sain. En revanche, dès que la cuve est percée ou que la corrosion est visible, la réparation n'a plus de sens et un remplacement s'impose. Entre les deux, l'arbitrage se joue sur l'âge de l'appareil, l'adéquation de son volume aux besoins réels du foyer et le coût des pièces. Nous vous donnons cet arbitrage franchement, avant d'intervenir, et nous vous indiquons le cas échéant le volume qui correspondrait réellement à votre usage."
     }
   ],
-  "relatedServices": ["depannage-chaudiere-gaz", "depannage-chauffage-electrique"],
+  "relatedServices": [
+    "depannage-chaudiere-gaz",
+    "depannage-chauffage-electrique"
+  ],
   "faq": [
     {
       "q": "Mon chauffe-eau ne produit plus d'eau chaude, que faire ?",

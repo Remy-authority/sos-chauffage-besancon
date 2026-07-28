@@ -1,4 +1,5 @@
 import {
+  AirVent,
   BadgeCheck,
   Bath,
   Fan,
@@ -34,6 +35,7 @@ const PICTOGRAMMES: Record<string, LucideIcon> = {
   ballon: Bath,
   desembouage: Waves,
   remplacement: Hammer,
+  clim: AirVent,
   // Symptômes et repères
   froid: ThermometerSnowflake,
   securite: Radiation,

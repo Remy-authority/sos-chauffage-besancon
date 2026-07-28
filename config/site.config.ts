@@ -115,6 +115,7 @@ export const siteConfig = {
     'Ballon d’eau chaude et chauffe-eau',
     'Radiateurs et circuit de chauffage central',
     'Chauffage électrique et thermostats',
+    'Climatisation réversible air-air',
   ],
 
   /* ── Zone d'intervention (schema areaServed + section zones) ── */
@@ -251,6 +252,12 @@ export const siteConfig = {
     photo: '/artisan.jpg',
     photoAlt:
       'Chauffagiste en veste de travail, bras croisés, devant une chaudière et un réseau de tuyauterie cuivre dans une chaufferie aux murs de pierre',
+    // DEMO – même sujet, détouré (PNG alpha) : posé sur un fond de la palette T3
+    // dans la section « Qui intervient chez vous ». L'alt ne décrit que le sujet,
+    // le décor d'origine ayant été retiré.
+    photoDetouree: '/artisan-detoure.png',
+    photoDetoureeAlt:
+      'Portrait d’un chauffagiste souriant en veste de travail, bras croisés',
     // Tenu court : sert de première ligne de titre, deux lignes équilibrées.
     accroche: 'Un seul interlocuteur',
     /** Parcours en étapes. Jamais de durée, jamais de date. */
@@ -344,7 +351,7 @@ export const siteConfig = {
       titre: 'L’entretien',
       sousTitre: 'Avant que le froid revienne',
       texte:
-        'L’entretien annuel d’une chaudière est une obligation légale en France, et c’est aussi ce qui évite l’arrêt en pleine vague de froid. La bonne fenêtre va d’août à octobre, quand le chauffage ne tourne pas encore.',
+        'L’entretien annuel d’une chaudière est une obligation légale en France, et c’est aussi ce qui évite l’arrêt en pleine vague de froid. La bonne fenêtre va d’août à octobre, quand le chauffage ne tourne pas encore. Et la belle saison a son chantier à elle : la climatisation réversible, posée au printemps, qui rafraîchit l’été et chauffe le reste de l’année.',
       points: [
         'Obligation légale annuelle',
         'Attestation remise après passage',

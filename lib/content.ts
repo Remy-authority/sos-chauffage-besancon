@@ -53,6 +53,12 @@ export interface Service {
   order: number
   /** Image hero de la page service (chemin public). */
   image?: string
+  /**
+   * Texte alternatif du visuel de tête (`public/services/<slug>.jpg`). Décrit le
+   * GESTE réellement photographié (outil, appareil, action), jamais une liste de
+   * mots-clés : même règle que pour les communes.
+   */
+  imageAlt?: string
 }
 
 export interface Zone {

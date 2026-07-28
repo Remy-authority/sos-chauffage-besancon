@@ -6,6 +6,7 @@
   "h1": "Dépannage chaudière fioul urgent à Besançon",
   "metaTitle": "Réparation chaudière fioul Besançon, dépannage urgent",
   "metaDescription": "Chaudière fioul en panne à Besançon. Chauffagiste fioul en urgence 7j/7, diagnostic, réparation et entretien annuel obligatoire.",
+  "imageAlt": "Brûleur de chaudière fioul démonté sur un établi d'atelier, électrodes d'allumage et joints neufs alignés, brosse métallique en main pour le nettoyage",
   "intro": "Le fioul reste très présent dans la couronne de Besançon et dans les communes rurales du Doubs, là où le réseau de gaz ne dessert pas toutes les rues. Une chaudière fioul ne tombe pas en panne pour les mêmes raisons qu'une chaudière gaz : le brûleur, le gicleur et la ligne d'alimentation depuis la cuve concentrent l'essentiel des arrêts. Nous intervenons en urgence sur ces installations, week-ends et jours fériés compris.",
   "bullets": [
     "Brûleur, gicleur, ligne d'alimentation",
@@ -30,7 +31,10 @@
       "body": "La question revient souvent, et elle n'a pas de réponse unique. Le raccordement au gaz n'est possible que si le réseau dessert la rue, ce qui n'est pas le cas partout dans le Grand Besançon. La pompe à chaleur suppose un logement suffisamment isolé et des émetteurs adaptés, faute de quoi le confort se dégrade précisément pendant les périodes de grand froid. Des aides publiques existent pour accompagner un changement d'appareil, MaPrimeRénov', les certificats d'économies d'énergie et l'éco-prêt à taux zéro : leurs conditions et leurs montants figurent sur les sites officiels de l'État et dépendent notamment de l'installateur retenu. Nous vous disons ce que votre installation permet techniquement, sans vous pousser vers une solution plutôt qu'une autre."
     }
   ],
-  "relatedServices": ["entretien-annuel-chaudiere", "remplacement-chaudiere"],
+  "relatedServices": [
+    "entretien-annuel-chaudiere",
+    "remplacement-chaudiere"
+  ],
   "faq": [
     {
       "q": "Quelle différence entre une chaudière gaz et une chaudière fioul ?",

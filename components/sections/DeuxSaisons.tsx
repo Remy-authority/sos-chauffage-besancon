@@ -86,16 +86,30 @@ export function DeuxSaisons() {
                 ))}
               </ul>
 
-              <Link
-                href="/services/entretien-annuel-chaudiere"
-                className="group mt-8 inline-flex items-center gap-2.5 font-titre text-titre-s font-medium text-jura-dense transition-colors hover:text-jura-franc"
-              >
-                Programmer mon entretien
-                <ArrowRight
-                  size={18}
-                  className="transition-transform duration-300 ease-thermique group-hover:translate-x-1"
-                />
-              </Link>
+              {/* Les deux chantiers de la belle saison : l'entretien qui prépare
+                  l'hiver, la climatisation réversible qui traite l'été. */}
+              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+                <Link
+                  href="/services/entretien-annuel-chaudiere"
+                  className="group inline-flex items-center gap-2.5 font-titre text-titre-s font-medium text-jura-dense transition-colors hover:text-jura-franc"
+                >
+                  Programmer mon entretien
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 ease-thermique group-hover:translate-x-1"
+                  />
+                </Link>
+                <Link
+                  href="/services/climatisation-reversible"
+                  className="group inline-flex items-center gap-2 text-legende font-medium text-calcaire-basalte transition-colors hover:text-jura-franc"
+                >
+                  La climatisation réversible
+                  <ArrowRight
+                    size={15}
+                    className="transition-transform duration-300 ease-thermique group-hover:translate-x-1"
+                  />
+                </Link>
+              </div>
             </div>
           </AnimatedSection>
         </div>

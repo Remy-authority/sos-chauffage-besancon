@@ -6,6 +6,7 @@
   "h1": "Dépannage urgence chaudière gaz à Besançon",
   "metaTitle": "Dépannage chaudière gaz à Besançon, intervention urgence",
   "metaDescription": "Panne de chaudière gaz à Besançon. Diagnostic, devis transparent, intervention rapide. Chauffagiste disponible 24h/24 et 7j/7.",
+  "imageAlt": "Chauffagiste relevant la pression au manomètre d'une chaudière murale gaz ouverte, tuyauterie cuivre apparente, lampe de chantier posée à côté dans une cave en pierre",
   "intro": "Une chaudière gaz qui s'arrête en hiver à Besançon est une urgence : sans elle, le logement perd son chauffage et souvent son eau chaude en même temps. Nous intervenons à Besançon et dans les communes du Grand Besançon, week-ends et jours fériés compris. Vous décrivez ce que fait l'appareil et le code affiché, nous identifions la famille de panne au téléphone et nous annonçons le tarif avant de nous déplacer.",
   "bullets": [
     "Ligne ouverte 7j/7",
@@ -30,7 +31,10 @@
       "body": "Une chaudière gaz correctement entretenue tient longtemps, mais elle finit par atteindre un point où la réparation n'a plus de sens. Trois éléments décident : la disponibilité des pièces détachées, qui se raréfient sur les modèles anciens et allongent les délais d'immobilisation ; la fréquence des pannes, car plusieurs arrêts par saison coûtent vite plus cher qu'un remplacement étalé ; et le rendement réel de l'appareil, une chaudière ancienne consommant sensiblement plus qu'un modèle à condensation pour le même confort. Nous vous donnons notre avis franchement, y compris quand il consiste à dire qu'une réparation tiendra encore plusieurs saisons."
     }
   ],
-  "relatedServices": ["entretien-annuel-chaudiere", "remplacement-chaudiere"],
+  "relatedServices": [
+    "entretien-annuel-chaudiere",
+    "remplacement-chaudiere"
+  ],
   "faq": [
     {
       "q": "Pourquoi ma chaudière gaz ne s'allume plus ?",

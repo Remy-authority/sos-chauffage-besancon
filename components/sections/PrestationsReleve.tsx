@@ -6,7 +6,7 @@ import { ServiceIcon } from '@/components/ui/ServiceIcon'
 import type { Service } from '@/lib/content'
 
 /**
- * Les huit prestations, en relevé.
+ * Les neuf prestations, en relevé.
  *
  * Traitement volontairement à contre-courant de la grille de cartes : une table
  * de rangées numérotées, dense et lisible, qui donne à la section l'allure d'une
@@ -26,12 +26,12 @@ export function PrestationsReleve({ services }: { services: Service[] }) {
           eyebrow="Ce que nous prenons en charge"
           title={
             <>
-              Huit interventions,
+              Neuf interventions,
               <br />
               un seul métier.
             </>
           }
-          subtitle="Le chauffage et l’eau chaude sanitaire, du dépannage d’urgence au remplacement d’appareil. Rien d’autre : nous ne faisons ni plomberie générale, ni électricité, ni climatisation seule."
+          subtitle="Le chauffage, l’eau chaude sanitaire et la climatisation réversible, du dépannage d’urgence au remplacement d’appareil. Rien d’autre : nous ne faisons ni plomberie générale, ni installation électrique."
         />
 
         <div className="mt-12 border-t border-calcaire-brume">
