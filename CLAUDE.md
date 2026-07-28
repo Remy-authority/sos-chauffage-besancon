@@ -78,6 +78,11 @@
 - **Structure du site :** 1 accueil, 1 page par service, 1 page par commune voisine,
   1 blog conseils, mentions légales conformes (droit français).
 - **FAQ sur chaque page.**
+- **Dotation éditoriale au lancement (règle permanente, décision Rémy 29/07/2026)** :
+  au jour de la mise en ligne, le site part avec **11 articles publiés** dans
+  `content/conseils/`, et le stock de brouillons autoblog couvre **6 mois de publication
+  au rythme de 3 articles/semaine** (soit 78 brouillons dans `content/drafts/`).
+  Le tout est constitué et contrôlé AVANT la mise en ligne.
 - **Interdits absolus** : bourrage de mots-clés, chiffres inventés non validés par Rémy,
   fausses certifications (NE PAS prétendre RGE), phrases creuses.
 - Contenu vrai, précis, local. Donnée non confirmée → on ne l'affiche pas.

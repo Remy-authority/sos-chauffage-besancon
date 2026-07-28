@@ -76,6 +76,12 @@
 - [x] docs/RUNBOOK-MISE-EN-LIGNE.md créé : préconditions P1-P8 + séquence jour J en 12
       étapes (dont piège identifié : ne PAS ajouter le domaine avant le merge, sinon la
       protection all_except_custom_domains laisserait l'ancien déploiement accessible).
+## Dotation éditoriale (règle Rémy 29/07 : 11 publiés + 78 brouillons avant mise en ligne)
+- [x] Lot 2 autoblog (007-018) livré, contrôle CEO passé, poussé. État : 3 publiés + 18 brouillons.
+- [ ] Lot 3 : 8 articles PUBLIÉS supplémentaires (total 11 au lancement). Message remis à Rémy.
+- [ ] Lots 4+ : 60 brouillons supplémentaires (total 78 = 6 mois à 3/semaine), par lots de
+      15 avec contrôle CEO entre chaque.
+
 - [ ] Re-test formulaire de bout en bout après activation DNS + redirection contact@.
 - [ ] Twilio 09 → Builder remplace le numéro DEMO dans site.config.ts.
 - [ ] Sign-off Rémy EXPLICITE puis dérouler le RUNBOOK dans l'ordre. Rien sans lui.
