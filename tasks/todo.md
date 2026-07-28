@@ -86,7 +86,9 @@
       équilibrée), poussé. 48 brouillons.
 - [x] Lot 6 (049-063, sortie d'hiver) : contrôle CEO passé (frontières purge/désembouage/
       équilibrage nettes, liens intra-lot ordonnés), poussé. 63 brouillons.
-- [ ] Lot 7 (064-078, printemps) : DERNIER lot, message remis à Rémy. Total visé 78.
+- [x] Lot 7 (064-078, printemps) : contrôle CEO passé (aides publiques exemplaires, frontières
+      remplacement/filtres clim nettes, 39 liens vérifiés un par un, 1 coquille corrigée par
+      l'agent puis re-contrôlée), poussé (45da719). DOTATION COMPLÈTE : 11 publiés + 78 brouillons.
 
 - [ ] Re-test formulaire de bout en bout après activation DNS + redirection contact@.
 - [ ] Twilio 09 → Builder remplace le numéro DEMO dans site.config.ts.

@@ -248,9 +248,26 @@ aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le
   l'agent autoblog en conversation, par lots, contrôle CEO entre chaque : lot 2 (007-018,
   nov-jan) VALIDÉ ; lot 3 (8 articles publiés, site à 11) VALIDÉ ; lot 4 (019-033, cœur
   de l'hiver) VALIDÉ ; lot 5 (034-048, grand froid) VALIDÉ ; lot 6 (049-063, sortie
-  d'hiver) VALIDÉ. EN COURS : lot 7 (064-078, printemps), dernier lot, message remis à
-  Rémy, contrôle CEO à faire à la livraison. Après lot 7 : dotation complète (11 + 78).
+  d'hiver) VALIDÉ ; lot 7 (064-078, printemps) VALIDÉ (voir ci-dessous).
   Méthode de contrôle CEO éprouvée sur chaque lot : scans (tirets, RGE/fluides, prix/%),
   unicité des sujets, liens uniquement vers publiés ou préfixes inférieurs, lecture de
   fond des articles sensibles (sécurité gaz, dégel, technique), build vert, brouillons
   invisibles (11 pages articles rendues), push après validation.
+- 29/07/2026 (suite) : **DOTATION ÉDITORIALE COMPLÈTE : 11 articles publiés + 78 brouillons
+  autoblog (001-078)**, soit six mois à 3 articles/semaine. Lot 7 contrôlé par le CEO en
+  lecture INTÉGRALE des 15 fichiers : article aides publiques (069) exemplaire (aucun
+  montant, aucun dispositif nommé, aucune promesse d'éligibilité, renvoi exclusif aux
+  organismes officiels), frontières nettes (072 filtres intérieurs vs 055 unité extérieure ;
+  bucket remplacement 067-071 = après-décision, renvoie vers « réparer ou remplacer »
+  publié sans le doublonner ; 066 maintient l'obligation légale malgré l'hiver sans
+  incident), points techniques vérifiés (cuve fioul réglementée, desserte gaz, émetteurs
+  PAC, condensats, eau stagnante au retour de vacances), 39 liens internes vérifiés un par
+  un (publiés, préfixes strictement inférieurs, 6 slugs services existants), 4 questions
+  FAQ partout, dates 14/05-16/06/2027 à 3/semaine, catégories dans la taxonomie existante,
+  build vert avec les seuls 11 articles rendus. Un défaut trouvé : coquille « coupler »
+  (078 l.35), corrigée par l'agent autoblog (45da719), re-contrôlée (diff limité à la
+  ligne), poussée avec le lot (f336696 + 45da719 sur design/t3).
+  RESTE AVANT MISE EN LIGNE : DNS OVH (NS toujours muets au 29/07) → redirection contact@
+  + re-test formulaire ; numéro 09 Twilio (cockpit phone null) → message Builder pour
+  remplacer le DEMO de site.config.ts ; puis sign-off Rémy EXPLICITE et déroulé strict du
+  RUNBOOK-MISE-EN-LIGNE.md (noindex levé en DERNIER).
