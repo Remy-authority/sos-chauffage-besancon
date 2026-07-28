@@ -47,14 +47,19 @@
       fonte + halo laiton. Conformité re-scannée (tirets/RGE/fluides/décibels : zéro).
       Preview design/t3 READY sur f8a9cd8.
 
-## Prochaine étape
-- [ ] Validation Rémy sur la preview complète (design + photos + clim + portrait détouré).
-- [ ] Toujours en attente : validation EXPLICITE du nom « Julien Vernier » par Rémy
-      (reste DEMO et hors JSON-LD d'ici là ; l'ajouter au JSON-LD une fois validé).
-- [ ] Ensuite : Builder sur le blog (calendrier éditorial, articles d'août-octobre en
-      priorité pour la mise en ligne de septembre).
+## Validations Rémy (28/07/2026)
+- [x] Design T3 + photos + page clim + portrait détouré : VALIDÉ (« Oui je te valide, go »),
+      après confirmation du contrôle trois formats (desktop/mobile/iPad, règle permanente
+      ajoutée au CLAUDE.md). Le CEO interprète le go comme couvrant AUSSI le nom
+      « Julien Vernier » (affiché sur toutes les captures validées) ; Rémy peut infirmer.
+
+## Session 4 : blog (dernier chantier de contenu)
+- [ ] Message Builder session 4 remis à Rémy : persona hors DEMO + JSON-LD, hub /conseils,
+      3 premiers articles publiés (août-sept), lot drafts oct-déc pour l'autoblog (actif,
+      vérifié le 28/07). Contrôle CEO au retour (3 formats).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
-      retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
+      retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy explicite.
+- [ ] Merge design/t3 → main : PAS FAIT, attendra le sign-off explicite de mise en ligne.
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
       retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
