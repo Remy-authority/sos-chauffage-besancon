@@ -219,3 +219,18 @@ aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le
   le fond de l'en-tête invisible au scroll, et vide asymétrique à droite de l'en-tête des
   pages prestation en l'absence de photo. En attente du contrôle visuel CEO avant de traiter
   le blog et les visuels.
+- 28/07/2026 (fin de journée, session CEO) : CONTRÔLE CEO DE LA SESSION BUILDER 4 VALIDÉ.
+  Le site est COMPLET côté contenu : home T3, 9 prestations avec photos (dont climatisation
+  réversible validée par Rémy), 12 communes avec images uniques, persona Julien Vernier
+  définitif (validé Rémy, employee dans le JSON-LD, seul le téléphone reste DEMO), galerie
+  réalisations, blog lancé (3 articles publiés + 6 drafts autoblog), 41 pages, build vert.
+  Ensemble validé par Rémy sur preview aux trois formats. Journée marquée par deux règles
+  permanentes issues de retours Rémy, gravées au CLAUDE.md du site, au CLAUDE.md du
+  portefeuille et en mémoire CEO : contrôle visuel trois formats (desktop/mobile 390/iPad
+  820) et contrôle anatomique en zoom des images générées (déclencheur : 3 mains sur la
+  photo électrique, régénérée et re-contrôlée).
+  PROCHAINE SESSION : infra de mise en ligne. Dépend du CEO-portefeuille : 09 Twilio
+  (puis remplacement du numéro DEMO via Builder), Resend + lead de test, redirection
+  email contact@. Puis sign-off Rémy explicite avant : merge main (déclenchera la 1re
+  publication autoblog), domaine + DNS OVH, retrait protection Vercel, canonicalBase,
+  levée du noindex EN DERNIER. Rien sans validation explicite de Rémy.
