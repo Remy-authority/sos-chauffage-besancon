@@ -40,12 +40,21 @@
       neutralisés) et intégrée à docs/SEO-GEO-PLAN.md.
 - [x] 4. Portrait détouré livré (rembg, zéro dérive de visage), vérifié sur fond vert
       (alpha propre), poussé (97ce767).
-- [ ] 2. Fix encadré « Ce qu'il faut retenir » (filets vs lignes du fond) : AU BUILDER.
-- [ ] Message Builder session 3 remis à Rémy (photos prestation + détection image services,
-      portrait détouré dans QuiIntervient, page climatisation-reversible, fix encadré).
-      ATTENTE : Rémy le colle au Builder, puis contrôle CEO de la livraison.
+- [x] 2. Session Builder 3 livrée (f8a9cd8) et CONTRÔLE CEO VALIDÉ (28/07) : photos en
+      tête des 9 prestations (16:10, légendes, OG par page), encadré « retenir » en
+      bandeau sur fond clair + replis opaques, page climatisation-reversible conforme
+      (build 38 pages, distinction air-air/air-eau nickel), portrait détouré sur dégradé
+      fonte + halo laiton. Conformité re-scannée (tirets/RGE/fluides/décibels : zéro).
+      Preview design/t3 READY sur f8a9cd8.
+
+## Prochaine étape
+- [ ] Validation Rémy sur la preview complète (design + photos + clim + portrait détouré).
 - [ ] Toujours en attente : validation EXPLICITE du nom « Julien Vernier » par Rémy
-      (reste DEMO et hors JSON-LD d'ici là).
+      (reste DEMO et hors JSON-LD d'ici là ; l'ajouter au JSON-LD une fois validé).
+- [ ] Ensuite : Builder sur le blog (calendrier éditorial, articles d'août-octobre en
+      priorité pour la mise en ligne de septembre).
+- [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
+      retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
 - [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
       retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
