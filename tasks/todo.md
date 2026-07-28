@@ -78,7 +78,8 @@
       protection all_except_custom_domains laisserait l'ancien déploiement accessible).
 ## Dotation éditoriale (règle Rémy 29/07 : 11 publiés + 78 brouillons avant mise en ligne)
 - [x] Lot 2 autoblog (007-018) livré, contrôle CEO passé, poussé. État : 3 publiés + 18 brouillons.
-- [ ] Lot 3 : 8 articles PUBLIÉS supplémentaires (total 11 au lancement). Message remis à Rémy.
+- [x] Lot 3 : 8 articles publiés livrés, contrôle CEO passé (dates hebdomadaires 04/08-16/09,
+      zéro lien mort, doctrine clim respectée), poussé. Site à 11 articles publiés.
 - [ ] Lots 4+ : 60 brouillons supplémentaires (total 78 = 6 mois à 3/semaine), par lots de
       15 avec contrôle CEO entre chaque.
 
