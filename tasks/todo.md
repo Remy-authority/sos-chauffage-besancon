@@ -92,7 +92,13 @@
 
 - [x] DNS actif vérifié (NS OVH, MX ForwardEmail, TXT forward contact@ → remy@, SPF,
       Search Console). Re-test formulaire de bout en bout fait en local (ok) + accusé
-      Resend direct vers contact@ (id 23040263). ⏳ Confirmation réception Rémy (2 emails).
+      Resend direct vers contact@ (id 23040263). RÉCEPTION CONFIRMÉE par le CEO via Gmail :
+      les 2 emails sont arrivés le 29/07 à 10:28 UTC mais un filtre Gmail les a rangés hors
+      boîte de réception, sous le libellé « 🟠 VoltaPro/CRM & RDV » (expéditeur voltapro.io).
+      Redirection contact@ VALIDÉE de bout en bout.
+- [ ] ⚠️ GO-LIVE : vérifier où atterrit le lead de test de prod dans Gmail. Si le RESEND_FROM
+      de prod est un @voltapro.io, les VRAIS leads seront classés hors inbox par le filtre
+      → adapter le filtre Gmail (ou l'expéditeur) pour que les leads Besançon restent visibles.
 - [x] Durcissement deliver() livré par le Builder (ea2ed09) et CONTRÔLE CEO VALIDÉ :
       diff limité à la fonction, build vert (49 pages), test réel du chemin d'échec
       (clé fausse → visiteur reçoit ok, lead complet tracé en [LEAD-FAIL] 401 dans

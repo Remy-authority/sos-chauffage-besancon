@@ -302,3 +302,15 @@ aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le
   serveur trace [LEAD-FAIL] 401 avec le corps d'erreur Resend ET le lead complet
   (récupérable en cherchant LEAD-FAIL dans les logs Vercel). Chemin nominal validé le
   même jour par l'accusé Resend. La protection anti-leads-perdus est complète.
+- 29/07/2026 (réception confirmée + point de vigilance Gmail) : Rémy ne voyait pas les
+  emails de test → vérification directe dans Gmail par le CEO : les DEUX emails (lead
+  formulaire « Nouveau lead, SOS Chauffage Besançon » et accusé direct) sont bien ARRIVÉS
+  le 29/07 à 10:28 UTC. La redirection contact@ → remy@remyzaoui.com est VALIDÉE de bout
+  en bout. Mais un filtre Gmail de Rémy classe les emails d'expéditeur voltapro.io hors
+  boîte de réception (libellé « 🟠 VoltaPro/CRM & RDV »), d'où l'impression de non-réception.
+  ⚠️ RISQUE PROD : si le RESEND_FROM de production est aussi un @voltapro.io, les vrais
+  leads seront invisibles dans l'inbox. Au go-live : vérifier où atterrit le lead de test
+  et adapter le filtre Gmail (ou l'expéditeur) AVANT de considérer la chaîne comme bonne.
+  RAPPEL D'ÉTAT (question Rémy « le site est en ligne ? ») : NON. Site complet mais
+  design/t3 non mergée, protection Vercel active, noindex posé, domaine pointé vers OVH.
+  Manquent : 09 Twilio (file), sign-off Rémy, déroulé du runbook.
