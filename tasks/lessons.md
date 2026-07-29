@@ -16,6 +16,8 @@
 
 - [28/07/2026] | Rémy a repéré TROIS mains sur la photo de la prestation chauffage électrique, validée par le CEO sans zoom anatomique | Règle permanente (CLAUDE.md §2 du site + CLAUDE.md portefeuille + mémoire CEO) : toute image générée montrant mains ou personnes est contrôlée EN ZOOM avant intégration, comptage mains/doigts sur crops, et contrainte anatomique explicite dans les prompts (« une seule main visible » = plus sûr).
 
+- [29/07/2026] | Test formulaire « réussi » (ok:true) alors qu'AUCUN email n'était parti : export $(grep|xargs) casse les valeurs à espaces, le coffre leadcatch nomme la variable RESEND_FROM_EMAIL (pas RESEND_FROM), et deliver() de la route contact avale silencieusement les refus Resend | Trois règles : 1) sourcer les env avec cut -d= -f2- variable par variable, jamais xargs ; 2) vérifier le NOM exact des variables dans chaque coffre avant de les mapper ; 3) ne jamais conclure sur le ok d'une route qui n'inspecte pas la réponse de son provider, exiger un accusé (id Resend) ou la réception réelle. Les variables Vercel « sensitive » sont illisibles au pull (longueur 0) : seul un lead de test en prod valide leurs valeurs.
+
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
 - [héritée] | Sites indexés trop tôt | SEO_NOINDEX=1 dès le tout premier déploiement, levé uniquement sur validation Rémy.

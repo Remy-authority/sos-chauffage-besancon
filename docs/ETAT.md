@@ -271,3 +271,26 @@ aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le
   + re-test formulaire ; numéro 09 Twilio (cockpit phone null) → message Builder pour
   remplacer le DEMO de site.config.ts ; puis sign-off Rémy EXPLICITE et déroulé strict du
   RUNBOOK-MISE-EN-LIGNE.md (noindex levé en DERNIER).
+- 29/07/2026 (infra domaine, posée par le CEO-portefeuille, VÉRIFIÉE par le CEO site) :
+  domaine LIVRÉ (KYC OVH validé), zone DNS ACTIVE (NS ns10/dns10.ovh.ca répondent,
+  vérifié par dig), redirection email ACTIVE (MX mx1/mx2.forwardemail.net + TXT
+  forward-email=contact:remy@remyzaoui.com + SPF forwardemail, vérifiés), Search Console
+  et Bing vérifiés (TXT google-site-verification présent), Resend en place sur Vercel
+  (noms RESEND_API_KEY + RESEND_FROM confirmés en production via vercel env ls ; valeurs
+  ILLISIBLES car sensitive, elles ne seront réellement validées que par le lead de test
+  du runbook), framework Vercel OK. L'apex pointe encore vers OVH (213.186.33.5) :
+  le pointage vers Vercel se fera AU GO-LIVE par le CEO-portefeuille, sur validation Rémy.
+  Le 09 Twilio reste en file (surveillance auto du stock, achat auto).
+  TESTS CEO du 29/07 : formulaire de bout en bout re-testé en LOCAL (build design/t3,
+  clé Resend du coffre leadcatch + expéditeur hello@voltapro.io) → réponse ok ; envoi
+  direct API vers contact@ ACCEPTÉ par Resend (accusé id 23040263-bff1-4722-aa81-435451d8fd2b)
+  → la chaîne Resend → contact@ → ForwardEmail est engagée. ⏳ ATTENTE : confirmation par
+  Rémy de la réception des DEUX emails de test dans sa boîte (preuve finale de la
+  redirection). Premier essai de test invalidé par le CEO lui-même : export cassé par
+  xargs + nom de variable différent dans le coffre (RESEND_FROM_EMAIL vs RESEND_FROM),
+  la route ayant alors envoyé via onboarding@resend.dev sans le signaler (leçon consignée).
+  ⚠️ Fragilité relevée dans app/api/contact/route.ts : deliver() n'inspecte PAS la réponse
+  Resend (un envoi refusé, ex. RESEND_FROM vide ou invalide en prod, serait avalé en
+  silence avec un ok:true renvoyé au visiteur = lead perdu sans trace). Durcissement à
+  proposer au Builder avant mise en ligne (vérifier response.ok + console.error du corps
+  d'erreur pour les logs Vercel).
