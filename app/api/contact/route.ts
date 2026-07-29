@@ -62,19 +62,30 @@ async function deliver(lead: Lead): Promise<void> {
   const resendKey = process.env.RESEND_API_KEY
   if (resendKey) {
     // Resend : tier gratuit (3 000 emails/mois). Aucune carte requise.
-    await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${resendKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: process.env.RESEND_FROM || 'onboarding@resend.dev',
-        to: [to],
-        subject,
-        text,
-      }),
-    })
+    // Un échec d'envoi (refus API ou panne réseau) ne fait JAMAIS échouer la
+    // réponse au visiteur : on trace [LEAD-FAIL] avec le lead complet pour
+    // qu'il reste récupérable dans les logs Vercel.
+    try {
+      const response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${resendKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: process.env.RESEND_FROM || 'onboarding@resend.dev',
+          to: [to],
+          subject,
+          text,
+        }),
+      })
+      if (!response.ok) {
+        const corps = await response.text().catch(() => '(corps illisible)')
+        console.error('[LEAD-FAIL]', response.status, corps, '\n' + text)
+      }
+    } catch (err) {
+      console.error('[LEAD-FAIL]', 'exception réseau', err, '\n' + text)
+    }
     return
   }
 
