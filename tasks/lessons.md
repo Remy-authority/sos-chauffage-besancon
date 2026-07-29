@@ -18,6 +18,8 @@
 
 - [29/07/2026] | Test formulaire « réussi » (ok:true) alors qu'AUCUN email n'était parti : export $(grep|xargs) casse les valeurs à espaces, le coffre leadcatch nomme la variable RESEND_FROM_EMAIL (pas RESEND_FROM), et deliver() de la route contact avale silencieusement les refus Resend | Trois règles : 1) sourcer les env avec cut -d= -f2- variable par variable, jamais xargs ; 2) vérifier le NOM exact des variables dans chaque coffre avant de les mapper ; 3) ne jamais conclure sur le ok d'une route qui n'inspecte pas la réponse de son provider, exiger un accusé (id Resend) ou la réception réelle. Les variables Vercel « sensitive » sont illisibles au pull (longueur 0) : seul un lead de test en prod valide leurs valeurs.
 
+- [30/07/2026] | Premier test manuel de l'Action autoblog : run en échec (exit 128), publication perdue. Cause : `git add content/conseils content/drafts public/conseils` avec un `public/conseils` inexistant tant qu'aucun article n'a d'assets → « fatal: pathspec did not match » | Dans un workflow, ne jamais `git add` un chemin qui peut ne pas exister : add conditionnel (`if [ -d … ]`). Corrigé ici (7c58957) ; le socle vient de Metz, VÉRIFIER LES AUTRES SITES du portefeuille qui n'ont pas d'assets d'articles.
+
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
 - [héritée] | Sites indexés trop tôt | SEO_NOINDEX=1 dès le tout premier déploiement, levé uniquement sur validation Rémy.

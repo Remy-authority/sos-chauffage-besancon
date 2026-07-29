@@ -113,3 +113,12 @@
 - 09 Twilio, redirection email, cockpit : CEO-portefeuille (vérifier présence avant mise en ligne).
 - Aucun déploiement public tant que le contenu Metz n'est pas 100 % réécrit chauffage Besançon.
 - Rien ne se déploie sans validation explicite de Rémy.
+
+## 🚀 EN LIGNE depuis le 30/07/2026 (runbook 12/12, voir ETAT.md). Mode exploitation
+- [ ] 09 Twilio (file d'attente) : à l'attribution → message Builder (site.config.ts),
+      vérif VoiceUrl, test d'appel, cockpit, régénérer la capture.
+- [ ] ACTION RÉMY : filtre Gmail VoltaPro (les leads arrivent HORS boîte de réception).
+- [ ] Contrôles J+1/J+7 : couverture Search Console, publication autoblog ven 31/07,
+      robots/sitemap depuis le domaine.
+- [ ] Remonter au CEO-portefeuille : bug git add public/conseils du socle (autres sites).
+- [ ] Si souhait Rémy : images d'illustration des articles (évolution Builder à cadrer).

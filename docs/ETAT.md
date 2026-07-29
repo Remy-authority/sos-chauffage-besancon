@@ -314,3 +314,44 @@ aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le
   RAPPEL D'ÉTAT (question Rémy « le site est en ligne ? ») : NON. Site complet mais
   design/t3 non mergée, protection Vercel active, noindex posé, domaine pointé vers OVH.
   Manquent : 09 Twilio (file), sign-off Rémy, déroulé du runbook.
+
+## 🚀 MISE EN LIGNE : 30/07/2026 (sign-off Rémy explicite, runbook déroulé par le CEO)
+
+Décision Rémy : lancement SANS attendre le 09 Twilio (précédent Reims, numéro DEMO
+09 39 03 05 13 affiché, remplacement dès attribution). Les 12 étapes, toutes vérifiées :
+1. Merge fast-forward design/t3 → main (42 commits), déploiement production READY.
+2. Prod contrôlée : title Besançon, zéro trace Metz, noindex encore posé à ce stade.
+3. Lead de test depuis la PROD : reçu dans Gmail (expéditeur prod leads@voltapro.io,
+   valeurs sensitive validées de fait). ⚠️ rangé hors inbox par le filtre Gmail VoltaPro
+   de Rémy → ACTION RÉMY TOUJOURS OUVERTE : ajuster le filtre, sinon leads invisibles.
+4. Domaines apex + www ajoutés au projet Vercel.
+5. DNS OVH par l'API (horodatage signé sur /auth/time) : A apex 76.76.21.21, www CNAME
+   cname.vercel-dns.com, parking supprimé, MX/TXT/SPF email INTACTS. www → apex en 308
+   (PATCH project domain). TLS émis, apex 200.
+6. canonicalBase → https://sos-chauffage-besancon.fr (Builder, a727316, contrôlé :
+   1 fichier, canonicals/OG/JSON-LD/sitemap/llms.txt vérifiés, zéro vercel.app au build).
+7. Protection Vercel retirée APRÈS contrôle visuel trois formats sur le domaine réel
+   (1440/820/390 : zéro débordement, zéro erreur JS ; artefact fullPage re-vérifié en
+   captures viewport, leçon du 28/07).
+8. SEO_NOINDEX retiré de la production UNIQUEMENT (preview/dev le gardent) + redeploy :
+   meta « index, follow », robots.txt Allow + crawlers IA autorisés + sitemap déclaré.
+9. Sitemap soumis : Google Search Console via service account (PUT 204, relecture
+   isPending) et Bing SubmitFeed (200). Scripts dans le scratchpad de session.
+10. Action autoblog testée en manuel : ÉCHEC au 1er run (fatal pathspec public/conseils
+    inexistant, hérité du socle Metz, cf. lessons.md), corrigée par le CEO (7c58957,
+    git add conditionnel), re-testée : publication de signes-panne-chauffage-imminente
+    en ligne (200), sitemap à 12 articles, 77 brouillons restants (réserve → 25/01/2027).
+    ⚠️ À REMONTER AU CEO-PORTEFEUILLE : les autres sites du socle ont le même git add.
+11. Cockpit : en-ligne, URL, online=2026-07-30, autoblogEndsAt=2027-01-25, capture
+    officielle regénérée via npm run screens.
+12. Ce journal. QUESTIONS RÉMY DU JOUR : « pas de photos dans les articles » → exact,
+    les articles n'ont pas d'images par conception (frontmatter sans champ image, DA
+    typographique T3) ; en faire une éventuelle évolution Builder si Rémy le souhaite.
+    « pas visible sur Google » → normal : noindex venait d'être levé, l'indexation
+    prend de quelques jours à quelques semaines (sitemap soumis pour l'accélérer).
+
+## MODE EXPLOITATION (depuis le 30/07/2026)
+- Suivi : Search Console (couverture, indexation), publications lun/mer/ven, leads.
+- EN ATTENTE EXTERNE : 09 Twilio (file) → patch Builder site.config.ts + VoiceUrl +
+  test d'appel + cockpit. ACTION RÉMY : filtre Gmail (leads hors inbox).
+- Post-J+7 (runbook) : robots/sitemap OK, couverture GSC, test appel 09, autoblog effectif.
