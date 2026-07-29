@@ -145,8 +145,8 @@ export const siteConfig = {
 
   /* ── SEO global ── */
   seo: {
-    // Preview = URL Vercel. Basculer sur le domaine final à la mise en ligne (Rémy).
-    canonicalBase: 'https://sos-chauffage-besancon.vercel.app',
+    // Domaine final (mise en ligne 30/07/2026). Apex canonique, www redirige en 308.
+    canonicalBase: 'https://sos-chauffage-besancon.fr',
     defaultOgImage: '/og.jpg',
     locale: 'fr_FR',
     lang: 'fr',
