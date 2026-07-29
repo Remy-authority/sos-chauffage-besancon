@@ -3,18 +3,22 @@
 > Préparé par le CEO le 29/07/2026. À dérouler DANS L'ORDRE, uniquement après le
 > sign-off explicite de Rémy. Chaque étape est vérifiée avant de passer à la suivante.
 
-## Préconditions (toutes obligatoires, état au 29/07/2026)
+## Préconditions (état au 29/07/2026, fin de journée)
 
 | # | Précondition | État | Responsable |
 |---|--------------|------|-------------|
-| P1 | Contenu 100 % chauffage Besançon, validé Rémy | ✅ FAIT (28/07) | CEO site |
-| P2 | Zone DNS OVH active (NS répondent) | ⏳ AFNIC en cours | CEO-portefeuille |
-| P3 | Redirection ForwardEmail contact@ → remy@remyzaoui.com | ⏳ attend P2 | CEO-portefeuille |
-| P4 | RESEND_API_KEY + RESEND_FROM posées (production) | ✅ FAIT (28/07, 06:09) | CEO-portefeuille |
-| P5 | Chaîne Resend testée (envoi réel reçu par Rémy) | ✅ FAIT (29/07, test API), à RE-tester via le formulaire après P3 | CEO site |
-| P6 | Numéro 09 Twilio dédié, VoiceUrl vérifié | ⏳ file d'attente stock 09 | CEO-portefeuille |
-| P7 | Numéro reporté dans config/site.config.ts (fin du DEMO) + cockpit | ⏳ attend P6 | Builder puis CEO-portefeuille |
-| P8 | Sign-off EXPLICITE de Rémy | ⏳ | Rémy |
+| P1 | Contenu 100 % chauffage Besançon, validé Rémy (+ dotation 11 publiés / 78 brouillons) | ✅ FAIT | CEO site |
+| P2 | Zone DNS OVH active (NS répondent) | ✅ FAIT (29/07, vérifié dig) | CEO-portefeuille |
+| P3 | Redirection ForwardEmail contact@ → remy@remyzaoui.com | ✅ FAIT (29/07, 2 emails reçus, rangés par filtre Gmail sous « VoltaPro/CRM & RDV ») | CEO-portefeuille |
+| P4 | RESEND_API_KEY + RESEND_FROM posées (production) | ✅ FAIT (noms vérifiés, valeurs sensitive → validées par le lead de test de l'étape 3) | CEO-portefeuille |
+| P5 | Chaîne formulaire testée de bout en bout (+ chemin d'échec LEAD-FAIL durci et testé) | ✅ FAIT (29/07) | CEO site |
+| P6 | ~~Numéro 09 Twilio~~ BASCULÉ EN POST-LANCEMENT (décision Rémy 29/07, précédent Reims : lancement avec numéro DEMO affiché, remplacement à l'arrivée du 09 : Builder patch site.config.ts + cockpit) | ⏳ file Twilio, NON bloquant | CEO-portefeuille |
+| P7 | (fusionné avec P6, post-lancement) | — | Builder |
+| P8 | Sign-off EXPLICITE de Rémy | ⏳ SEUL RESTANT | Rémy |
+
+⚠️ Vigilance ajoutée au lead de test (étape 3) : vérifier OÙ atterrit l'email dans Gmail.
+Si l'expéditeur de prod est un @voltapro.io, le filtre Gmail de Rémy classera les vrais
+leads hors inbox → adapter le filtre (ou l'expéditeur) avant de valider l'étape.
 
 ## Séquence de mise en ligne (jour J)
 
