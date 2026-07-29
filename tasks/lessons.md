@@ -20,6 +20,8 @@
 
 - [30/07/2026] | Premier test manuel de l'Action autoblog : run en échec (exit 128), publication perdue. Cause : `git add content/conseils content/drafts public/conseils` avec un `public/conseils` inexistant tant qu'aucun article n'a d'assets → « fatal: pathspec did not match » | Dans un workflow, ne jamais `git add` un chemin qui peut ne pas exister : add conditionnel (`if [ -d … ]`). Corrigé ici (7c58957) ; le socle vient de Metz, VÉRIFIER LES AUTRES SITES du portefeuille qui n'ont pas d'assets d'articles.
 
+- [30/07/2026] | Cover du pilote images validée par le Builder PUIS par le CEO alors qu'un lavabo était posé au ras du sol (aberration de génération) ; c'est Rémy qui l'a vue | Le contrôle des images générées ne s'arrête pas à l'anatomie : vérifier aussi la PLAUSIBILITÉ PHYSIQUE de la scène, en listant les objets un par un et en se demandant pour chacun « est-il à une hauteur/position/taille normale ? » (lavabo, prises, fenêtres, robinets, meubles). Une scène « belle » n'est pas une scène juste. Dans les prompts : limiter le nombre d'objets secondaires, les générateurs ratent surtout le mobilier périphérique.
+
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
 - [héritée] | Sites indexés trop tôt | SEO_NOINDEX=1 dès le tout premier déploiement, levé uniquement sur validation Rémy.
