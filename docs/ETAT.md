@@ -294,3 +294,11 @@ aucune erreur JS, aucun débordement. Le seul DEMO restant dans la config est le
   silence avec un ok:true renvoyé au visiteur = lead perdu sans trace). Durcissement à
   proposer au Builder avant mise en ligne (vérifier response.ok + console.error du corps
   d'erreur pour les logs Vercel).
+- 29/07/2026 (durcissement route contact) : livré par le Builder (ea2ed09, périmètre
+  strict deliver() de app/api/contact/route.ts) et CONTRÔLE CEO VALIDÉ : diff relu
+  (response.ok inspecté + try/catch réseau, réponse visiteur inchangée, fallback sans
+  clé intact, zéro tiret cadratin), build vert (49 pages), et TEST RÉEL du chemin
+  d'échec en local avec clé volontairement fausse : le visiteur reçoit ok, le log
+  serveur trace [LEAD-FAIL] 401 avec le corps d'erreur Resend ET le lead complet
+  (récupérable en cherchant LEAD-FAIL dans les logs Vercel). Chemin nominal validé le
+  même jour par l'accusé Resend. La protection anti-leads-perdus est complète.

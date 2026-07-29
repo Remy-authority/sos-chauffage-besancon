@@ -93,8 +93,10 @@
 - [x] DNS actif vérifié (NS OVH, MX ForwardEmail, TXT forward contact@ → remy@, SPF,
       Search Console). Re-test formulaire de bout en bout fait en local (ok) + accusé
       Resend direct vers contact@ (id 23040263). ⏳ Confirmation réception Rémy (2 emails).
-- [ ] Message Builder à envoyer (sur go Rémy) : durcir deliver() de app/api/contact/route.ts
-      (vérifier response.ok de Resend + log d'erreur, sinon lead perdu en silence).
+- [x] Durcissement deliver() livré par le Builder (ea2ed09) et CONTRÔLE CEO VALIDÉ :
+      diff limité à la fonction, build vert (49 pages), test réel du chemin d'échec
+      (clé fausse → visiteur reçoit ok, lead complet tracé en [LEAD-FAIL] 401 dans
+      les logs). Chemin nominal déjà validé par l'accusé Resend du 29/07.
 - [ ] Twilio 09 → Builder remplace le numéro DEMO dans site.config.ts.
 - [ ] Sign-off Rémy EXPLICITE puis dérouler le RUNBOOK dans l'ordre. Rien sans lui.
 - [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
