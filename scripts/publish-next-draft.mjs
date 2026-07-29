@@ -7,7 +7,8 @@
  *  2. Si vide : log un avertissement clair et sort en succès (exit 0), sans rien publier.
  *  3. Sinon : déplace le 1er draft vers content/conseils/ en retirant le préfixe numérique,
  *     met `date:` du frontmatter à la date du jour (Europe/Paris), déplace un éventuel dossier
- *     d'assets « <nom-du-draft>.assets/ » vers public/conseils/.
+ *     d'assets « <nom-du-draft>.assets/ » vers public/conseils/<slug>/ (le dossier d'images
+ *     propre à l'article, référencé par son frontmatter `cover:` et ses balises <Figure>).
  *  4. Écrit les sorties (published / file / slug) dans $GITHUB_OUTPUT pour l'étape commit.
  *
  * Ne fait AUCUN commit/push : c'est le workflow qui s'en charge (traçabilité + secrets).
@@ -76,19 +77,22 @@ fs.mkdirSync(CONSEILS, { recursive: true })
 fs.writeFileSync(destPath, raw)
 fs.unlinkSync(srcPath)
 
-// Assets optionnels : content/drafts/<draftBase>.assets/* -> public/conseils/*
+const slug = targetFile.replace(/\.mdx$/, '')
+
+// Assets optionnels : content/drafts/<draftBase>.assets/* -> public/conseils/<slug>/
+// (un dossier PAR article : c'est le chemin que le frontmatter `cover:` et les
+// <Figure> du draft référencent déjà, il ne bouge pas à la publication).
 const assetsDir = path.join(DRAFTS, `${draftBase}.assets`)
 let movedAssets = 0
 if (fs.existsSync(assetsDir) && fs.statSync(assetsDir).isDirectory()) {
-  fs.mkdirSync(PUBLIC_CONSEILS, { recursive: true })
+  const destAssetsDir = path.join(PUBLIC_CONSEILS, slug)
+  fs.mkdirSync(destAssetsDir, { recursive: true })
   for (const asset of fs.readdirSync(assetsDir)) {
-    fs.renameSync(path.join(assetsDir, asset), path.join(PUBLIC_CONSEILS, asset))
+    fs.renameSync(path.join(assetsDir, asset), path.join(destAssetsDir, asset))
     movedAssets++
   }
   fs.rmdirSync(assetsDir)
 }
-
-const slug = targetFile.replace(/\.mdx$/, '')
 console.log(`Publié : content/drafts/${draftFile} -> content/conseils/${targetFile} (date: ${today}, ${movedAssets} asset(s) déplacé(s), ${drafts.length - 1} draft(s) restant(s)).`)
 setOutput('published', 'true')
 setOutput('file', targetFile)

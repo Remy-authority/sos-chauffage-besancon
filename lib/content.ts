@@ -96,6 +96,12 @@ export interface Article {
   date: string
   category: string
   cover?: string
+  /**
+   * Texte alternatif de la couverture. Décrit la SCÈNE réellement photographiée
+   * (appareil, matière, lumière), jamais une liste de mots-clés : même règle que
+   * pour les communes et les services. Ignoré si `cover` est absent.
+   */
+  coverAlt?: string
   /** Maillage interne automatique → slugs de services. */
   relatedServices: string[]
   /** FAQ de l'article (frontmatter `faq:`), affichée + FAQPage JSON-LD (GEO). */
@@ -183,6 +189,7 @@ export function getArticles(): Article[] {
         date: (data.date as string) || '1970-01-01',
         category: (data.category as string) || 'Conseils',
         cover: coverIfExists(data.cover),
+        coverAlt: typeof data.coverAlt === 'string' ? data.coverAlt : undefined,
         relatedServices: (data.relatedServices as string[]) || [],
         faq: (data.faq as FaqItem[]) || [],
         content,
