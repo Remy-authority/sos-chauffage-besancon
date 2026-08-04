@@ -1,0 +1,6 @@
+{
+  "_role": "Ancrage visuel du site, lu par scripts/generate-article-images.mjs. Il fixe l'identite des images generees a la publication des articles. Deux sites du portefeuille ne doivent JAMAIS partager le meme ancrage (regle anti-footprint, docs/RECETTE-VISUELS-ARTICLES.md).",
+  "contexte": "Besancon et le Doubs, France : pierre calcaire comtoise, toits a forte pente, bati ancien de la boucle du Doubs",
+  "metier": "depannage et entretien de chauffage, chaudieres et pompes a chaleur",
+  "ambiance": "photographie chaude et posee, palette vert sapin et cuivre, fonte et laiton, chaufferies comtoises"
+}
