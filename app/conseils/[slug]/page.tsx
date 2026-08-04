@@ -18,6 +18,7 @@ import { Faq } from '@/components/ui/Faq'
 import { CtaBanner } from '@/components/ui/CtaBanner'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { ArticleImage } from '@/components/ui/ArticleImage'
+import { FigureArticle } from '@/components/ui/FigureArticle'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
 import { HaloThermique } from '@/components/ui/HaloThermique'
 
@@ -61,7 +62,7 @@ function formatDateFr(iso: string): string {
   return `${j} ${MOIS[m - 1]} ${a}`
 }
 
-const composantsMdx = { img: ArticleImage }
+const composantsMdx = { img: ArticleImage, Figure: FigureArticle }
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = getArticle(params.slug)
@@ -122,10 +123,10 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <div className="enceinte max-w-colonne">
           {article.cover && (
             <figure className="mb-12">
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-socle border border-calcaire-pierre shadow-pose">
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-socle border border-calcaire-pierre shadow-pose">
                 <Image
                   src={article.cover}
-                  alt=""
+                  alt={article.coverAlt ?? ''}
                   fill
                   priority
                   sizes="(min-width: 1024px) 704px, 100vw"
@@ -193,10 +194,10 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                     className="group flex h-full flex-col transition-colors duration-300 ease-thermique hover:bg-calcaire-voile"
                   >
                     {autre.cover && (
-                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-calcaire-voile">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-calcaire-voile">
                         <Image
                           src={autre.cover}
-                          alt=""
+                          alt={autre.coverAlt ?? ''}
                           fill
                           sizes="(min-width: 1024px) 380px, 50vw"
                           className="object-cover transition-transform duration-500 ease-thermique group-hover:scale-105"

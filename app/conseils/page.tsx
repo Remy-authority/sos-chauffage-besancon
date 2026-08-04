@@ -104,10 +104,10 @@ export default function ConseilsListing() {
                     className="group flex h-full flex-col transition-colors duration-300 ease-thermique hover:bg-calcaire-voile"
                   >
                     {article.cover && (
-                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-calcaire-voile">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-calcaire-voile">
                         <Image
                           src={article.cover}
-                          alt=""
+                          alt={article.coverAlt ?? ''}
                           fill
                           sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
                           className="object-cover transition-transform duration-500 ease-thermique group-hover:scale-105"
