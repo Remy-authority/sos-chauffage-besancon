@@ -30,8 +30,8 @@ export const siteConfig = {
   /* ── Contact ── */
   // DEMO – numéro hérité du socle. À remplacer par le 09 Twilio dédié au site
   // (voir RENT & RANK/docs/INFRA-NOUVEAU-SITE.md) avant toute mise en ligne.
-  phone: '+33939030513',
-  phoneDisplay: '09 39 03 05 13',
+  phone: '+33939200076',
+  phoneDisplay: '09 39 20 00 76',
   phoneIsDemo: true,
   email: 'contact@sos-chauffage-besancon.fr',
 
