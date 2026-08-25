@@ -98,7 +98,6 @@ export function localBusinessJsonLd() {
     telephone: siteConfig.phone,
     email: siteConfig.email,
     image: absUrl(siteConfig.seo.defaultOgImage),
-    priceRange: '€€',
     areaServed: [
       { '@type': 'City', name: siteConfig.serviceArea.base },
       ...zones.map((z) => ({
