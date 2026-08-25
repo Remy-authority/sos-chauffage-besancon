@@ -2,7 +2,8 @@
   "_role": "Ancrage visuel du site, lu par scripts/generate-article-images.mjs. Il fixe l'identite des images generees a la publication des articles. Deux sites du portefeuille ne doivent JAMAIS partager le meme ancrage (regle anti-footprint, docs/RECETTE-VISUELS-ARTICLES.md).",
   "contexte": "Besancon et le Doubs, France : pierre calcaire comtoise, toits a forte pente, bati ancien de la boucle du Doubs",
   "metier": "depannage et entretien de chauffage, chaudieres et pompes a chaleur",
-  "ambiance": "photographie chaude et posee, palette vert sapin et cuivre, fonte et laiton, chaufferies comtoises",
+  "ambiance": "photographie chaude et posée, palette vert sapin et cuivre, fonte et laiton : 70% de résultats finis en scène entière montrant le confort retrouvé — une chaudière propre et en marche dans une chaufferie ou un local technique rangé et net, ou une pièce chauffée confortable — jamais une chaudière en panne ni une pièce en désordre ; 30% de métier en action, l'artisan vu de dos ou par ses mains et ses outils seulement, jamais de visage, une seule main visible au plus. Jamais un défaut seul en gros plan (chaudière en panne, fuite), jamais de ton dramatique ni de gyrophare, lumière naturelle douce, cadrage de photographe d'intérieur.",
   "convention": "dossier",
-  "_convention_role": "Ou poser les images quand le brouillon ne declare aucun cover. dossier = public/conseils/<slug>/cover.jpg ; plat = public/conseils/<slug>.jpg. Doit refleter ce que le site sert deja en production."
+  "_convention_role": "Ou poser les images quand le brouillon ne declare aucun cover. dossier = public/conseils/<slug>/cover.jpg ; plat = public/conseils/<slug>.jpg. Doit refleter ce que le site sert deja en production.",
+  "_direction": "26/08/2026, decision Remy : pour un site d'urgence, le resultat fini est le confort retrouve a l'interieur du logement (pas un chantier exterieur) ; resultats finis en scene entiere (70%) et metier en action (30%, artisan vu de dos ou par ses mains/outils seulement), jamais un defaut seul en gros plan."
 }
