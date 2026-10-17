@@ -1,124 +1,42 @@
-# TODO — SOS Chauffage Besançon (session 1, 28/07/2026)
+# TODO — SOS Chauffage Besançon
 
-## Session 1 (CEO)
-- [x] 1. Infra : git init + repo GitHub Remy-authority/sos-chauffage-besancon + projet Vercel relié, SEO_NOINDEX=1 sur TOUS les environnements AVANT le 1er déploiement. Fait : 1er déploiement READY, protégé (auth Vercel), audit secrets SAFE, build local OK.
-- [x] 2. Agent SEO : plan SEO-GEO complet. V1 refusée (meta « Metz », RGE, géo fausse, chiffres inventés), V2 corrigée + relecture CEO (3 corrections géo, llms.txt nettoyé, HVACBusiness). Écrit dans docs/SEO-GEO-PLAN.md, codes postaux revérifiés par le CEO.
-- [x] 3. Brief Builder T3 : docs/BRIEF-BUILDER-T3.md complet + message prêt à coller remis à Rémy.
-- [x] 4. Fin de session : docs/ETAT.md à jour + compte-rendu remis.
+## Mise à jour n°1 (kickoff 18/10/2026, `docs/KICKOFF-MAJ-18-10.md`)
+État : §0 fait le 18/10, PLAN remis à Rémy, RIEN n'est codé avant son GO.
+Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 
-## Session 2 (28/07/2026)
-- [x] Build T3 livré par le Builder (branche design/t3).
-- [x] Contrôle CEO : audit conformité (Metz/RGE/tirets), build vert, contrôle visuel
-      desktop + mobile sur 4 gabarits. VALIDÉ.
-- [x] Branche design/t3 poussée → preview Vercel (protégée + noindex).
-- [ ] Validation Rémy sur la preview (design T3).
-- [ ] Après validation : Builder reprend pour le blog (calendrier éditorial) et finitions.
-- [ ] Retour Rémy sur la preview : design validé sur le fond, MAIS manque l'humain et la
-      preuve : photos de réalisations, portrait de l'artisan, identité inventée, images.
-- [x] Visuels générés (20 images) + contrôle CEO sur planches-contact : portrait et og
-      VALIDÉS, 12 zones et 6 réalisations globalement belles.
-- [ ] Corrections visuels EN COURS (2e agent) : 3 zones à régénérer (roche-lez-beaupre
-      doublon de thise ; marchaux façon Ornans avec rivière inventée ; chatillon trop
-      proche d'avanne et pas assez périurbain), 3 réalisations à régénérer (motif
-      fenêtre-village répété sur 5/6), floutage plaque sur ecole-valentin.
-- [x] Persona « Julien Vernier » proposé (sans homonyme local) et INTÉGRÉ par le Builder
-      (commit c75f7d9) : bloc config en DEMO, section home « Qui intervient chez vous »,
-      bandeau signature sur les 8 prestations. Nom en attente de validation Rémy.
-- [x] Galerie réalisations sur la home + imageAlt et cadrage 16:10 des communes (Builder).
-- [x] Contrôle CEO session Builder 2 : conformité OK, build vert, captures examinées
-      (artisan, galerie, signature, commune) : VALIDÉ.
-- [x] Décision CEO sur les 2 arbitrages Builder : régénérer pirey.jpg (montrait Besançon
-      même) et avanne-aveney.jpg (falaises exagérées) pour fidélité au terrain. Validé
-      aussi : persona hors JSON-LD tant que le nom n'est pas arrêté par Rémy.
-- [x] Régénération pirey + avanne : contrôlée, validée, poussée (c2e89b2). Preview à jour.
+### §0 État des lieux (18/10/2026, production, commit 3b3ef4d)
+- GSC 90 j : 13 clics, 3 478 vues ; 28 j : 0 clic, 849 vues. Indexation 44/72 (61 %).
+- Liste 1 (pages ≥ 10 vues, 0 clic, 28 j) : /services/depannage-chaudiere-gaz 347 (pos 66,6) ; /services/depannage-ballon-eau-chaude 292 (57,2) ; / 220 (62,7) ; /conseils/comprendre-circuit-chauffage-central 126 (31,4) ; /services/depannage-pompe-chaleur 124 (78) ; /contact 90 ; /services/depannage-chaudiere-fioul 89 ; /services/climatisation-reversible 62 ; /zones/chatillon-le-duc 58 ; /zones/saint-vit 53 ; /zones 46 ; /services/entretien-annuel-chaudiere 43 (16,9) ; franois 38 ; ecole-valentin 35 ; thise 29 ; givre-interieur 27 (10,1) ; courts-cycles 19 (15,5) ; desembouage 17 (27,9) ; lire-code-erreur 16 (4,8) ; mamirolle 16 ; roche-lez-beaupre 12 (5,6) ; pirey 11 ; chauffage-en-panne-qui-appeler 10 (7,0).
+- Liste 2 (requêtes pos 8-30, ≥ 5 vues, 90 j) : climatisation besancon 21,9 ; dépannage urgence chaudière 28,1 ; depannage chaudiere 24,5 ; installation chauffe-eau besancon 13,8 ; depannage chauffage 26,4 ; entretien chaudière fioul autour de moi 10,4 ; vendeur chauffe-eau besancon 12,8.
+  Famille chauffe-eau (90 j ≈ 1 100 vues) : dépannage ballon d'eau chaude besancon 120 vues pos 41 (28 j : 32) ; urgence chauffe-eau 110 ; reparation chauffe eau 105 ; ballon d'eau chaude besancon 104 pos 44 (28 j : 16,6 ; 7 j : 17,3 → TOP 20, seuil Twilio #R12) ; problème de chauffe-eau 102 ; chauffe-eau en panne 99 ; fuite chauffe-eau 98 ; dépannage chauffe-eau 94 ; mise en service chauffe-eau 94.
+  Requête d'argent : urgence chaudière besancon 131 vues pos 36,9 (28 j : 22,0). Autres : depannage chaudiere fioul 96 ; installateur climatisation besancon 68 ; entretien chaudière besançon 47 ; chauffagiste besançon 15 (65,9).
+- Liste 3 (prix / devis / tarif) : VIDE.
+- Liste 4 (pilier) : /services/depannage-ballon-eau-chaude.
+- Titles/descriptions servis : 47/72 pages hors bornes (accueil desc 223 ; /zones title 70 desc 184 ; mentions-legales 16/43 ; PAC desc 119 ; 43 articles desc 161-235 ; 19 titles d'articles 61-78). Brouillons : 41/43 titles hors bornes, 43/43 descriptions.
+- Contrôles production : design ECHEC 6 défauts (pas de photo bloc 1, 593 car., pas de schéma, point 12 deux lignes 96 largeurs, point 10 logo pied -73 px) ; navigation ECHEC 3 (pas de sous-menus, contact incomplet, bloc 2 pas centré) ; blocs-pages non lançable sur le domaine public (à faire sur l'aperçu) ; visuels-articles OK ; footprint OK (Reims, Saint-Étienne, Pau, Metz) ; check-texte ECHEC (paragraphes 29/38/26/56 mots).
+- Vitesse mobile production : 91 / 97 / 94 → médiane 94, LCP ≈ 2,7 s.
+- Autoblog : 46 publiés, 43 brouillons, cron lun-mer-ven 05:31 ; 3/semaine → fin 25/01/2027 ; 5/semaine → fin 16/12/2026.
+- DataForSEO : solde 2,055 $ ; mesure zone + France ≈ 0,10 $ (GO Rémy avant).
 
-## Session 3 (retour Rémy du 28/07 : « très bien, quelques modifs »)
-- [x] 1. 9 photos prestation livrées, contrôle CEO passé (aucun visage, série variée),
-      renommage climatisation.jpg → climatisation-reversible.jpg (slug SEO), 06-desembouage
-      refait de dos (cheveux gris cohérents persona). Poussé (6fc2b42).
-- [x] 3. Climatisation validée Rémy : fiche SEO Service 9 contrôlée (chiffres génériques
-      neutralisés) et intégrée à docs/SEO-GEO-PLAN.md.
-- [x] 4. Portrait détouré livré (rembg, zéro dérive de visage), vérifié sur fond vert
-      (alpha propre), poussé (97ce767).
-- [x] 2. Session Builder 3 livrée (f8a9cd8) et CONTRÔLE CEO VALIDÉ (28/07) : photos en
-      tête des 9 prestations (16:10, légendes, OG par page), encadré « retenir » en
-      bandeau sur fond clair + replis opaques, page climatisation-reversible conforme
-      (build 38 pages, distinction air-air/air-eau nickel), portrait détouré sur dégradé
-      fonte + halo laiton. Conformité re-scannée (tirets/RGE/fluides/décibels : zéro).
-      Preview design/t3 READY sur f8a9cd8.
+### Note AVANT (grille §8) : 0/10
+1 ❌ H1 sans « urgence chaudière », description 223 · 2 ❌ /tarifs = 404 · 3 ❌ ballon pas un pilier · 4 ❌ zones sans fait sourcé, sans carte · 5 ❌ pages vues sans clic intactes · 6 ❌ pas de sous-menus, Besançon sans page · 7 ❌ pas de photo bloc 1 · 8 ❌ texte long, icônes lucide · 9 ❌ logo pied -73 px, pas de volets (vitesse 94 OK) · 10 ❌ contrôles rouges, 3/semaine.
 
-## Validations Rémy (28/07/2026)
-- [x] Design T3 + photos + page clim + portrait détouré : VALIDÉ (« Oui je te valide, go »),
-      après confirmation du contrôle trois formats (desktop/mobile/iPad, règle permanente
-      ajoutée au CLAUDE.md). Le CEO interprète le go comme couvrant AUSSI le nom
-      « Julien Vernier » (affiché sur toutes les captures validées) ; Rémy peut infirmer.
+### À NE PAS TOUCHER (page 1 ou proche)
+- /conseils/chaudiere-ne-sallume-plus-ecran-eteint (4 clics, pos 4,6)
+- /conseils/radiateur-electrique-fait-sauter-disjoncteur (3 clics, pos 7,3)
+- /conseils/chauffage-tourne-en-continu-sans-sarreter (1 clic, pos 6,5)
+- Aussi proches de la page 1 : lire-code-erreur (4,8), chauffage-en-panne-qui-appeler (7,0), givre-interieur (10,1), /zones/roche-lez-beaupre (5,6), /zones/avanne-aveney (6,5).
+- Seul geste autorisé sur ces pages : description ramenée à 120-160 SANS changer le title ni le corps (expressions vérifiées au curl avant/après).
 
-## Session 4 : blog (dernier chantier de contenu)
-- [x] Session Builder 4 livrée (7c8316c) et CONTRÔLE CEO VALIDÉ (28/07) : persona hors
-      DEMO (sauf téléphone, attend Twilio) + employee Person minimal dans le JSON-LD,
-      hub /conseils avec fix col-span des grilles incomplètes, 3 articles publiés
-      (qualité vérifiée : juridiquement justes, locaux, zéro chiffre inventé, seuls
-      numéros publics GRDF/112 et plage légale 4-400 kW), 6 drafts autoblog 001-006.
-      Conformité re-scannée (tirets/RGE/fluides/prix : zéro), build vert 41 pages,
-      contrôle trois formats hub + article : zéro débordement, grilles pleines.
-- [x] Photo chauffage électrique régénérée après signalement Rémy (3 mains) : une seule
-      main vérifiée en zoom par le CEO. Règles anatomie + trois formats gravées
-      (CLAUDE.md site, CLAUDE.md portefeuille, mémoire CEO, lessons.md).
-
-## SITE COMPLET. Phase infra (état 29/07/2026, matin)
-- [x] Point de situation 29/07 : zone DNS toujours en attente AFNIC, Twilio toujours en
-      file (cockpit phone=null), MAIS Resend posé par le CEO-portefeuille le 28/07 06:09
-      (RESEND_API_KEY + RESEND_FROM, production, sensitive).
-- [x] Chaîne Resend TESTÉE par le CEO site (29/07) : envoi réel via l'API avec la clé du
-      portefeuille (leadcatch/.env.local, procédure INFRA-NOUVEAU-SITE.md), expéditeur
-      SOS Leads <leads@voltapro.io> → remy@remyzaoui.com. Accusé Resend reçu.
-      ⏳ ATTENTE : confirmation de réception par Rémy dans sa boîte.
-- [x] docs/RUNBOOK-MISE-EN-LIGNE.md créé : préconditions P1-P8 + séquence jour J en 12
-      étapes (dont piège identifié : ne PAS ajouter le domaine avant le merge, sinon la
-      protection all_except_custom_domains laisserait l'ancien déploiement accessible).
-## Dotation éditoriale (règle Rémy 29/07 : 11 publiés + 78 brouillons avant mise en ligne)
-- [x] Lot 2 autoblog (007-018) livré, contrôle CEO passé, poussé. État : 3 publiés + 18 brouillons.
-- [x] Lot 3 : 8 articles publiés livrés, contrôle CEO passé (dates hebdomadaires 04/08-16/09,
-      zéro lien mort, doctrine clim respectée), poussé. Site à 11 articles publiés.
-- [x] Lot 4 (019-033, cœur de l'hiver) : contrôle CEO passé (sécurité gaz irréprochable,
-      fioul figé exact, discipline de liens vers préfixes inférieurs), poussé. 33 brouillons.
-- [x] Lot 5 (034-048, grand froid) : contrôle CEO passé (dégel sans flamme, vidange
-      équilibrée), poussé. 48 brouillons.
-- [x] Lot 6 (049-063, sortie d'hiver) : contrôle CEO passé (frontières purge/désembouage/
-      équilibrage nettes, liens intra-lot ordonnés), poussé. 63 brouillons.
-- [x] Lot 7 (064-078, printemps) : contrôle CEO passé (aides publiques exemplaires, frontières
-      remplacement/filtres clim nettes, 39 liens vérifiés un par un, 1 coquille corrigée par
-      l'agent puis re-contrôlée), poussé (45da719). DOTATION COMPLÈTE : 11 publiés + 78 brouillons.
-
-- [x] DNS actif vérifié (NS OVH, MX ForwardEmail, TXT forward contact@ → remy@, SPF,
-      Search Console). Re-test formulaire de bout en bout fait en local (ok) + accusé
-      Resend direct vers contact@ (id 23040263). RÉCEPTION CONFIRMÉE par le CEO via Gmail :
-      les 2 emails sont arrivés le 29/07 à 10:28 UTC mais un filtre Gmail les a rangés hors
-      boîte de réception, sous le libellé « 🟠 VoltaPro/CRM & RDV » (expéditeur voltapro.io).
-      Redirection contact@ VALIDÉE de bout en bout.
-- [ ] ⚠️ GO-LIVE : vérifier où atterrit le lead de test de prod dans Gmail. Si le RESEND_FROM
-      de prod est un @voltapro.io, les VRAIS leads seront classés hors inbox par le filtre
-      → adapter le filtre Gmail (ou l'expéditeur) pour que les leads Besançon restent visibles.
-- [x] Durcissement deliver() livré par le Builder (ea2ed09) et CONTRÔLE CEO VALIDÉ :
-      diff limité à la fonction, build vert (49 pages), test réel du chemin d'échec
-      (clé fausse → visiteur reçoit ok, lead complet tracé en [LEAD-FAIL] 401 dans
-      les logs). Chemin nominal déjà validé par l'accusé Resend du 29/07.
-- [ ] Twilio 09 → Builder remplace le numéro DEMO dans site.config.ts.
-- [ ] Sign-off Rémy EXPLICITE puis dérouler le RUNBOOK dans l'ordre. Rien sans lui.
-- [ ] Vérifier alias sos-chauffage-besancon.vercel.app (404 propagation en session 1).
-- [ ] Avant mise en ligne (rappel) : Twilio 09 + Resend testé + redirection email +
-      retrait protection Vercel + noindex levé UNIQUEMENT sur validation Rémy.
-
-## Hors périmètre session 1 (rappel)
-- 09 Twilio, redirection email, cockpit : CEO-portefeuille (vérifier présence avant mise en ligne).
-- Aucun déploiement public tant que le contenu Metz n'est pas 100 % réécrit chauffage Besançon.
-- Rien ne se déploie sans validation explicite de Rémy.
-
-## 🚀 EN LIGNE depuis le 30/07/2026 (runbook 12/12, voir ETAT.md). Mode exploitation
-- [ ] 09 Twilio (file d'attente) : à l'attribution → message Builder (site.config.ts),
-      vérif VoiceUrl, test d'appel, cockpit, régénérer la capture.
-- [ ] ACTION RÉMY : filtre Gmail VoltaPro (les leads arrivent HORS boîte de réception).
-- [ ] Contrôles J+1/J+7 : couverture Search Console, publication autoblog ven 31/07,
-      robots/sitemap depuis le domaine.
-- [ ] Remonter au CEO-portefeuille : bug git add public/conseils du socle (autres sites).
-- [ ] Si souhait Rémy : images d'illustration des articles (évolution Builder à cadrer).
+### Plan des 10 chantiers (après GO)
+- [ ] 1 Accueil : title ≤ 60 avec « urgence chaudière Besançon », H1, description 120-160, ≤ 800 mots.
+- [ ] 2 /tarifs sourcée, liée pied de page + prestations + un paragraphe ; pas de priceRange.
+- [ ] 3 Pilier chauffe-eau : page ballon réécrite (title, H1, intro, FAQ, schéma dessiné) ; page urgence chauffe-eau si la mesure le justifie.
+- [ ] 4 Zones : fait sourcé geo.api.gouv.fr × 12, titles « métier + commune », carte dessinée du Grand Besançon bloc 7/8, page Besançon.
+- [ ] 5 Pages vues sans clic réécrites (gaz, PAC, fioul, climatisation renforcée, contact) ; titles/descriptions des 72 pages + 43 brouillons.
+- [ ] 6 Maillage : 2 sous-menus de 3 + voir tout, /zones relié, contact = formulaire + FAQ + prestations.
+- [ ] 7 Bloc 1 : photo plein écran chaudière murale posée, scrollytelling si GO, formulaire noir à étapes qui avance au clic, 2 lignes max.
+- [ ] 8 Accueil : icônes dessinées animées, prestations empilées, formulaire à la fin, persona fictif retiré (QuiIntervient, SignatureArtisan, JSON-LD employee, artisan.jpg), FAQ fermée après zones, bloc 3 schéma.
+- [ ] 9 Pied de page : volets téléphone, colonnes alignées 1440, logo centré au pixel ; vitesse ≥ 91.
+- [ ] 10 Contrôles : script publication refuse hors bornes, série CODE 0 sur aperçu, 2 passes + 1 relecture Opus, autoblog selon décision Rémy.
+- Interdits : téléphone inchangé (03 53 01 00 25, phoneIsDemo), jamais le 07, pas de RGE/avis/certif/chiffre inventé, pas de test formulaire sauf si modifié (1 envoi, signalé, effacé).
