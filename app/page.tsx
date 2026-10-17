@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site.config'
 import { getServices, getZones } from '@/lib/content'
 import { buildMetadata } from '@/lib/seo'
-import { HeroChauffe } from '@/components/sections/HeroChauffe'
+import { HeroChaudiere } from '@/components/sections/HeroChaudiere'
 import { DiagnosticThermique } from '@/components/sections/DiagnosticThermique'
 import { DeuxSaisons } from '@/components/sections/DeuxSaisons'
 import { PrestationsReleve } from '@/components/sections/PrestationsReleve'
@@ -46,7 +46,7 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroChauffe />
+      <HeroChaudiere />
       <DiagnosticThermique services={navServices} />
       <DeuxSaisons />
       <PrestationsReleve services={services} />

@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowLeft,
-  ArrowRight,
   Bath,
   CircleAlert,
   Fan,
@@ -78,7 +77,8 @@ const variantesEtape = {
   sortie: { opacity: 0, x: -16 },
 }
 
-export function LeadForm() {
+export function LeadForm({ variante = 'normal' }: { variante?: 'normal' | 'compact' } = {}) {
+  const compact = variante === 'compact'
   const [etape, setEtape] = useState<Etape>(1)
   const [champs, setChamps] = useState<Champs>({
     probleme: '',
@@ -110,12 +110,10 @@ export function LeadForm() {
     }
   }
 
-  const boutonSuivant =
-    'inline-flex min-h-[48px] items-center gap-2 rounded-module px-6 text-sm font-semibold transition-all duration-300 ease-thermique'
 
   return (
     <div
-      className="grain relative overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-coulee p-6 shadow-releve md:p-9"
+      className={`grain relative overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-coulee shadow-releve ${compact ? 'p-5 md:p-6' : 'p-6 md:p-9'}`}
       role="region"
       aria-label="Formulaire de demande"
     >
@@ -139,23 +137,26 @@ export function LeadForm() {
               exit="sortie"
               transition={{ duration: 0.28, ease: COURBE }}
             >
-              <h2 className="mt-7 text-titre-m text-calcaire-neige">
+              <h2 className={`mt-7 text-calcaire-neige ${compact ? 'text-titre-s' : 'text-titre-m'}`}>
                 Qu’est-ce qui ne chauffe plus ?
               </h2>
               <p className="mt-2 text-legende text-calcaire-ombre">
                 Choisissez la situation la plus proche de la vôtre.
               </p>
 
-              <div className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+              <div className={`mt-6 grid grid-cols-2 gap-2.5 ${compact ? '' : 'sm:grid-cols-4'}`}>
                 {SITUATIONS.map(({ id, label, Icone }) => {
                   const choisi = champs.probleme === id
                   return (
                     <button
                       key={id}
                       type="button"
-                      onClick={() => definir('probleme', id)}
+                      onClick={() => {
+                        definir('probleme', id)
+                        setEtape(2)
+                      }}
                       aria-pressed={choisi}
-                      className={`flex min-h-[94px] flex-col items-start justify-between gap-3 rounded-module border p-3.5 text-left text-legende font-medium leading-tight transition-all duration-300 ease-thermique ${
+                      className={`flex ${compact ? 'min-h-[72px]' : 'min-h-[94px]'} flex-col items-start justify-between gap-3 rounded-module border p-3.5 text-left text-legende font-medium leading-tight transition-all duration-300 ease-thermique ${
                         choisi
                           ? 'border-laiton-franc bg-laiton-franc/15 text-calcaire-neige'
                           : 'border-calcaire-neige/10 bg-calcaire-neige/[0.03] text-calcaire-brume hover:border-calcaire-neige/25 hover:bg-calcaire-neige/[0.07]'
@@ -172,21 +173,6 @@ export function LeadForm() {
                 })}
               </div>
 
-              <div className="mt-7 flex justify-end">
-                <button
-                  type="button"
-                  onClick={() => setEtape(2)}
-                  disabled={!champs.probleme}
-                  className={`${boutonSuivant} ${
-                    champs.probleme
-                      ? 'bg-laiton-franc text-fonte-abysse hover:bg-laiton-clair'
-                      : 'cursor-not-allowed bg-calcaire-neige/10 text-calcaire-roche'
-                  }`}
-                >
-                  Continuer
-                  <ArrowRight size={16} strokeWidth={2.4} />
-                </button>
-              </div>
             </motion.div>
           )}
 
@@ -199,7 +185,7 @@ export function LeadForm() {
               exit="sortie"
               transition={{ duration: 0.28, ease: COURBE }}
             >
-              <h2 className="mt-7 text-titre-m text-calcaire-neige">
+              <h2 className={`mt-7 text-calcaire-neige ${compact ? 'text-titre-s' : 'text-titre-m'}`}>
                 Où, et à quel point c’est pressé ?
               </h2>
               <p className="mt-2 text-legende text-calcaire-ombre">
@@ -230,7 +216,10 @@ export function LeadForm() {
                       <button
                         key={valeur}
                         type="button"
-                        onClick={() => definir('urgence', valeur)}
+                        onClick={() => {
+                          definir('urgence', valeur)
+                          if (champs.ville.trim()) setEtape(3)
+                        }}
                         aria-pressed={champs.urgence === valeur}
                         className={`min-h-[44px] rounded-module border px-4 text-legende font-semibold transition-all duration-300 ease-thermique ${
                           champs.urgence === valeur
@@ -243,6 +232,9 @@ export function LeadForm() {
                     ))}
                   </div>
                 </fieldset>
+                {champs.urgence && !champs.ville.trim() && (
+                  <p className="text-legende text-laiton-clair">Indiquez votre commune, la suite s’ouvre toute seule.</p>
+                )}
               </div>
 
               <div className="mt-7 flex items-center justify-between">
@@ -253,19 +245,6 @@ export function LeadForm() {
                 >
                   <ArrowLeft size={16} strokeWidth={2.4} />
                   Retour
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setEtape(3)}
-                  disabled={!champs.ville || !champs.urgence}
-                  className={`${boutonSuivant} ${
-                    champs.ville && champs.urgence
-                      ? 'bg-laiton-franc text-fonte-abysse hover:bg-laiton-clair'
-                      : 'cursor-not-allowed bg-calcaire-neige/10 text-calcaire-roche'
-                  }`}
-                >
-                  Continuer
-                  <ArrowRight size={16} strokeWidth={2.4} />
                 </button>
               </div>
             </motion.div>
@@ -280,7 +259,7 @@ export function LeadForm() {
               exit="sortie"
               transition={{ duration: 0.28, ease: COURBE }}
             >
-              <h2 className="mt-7 text-titre-m text-calcaire-neige">Comment vous joindre ?</h2>
+              <h2 className={`mt-7 text-calcaire-neige ${compact ? 'text-titre-s' : 'text-titre-m'}`}>Comment vous joindre ?</h2>
               <p className="mt-2 text-legende text-calcaire-ombre">
                 Nous vous rappelons dès que possible. Pour une urgence, l’appel reste le plus rapide.
               </p>

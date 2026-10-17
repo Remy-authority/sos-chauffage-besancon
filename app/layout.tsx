@@ -8,6 +8,7 @@ import { getServices } from '@/lib/content'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StickyCTA } from '@/components/layout/StickyCTA'
+import Apparitions from '@/components/ui/Apparitions'
 
 /**
  * Duo typographique du template T3.
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Aller au contenu
         </a>
         <Header services={services} />
+        <Apparitions />
         <main id="main">{children}</main>
         <Footer />
         <StickyCTA />

@@ -262,3 +262,244 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ── Écorché de la chaudière (bloc 1) ───────────────────────────────────── */
+.eco {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: top left;
+  pointer-events: none;
+}
+.eco svg {
+  overflow: visible;
+}
+.eco-facade {
+  position: absolute;
+  transform-origin: left center;
+  will-change: transform, opacity;
+  backface-visibility: visible;
+}
+.eco [data-etiquette] {
+  transform-box: fill-box;
+  transition: none;
+}
+.eco-flamme {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+[data-allume] .eco-flamme,
+.eco-fixe .eco-flamme {
+  animation: eco-flamme 0.75s ease-in-out infinite alternate;
+}
+[data-allume] .eco-flamme:nth-child(2n),
+.eco-fixe .eco-flamme:nth-child(2n) {
+  animation-delay: -0.35s;
+}
+[data-allume] .eco-flamme:nth-child(3n),
+.eco-fixe .eco-flamme:nth-child(3n) {
+  animation-duration: 0.95s;
+}
+.eco-rotor {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+[data-allume] .eco-rotor,
+.eco-fixe .eco-rotor {
+  animation: eco-tourne 2.6s linear infinite;
+}
+[data-allume] .eco-code,
+.eco-fixe .eco-code {
+  animation: eco-clignote 1.1s steps(2, jump-none) infinite;
+}
+@keyframes eco-flamme {
+  from {
+    transform: scaleY(0.8) scaleX(1.06);
+  }
+  to {
+    transform: scaleY(1.15) scaleX(0.94);
+  }
+}
+@keyframes eco-tourne {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes eco-clignote {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eco-flamme,
+  .eco-rotor,
+  .eco-code {
+    animation: none !important;
+  }
+}
+
+/* Apparitions au défilement et pictos de chauffagiste (mise à jour n°1, 18/10/2026, #R53, #R67,
+   #R71). `data-anim` n'est posé que par components/ui/Apparitions.tsx, jamais avec « réduire les
+   animations » : sans lui, tout reste affiché et immobile. */
+[data-anim='pret'] {
+  opacity: 0;
+  transform: translateY(22px);
+}
+[data-anim='vu'] {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.55s ease-out, transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.picto * {
+  transform-box: fill-box;
+}
+/* Le cadre du picto se trace une fois, à l'apparition. */
+[data-anim='vu'] .picto .trait {
+  stroke-dasharray: 1;
+  animation: picto-trait 0.9s ease-out calc(var(--d, 0s) + var(--decal, 0s)) both;
+}
+/* Le geste du métier se rejoue en boucle : le devis s'écrit, l'onde de l'appel part, le repère
+   rebondit, l'aiguille tourne, la flamme respire, la clé serre. Arrêté hors écran. */
+@media (prefers-reduced-motion: no-preference) {
+  .picto .ecrit {
+    stroke-dasharray: 1;
+    animation: picto-ecrit 3.2s ease-in-out calc(var(--d, 0s) + var(--i, 0) * 0.3s) infinite both;
+  }
+  .picto .pose {
+    animation: picto-pose 2.6s cubic-bezier(0.5, 0, 0.6, 1) var(--d, 0s) infinite both;
+  }
+  .picto .glisse {
+    animation: picto-glisse 2.8s ease-in-out var(--d, 0s) infinite both;
+  }
+  .picto .glisse-court {
+    animation: picto-glisse-court 2.4s ease-in-out var(--d, 0s) infinite both;
+  }
+  .picto .balaie {
+    animation: picto-balaie 3s ease-in-out var(--d, 0s) infinite both;
+  }
+  .picto .rebond {
+    transform-origin: bottom;
+    animation: picto-rebond 2s ease-out var(--d, 0s) infinite both;
+  }
+  .picto .apparait {
+    animation: picto-apparait 3.2s ease-in-out var(--d, 0s) infinite both;
+  }
+  .picto .descend {
+    animation: picto-descend 2.8s ease-in-out var(--d, 0s) infinite both;
+  }
+  .picto .tourne {
+    transform-origin: 50% 100%;
+    animation: picto-tourne 6s linear var(--d, 0s) infinite both;
+  }
+  .picto .respire {
+    transform-origin: 50% 100%;
+    animation: picto-respire 1.6s ease-in-out var(--d, 0s) infinite alternate both;
+  }
+  .picto .serre {
+    animation: picto-serre 2.4s ease-in-out var(--d, 0s) infinite both;
+  }
+  .picto .clignote {
+    animation: picto-clignote 1.4s steps(2, jump-none) var(--d, 0s) infinite both;
+  }
+  .picto[data-hors] *,
+  [data-hors] .picto * {
+    animation-play-state: paused !important;
+  }
+}
+@keyframes picto-trait {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes picto-ecrit {
+  0% { stroke-dashoffset: 1; opacity: 1; }
+  35% { stroke-dashoffset: 0; }
+  82% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes picto-pose {
+  0% { transform: translateY(-7px); opacity: 0; }
+  12% { opacity: 1; }
+  34% { transform: translateY(0); }
+  40% { transform: translateY(-1px); }
+  46%, 84% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+@keyframes picto-glisse {
+  0%, 100% { transform: translateX(-5px); }
+  50% { transform: translateX(4px); }
+}
+@keyframes picto-glisse-court {
+  0%, 100% { transform: translateX(-2.5px); }
+  50% { transform: translateX(2.5px); }
+}
+@keyframes picto-balaie {
+  0%, 100% { transform: translate(-4px, 0); }
+  30% { transform: translate(3px, -2px); }
+  60% { transform: translate(5px, 1px); }
+}
+@keyframes picto-rebond {
+  0%, 45%, 100% { transform: translateY(0); }
+  15% { transform: translateY(-5px); }
+  28% { transform: translateY(0); }
+  36% { transform: translateY(-2px); }
+}
+@keyframes picto-apparait {
+  0%, 30% { opacity: 0; }
+  45%, 85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes picto-descend {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(3px); }
+}
+@keyframes picto-tourne {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes picto-respire {
+  from { transform: scaleY(0.82) scaleX(1.06); }
+  to { transform: scaleY(1.12) scaleX(0.96); }
+}
+@keyframes picto-serre {
+  0%, 100% { transform: rotate(0deg); }
+  40% { transform: rotate(-28deg); }
+  60% { transform: rotate(-28deg); }
+}
+@keyframes picto-clignote {
+  from { opacity: 1; }
+  to { opacity: 0.2; }
+}
+
+/* Entrées en cascade et traits miel : `.entree` apparaît à son tour (`--decal`), `.trait-miel`
+   se trace juste après, `.trait-etapes` relie les étapes du déroulé. */
+[data-anim='vu'] .entree {
+  animation: entree 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) var(--decal, 0s) both;
+}
+[data-anim='vu'] .trait-miel {
+  transform-origin: left;
+  animation: trait-miel 0.6s ease-out calc(var(--decal, 0s) + 0.55s) both;
+}
+[data-anim='vu'] .trait-etapes {
+  animation: trait-etapes 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+@keyframes entree {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes trait-miel {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes trait-etapes {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@media (max-width: 1023px) {
+  @keyframes trait-etapes {
+    from { clip-path: inset(0 0 100% 0); }
+    to { clip-path: inset(0 0 0 0); }
+  }
+}
