@@ -1,0 +1,172 @@
+{
+"depannage ballon d'eau chaude besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"chauffe-eau en panne besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"fuite chauffe-eau besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"reparation chauffe-eau besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"reparation chauffe eau besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"urgence chauffe-eau besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"depannage chauffe-eau besancon": {
+"volume": 10,
+"cpc": null,
+"competition": null
+},
+"chauffe-eau besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"ballon d'eau chaude besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"remplacement chauffe-eau besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"plombier chauffe-eau besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"urgence chaudiere besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"depannage chaudiere besancon": {
+"volume": 10,
+"cpc": null,
+"competition": "MEDIUM"
+},
+"depannage chaudiere gaz besancon": {
+"volume": 10,
+"cpc": 3.16,
+"competition": "MEDIUM"
+},
+"depannage chaudiere fioul besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"chauffagiste besancon": {
+"volume": 260,
+"cpc": 2.82,
+"competition": "MEDIUM"
+},
+"chauffagiste urgence besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"plombier chauffagiste besancon": {
+"volume": 50,
+"cpc": 1.8,
+"competition": "MEDIUM"
+},
+"depannage chauffage besancon": {
+"volume": 10,
+"cpc": null,
+"competition": null
+},
+"entretien chaudiere besancon": {
+"volume": 10,
+"cpc": 2.56,
+"competition": "MEDIUM"
+},
+"depannage pompe a chaleur besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"climatisation besancon": {
+"volume": 210,
+"cpc": 3.02,
+"competition": "MEDIUM"
+},
+"installateur climatisation besancon": {
+"volume": 50,
+"cpc": 2.67,
+"competition": "MEDIUM"
+},
+"installation climatisation besancon": {
+"volume": 50,
+"cpc": 2.67,
+"competition": "MEDIUM"
+},
+"depannage chauffage electrique besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"desembouage chauffage besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"remplacement chaudiere besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"chaudiere besancon": {
+"volume": null,
+"cpc": null,
+"competition": null
+},
+"chauffe-eau en panne": {
+"volume": 480,
+"cpc": 3.73,
+"competition": "MEDIUM"
+},
+"depannage chauffe-eau": {
+"volume": 590,
+"cpc": 9.2,
+"competition": "HIGH"
+},
+"reparation chauffe-eau": {
+"volume": 590,
+"cpc": 9.74,
+"competition": "HIGH"
+},
+"fuite chauffe-eau": {
+"volume": 1600,
+"cpc": 7.04,
+"competition": "LOW"
+},
+"urgence chaudiere": {
+"volume": 210,
+"cpc": 12.04,
+"competition": "HIGH"
+},
+"depannage chaudiere": {
+"volume": 1300,
+"cpc": 3.34,
+"competition": "MEDIUM"
+}
+}
