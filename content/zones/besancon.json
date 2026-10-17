@@ -1,0 +1,55 @@
+{
+  "slug": "besancon",
+  "name": "Besançon",
+  "postalCode": "25000",
+  "orientation": "Centre",
+  "imageAlt": "Toits de tuiles du centre ancien de Besançon dans la boucle du Doubs, la citadelle sur son rocher en arrière-plan",
+  "context": "Ville-centre de 118 489 habitants, de la Boucle aux grands quartiers de Planoise et Palente, où l'habitat collectif domine.",
+  "fait": "Besançon compte 118 489 habitants sur 6 514 hectares, soit la plus grande commune du Doubs par la population.",
+  "source": "geo.api.gouv.fr, commune 25056, relevé du 18/10/2026",
+  "metaTitle": "Dépannage chauffage Besançon, chauffagiste par quartier",
+  "metaDescription": "Chauffagiste à Besançon (25000) : dépannage chaudière, radiateurs froids, plus d'eau chaude, entretien annuel, de la Boucle à Planoise. Urgence 7j/7.",
+  "h1": "Dépannage chauffage à Besançon, quartier par quartier",
+  "intro": "Nous dépannons le chauffage dans tous les quartiers de Besançon (25000). La ville réunit un centre ancien dans la boucle du Doubs, des faubourgs de maisons et de grands ensembles collectifs : trois types d'installations, trois façons de tomber en panne.",
+  "blocks": [
+    {
+      "heading": "Le centre ancien : chaudières murales en appartement",
+      "body": "Dans la Boucle, à Battant et aux Chaprais, le chauffage est presque toujours individuel. Une chaudière gaz murale dans la cuisine ou la salle de bains alimente les radiateurs et l'eau chaude. Les immeubles anciens imposent des conduits de fumée partagés et des accès parfois étroits. Les pannes qui reviennent le plus souvent : un code erreur d'allumage, une pression tombée à zéro, un échangeur entartré qui coupe l'eau chaude. Nous arrivons avec les pièces courantes des marques les plus posées en ville."
+    },
+    {
+      "heading": "Planoise, Palente, Clairs-Soleils : l'immeuble et le collectif",
+      "body": "Dans les grands quartiers, deux cas se présentent. Si l'immeuble est raccordé au réseau de chaleur ou à une chaufferie collective, la panne générale relève du syndic ou de l'exploitant. Nous intervenons alors sur ce qui vous appartient : radiateurs froids, robinets thermostatiques bloqués, ballon d'eau chaude individuel. Si chaque logement a sa propre chaudière, le dépannage est identique à celui d'une maison. Au téléphone, nous commençons par trancher cette question : elle décide de qui doit intervenir."
+    },
+    {
+      "heading": "Saint-Ferjeux, Velotte, Bregille, Saint-Claude : le pavillon",
+      "body": "Les faubourgs de maisons individuelles ont un parc varié : chaudières gaz au sol, fioul dans les secteurs non desservis par le gaz, pompes à chaleur récentes. Le circuit entier vous appartient, de la chaudière au dernier radiateur. Les défauts de circulation, boues et déséquilibre entre étages, s'y installent sans que personne ne les signale. Nous regardons l'installation complète, pas seulement l'appareil qui affiche l'erreur."
+    },
+    {
+      "heading": "Avant notre arrivée, trois gestes utiles",
+      "body": "1. Notez le code erreur exactement tel qu'il s'affiche et donnez-le au téléphone : il oriente le diagnostic et la pièce à emporter. 2. Lisez la pression sur le manomètre : sous 1 bar à froid, le circuit a perdu de l'eau, ne réarmez pas en boucle. 3. Dégagez l'accès à l'appareil et au compteur. En cas d'odeur de gaz, coupez le compteur, aérez, sortez et appelez le numéro d'urgence sécurité gaz avant toute autre chose."
+    }
+  ],
+  "neighbours": [
+    "Thise",
+    "École-Valentin",
+    "Avanne-Aveney"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous dans tous les quartiers de Besançon ?",
+      "a": "Oui : la Boucle, Battant, les Chaprais, Palente, Planoise, Saint-Ferjeux, Montrapon, Velotte, les Clairs-Soleils, Bregille et Saint-Claude. Le délai dépend du planning du moment, pas du quartier. Nous l'annonçons au téléphone."
+    },
+    {
+      "q": "Mon immeuble est sur le réseau de chaleur, pouvez-vous intervenir ?",
+      "a": "Sur la partie collective, non : la chaufferie et le réseau relèvent de l'exploitant et du syndic. Sur ce qui est dans votre logement, oui : radiateurs qui ne chauffent pas, robinets thermostatiques bloqués, ballon d'eau chaude individuel. Nous faisons le tri avec vous au téléphone."
+    },
+    {
+      "q": "Quel est le tarif d'un dépannage de chaudière à Besançon ?",
+      "a": "Le tarif est annoncé au téléphone à partir de ce que vous décrivez, puis confirmé sur place avant de commencer. Il dépend de la prestation, pas de l'heure de l'appel. Les fourchettes par prestation sont publiées sur notre page des tarifs."
+    },
+    {
+      "q": "Ma chaudière murale coupe l'eau chaude mais chauffe encore, est-ce grave ?",
+      "a": "C'est une panne fréquente dans les appartements du centre : l'échangeur sanitaire entartré ou une vanne trois voies bloquée. Le chauffage continue, l'eau chaude s'arrête. La réparation se fait sur place dans la plupart des cas, sans remplacer la chaudière."
+    }
+  ]
+}

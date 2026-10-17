@@ -503,3 +503,48 @@
     to { clip-path: inset(0 0 0 0); }
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Carte dessinée du Grand Besançon (accueil, bloc 6 ; #R60). Les communes
+   apparaissent en cascade (--i = rang de distance au centre), Besançon plus
+   sombre, survol plus franc, nom en halo clair pour rester lisible sur le vert.
+   --------------------------------------------------------------------------- */
+.carte-communes .carte-commune,
+.carte-communes .carte-centre {
+  stroke: theme('colors.calcaire.neige');
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  transition: fill 0.6s ease-out calc(var(--i, 0) * 70ms + 150ms);
+}
+.carte-communes .carte-commune { fill: theme('colors.jura.tendre'); }
+.carte-communes .carte-centre { fill: theme('colors.jura.dense'); }
+.carte-communes[data-anim='pret'] .carte-commune,
+.carte-communes[data-anim='pret'] .carte-centre { fill: theme('colors.calcaire.pierre'); }
+.carte-communes .carte-lien { cursor: pointer; outline: none; }
+.carte-communes .carte-lien:hover .carte-commune,
+.carte-communes .carte-lien:focus-visible .carte-commune { fill: theme('colors.jura.franc'); transition-delay: 0s; }
+.carte-communes .carte-lien:hover .carte-centre,
+.carte-communes .carte-lien:focus-visible .carte-centre { fill: theme('colors.jura.sombre'); transition-delay: 0s; }
+.carte-communes .carte-etiquettes { pointer-events: none; }
+.carte-communes .carte-nom {
+  font-family: var(--police-texte), system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  fill: theme('colors.fonte.abysse');
+  paint-order: stroke;
+  stroke: theme('colors.calcaire.neige');
+  stroke-width: 6px;
+  stroke-linejoin: round;
+}
+.carte-communes .carte-nom-centre { font-size: 32px; font-weight: 700; }
+.carte-communes .carte-filet { stroke: theme('colors.fonte.abysse'); stroke-width: 1.5; fill: none; }
+.carte-communes .carte-point { fill: theme('colors.fonte.abysse'); }
+@media (max-width: 1023px) {
+  .carte-communes .carte-nom { font-size: 38px; stroke-width: 9px; }
+  .carte-communes .carte-nom-centre { font-size: 52px; }
+  .carte-communes .carte-filet { stroke-width: 2.5; }
+}
+
+/* Lignes équilibrées : pas de mot orphelin en bout de titre ni de paragraphe. */
+h1, h2, h3, .text-titre-s, .text-titre-m, .text-titre-l, .text-titre-xl { text-wrap: balance; }
+p, li, figcaption, dd { text-wrap: pretty; }

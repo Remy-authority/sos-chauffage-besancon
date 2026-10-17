@@ -164,6 +164,12 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
 
       <article className="bg-calcaire-neige py-14 lg:py-20">
         <div className="enceinte max-w-colonne">
+          {zone.fait && (
+            <aside className="mb-10 border-l-2 border-laiton-franc bg-calcaire-voile px-6 py-5" aria-label="Repère sur la commune">
+              <p className="text-lecture text-fonte-nuit">{zone.fait}</p>
+              {zone.source && <p className="mt-2 text-legende text-calcaire-ombre">Source : {zone.source}</p>}
+            </aside>
+          )}
           {zone.blocks.length > 0 && (
             <div className="corps-edito space-y-10">
               {zone.blocks.map((bloc) => (
@@ -196,6 +202,10 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
                 </li>
               ))}
             </ul>
+            <Link href="/zones" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-fonte-abysse underline decoration-laiton-franc decoration-2 underline-offset-4">
+              Toutes les communes couvertes
+              <ArrowRight size={15} aria-hidden="true" />
+            </Link>
           </AnimatedSection>
 
           {zone.neighbours.length > 0 && (

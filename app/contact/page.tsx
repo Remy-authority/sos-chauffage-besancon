@@ -7,10 +7,15 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { Button } from '@/components/ui/Button'
 import { LeadForm } from '@/components/ui/LeadForm'
 import { CtaBanner } from '@/components/ui/CtaBanner'
+import { Faq } from '@/components/ui/Faq'
+import { ServiceIcon } from '@/components/ui/ServiceIcon'
+import { getServices } from '@/lib/content'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Contact et demande d’intervention',
-  description: `Contactez ${siteConfig.businessName} pour un dépannage de chauffage ou un entretien de chaudière à ${siteConfig.city} et dans le Grand Besançon. Ligne ouverte 7j/7.`,
+  title: 'Contacter un chauffagiste à Besançon, dépannage 7j/7',
+  description: `Chaudière en panne, plus d’eau chaude ou entretien à prévoir. Joignez ${siteConfig.businessName} par téléphone ou formulaire, à ${siteConfig.city} et dans le Grand Besançon.`,
   path: '/contact',
 })
 
@@ -31,6 +36,7 @@ const COORDONNEES = [
 ]
 
 export default function ContactPage() {
+  const services = getServices()
   return (
     <>
       <PageHeader
@@ -51,9 +57,9 @@ export default function ContactPage() {
             <AnimatedSection>
               <h2 className="text-titre-m">Nous joindre</h2>
               <p className="mt-4 max-w-lecture text-lecture text-calcaire-basalte">
-                Une panne de chauffage se décrit mal par écrit. Si le logement est froid, appelez :
-                c’est plus rapide, et nous pouvons vous indiquer tout de suite ce qu’il faut
-                vérifier en attendant, code erreur, pression du circuit, position du thermostat.
+                Une panne de chauffage se décrit mal par écrit. Si le logement est froid, appelez,
+                c’est plus rapide. Nous vous indiquons tout de suite ce qu’il faut vérifier en
+                attendant, code erreur, pression du circuit, position du thermostat.
               </p>
             </AnimatedSection>
 
@@ -103,6 +109,47 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <section className="plage bg-calcaire-voile" aria-labelledby="contact-prestations-titre">
+        <div className="enceinte">
+          <div className="mx-auto max-w-lecture text-center">
+            <p className="surtitre text-jura-franc">Ce que nous dépannons</p>
+            <h2 id="contact-prestations-titre" className="mt-3 text-titre-m">
+              Dites-nous quel appareil est en cause
+            </h2>
+            <p className="mt-4 text-lecture text-calcaire-basalte">
+              Chaque prestation a sa page, avec les pannes fréquentes et les prix pratiqués.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((s) => (
+              <li key={s.slug} className="vivant">
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="group flex h-full items-center gap-4 rounded-module border border-calcaire-pierre bg-calcaire-neige p-4 transition-colors hover:border-jura-franc"
+                >
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-module bg-jura-mousse text-jura-dense">
+                    <ServiceIcon icon={s.icon} className="h-6 w-6" />
+                  </span>
+                  <span className="min-w-0 flex-1 font-titre text-base font-semibold text-fonte-abysse">
+                    {s.navTitle}
+                  </span>
+                  <ArrowRight
+                    size={18}
+                    className="shrink-0 text-calcaire-roche transition-transform group-hover:translate-x-1 group-hover:text-jura-dense"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <Faq
+        items={siteConfig.contactFaq as unknown as { q: string; a: string }[]}
+        eyebrow="Avant d’appeler"
+        title={<>Les questions qu’on nous pose avant de venir</>}
+      />
 
       <CtaBanner />
     </>

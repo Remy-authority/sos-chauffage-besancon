@@ -10,18 +10,19 @@ import { Faq } from '@/components/ui/Faq'
 import { CtaBanner } from '@/components/ui/CtaBanner'
 
 export const metadata: Metadata = buildMetadata({
-  title: `Chauffagiste à ${siteConfig.city} et dans le Grand Besançon, communes desservies`,
-  description: `Communes desservies autour de ${siteConfig.city} pour le dépannage de chauffage et l'entretien de chaudière : Saint-Vit, Thise, École-Valentin, Franois et les autres communes de l'agglomération.`,
+  title: 'Dépannage chauffage dans le Grand Besançon, 13 communes',
+  description: `Chauffagiste à ${siteConfig.city} et dans 12 communes du Grand Besançon : Saint-Vit, Thise, École-Valentin, Franois. Dépannage de chaudière, tarif annoncé avant de venir.`,
   path: '/zones',
 })
 
 export default function ZonesHub() {
   const zones = getZones()
-  const noms = zones.map((z) => z.name)
+  const voisines = zones.filter((z) => z.slug !== 'besancon')
+  const noms = voisines.map((z) => z.name)
   const { city, businessName, departmentName, department, serviceArea } = siteConfig
 
   // Réponse courte factuelle, pensée pour être citable telle quelle (levier GEO).
-  const citable = `${businessName} intervient à ${city} (${departmentName}, ${department}) et dans ${zones.length} communes du Grand Besançon : ${noms.join(', ')}. Dépannage de chaudière gaz et fioul, pompe à chaleur, ballon d'eau chaude, radiateurs, et entretien annuel obligatoire. Ligne ouverte ${siteConfig.availability}.`
+  const citable = `${businessName} intervient à ${city} (${departmentName}, ${department}) et dans ${voisines.length} communes du Grand Besançon : ${noms.join(', ')}. Dépannage de chaudière gaz et fioul, pompe à chaleur, ballon d'eau chaude, radiateurs, et entretien annuel obligatoire. Ligne ouverte ${siteConfig.availability}.`
 
   const faqHub = [
     {
@@ -53,7 +54,7 @@ export default function ZonesHub() {
             <span className="mot-laiton">du Grand Besançon</span>
           </>
         }
-        subtitle={`Nous couvrons ${city} et ${zones.length} communes voisines pour le dépannage de chauffage et l’entretien de chaudière.`}
+        subtitle={`Nous couvrons ${city} et ${voisines.length} communes voisines pour le dépannage de chauffage et l’entretien de chaudière.`}
       />
 
       <section className="bg-calcaire-neige py-14 lg:py-20">
@@ -105,9 +106,12 @@ export default function ZonesHub() {
           <AnimatedSection className="mt-8 rounded-socle border border-calcaire-pierre bg-calcaire-voile p-7">
             <h2 className="text-titre-s">Et à {city} même</h2>
             <p className="mt-3 max-w-lecture text-lecture text-calcaire-basalte">
-              {city} n’a pas de page dédiée : c’est notre ville de base. Nous intervenons dans tous
-              les quartiers, de la Boucle aux faubourgs, sur l’habitat ancien comme sur les
-              constructions récentes.
+              {city} est notre ville de base. Nous intervenons dans tous les quartiers, de la Boucle
+              aux faubourgs, sur l’habitat ancien comme sur les constructions récentes.{' '}
+              <Link href="/zones/besancon" className="font-medium text-jura-dense underline decoration-laiton-franc decoration-2 underline-offset-4">
+                Voir la page Besançon, quartier par quartier
+              </Link>
+              .
             </p>
             <ul className="mt-5 flex flex-wrap gap-2">
               {serviceArea.districts.map((quartier) => (

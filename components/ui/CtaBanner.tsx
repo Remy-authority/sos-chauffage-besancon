@@ -32,7 +32,7 @@ export function CtaBanner({ title, subtitle }: { title?: string; subtitle?: stri
 
             <p className="mt-5 max-w-lecture text-chapo text-calcaire-brume">
               {subtitle ??
-                'Deux phrases suffisent : ce que fait l’appareil, depuis quand. Nous vous disons quelle piste tenir, ce que coûte l’intervention et quand nous pouvons passer.'}
+                'Deux phrases suffisent, ce que fait l’appareil et depuis quand. Nous vous disons quelle piste tenir, ce que coûte l’intervention et quand nous pouvons passer.'}
             </p>
           </div>
 

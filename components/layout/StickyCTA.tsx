@@ -57,6 +57,7 @@ export function StickyCTA() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3, ease: COURBE }}
+            data-barre-fixe
             className="fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-fonte-brut bg-fonte-abysse/95 p-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom))] backdrop-blur-xl lg:hidden"
           >
             <a

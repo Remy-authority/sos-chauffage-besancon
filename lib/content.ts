@@ -69,7 +69,7 @@ export interface Zone {
   context?: string
   /**
    * Position réelle de la commune par rapport à Besançon (« Nord-est », « Ouest »…).
-   * Sert au regroupement par orientation de la section `CarteZones` et du hub
+   * Sert au regroupement par orientation du hub
    * /zones. Valeurs vérifiées, cf. docs/SEO-GEO-PLAN.md §3 : ne jamais improviser.
    */
   orientation?: string
@@ -79,6 +79,10 @@ export interface Zone {
    * l'alt sert d'abord les lecteurs d'écran, il n'est pas un emplacement SEO.
    */
   imageAlt?: string
+  /** Un fait sourcé sur la commune (population, surface…), lu sur geo.api.gouv.fr. */
+  fait?: string
+  /** La source du fait, affichée sous lui. */
+  source?: string
   metaTitle: string
   metaDescription: string
   h1: string

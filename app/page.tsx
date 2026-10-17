@@ -3,65 +3,57 @@ import { siteConfig } from '@/config/site.config'
 import { getServices, getZones } from '@/lib/content'
 import { buildMetadata } from '@/lib/seo'
 import { HeroChaudiere } from '@/components/sections/HeroChaudiere'
-import { DiagnosticThermique } from '@/components/sections/DiagnosticThermique'
-import { DeuxSaisons } from '@/components/sections/DeuxSaisons'
-import { PrestationsReleve } from '@/components/sections/PrestationsReleve'
-import { Realisations } from '@/components/sections/Realisations'
-import { ParcAppareils } from '@/components/sections/ParcAppareils'
-import { HiverComtois } from '@/components/sections/HiverComtois'
-import { QuiIntervient } from '@/components/sections/QuiIntervient'
-import { CarteZones } from '@/components/sections/CarteZones'
+import { Symptomes } from '@/components/sections/Symptomes'
+import { SequenceIntervention } from '@/components/sections/SequenceIntervention'
+import { PrestationsEmpilees } from '@/components/sections/PrestationsEmpilees'
+import { PourquoiNous } from '@/components/sections/PourquoiNous'
+import { CarteGrandBesancon } from '@/components/sections/CarteGrandBesancon'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { LeadForm } from '@/components/ui/LeadForm'
 import { Faq } from '@/components/ui/Faq'
-import { CtaBanner } from '@/components/ui/CtaBanner'
 
-const TITRE = `Dépannage chauffage et chaudière à ${siteConfig.city}, urgence 24h/24`
-const DESCRIPTION = `Chauffagiste à ${siteConfig.city} et dans le Grand Besançon : panne de chaudière gaz ou fioul, radiateurs froids, plus d'eau chaude, pompe à chaleur, entretien annuel obligatoire. Ligne ouverte 7j/7, tarif annoncé avant intervention.`
+const TITRE_ACCUEIL = 'Urgence chaudière Besançon, dépannage chauffage 24h/24'
+const DESCRIPTION_ACCUEIL =
+  'Chaudière en panne, radiateurs froids, plus d’eau chaude à Besançon ? Chauffagiste 24h/24, tarif annoncé avant de venir, pièces courantes à bord.'
 
 export const metadata: Metadata = buildMetadata({
-  title: TITRE,
-  description: DESCRIPTION,
+  title: TITRE_ACCUEIL,
+  description: DESCRIPTION_ACCUEIL,
   path: '/',
 })
 
 /**
- * Accueil, template T3.
+ * Accueil, mise à jour n°1 du 18/10/2026 (kickoff « 10 chantiers »).
  *
- * Enchaînement propre au métier du chauffage, et volontairement distinct des
- * autres templates du portefeuille : on ouvre sur le TRIAGE (panne ou
- * entretien), on enchaîne sur le DIAGNOSTIC par symptôme, puis seulement après
- * viennent les prestations. L'ancrage local (hiver comtois, bâti bisontin) est
- * traité en section pleine, pas en encart.
- *
- * La preuve arrive en deux temps : les RÉALISATIONS juste après les prestations
- * (ce que donne le travail), puis QUI INTERVIENT après l'ancrage local (à qui on
- * confie sa chaudière). Les deux sections sombres de la page, réalisations et
- * hiver comtois, restent séparées par une section claire.
+ * Ordre : 1 bloc 1 scrollytelling (la chaudière qui s'ouvre), 2 symptômes,
+ * 3 déroulé du dépannage au défilement, 4 prestations une par une, 5 pourquoi nous,
+ * 6 carte dessinée du Grand Besançon, 7 FAQ fermée, 8 formulaire de fin (#R71).
+ * Moins de 800 mots visibles (#R67), aucune personne fictive, aucun chiffre inventé.
  */
 export default function HomePage() {
   const services = getServices()
   const zones = getZones()
-  const navServices = services.map((s) => ({ slug: s.slug, navTitle: s.navTitle }))
 
   return (
     <>
       <HeroChaudiere />
-      <DiagnosticThermique services={navServices} />
-      <DeuxSaisons />
-      <PrestationsReleve services={services} />
-      <Realisations />
-      <ParcAppareils />
-      <HiverComtois />
-      <QuiIntervient />
-      <CarteZones zones={zones} />
+      <Symptomes services={services.map((s) => ({ slug: s.slug, navTitle: s.navTitle }))} />
+      <SequenceIntervention />
+      <PrestationsEmpilees services={services} />
+      <PourquoiNous />
+      <CarteGrandBesancon zones={zones} />
 
-      <section id="devis" className="plage bg-calcaire-neige" aria-labelledby="devis-titre">
+      <Faq
+        items={siteConfig.homeFaq as unknown as { q: string; a: string }[]}
+        subtitle={`Urgence, entretien, tarifs, code erreur ou odeur de gaz, ce qu’on nous demande le plus à ${siteConfig.city}.`}
+      />
+
+      <section id="devis" className="plage bg-calcaire-voile" aria-labelledby="devis-titre">
         <div className="enceinte grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
             <SectionHeader
               id="devis-titre"
-              eyebrow="Décrire ma situation"
+              eyebrow="Décrire ma panne"
               title={
                 <>
                   Trois questions,
@@ -69,7 +61,7 @@ export default function HomePage() {
                   et nous vous rappelons.
                 </>
               }
-              subtitle="Plus vous êtes précis sur ce que fait l’appareil et depuis quand, plus l’estimation au téléphone sera juste. Pour une urgence, l’appel reste le plus rapide."
+              subtitle="Dites ce que fait l’appareil et depuis quand. Pour une urgence, l’appel reste le plus rapide."
             />
           </div>
           <div className="lg:col-span-7">
@@ -77,13 +69,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <Faq
-        items={siteConfig.homeFaq as unknown as { q: string; a: string }[]}
-        subtitle={`Urgence, obligation d’entretien, tarifs, code erreur, odeur de gaz : les questions qui reviennent le plus souvent à ${siteConfig.city}.`}
-      />
-
-      <CtaBanner />
     </>
   )
 }

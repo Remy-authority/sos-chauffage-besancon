@@ -4,7 +4,7 @@ import './globals.css'
 import { siteConfig } from '@/config/site.config'
 import { themeCssVars } from '@/lib/theme'
 import { buildMetadata, jsonLdScript, localBusinessJsonLd } from '@/lib/seo'
-import { getServices } from '@/lib/content'
+import { getServices, getZones } from '@/lib/content'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StickyCTA } from '@/components/layout/StickyCTA'
@@ -37,8 +37,9 @@ const policeTexte = IBM_Plex_Sans({
   weight: ['400', '500', '600'],
 })
 
-const titreAccueil = `Dépannage chauffage et chaudière à ${siteConfig.city}, urgence 24h/24`
-const descriptionAccueil = `Chauffagiste à ${siteConfig.city} et dans le Grand Besançon : dépannage de chaudière gaz et fioul, pompe à chaleur, ballon d'eau chaude, radiateurs froids, entretien annuel obligatoire. Ligne ouverte 7j/7.`
+const titreAccueil = 'Urgence chaudière Besançon, dépannage chauffage 24h/24'
+const descriptionAccueil =
+  'Chaudière en panne, radiateurs froids, plus d’eau chaude à Besançon ? Chauffagiste 24h/24, tarif annoncé avant de venir, pièces courantes à bord.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.canonicalBase),
@@ -60,6 +61,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const services = getServices().map((s) => ({ slug: s.slug, navTitle: s.navTitle }))
+  const zones = getZones().map((z) => ({ slug: z.slug, name: z.name }))
 
   return (
     <html
@@ -80,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Aller au contenu
         </a>
-        <Header services={services} />
+        <Header services={services} zones={zones} />
         <Apparitions />
         <main id="main">{children}</main>
         <Footer />

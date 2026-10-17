@@ -234,59 +234,6 @@ export const siteConfig = {
   ],
 
   /**
-   * L'artisan qui incarne le site.
-   *
-   * Identité « Julien Vernier » VALIDÉE par Rémy (28/07/2026), présente aussi dans
-   * le JSON-LD (`employee` sur HVACBusiness). À la mise en location, remplacer
-   * l'ensemble du bloc par les informations réelles du loueur. Règles de
-   * rédaction, non négociables :
-   *  - AUCUN chiffre d'expérience (« X ans de métier », « X interventions »).
-   *  - AUCUNE certification, AUCUN label, AUCUNE qualification déclarée.
-   *  - Un parcours raconté par étapes, pas par dates.
-   */
-  persona: {
-    nom: 'Julien Vernier',
-    role: 'Chauffagiste',
-    photo: '/artisan.jpg',
-    photoAlt:
-      'Chauffagiste en veste de travail, bras croisés, devant une chaudière et un réseau de tuyauterie cuivre dans une chaufferie aux murs de pierre',
-    // Même sujet, détouré (PNG alpha) : posé sur un fond de la palette T3 dans la
-    // section « Qui intervient chez vous ». L'alt ne décrit que le sujet, le
-    // décor d'origine ayant été retiré.
-    photoDetouree: '/artisan-detoure.png',
-    photoDetoureeAlt:
-      'Portrait d’un chauffagiste souriant en veste de travail, bras croisés',
-    // Tenu court : sert de première ligne de titre, deux lignes équilibrées.
-    accroche: 'Un seul interlocuteur',
-    /** Parcours en étapes. Jamais de durée, jamais de date. */
-    parcours: [
-      {
-        titre: 'Formé à Besançon',
-        texte:
-          'Apprentissage puis premières années sur le terrain dans l’agglomération, sur des installations de toutes générations.',
-      },
-      {
-        titre: 'Les chaudières fioul du Haut-Doubs',
-        texte:
-          'Des débuts sur des chaufferies isolées, en altitude, là où une panne au cœur de l’hiver ne peut pas attendre le lendemain.',
-      },
-      {
-        titre: 'Le gaz à condensation et les pompes à chaleur',
-        texte:
-          'Spécialisation ensuite sur les deux technologies qui équipent aujourd’hui la majorité des logements du Grand Besançon.',
-      },
-    ],
-    citation:
-      'Une panne de chauffage se raconte mal par écrit. Au téléphone, en trois questions, je sais déjà si je viens avec la pièce ou avec la caisse à outils.',
-    /** Engagements factuels, vérifiables sur le site lui-même. */
-    engagements: [
-      'Un seul interlocuteur, au téléphone comme sur le chantier',
-      'Le tarif annoncé avant l’intervention',
-      'Ce qui a été fait, expliqué avant de repartir',
-    ],
-  },
-
-  /**
    * Galerie de réalisations.
    *
    * ⚠️ Les légendes désignent un TYPE d'intervention, jamais un client, jamais une
@@ -382,6 +329,26 @@ export const siteConfig = {
     {
       q: 'Faut-il remplacer une chaudière ancienne ou continuer à la réparer ?',
       a: "La question se tranche sur trois éléments : la disponibilité des pièces détachées, la fréquence des pannes et le rendement réel de l'appareil. Une chaudière qui tombe en panne plusieurs fois par saison et dont les pièces se raréfient coûte plus cher entretenue que remplacée. Des aides publiques existent pour le remplacement, MaPrimeRénov', les certificats d'économies d'énergie et l'éco-prêt à taux zéro : leurs conditions figurent sur les sites officiels de l'État, et elles dépendent de l'installateur retenu.",
+    },
+  ],
+
+  /* ── FAQ de la page Contact ── */
+  contactFaq: [
+    {
+      q: 'Faut-il appeler ou remplir le formulaire ?',
+      a: "Si le logement est froid ou qu'il n'y a plus d'eau chaude, appelez. Le formulaire convient pour un entretien, un devis de remplacement ou une panne qui peut attendre quelques heures. Dans les deux cas, décrivez ce que fait l'appareil et notez le code affiché à l'écran.",
+    },
+    {
+      q: 'Que préparer avant notre venue ?',
+      a: "La marque et le modèle de l'appareil (étiquette sous la chaudière ou sur le côté du ballon), le code erreur s'il y en a un, la pression lue au manomètre, et la date du dernier entretien. Dégagez l'accès à l'appareil et au compteur de gaz.",
+    },
+    {
+      q: 'Combien coûte le déplacement ?',
+      a: "Le prix du déplacement et du diagnostic est annoncé au téléphone avant de venir. Le coût de la réparation est confirmé sur place, avant de commencer, une fois la pièce en cause identifiée. Nos fourchettes sont détaillées sur la page Tarifs.",
+    },
+    {
+      q: 'Intervenez-vous dans ma commune ?',
+      a: "Nous intervenons à Besançon et dans douze communes du Grand Besançon, de Saint-Vit à Marchaux-Chaudefontaine. La liste complète et les délais par commune figurent sur la page des zones d'intervention.",
     },
   ],
 
