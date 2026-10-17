@@ -83,6 +83,9 @@
   `content/conseils/`, et le stock de brouillons autoblog couvre **6 mois de publication
   au rythme de 3 articles/semaine** (soit 78 brouillons dans `content/drafts/`).
   Le tout est constitué et contrôlé AVANT la mise en ligne.
+  Depuis la mise à jour n°1 (18/10/2026) : **5 articles par semaine** (lundi à vendredi),
+  réserve rechargée par lots de 20, le script de publication REFUSE un brouillon dont le
+  title sort de 30-60 ou la description de 120-160 caractères.
 - **Interdits absolus** : bourrage de mots-clés, chiffres inventés non validés par Rémy,
   fausses certifications (NE PAS prétendre RGE), phrases creuses.
 - Contenu vrai, précis, local. Donnée non confirmée → on ne l'affiche pas.
@@ -95,7 +98,9 @@
 ## 4. INFRA OBLIGATOIRE AVANT MISE EN LIGNE (leçon des sites 1-4)
 
 Suivre `RENT & RANK/docs/INFRA-NOUVEAU-SITE.md` :
-1. **Numéro 09 Twilio dédié** avec renvoi d'appel configuré (VoiceUrl VÉRIFIÉ après achat).
+1. **Téléphone (état au 18/10/2026)** : le site affiche `03 53 01 00 25` avec `phoneIsDemo: true`.
+   Le 09 Twilio n'est PAS décidé : on ne l'achète pas, on ne change ni la logique ni le numéro
+   (kickoff mise à jour n°1 du 18/10/2026). JAMAIS le 07 de Rémy.
 2. **Resend actif** sur le projet Vercel (`RESEND_API_KEY` + `RESEND_FROM`) + redéploiement
    + LEAD DE TEST reçu dans la boîte de Rémy. Sans ça, les leads formulaire sont PERDUS.
 3. Redirection email `contact@sos-chauffage-besancon.fr` → remy@remyzaoui.com (DNS OVH).
@@ -114,13 +119,15 @@ Suivre `RENT & RANK/docs/INFRA-NOUVEAU-SITE.md` :
 
 ## 6. FONCTIONNEMENT DES RÔLES
 
-- **CEO (coordinateur)** : **NE CODE JAMAIS le site (code produit = Builder, TOUJOURS).**
-  Pilote, audite, coordonne, prépare des messages prêts à coller entre balises
-  `=== MESSAGE POUR [AGENT] ===`. Langage simple, zéro jargon.
+- **CEO du site (depuis le kickoff du 18/10/2026, règle #R64 du portefeuille)** : il FAIT
+  LE TRAVAIL LUI-MÊME dans sa conversation : code, pages, photos, corrections, contrôles.
+  3 sous-agents AU PLUS par chantier (gros lots parallèles : articles, relecture à froid),
+  jamais un sous-agent neuf par correction. Tout tourne sur Opus 5.5. Langage simple, zéro jargon.
 - **ZÉRO fainéantise du CEO.** Le CEO utilise ses propres accès (git, gh, build, APIs) et ne
   demande à Rémy QUE ce que lui seul peut faire (validations, paiements).
-- **Ce que le CEO PEUT faire** : git (branches, push de preview), builds de vérification,
-  infos via gh/API. Interdiction absolue : écrire/modifier `app/`, `components/`, `lib/`,
-  `content/`, `config/` → Builder.
-- **Builder** : tout le code (design T3 + intégration + contenu structuré), sur Opus.
-- **SEO** : carte mots-clés, plan services/communes, calendrier éditorial, doctrine §3.
+- **Ce que le CEO fait** : git (branches, preview), builds, code dans `app/`, `components/`,
+  `lib/`, `content/`, `config/`, contrôles de `RENT & RANK/tasks/` (série CODE 0), captures.
+  Les rôles Builder et SEO séparés sont ABROGÉS (18/10/2026).
+- **Interdits de contenu (rappel)** : aucune personne fictive (le personnage « Julien Vernier »
+  a été retiré le 18/10/2026), aucun avis, aucune certification (jamais RGE), aucun chiffre
+  inventé, jamais « met en relation », jamais de tiret cadratin.
