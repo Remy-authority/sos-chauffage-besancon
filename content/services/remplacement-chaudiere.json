@@ -24,7 +24,10 @@
     },
     {
       "heading": "Le déroulé d'un remplacement",
-      "body": "1. Nous visitons l'installation existante et relevons les points contraignants, conduit, raccordements, évacuation des condensats, emplacement. 2. Nous vous présentons les options techniquement possibles chez vous, avec ce qui les distingue à l'usage, et le devis correspondant. 3. Une fois votre choix arrêté, nous convenons d'une date en tenant compte de la saison : un remplacement se planifie idéalement hors période de chauffe. 4. Le jour de la pose, l'ancien appareil est déposé et évacué, le nouveau raccordé, le circuit rincé si nécessaire. 5. Nous procédons à la mise en service, au réglage de la régulation et au contrôle de combustion, puis nous vous expliquons le fonctionnement de l'appareil et de sa programmation avant de repartir."
+      "body": "1. Nous visitons l'installation existante et relevons les points contraignants, conduit, raccordements, évacuation des condensats, emplacement. 2. Nous vous présentons les options techniquement possibles chez vous, avec ce qui les distingue à l'usage, et le devis correspondant. 3. Une fois votre choix arrêté, nous convenons d'une date en tenant compte de la saison : un remplacement se planifie idéalement hors période de chauffe. 4. Le jour de la pose, l'ancien appareil est déposé et évacué, le nouveau raccordé, le circuit rincé si nécessaire. 5. Nous procédons à la mise en service, au réglage de la régulation et au contrôle de combustion, puis nous vous expliquons le fonctionnement de l'appareil et de sa programmation avant de repartir.",
+      "image": "/dessins/remplacement-chaudiere.svg",
+      "imageAlt": "Remplacement, schéma dessiné avec les pièces numérotées",
+      "imageCaption": "Remplacement, dessiné : 1 l'ancienne chaudière au sol et son conduit maçonné, 2 la murale à condensation neuve et sa ventouse."
     },
     {
       "heading": "Les aides publiques, ce qu'on peut en dire honnêtement",

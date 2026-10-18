@@ -20,7 +20,10 @@
     },
     {
       "heading": "Comment se déroule un désembouage",
-      "body": "1. Nous commençons par un diagnostic de circulation, radiateur par radiateur, pour distinguer un circuit embouté d'un simple défaut d'équilibrage ou d'une présence d'air, qui ne se traitent pas de la même façon. 2. Nous isolons le circuit et raccordons la machine de désembouage sur les points prévus à cet effet. 3. Le circuit est nettoyé par circulation hydrodynamique, avec un produit adapté au type d'installation et aux métaux en présence. 4. Nous procédons ensuite à un rinçage complet, étape qui conditionne tout le reste : un produit mal rincé continue d'agir sur les métaux. 5. Le circuit est remis en eau, la pression réglée et le fonctionnement contrôlé émetteur par émetteur. 6. Nous vous conseillons sur la pose éventuelle d'un filtre magnétique, qui capte les particules ferreuses en continu et espace nettement les désemboiages suivants."
+      "body": "1. Nous commençons par un diagnostic de circulation, radiateur par radiateur, pour distinguer un circuit embouté d'un simple défaut d'équilibrage ou d'une présence d'air, qui ne se traitent pas de la même façon. 2. Nous isolons le circuit et raccordons la machine de désembouage sur les points prévus à cet effet. 3. Le circuit est nettoyé par circulation hydrodynamique, avec un produit adapté au type d'installation et aux métaux en présence. 4. Nous procédons ensuite à un rinçage complet, étape qui conditionne tout le reste : un produit mal rincé continue d'agir sur les métaux. 5. Le circuit est remis en eau, la pression réglée et le fonctionnement contrôlé émetteur par émetteur. 6. Nous vous conseillons sur la pose éventuelle d'un filtre magnétique, qui capte les particules ferreuses en continu et espace nettement les désemboiages suivants.",
+      "image": "/dessins/desembouage-chauffage.svg",
+      "imageAlt": "Désembouage, schéma dessiné avec les pièces numérotées",
+      "imageCaption": "Désembouage, dessiné : 1 les boues au fond du radiateur, 2 la pompe raccordée en boucle, 3 le bac où elles finissent."
     },
     {
       "heading": "Pourquoi les circuits s'emboutent, et plus vite ici",

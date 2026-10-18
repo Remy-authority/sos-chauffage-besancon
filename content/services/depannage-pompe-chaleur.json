@@ -20,7 +20,10 @@
     },
     {
       "heading": "Les pannes que nous traitons le plus souvent",
-      "body": "Côté hydraulique, sur une PAC air-eau, la perte de pression et le circulateur bloqué donnent les mêmes symptômes que sur une chaudière. La machine tourne, les radiateurs restent froids.\n\nCôté air, l'unité extérieure encrassée par les feuilles et les poussières perd son échange thermique et force jusqu'à la mise en sécurité. Viennent ensuite les défauts de sonde et les cartes de régulation défaillantes.\n\nLes problèmes de dégivrage apparaissent quand l'évacuation des condensats est bouchée ou gelée. Le manque de fluide frigorigène, souvent évoqué, est moins fréquent. Il signale une fuite sur le circuit et demande une intervention spécifique."
+      "body": "Côté hydraulique, sur une PAC air-eau, la perte de pression et le circulateur bloqué donnent les mêmes symptômes que sur une chaudière. La machine tourne, les radiateurs restent froids.\n\nCôté air, l'unité extérieure encrassée par les feuilles et les poussières perd son échange thermique et force jusqu'à la mise en sécurité. Viennent ensuite les défauts de sonde et les cartes de régulation défaillantes.\n\nLes problèmes de dégivrage apparaissent quand l'évacuation des condensats est bouchée ou gelée. Le manque de fluide frigorigène, souvent évoqué, est moins fréquent. Il signale une fuite sur le circuit et demande une intervention spécifique.",
+      "image": "/dessins/depannage-pompe-chaleur.svg",
+      "imageAlt": "Pompe à chaleur air-eau, schéma dessiné avec les pièces numérotées",
+      "imageCaption": "Pompe à chaleur air-eau, dessinée : 1 le givre sur l'unité extérieure, 2 le ventilateur, 3 la résistance d'appoint, 4 l'afficheur du module intérieur."
     },
     {
       "heading": "Le dimensionnement de l'appoint, le point sensible ici",

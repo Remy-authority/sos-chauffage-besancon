@@ -16,7 +16,10 @@
   "blocks": [
     {
       "heading": "Les pannes de chaudière gaz que nous traitons le plus souvent",
-      "body": "Quatre familles couvrent la grande majorité des appels. La perte de pression d'abord. Le manomètre descend sous la plage de fonctionnement, la chaudière se met en défaut et le circuit ne chauffe plus correctement.\n\nSi vous remettez de l'eau chaque semaine, il y a une fuite ou un vase d'expansion à bout de souffle. Le simple réappoint ne règle rien, il masque le problème.\n\nLe défaut d'allumage ensuite. La chaudière tente d'allumer, n'y parvient pas et se verrouille. L'électrode encrassée, le pressostat de fumées et la vanne gaz sont les pistes habituelles.\n\nLe défaut de sonde fait lire une température incohérente, la chaudière se protège en s'arrêtant. La panne de circulateur enfin, la chaudière chauffe mais l'eau ne circule plus et les radiateurs restent froids."
+      "body": "Quatre familles couvrent la grande majorité des appels. La perte de pression d'abord. Le manomètre descend sous la plage de fonctionnement, la chaudière se met en défaut et le circuit ne chauffe plus correctement.\n\nSi vous remettez de l'eau chaque semaine, il y a une fuite ou un vase d'expansion à bout de souffle. Le simple réappoint ne règle rien, il masque le problème.\n\nLe défaut d'allumage ensuite. La chaudière tente d'allumer, n'y parvient pas et se verrouille. L'électrode encrassée, le pressostat de fumées et la vanne gaz sont les pistes habituelles.\n\nLe défaut de sonde fait lire une température incohérente, la chaudière se protège en s'arrêtant. La panne de circulateur enfin, la chaudière chauffe mais l'eau ne circule plus et les radiateurs restent froids.",
+      "image": "/dessins/depannage-chaudiere-gaz.svg",
+      "imageAlt": "Chaudière gaz murale ouverte, schéma dessiné avec les pièces numérotées",
+      "imageCaption": "Chaudière gaz murale ouverte, dessinée : 1 l'échangeur, 2 le brûleur, 3 la pompe, 4 le vase d'expansion, 5 l'afficheur du code erreur."
     },
     {
       "heading": "Ce que le code erreur nous apprend avant même de venir",

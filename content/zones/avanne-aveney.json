@@ -16,7 +16,10 @@
     },
     {
       "heading": "Le vase d'expansion, la panne qu'on attribue à tort à la chaudière",
-      "body": "Sur les installations de cette génération, la chute de pression répétée est le motif d'appel numéro un. Le réflexe habituel consiste à remettre de l'eau, ce qui fait repartir la chaudière quelques jours avant que le défaut ne revienne. Dans une bonne partie des cas, il n'y a aucune fuite : c'est le vase d'expansion qui a perdu sa pression d'azote et n'absorbe plus la dilatation de l'eau chaude. La soupape de sécurité évacue alors le surplus à chaque montée en température, la pression retombe, et le cycle recommence. Un indice se vérifie en dix secondes : si l'évacuation sous la soupape est humide en permanence, le vase est le premier suspect."
+      "body": "Sur les installations de cette génération, la chute de pression répétée est le motif d'appel numéro un. Le réflexe habituel consiste à remettre de l'eau, ce qui fait repartir la chaudière quelques jours avant que le défaut ne revienne. Dans une bonne partie des cas, il n'y a aucune fuite : c'est le vase d'expansion qui a perdu sa pression d'azote et n'absorbe plus la dilatation de l'eau chaude. La soupape de sécurité évacue alors le surplus à chaque montée en température, la pression retombe, et le cycle recommence. Un indice se vérifie en dix secondes : si l'évacuation sous la soupape est humide en permanence, le vase est le premier suspect.",
+      "image": "/dessins/carte-avanne-aveney.svg",
+      "imageAlt": "Carte dessinée du Grand Besançon, Avanne-Aveney en jaune miel, Besançon au centre",
+      "imageCaption": "Avanne-Aveney en jaune, au sud-ouest de Besançon, sur la carte dessinée des communes où nous intervenons."
     },
     {
       "heading": "La vallée, l'humidité et le chauffage",

@@ -16,7 +16,10 @@
   "blocks": [
     {
       "heading": "Un seul appareil pour les deux saisons",
-      "body": "Une climatisation réversible fonctionne comme une pompe à chaleur. Elle ne produit pas de froid ou de chaud à partir de rien, elle déplace des calories entre l'intérieur et l'extérieur.\n\nL'été, elle évacue la chaleur du logement vers dehors. L'hiver, elle inverse son cycle et va chercher la chaleur de l'air extérieur pour la souffler dans les pièces, en restituant plus d'énergie qu'elle n'en consomme.\n\nC'est un vrai équipement quatre saisons, pas un simple confort de canicule. À l'intersaison, elle chauffe sans allumer la chaudière. Lors des pics de froid comtois, elle épaule le chauffage principal, qui reste maître du jeu."
+      "body": "Une climatisation réversible fonctionne comme une pompe à chaleur. Elle ne produit pas de froid ou de chaud à partir de rien, elle déplace des calories entre l'intérieur et l'extérieur.\n\nL'été, elle évacue la chaleur du logement vers dehors. L'hiver, elle inverse son cycle et va chercher la chaleur de l'air extérieur pour la souffler dans les pièces, en restituant plus d'énergie qu'elle n'en consomme.\n\nC'est un vrai équipement quatre saisons, pas un simple confort de canicule. À l'intersaison, elle chauffe sans allumer la chaudière. Lors des pics de froid comtois, elle épaule le chauffage principal, qui reste maître du jeu.",
+      "image": "/dessins/climatisation-reversible.svg",
+      "imageAlt": "Climatisation réversible, schéma dessiné avec les pièces numérotées",
+      "imageCaption": "Climatisation réversible, dessinée : 1 l'unité extérieure, 2 l'unité murale qui souffle froid l'été et chaud l'hiver, 3 l'évacuation des condensats."
     },
     {
       "heading": "Climatisation réversible ou pompe à chaleur air-eau, ne confondons pas",

@@ -21,7 +21,10 @@
     },
     {
       "heading": "Fuite de chauffe-eau à Besançon, d'où vient l'eau",
-      "body": "Une flaque sous le ballon n'annonce pas forcément la fin de la cuve. Dans la plupart des cas, l'eau vient du groupe de sécurité, la petite pièce posée sur l'arrivée d'eau froide.\n\nCe groupe goutte normalement pendant la chauffe, quelques centilitres. S'il coule en continu, il est entartré ou la pression du réseau est trop forte, et il se remplace.\n\nUne fuite au raccord ou à la bride se reprend aussi. Une cuve percée, en revanche, ne se répare pas, le ballon se remplace. Coupez l'électricité et l'arrivée d'eau en attendant notre venue."
+      "body": "Une flaque sous le ballon n'annonce pas forcément la fin de la cuve. Dans la plupart des cas, l'eau vient du groupe de sécurité, la petite pièce posée sur l'arrivée d'eau froide.\n\nCe groupe goutte normalement pendant la chauffe, quelques centilitres. S'il coule en continu, il est entartré ou la pression du réseau est trop forte, et il se remplace.\n\nUne fuite au raccord ou à la bride se reprend aussi. Une cuve percée, en revanche, ne se répare pas, le ballon se remplace. Coupez l'électricité et l'arrivée d'eau en attendant notre venue.",
+      "image": "/dessins/depannage-ballon-eau-chaude.svg",
+      "imageAlt": "Les trois points de fuite d'un ballons, schéma dessiné avec les pièces numérotées",
+      "imageCaption": "Les trois points de fuite d'un ballon, dessinés : 1 le groupe de sécurité, 2 le joint de bride, 3 la cuve percée par la corrosion."
     },
     {
       "heading": "Urgence chauffe-eau à Besançon",

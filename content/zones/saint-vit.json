@@ -16,7 +16,10 @@
     },
     {
       "heading": "Ce qui déclenche les appels ici",
-      "body": "En saison de chauffe, la moitié des demandes que nous recevons depuis Saint-Vit concerne une chaudière qui se met en sécurité, souvent avec un code affiché, et une perte de pression du circuit. Viennent ensuite les radiateurs qui ne montent plus en température alors que la chaudière tourne, symptôme classique d'un circuit chargé en boues sur une installation ancienne. Hors saison, les demandes basculent sur l'entretien annuel et sur la préparation avant l'hiver, ce qui est le bon réflexe : un entretien programmé en septembre coûte le même prix qu'en janvier, mais il s'obtient dans des délais bien plus courts."
+      "body": "En saison de chauffe, la moitié des demandes que nous recevons depuis Saint-Vit concerne une chaudière qui se met en sécurité, souvent avec un code affiché, et une perte de pression du circuit. Viennent ensuite les radiateurs qui ne montent plus en température alors que la chaudière tourne, symptôme classique d'un circuit chargé en boues sur une installation ancienne. Hors saison, les demandes basculent sur l'entretien annuel et sur la préparation avant l'hiver, ce qui est le bon réflexe : un entretien programmé en septembre coûte le même prix qu'en janvier, mais il s'obtient dans des délais bien plus courts.",
+      "image": "/dessins/carte-saint-vit.svg",
+      "imageAlt": "Carte dessinée du Grand Besançon, Saint-Vit en jaune miel, Besançon au centre",
+      "imageCaption": "Sur la carte dessinée du Grand Besançon, Saint-Vit apparaît en jaune, à l'ouest de la ville."
     },
     {
       "heading": "Gaz, fioul et électrique à Saint-Vit",

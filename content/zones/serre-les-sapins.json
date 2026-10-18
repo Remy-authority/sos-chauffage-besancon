@@ -16,7 +16,10 @@
     },
     {
       "heading": "Pompe à chaleur et températures basses",
-      "body": "Les logements récents de la commune sont souvent équipés d'une pompe à chaleur. Il faut savoir ce que cette technologie fait par temps froid : son rendement diminue à mesure que la température extérieure baisse, puisqu'elle prélève sa chaleur dans l'air, et l'installation bascule alors sur son appoint, résistance électrique intégrée ou chaudière conservée en relève. Ce comportement est normal. Le vrai sujet est le réglage du basculement. Quand l'appoint se déclenche trop tard, le logement ne monte plus en température et l'occupant croit à une panne. Quand il est enclenché en permanence dès l'automne, la facture d'électricité grimpe sans qu'aucun défaut ne soit affiché. C'est un point que nous contrôlons systématiquement."
+      "body": "Les logements récents de la commune sont souvent équipés d'une pompe à chaleur. Il faut savoir ce que cette technologie fait par temps froid : son rendement diminue à mesure que la température extérieure baisse, puisqu'elle prélève sa chaleur dans l'air, et l'installation bascule alors sur son appoint, résistance électrique intégrée ou chaudière conservée en relève. Ce comportement est normal. Le vrai sujet est le réglage du basculement. Quand l'appoint se déclenche trop tard, le logement ne monte plus en température et l'occupant croit à une panne. Quand il est enclenché en permanence dès l'automne, la facture d'électricité grimpe sans qu'aucun défaut ne soit affiché. C'est un point que nous contrôlons systématiquement.",
+      "image": "/dessins/carte-serre-les-sapins.svg",
+      "imageAlt": "Carte dessinée du Grand Besançon, Serre-les-Sapins en jaune miel, Besançon au centre",
+      "imageCaption": "La commune de Serre-les-Sapins, à l'ouest de Besançon, repérée en jaune parmi celles que nous desservons."
     },
     {
       "heading": "L'environnement boisé, un facteur d'encrassement",

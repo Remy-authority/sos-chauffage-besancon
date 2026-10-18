@@ -46,9 +46,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
  * image cassée, aucun doublon visuel.
  */
 function imageDediee(slug: string): string | null {
-  return existsSync(join(process.cwd(), 'public', 'zones', `${slug}.jpg`))
-    ? `/zones/${slug}.jpg`
-    : null
+  // Photo dédiée (.jpg) ou, pour Besançon, la carte dessinée du Grand Besançon (.svg, 18/10/2026).
+  for (const ext of ['jpg', 'svg']) {
+    if (existsSync(join(process.cwd(), 'public', 'zones', `${slug}.${ext}`))) return `/zones/${slug}.${ext}`
+  }
+  return null
 }
 
 export default function ZonePage({ params }: { params: { slug: string } }) {
@@ -123,9 +125,11 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
                 </div>
                 <figcaption className="mt-3 flex items-center gap-2.5 text-legende text-calcaire-ombre">
                   <span aria-hidden="true" className="h-px w-5 shrink-0 bg-laiton-franc" />
-                  {zone.orientation
-                    ? `${zone.name}, ${zone.orientation.toLowerCase()} de ${siteConfig.city}`
-                    : `${zone.name}, Grand Besançon`}
+                  {zone.slug === 'besancon'
+                    ? `${zone.name}, au centre des douze communes que nous couvrons`
+                    : zone.orientation
+                      ? `${zone.name}, ${zone.orientation.toLowerCase()} de ${siteConfig.city}`
+                      : `${zone.name}, Grand Besançon`}
                 </figcaption>
               </figure>
             ) : (

@@ -16,7 +16,10 @@
     },
     {
       "heading": "Humidité de vallée et pompes à chaleur",
-      "body": "L'air humide d'un fond de vallée givre plus facilement l'unité extérieure d'une pompe à chaleur. Les cycles de dégivrage sont donc plus fréquents ici qu'ailleurs dans l'agglomération, ce qui est normal et se traduit par des arrêts courts, un souffle d'air froid et un écoulement d'eau sous l'unité. Deux situations doivent en revanche alerter : une glace qui persiste d'un cycle à l'autre jusqu'à former un bloc, et une évacuation des condensats gelée, qui empêche l'eau de dégivrage de s'écouler et finit par mettre la machine en défaut. Le dégagement et la protection de cette évacuation font partie des points que nous vérifions systématiquement à l'automne."
+      "body": "L'air humide d'un fond de vallée givre plus facilement l'unité extérieure d'une pompe à chaleur. Les cycles de dégivrage sont donc plus fréquents ici qu'ailleurs dans l'agglomération, ce qui est normal et se traduit par des arrêts courts, un souffle d'air froid et un écoulement d'eau sous l'unité. Deux situations doivent en revanche alerter : une glace qui persiste d'un cycle à l'autre jusqu'à former un bloc, et une évacuation des condensats gelée, qui empêche l'eau de dégivrage de s'écouler et finit par mettre la machine en défaut. Le dégagement et la protection de cette évacuation font partie des points que nous vérifions systématiquement à l'automne.",
+      "image": "/dessins/carte-roche-lez-beaupre.svg",
+      "imageAlt": "Carte dessinée du Grand Besançon, Roche-lez-Beaupré en jaune miel, Besançon au centre",
+      "imageCaption": "Roche-lez-Beaupré en jaune, au nord-est de Besançon, sur la carte dessinée des communes où nous intervenons."
     },
     {
       "heading": "Ce qui protège une installation pendant un épisode de gel",

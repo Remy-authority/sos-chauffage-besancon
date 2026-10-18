@@ -3,7 +3,7 @@
   "name": "Besançon",
   "postalCode": "25000",
   "orientation": "Centre",
-  "imageAlt": "Toits de tuiles du centre ancien de Besançon dans la boucle du Doubs, la citadelle sur son rocher en arrière-plan",
+  "imageAlt": "Carte dessinée du Grand Besançon : Besançon en jaune miel au centre, entourée des douze communes que nous couvrons",
   "context": "Ville-centre de 118 489 habitants, de la Boucle aux grands quartiers de Planoise et Palente, où l'habitat collectif domine.",
   "fait": "Besançon compte 118 489 habitants sur 6 514 hectares, soit la plus grande commune du Doubs par la population.",
   "source": "geo.api.gouv.fr, commune 25056, relevé du 18/10/2026",
@@ -14,7 +14,10 @@
   "blocks": [
     {
       "heading": "Le centre ancien : chaudières murales en appartement",
-      "body": "Dans la Boucle, à Battant et aux Chaprais, le chauffage est presque toujours individuel. Une chaudière gaz murale dans la cuisine ou la salle de bains alimente les radiateurs et l'eau chaude. Les immeubles anciens imposent des conduits de fumée partagés et des accès parfois étroits. Les pannes qui reviennent le plus souvent : un code erreur d'allumage, une pression tombée à zéro, un échangeur entartré qui coupe l'eau chaude. Nous arrivons avec les pièces courantes des marques les plus posées en ville."
+      "body": "Dans la Boucle, à Battant et aux Chaprais, le chauffage est presque toujours individuel. Une chaudière gaz murale dans la cuisine ou la salle de bains alimente les radiateurs et l'eau chaude. Les immeubles anciens imposent des conduits de fumée partagés et des accès parfois étroits. Les pannes qui reviennent le plus souvent : un code erreur d'allumage, une pression tombée à zéro, un échangeur entartré qui coupe l'eau chaude. Nous arrivons avec les pièces courantes des marques les plus posées en ville.",
+      "image": "/realisations/01-chaudiere-gaz.jpg",
+      "imageAlt": "Chaudière murale gaz neuve raccordée en cuivre, avec tubage d'évacuation inox, dans un logement ancien",
+      "imageCaption": "Une chaudière murale gaz à condensation posée dans un logement ancien, raccordée en cuivre, conduit inox."
     },
     {
       "heading": "Planoise, Palente, Clairs-Soleils : l'immeuble et le collectif",

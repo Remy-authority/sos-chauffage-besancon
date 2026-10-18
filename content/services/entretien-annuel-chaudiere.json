@@ -20,7 +20,10 @@
     },
     {
       "heading": "Ce que comprend réellement la visite",
-      "body": "Un entretien annuel sérieux ne se résume pas à un coup de chiffon sur la façade de l'appareil.\n\nNous procédons au nettoyage du corps de chauffe et du brûleur, au contrôle de l'ensemble des organes de sécurité, à la vérification de la pression du circuit et du vase d'expansion, au contrôle du bon fonctionnement du circulateur et des vannes, à la mesure de la combustion et à la vérification de l'évacuation des fumées.\n\nSur une chaudière fioul, s'y ajoutent le remplacement du gicleur et du filtre ainsi que le réglage du brûleur. Nous terminons par un point d'usure : les pièces qui approchent de leur fin de vie vous sont signalées avant qu'elles ne lâchent."
+      "body": "Un entretien annuel sérieux ne se résume pas à un coup de chiffon sur la façade de l'appareil.\n\nNous procédons au nettoyage du corps de chauffe et du brûleur, au contrôle de l'ensemble des organes de sécurité, à la vérification de la pression du circuit et du vase d'expansion, au contrôle du bon fonctionnement du circulateur et des vannes, à la mesure de la combustion et à la vérification de l'évacuation des fumées.\n\nSur une chaudière fioul, s'y ajoutent le remplacement du gicleur et du filtre ainsi que le réglage du brûleur. Nous terminons par un point d'usure : les pièces qui approchent de leur fin de vie vous sont signalées avant qu'elles ne lâchent.",
+      "image": "/dessins/entretien-annuel-chaudiere.svg",
+      "imageAlt": "Les points d'un entretiens, schéma dessiné avec les pièces numérotées",
+      "imageCaption": "Les points d'un entretien, dessinés : 1 l'analyse des fumées au conduit, 2 l'échangeur, 3 le brûleur, 4 la pression au manomètre, 5 l'afficheur et les réglages."
     },
     {
       "heading": "Pourquoi la période compte autant que la visite",

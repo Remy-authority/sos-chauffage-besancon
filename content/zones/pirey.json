@@ -16,7 +16,10 @@
     },
     {
       "heading": "Ce que la rénovation partielle laisse derrière elle",
-      "body": "Quand seule une partie du circuit a été refaite, on trouve fréquemment sur un même réseau des tuyauteries en cuivre neuves raccordées à de l'acier ancien, parfois avec des radiateurs en fonte conservés. Ce mélange de métaux favorise la corrosion et accélère la formation de boues, précisément dans les zones de raccordement. Le symptôme apparaît des années plus tard, sous la forme de radiateurs qui ne montent plus en température, d'un circulateur qui force ou d'une eau de purge très foncée. Un désembouage, complété par un filtre magnétique qui capte les particules ferreuses en continu, règle durablement la question."
+      "body": "Quand seule une partie du circuit a été refaite, on trouve fréquemment sur un même réseau des tuyauteries en cuivre neuves raccordées à de l'acier ancien, parfois avec des radiateurs en fonte conservés. Ce mélange de métaux favorise la corrosion et accélère la formation de boues, précisément dans les zones de raccordement. Le symptôme apparaît des années plus tard, sous la forme de radiateurs qui ne montent plus en température, d'un circulateur qui force ou d'une eau de purge très foncée. Un désembouage, complété par un filtre magnétique qui capte les particules ferreuses en continu, règle durablement la question.",
+      "image": "/dessins/carte-pirey.svg",
+      "imageAlt": "Carte dessinée du Grand Besançon, Pirey en jaune miel, Besançon au centre",
+      "imageCaption": "Carte dessinée des communes couvertes : Pirey, au nord-ouest de Besançon, est en jaune miel."
     },
     {
       "heading": "Ce que nous contrôlons sur un bâti ancien",

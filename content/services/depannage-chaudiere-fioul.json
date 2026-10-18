@@ -20,7 +20,10 @@
     },
     {
       "heading": "Ce qu'un dépannage fioul demande de spécifique",
-      "body": "Une intervention fioul ne se limite pas à la chaudière. Elle porte sur une chaîne complète, de la cuve au conduit de fumées.\n\nNous contrôlons le niveau et l'état du combustible, la ligne d'aspiration et son filtre, la pression et l'étanchéité de la pompe, l'état du gicleur et des électrodes, le réglage de la combustion, puis le tirage.\n\nUn brûleur mal réglé continue de fonctionner, mais il consomme davantage, encrasse plus vite et finit par s'arrêter en pleine saison. Un dépannage fioul se termine donc toujours par un contrôle de combustion, pas seulement par un redémarrage."
+      "body": "Une intervention fioul ne se limite pas à la chaudière. Elle porte sur une chaîne complète, de la cuve au conduit de fumées.\n\nNous contrôlons le niveau et l'état du combustible, la ligne d'aspiration et son filtre, la pression et l'étanchéité de la pompe, l'état du gicleur et des électrodes, le réglage de la combustion, puis le tirage.\n\nUn brûleur mal réglé continue de fonctionner, mais il consomme davantage, encrasse plus vite et finit par s'arrêter en pleine saison. Un dépannage fioul se termine donc toujours par un contrôle de combustion, pas seulement par un redémarrage.",
+      "image": "/dessins/depannage-chaudiere-fioul.svg",
+      "imageAlt": "Une chaufferie fioul, schéma dessiné avec les pièces numérotées",
+      "imageCaption": "Une chaufferie fioul, dessinée : 1 la cuve, 2 le filtre, 3 le gicleur du brûleur, 4 la flamme dans le corps de chauffe."
     },
     {
       "heading": "L'entretien fioul, le bon moment pour le programmer",
