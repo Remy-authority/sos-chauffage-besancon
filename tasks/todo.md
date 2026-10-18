@@ -43,6 +43,7 @@ Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 
 ### Après le GO de Rémy sur l'aperçu (à faire dans l'ordre)
 - [x] GO images (« ok go ») : photo du bloc 1 + 12 communes, ≈ 0,54 $ fal.ai, `CHAUDIERE` recalé, bande téléphone refaite, vitesse rattrapée (perte 2 points à armes égales), série CODE 0 sur 03179cc.
+- [x] Retour de Rémy sur l'aperçu (formulaire absent du 1er écran téléphone, étiquettes du bloc 3 coupées, aucune photo de prestation) : carte au 1er écran, étiquettes dégagées, 9 prestations avec photo dont 5 refaites (≈ 0,18 $, GO « Oui va y »), repli sans animation corrigé ; commits 53d2447 et a61f24e ; série CODE 0 sur a61f24e.
 - [ ] GO de mise en ligne de Rémy.
 - [ ] Merge `maj-1-18-10` → main, production vérifiée au curl (title accueil).
 - [ ] Test du formulaire en production : UN envoi, signalé à Rémy, effacé après.

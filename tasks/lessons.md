@@ -37,6 +37,9 @@
 - [18/10/2026] | Aperçu Vercel 87 contre domaine 97 : l'aperçu charge une barre d'outils Vercel que la production n'a pas | Mesurer à armes égales : publier le code en ligne comme second aperçu (commit vide sur une branche temporaire, supprimée après) et comparer aperçu contre aperçu.
 - [18/10/2026] | check-serie rendait ECHEC : le contrôle avait été journalisé sous le nom `audit-design` | Le nom attendu est `design` ; le garde-fou des textes lisibles exige FAL_KEY exporté depuis `../.ops.env` (jamais affiché).
 - [18/10/2026] | Un écorché dessiné à taille fixe ne suivait pas la photo recadrée | Envelopper le dessin dans une échelle (`ECHELLE_DESSIN`) calculée sur la boîte de la photo.
+- [18/10/2026] | Rémy a vu avant moi : pas de formulaire au premier écran du téléphone, une étiquette du bloc 3 coupée par la loupe, une autre touchée par le tuyau orange | Avant tout lien à Rémy : chaque étape du bloc 3 capturée à 390, 485, 820 et 1440 px et regardée étiquette par étiquette (rien ne touche, rien n'est coupé) ; le premier écran du téléphone montre un formulaire, vérifié aussi en « réduire les animations ».
+- [18/10/2026] | Les cartes de prestations de l'accueil n'avaient aucune photo (« est-ce que tu ne serais pas en train de te foutre de ma gueule ») | Chaque prestation de l'accueil porte la photo de SA prestation ; toute photo réutilisée est rouverte en taille réelle et zoomée (mains, personne coupée par un cadre) avant d'être reliée.
+- [18/10/2026] | Le repli « réduire les animations » cachait la carte du premier écran, et un toucher y aurait lancé la séquence animée | Tout élément ajouté au bloc 1 se teste dans les trois modes (repos, défilement, repli sans animation).
 
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
