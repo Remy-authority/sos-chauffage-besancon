@@ -4,6 +4,7 @@ generate-photos-maj1.py : les 13 photos de la mise à jour n°1 (GO Rémy « ok 
 
   python3 scripts/generate-photos-maj1.py bloc1            # 1 photo, fal-ai/nano-banana-pro 2K (0,15 $)
   python3 scripts/generate-photos-maj1.py zones [slug,...]  # 12 couvertures, Seedream 4 (~0,03 $ pièce)
+  python3 scripts/generate-photos-maj1.py services [slug,...]  # 5 prestations refaites (GO Rémy « Oui va y »)
 
 Clé FAL_KEY lue dans l'environnement, sinon dans ../.ops.env. Le brut va dans le scratchpad
 (variable PHOTOS_BRUT), le journal dans docs/data/photos-18-10/journal.tsv.
@@ -95,6 +96,33 @@ ZONES = {
               "Sèche-serviettes et chauffe-eau gaz compact neufs dans une salle de bains rénovée, lumière de bord de rivière"),
 }
 
+# Photos des prestations (accueil et pages de service) : la prestation entière, appareil récent et
+# propre, une personne au plus, une seule main visible (contrôle anatomique, CLAUDE.md du site).
+UNE_MAIN = " Exactly one person in the frame at most, only one of his hands visible, natural anatomy."
+SERVICES = {
+    "depannage-chaudiere-gaz": ("A heating technician in a clean dark navy work jacket, seen from the side, setting the control panel "
+                                "of a modern white wall-hung gas condensing boiler whose front cover is removed, tidy internal "
+                                "components visible, in a bright renovated utility room, copper pipes straight below." + UNE_MAIN,
+                                "Chauffagiste réglant le tableau de commande d’une chaudière murale gaz ouverte, dans une buanderie rénovée"),
+    "depannage-chaudiere-fioul": ("A modern white floor-standing oil condensing boiler with its front panel open on a clean burner, in a "
+                                  "bright tidy boiler room with white walls and a neat oil line, wide shot of the whole room, a heating "
+                                  "technician in a dark navy work jacket kneeling in front of the boiler, his whole body and face in "
+                                  "profile inside the frame, checking the burner." + UNE_MAIN,
+                                  "Chauffagiste contrôlant le brûleur d’une chaudière fioul au sol, façade ouverte, dans une chaufferie propre"),
+    "entretien-annuel-chaudiere": ("Close view of a heating technician holding a digital combustion analyser, its probe inserted in the "
+                                   "flue test port of a modern white wall-hung condensing boiler, the analyser screen showing readings, "
+                                   "bright clean kitchen with oak cabinets." + UNE_MAIN,
+                                   "Analyseur de combustion branché sur le conduit d’une chaudière murale, lors de l’entretien annuel"),
+    "depannage-ballon-eau-chaude": ("A new white vertical electric hot water cylinder freshly installed in a bright laundry room, its "
+                                    "safety group and copper pipes neatly fitted, a chrome tap beside it running hot water with a light "
+                                    "wisp of steam, white tiles, empty of people.",
+                                    "Ballon d’eau chaude remis en service dans une buanderie, eau chaude au robinet"),
+    "desembouage-chauffage": ("A compact heating-system flushing machine with a transparent filter canister full of clear water, "
+                              "connected by two clean hoses to the valves of a white panel radiator in a bright living room with oak "
+                              "floor, protective sheet under the machine, empty of people.",
+                              "Pompe de désembouage raccordée à un radiateur, eau redevenue claire dans le filtre, séjour lumineux"),
+}
+
 def ecrire_jpeg(octets: bytes, dest: Path, largeur=1600, hauteur=1000, max_ko=400) -> int:
     im = Image.open(io.BytesIO(octets)).convert("RGB")
     w, h = im.size
@@ -133,6 +161,19 @@ def main() -> None:
             f.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n")
             print(f"{slug}: {round(ko / 1024)} Ko, alt mis à jour")
             journal(f"zone {slug}\tfal-ai/bytedance/seedream/v4 2048x1280\t~0,03 $\t{round(ko / 1024)} Ko")
+    elif quoi == "services":
+        voulus = sys.argv[2].split(",") if len(sys.argv) > 2 else list(SERVICES)
+        for slug in voulus:
+            prompt, alt = SERVICES[slug]
+            octets = fal("fal-ai/bytedance/seedream/v4/text-to-image",
+                         {"prompt": prompt + " " + STYLE.replace("Still-life scene of the finished installation, empty of people. ", ""), "image_size": {"width": 2048, "height": 1280}, "num_images": 1})
+            (BRUT / f"service-{slug}-brut.jpg").write_bytes(octets)
+            ko = ecrire_jpeg(octets, ROOT / "public/services" / f"{slug}.jpg")
+            f = ROOT / "content/services" / f"{slug}.json"
+            d = json.loads(f.read_text()); d["imageAlt"] = alt
+            f.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n")
+            print(f"{slug}: {round(ko / 1024)} Ko, alt mis à jour")
+            journal(f"service {slug}\tfal-ai/bytedance/seedream/v4 2048x1280\t~0,03 $\t{round(ko / 1024)} Ko")
     else:
         raise SystemExit(__doc__)
 
