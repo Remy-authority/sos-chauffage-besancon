@@ -52,16 +52,19 @@ export function LogoMark({ className = 'h-10 w-10' }: { className?: string }) {
 export function Logo({
   tone = 'dark',
   className = '',
+  empile = false,
 }: {
+  /** Pied de page au téléphone : dessin au-dessus du nom, les deux centrés au pixel (#R53). */
+  empile?: boolean
   /** `dark` : texte fonte sur fond clair. `light` : texte calcaire sur fond sombre. */
   tone?: 'dark' | 'light'
   className?: string
 }) {
   const clair = tone === 'light'
   return (
-    <span className={`flex items-center gap-3 ${className}`}>
+    <span className={`flex items-center gap-3 ${empile ? 'flex-col text-center lg:flex-row lg:text-left' : ''} ${className}`}>
       <LogoMark className="h-10 w-10 shrink-0" />
-      <span className="flex flex-col leading-none">
+      <span className={`flex flex-col leading-none ${empile ? 'items-center lg:items-start' : ''}`}>
         <span
           className={`font-titre text-[1.0625rem] font-semibold tracking-tight ${
             clair ? 'text-calcaire-neige' : 'text-fonte-abysse'

@@ -41,27 +41,27 @@
   "faq": [
     {
       "q": "Quelle différence entre une chaudière gaz et une chaudière fioul ?",
-      "a": "Le gaz arrive en continu par le réseau, le fioul est stocké dans une cuve qu'il faut remplir et surveiller. Cette différence change tout au dépannage : sur une chaudière fioul, une part importante des pannes vient de la ligne d'alimentation, du filtre, du gicleur et de la qualité du combustible, alors qu'une chaudière gaz tombe plutôt en défaut d'allumage ou de pression de circuit. Les compétences et l'outillage ne sont pas les mêmes."
+      "a": "Le gaz arrive en continu par le réseau, le fioul est stocké dans une cuve qu'il faut remplir et surveiller.\n\nCette différence change tout au dépannage : sur une chaudière fioul, une part importante des pannes vient de la ligne d'alimentation, du filtre, du gicleur et de la qualité du combustible, alors qu'une chaudière gaz tombe plutôt en défaut d'allumage ou de pression de circuit.\n\nLes compétences et l'outillage ne sont pas les mêmes."
     },
     {
       "q": "Pourquoi ma chaudière fioul s'arrête régulièrement ?",
-      "a": "Les arrêts répétés viennent le plus souvent d'une cuve trop basse qui laisse aspirer les dépôts, d'un gicleur encrassé qui dégrade la pulvérisation, d'un filtre saturé ou d'une cellule photorésistante qui ne détecte plus la flamme. Un réarmement fait repartir l'appareil quelques heures sans traiter la cause : si vous devez réarmer plusieurs fois par semaine, l'installation demande une intervention."
+      "a": "Les arrêts répétés viennent le plus souvent d'une cuve trop basse qui laisse aspirer les dépôts, d'un gicleur encrassé qui dégrade la pulvérisation, d'un filtre saturé ou d'une cellule photorésistante qui ne détecte plus la flamme.\n\nUn réarmement fait repartir l'appareil quelques heures sans traiter la cause : si vous devez réarmer plusieurs fois par semaine, l'installation demande une intervention."
     },
     {
       "q": "À quelle fréquence faut-il réviser une chaudière fioul ?",
-      "a": "Une fois par an, c'est une obligation réglementaire pour les chaudières de 4 à 400 kilowatts, et c'est aussi ce que demande la technologie. La meilleure période va de septembre à novembre, avant la mise en service intensive. Programmer la visite à l'avance évite d'être pris dans le pic de demande de décembre et janvier."
+      "a": "Une fois par an, c'est une obligation réglementaire pour les chaudières de 4 à 400 kilowatts, et c'est aussi ce que demande la technologie. La meilleure période va de septembre à novembre, avant la mise en service intensive.\n\nProgrammer la visite à l'avance évite d'être pris dans le pic de demande de décembre et janvier."
     },
     {
       "q": "Combien coûte l'entretien d'une chaudière fioul ?",
-      "a": "Le tarif dépend du type d'appareil, de son accessibilité et de ce que la visite met en évidence. Nous l'annonçons au téléphone avant de fixer le rendez-vous, et il ne change pas sans que vous en soyez informé au préalable. Un contrat annuel permet de programmer la visite à date fixe et de stabiliser le tarif d'une année sur l'autre."
+      "a": "Le tarif dépend du type d'appareil, de son accessibilité et de ce que la visite met en évidence. Nous l'annonçons au téléphone avant de fixer le rendez-vous, et il ne change pas sans que vous en soyez informé au préalable.\n\nUn contrat annuel permet de programmer la visite à date fixe et de stabiliser le tarif d'une année sur l'autre."
     },
     {
       "q": "Que risque une chaudière fioul mal entretenue ?",
-      "a": "Trois choses, dans cet ordre : une surconsommation, parce qu'un brûleur déréglé et un corps de chauffe encrassé dégradent le rendement ; un encrassement accéléré, qui abrège la vie de l'appareil ; et une panne en pleine saison de chauffe, au moment précis où l'installation est la plus sollicitée. S'y ajoute le risque lié à une combustion incomplète, que seul le contrôle annuel permet de détecter."
+      "a": "Trois choses, dans cet ordre : une surconsommation, parce qu'un brûleur déréglé et un corps de chauffe encrassé dégradent le rendement ; un encrassement accéléré, qui abrège la vie de l'appareil ; et une panne en pleine saison de chauffe, au moment précis où l'installation est la plus sollicitée.\n\nS'y ajoute le risque lié à une combustion incomplète, que seul le contrôle annuel permet de détecter."
     },
     {
       "q": "Puis-je remplacer ma chaudière fioul par une chaudière gaz ?",
-      "a": "C'est possible si le réseau de gaz dessert votre rue, ce qui n'est pas le cas partout autour de Besançon. L'opération suppose un raccordement, le retrait ou la neutralisation de la cuve et une adaptation du conduit d'évacuation : elle se prépare, elle ne s'improvise pas en urgence au milieu de l'hiver. Nous vous disons d'abord ce qui est techniquement faisable chez vous."
+      "a": "C'est possible si le réseau de gaz dessert votre rue, ce qui n'est pas le cas partout autour de Besançon.\n\nL'opération suppose un raccordement, le retrait ou la neutralisation de la cuve et une adaptation du conduit d'évacuation : elle se prépare, elle ne s'improvise pas en urgence au milieu de l'hiver. Nous vous disons d'abord ce qui est techniquement faisable chez vous."
     }
   ]
 }

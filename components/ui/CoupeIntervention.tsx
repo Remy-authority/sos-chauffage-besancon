@@ -26,8 +26,8 @@ function visible(etape: number, de: number, a?: number) {
   return { 'data-de': de, style: { opacity: vu ? 1 : 0, transition: 'opacity .3s ease-out' } }
 }
 
-function Etiquette({ etape, k, x, y, texte, vers }: { etape: number; k: number; x: number; y: number; texte: string; vers: [number, number] }) {
-  const gauche = vers[0] < x
+function Etiquette({ etape, k, x, y, texte, vers, ancre }: { etape: number; k: number; x: number; y: number; texte: string; vers: [number, number]; ancre?: 'start' | 'end' }) {
+  const gauche = ancre ? ancre === 'start' : vers[0] < x
   return (
     <g className="cf-miel" data-k={k} {...visible(etape, k, k)}>
       <path d={`M${vers[0]} ${vers[1]} L${x} ${y}`} stroke={MIEL} strokeWidth="3" strokeLinecap="round" />
@@ -171,12 +171,12 @@ export default function CoupeIntervention({ serre = false, etape, ...props }: { 
       </g>
 
       {/* étiquettes jaune miel, une par temps */}
-      <Etiquette etape={t} k={0} x={690} y={275} texte="Le code erreur, lu au téléphone" vers={[880, 338]} />
-      <Etiquette etape={t} k={1} x={560} y={530} texte="Prix annoncé avant de partir" vers={[640, 560]} />
-      <Etiquette etape={t} k={2} x={330} y={540} texte="Pièces courantes à bord" vers={[270, 618]} />
-      <Etiquette etape={t} k={3} x={700} y={520} texte="Pression, allumage, échangeur" vers={[840, 420]} />
-      <Etiquette etape={t} k={4} x={700} y={620} texte="Pièce remplacée" vers={[900, 465]} />
-      <Etiquette etape={t} k={5} x={640} y={215} texte="Chauffage et eau chaude vérifiés" vers={[720, 262]} />
+      <Etiquette etape={t} k={0} x={845} y={300} texte="Le code erreur, lu au téléphone" vers={[880, 338]} />
+      <Etiquette etape={t} k={1} x={670} y={690} texte="Prix annoncé avant de partir" vers={[700, 592]} ancre="start" />
+      <Etiquette etape={t} k={2} x={405} y={540} texte="Pièces courantes à bord" vers={[270, 618]} />
+      <Etiquette etape={t} k={3} x={800} y={490} texte="Pression, allumage, échangeur" vers={[840, 420]} />
+      <Etiquette etape={t} k={4} x={870} y={600} texte="Pièce remplacée" vers={[900, 465]} />
+      <Etiquette etape={t} k={5} x={575} y={162} texte="Chauffage et eau chaude vérifiés" vers={[692, 272]} />
     </svg>
   )
 }

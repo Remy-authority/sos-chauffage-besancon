@@ -8,6 +8,7 @@ import { ArrowRight, PhoneCall } from 'lucide-react'
 import { getRelatedArticles, getService, getServices, getZones } from '@/lib/content'
 import { buildMetadata, jsonLdScript, serviceJsonLd } from '@/lib/seo'
 import { siteConfig } from '@/config/site.config'
+import { paragraphes } from '@/lib/text'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { Button } from '@/components/ui/Button'
 import { Faq } from '@/components/ui/Faq'
@@ -85,7 +86,11 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               <ServiceIcon icon={service.icon} className="h-[1.35rem] w-[1.35rem]" />
             </span>
             <h1 className="mt-6 text-titre-l text-calcaire-neige md:text-titre-xl">{service.h1}</h1>
-            <p className="mt-5 max-w-lecture text-chapo text-calcaire-brume">{service.intro}</p>
+            <div className="mt-5 max-w-lecture space-y-4 text-chapo text-calcaire-brume">
+              {paragraphes(service.intro).map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))}
+            </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href={`tel:${siteConfig.phone}`} variant="laiton" size="ample">
                 <PhoneCall size={18} strokeWidth={2.2} />

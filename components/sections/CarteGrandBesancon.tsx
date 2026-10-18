@@ -11,8 +11,18 @@ import { ListeCommunes } from '@/components/sections/ListeCommunes'
  * scripts/generate-carte-grand-besancon.py. Jamais une grille de photos.
  */
 
-/** Décalages du libellé quand le centre officiel tombe trop près d'un voisin. */
-const ETIQUETTES: Record<string, { dx?: number; dy?: number; ancre?: 'start' | 'end' }> = {}
+/**
+ * Décalages du libellé quand le centre officiel tombe trop près d'un voisin (vérifiés sur
+ * capture à 390 et 1440 px) ; `filet` dessine le trait vers le centre officiel.
+ */
+const ETIQUETTES: Record<string, { dx?: number; dy?: number; ancre?: 'start' | 'end'; filet?: boolean }> = {
+  besancon: { dy: 48 },
+  'chatillon-le-duc': { dy: -42 },
+  'miserey-salines': { dy: 8 },
+  thise: { dy: -26 },
+  'roche-lez-beaupre': { dy: 18 },
+  franois: { dy: 14 },
+}
 
 const ORDRE = [...COMMUNES_TRACEES].sort((a, b) => {
   const c = COMMUNES_TRACEES.find((z) => z.slug === 'besancon')!
@@ -55,8 +65,8 @@ export function CarteGrandBesancon({ zones }: { zones: Zone[] }) {
                   const morceaux = z.nom.length > 14 && coupe > 0 ? [z.nom.slice(0, coupe), z.nom.slice(coupe + 1)] : [z.nom]
                   return (
                     <g key={z.slug}>
-                      {(e.dx || e.dy) && <path className="carte-filet" d={`M${z.cx} ${z.cy}L${x} ${y}`} />}
-                      {(e.dx || e.dy) && <circle className="carte-point" cx={z.cx} cy={z.cy} r="4" />}
+                      {e.filet && <path className="carte-filet" d={`M${z.cx} ${z.cy}L${x} ${y}`} />}
+                      {e.filet && <circle className="carte-point" cx={z.cx} cy={z.cy} r="4" />}
                       <text x={x} y={y} textAnchor={e.ancre ?? 'middle'} dominantBaseline="middle" className={z.slug === 'besancon' ? 'carte-nom carte-nom-centre' : 'carte-nom'}>
                         {morceaux.length === 2 ? (
                           <>

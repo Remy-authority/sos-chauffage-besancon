@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="text-center lg:col-span-4 lg:text-left">
             <Link href="/" className="inline-flex" aria-label={`${siteConfig.businessName}, accueil`}>
-              <Logo tone="light" />
+              <Logo tone="light" empile />
             </Link>
             <p className="mx-auto mt-5 max-w-xs text-legende leading-6 text-calcaire-brume lg:mx-0">
               Dépannage de chaudière, de chauffage et d’eau chaude à {siteConfig.city} et dans le Grand Besançon. Le tarif est annoncé avant de venir.
@@ -76,7 +76,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-3 border-t border-fonte-brut/60 pt-6 text-center text-xs text-calcaire-brume/80 lg:mt-14 lg:flex-row lg:justify-between lg:pt-7 lg:text-left">
+        <div className="mt-6 flex flex-col items-center gap-3 text-center text-xs text-calcaire-brume/80 lg:mt-14 lg:flex-row lg:justify-between lg:border-t lg:border-fonte-brut/60 lg:pt-7 lg:text-left">
           <p>© {annee} {siteConfig.businessName}. Chauffagiste à {siteConfig.city}.</p>
           <nav aria-label="Pages légales" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             <Link href="/mentions-legales" className="hover:text-laiton-clair">Mentions légales</Link>

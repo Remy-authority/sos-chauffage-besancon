@@ -239,14 +239,19 @@ export default function HeroChaudiereSequence({
     const rendre = () => {
       raf = 0
       const rpiste = pisteEl.getBoundingClientRect()
-      const course = Math.max(1, rpiste.height - Hp)
-      const p = clamp((entete - rpiste.top) / course)
+      // La piste commence sous l'en-tête fixe et le panneau collé est repoussé de `entete` pixels :
+      // il reste collé jusqu'à ce que le bas de la piste atteigne entete + Hp. Progression p = 0 au
+      // repos (page non défilée), 1 quand le panneau se décolle.
+      const y = -rpiste.top
+      const course = Math.max(1, rpiste.height - Hp - entete)
+      const p = clamp(y / course)
       if (p === dernier) return
       dernier = p
       const L = LIMITES[cle]
 
-      // Texte, voile (et formulaire sur ordinateur) : fondu court, le texte monte un peu en s'effaçant.
-      const f = clamp(p / (cle === 'ordi' ? 0.03 : 0.035))
+      // Texte, voile (et formulaire sur ordinateur) : au repos tout est plein et cliquable ; le fondu
+      // ne commence qu'après 12 px de défilement et s'achève à 100 px, le texte monte un peu en s'effaçant.
+      const f = clamp((y - 12) / 88)
       const opa = 1 - lisse(f)
       const formGlisse = cle === 'ordi' && p >= L.f0
       for (const el of cle === 'ordi' && !formGlisse ? [texteRef.current, formRef.current] : [texteRef.current]) {

@@ -8,11 +8,11 @@
   "metaTitle": "Dépannage chauffage à Châtillon-le-Duc, urgence 24h/24",
   "metaDescription": "Chaudière en panne ou chauffage collectif en défaut à Châtillon-le-Duc (25870) ? Chauffagiste en urgence, parties privatives comprises, entretien annuel.",
   "h1": "Chauffagiste urgence et dépannage à Châtillon-le-Duc",
-  "intro": "À Châtillon-le-Duc (25870), nous dépannons le chauffage et assurons l'entretien annuel des chaudières. Au nord de Besançon, à proximité des grands axes, la commune associe des maisons individuelles à des ensembles de petit collectif. Cette double nature change la façon d'aborder une panne : dans un appartement, une partie de l'installation ne vous appartient pas.",
+  "intro": "À Châtillon-le-Duc (25870), nous dépannons le chauffage et assurons l'entretien annuel des chaudières. Au nord de Besançon, à proximité des grands axes, la commune associe des maisons individuelles à des ensembles de petit collectif.\n\nCette double nature change la façon d'aborder une panne : dans un appartement, une partie de l'installation ne vous appartient pas.",
   "blocks": [
     {
       "heading": "En appartement, savoir ce qui vous concerne",
-      "body": "Dans un logement collectif, la frontière est nette et il faut la connaître avant d'appeler. Ce qui relève du privatif : vos radiateurs, leurs robinets thermostatiques, la purge de vos émetteurs, et votre chaudière individuelle s'il y en a une. Ce qui relève du collectif : la chaufferie, les colonnes de distribution, la régulation générale et l'équilibrage entre les logements. Le meilleur indicateur est la simultanéité. Si vous êtes le seul à avoir froid, cherchez chez vous, en commençant par la purge et par le robinet thermostatique. Si plusieurs logements sont concernés en même temps, la cause est en partie commune et c'est au syndic de déclencher l'intervention : nous vous le dirons plutôt que de nous déplacer pour rien."
+      "body": "Dans un logement collectif, la frontière est nette et il faut la connaître avant d'appeler. Ce qui relève du privatif : vos radiateurs, leurs robinets thermostatiques, la purge de vos émetteurs, et votre chaudière individuelle s'il y en a une.\n\nCe qui relève du collectif : la chaufferie, les colonnes de distribution, la régulation générale et l'équilibrage entre les logements. Le meilleur indicateur est la simultanéité.\n\nSi vous êtes le seul à avoir froid, cherchez chez vous, en commençant par la purge et par le robinet thermostatique.\n\nSi plusieurs logements sont concernés en même temps, la cause est en partie commune et c'est au syndic de déclencher l'intervention : nous vous le dirons plutôt que de nous déplacer pour rien."
     },
     {
       "heading": "Le radiateur froid en appartement, dans l'ordre",
@@ -23,7 +23,7 @@
     },
     {
       "heading": "Maison individuelle, l'installation vous appartient en entier",
-      "body": "Sur les secteurs pavillonnaires de la commune, le diagnostic est plus direct : il n'y a ni partie commune ni interlocuteur intermédiaire, et l'intervention peut porter d'emblée sur l'ensemble de l'installation, de la chaudière au dernier émetteur. Le revers est qu'aucun voisin ne signale un défaut naissant à votre place. Les deux points à surveiller sont la pression du circuit, dont la baisse répétée trahit une fuite ou un vase d'expansion fatigué, et le comportement des radiateurs en bout de circuit, souvent les premiers à décrocher quand la circulation se dégrade. Relever ces deux éléments avant d'appeler fait gagner un temps réel sur le diagnostic."
+      "body": "Sur les secteurs pavillonnaires de la commune, le diagnostic est plus direct : il n'y a ni partie commune ni interlocuteur intermédiaire, et l'intervention peut porter d'emblée sur l'ensemble de l'installation, de la chaudière au dernier émetteur.\n\nLe revers est qu'aucun voisin ne signale un défaut naissant à votre place.\n\nLes deux points à surveiller sont la pression du circuit, dont la baisse répétée trahit une fuite ou un vase d'expansion fatigué, et le comportement des radiateurs en bout de circuit, souvent les premiers à décrocher quand la circulation se dégrade.\n\nRelever ces deux éléments avant d'appeler fait gagner un temps réel sur le diagnostic."
     }
   ],
   "neighbours": [
@@ -34,11 +34,11 @@
   "faq": [
     {
       "q": "Mon chauffage est collectif, pouvez-vous intervenir chez moi ?",
-      "a": "Oui, sur tout ce qui relève de votre partie privative : radiateurs, robinets thermostatiques, purge et équilibrage de vos émetteurs. En revanche, la chaufferie, les colonnes et la régulation générale sont des parties communes : c'est au syndic ou au gestionnaire de faire intervenir. Si plusieurs logements ont froid simultanément, vous êtes dans ce second cas."
+      "a": "Oui, sur tout ce qui relève de votre partie privative : radiateurs, robinets thermostatiques, purge et équilibrage de vos émetteurs. En revanche, la chaufferie, les colonnes et la régulation générale sont des parties communes : c'est au syndic ou au gestionnaire de faire intervenir.\n\nSi plusieurs logements ont froid simultanément, vous êtes dans ce second cas."
     },
     {
       "q": "Un seul de mes radiateurs est froid, que faire d'abord ?",
-      "a": "Vérifiez que le robinet thermostatique n'est pas grippé, puis passez la main sur le radiateur. Froid en haut et chaud en bas, le radiateur a pris de l'air, purgez-le. Chaud en haut et froid en bas indique des boues, et il faut traiter le circuit. Après une purge, contrôlez la pression si vous avez une chaudière individuelle : elle baisse et peut mettre l'appareil en sécurité."
+      "a": "Vérifiez que le robinet thermostatique n'est pas grippé, puis passez la main sur le radiateur. Froid en haut et chaud en bas, le radiateur a pris de l'air, purgez-le. Chaud en haut et froid en bas indique des boues, et il faut traiter le circuit.\n\nAprès une purge, contrôlez la pression si vous avez une chaudière individuelle : elle baisse et peut mettre l'appareil en sécurité."
     },
     {
       "q": "Intervenez-vous en urgence à Châtillon-le-Duc le week-end ?",

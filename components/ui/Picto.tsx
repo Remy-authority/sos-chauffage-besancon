@@ -138,11 +138,12 @@ const DESSINS: Record<PictoNom, JSX.Element> = {
   ),
   ventilateur: (
     <>
-      <path className="trait" d="M3.5 5.5h17v13h-17zM3.5 15.5h17" />
-      <g className="tourne" style={centre}>
-        <path d="M12 10.5c0-2-1.2-3-2.2-3 .3 1.6 1 2.6 2.2 3ZM12 10.5c2 0 3-1.2 3-2.2-1.6.3-2.6 1-3 2.2ZM12 10.5c0 2 1.2 3 2.2 3-.3-1.6-1-2.6-2.2-3ZM12 10.5c-2 0-3 1.2-3 2.2 1.6-.3 2.6-1 3-2.2Z" />
+      <path className="trait" d="M2.5 4.5h19v12a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-12ZM2.5 4.5l1-2h16l2 2M8 17.5v3M16 17.5v3M17 7.5h2.5M17 10h2.5" />
+      <circle className="trait" cx="9.5" cy="10.5" r="4.6" />
+      <g className="tourne" style={{ transformOrigin: '9.5px 10.5px' }}>
+        <path d="M9.5 10.5c0-2.2-1.1-3.4-2.3-3.4.2 1.7 1 2.9 2.3 3.4ZM9.5 10.5c2.2 0 3.4-1.1 3.4-2.3-1.7.2-2.9 1-3.4 2.3ZM9.5 10.5c0 2.2 1.1 3.4 2.3 3.4-.2-1.7-1-2.9-2.3-3.4ZM9.5 10.5c-2.2 0-3.4 1.1-3.4 2.3 1.7-.2 2.9-1 3.4-2.3Z" fill="currentColor" stroke="none" />
       </g>
-      <circle cx="12" cy="10.5" r=".8" fill="currentColor" stroke="none" />
+      <circle cx="9.5" cy="10.5" r=".9" fill="currentColor" stroke="none" />
     </>
   ),
   ballon: (
@@ -166,8 +167,8 @@ const DESSINS: Record<PictoNom, JSX.Element> = {
   ),
   eclair: (
     <>
-      <path className="trait" d="M13.5 2.5 6 13.5h5l-1 8 7.5-11h-5l1-8Z" />
-      <path className="apparait" d="M18.5 5.5l1.5-1.5M19.5 9h2M4 9H2M4.5 5.5 3 4" />
+      <path className="trait" d="M3.5 9.5h17v9h-17zM6.5 9.5v9M10.2 9.5v9M13.8 9.5v9M17.5 9.5v9M6 18.5v2M18 18.5v2" />
+      <path className="clignote" d="M13 1.5 9.5 6.5h3L11 10l4-5h-3.2L13 1.5Z" fill="currentColor" stroke="none" />
     </>
   ),
   desembouage: (
@@ -182,8 +183,9 @@ const DESSINS: Record<PictoNom, JSX.Element> = {
   ),
   entretien: (
     <>
-      <path className="trait" d="M12 2.5 4.5 5.5v6c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5v-6L12 2.5Z" />
-      <path className="ecrit" style={i(0)} d="M8.5 12 11 14.5l4.5-5" strokeWidth="1.8" />
+      <path className="trait" d="M3.5 5.5h17a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1ZM2.5 9.5h19M7.5 3v4M16.5 3v4" />
+      <path className="respire" style={bas} d="M12 11.3c1.1 1.4 2.3 2.6 2.3 4.2a2.3 2.3 0 0 1-4.6 0c0-1.6 1.2-2.8 2.3-4.2Z" />
+      <path className="ecrit" style={i(0)} d="M5.5 13.5 7 15l2.5-3" />
     </>
   ),
   remplacement: (

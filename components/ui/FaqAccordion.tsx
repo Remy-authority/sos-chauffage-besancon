@@ -1,4 +1,5 @@
 import type { FaqItem } from '@/lib/content'
+import { paragraphes } from '@/lib/text'
 
 /**
  * Accordéon FAQ en <details>/<summary> (mise à jour n°1, 18/10/2026) : les
@@ -24,7 +25,11 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
             </span>
           </summary>
           <div className="bg-calcaire-voile px-5 pb-7 pl-[3.4rem] lg:px-7 lg:pl-[3.9rem]">
-            <p className="max-w-lecture text-lecture text-calcaire-basalte">{it.a}</p>
+            <div className="max-w-lecture space-y-3 text-lecture text-calcaire-basalte">
+              {paragraphes(it.a).map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))}
+            </div>
           </div>
         </details>
       ))}

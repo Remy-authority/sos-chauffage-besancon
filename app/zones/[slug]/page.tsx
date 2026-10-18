@@ -8,6 +8,7 @@ import { ArrowRight, MapPin, PhoneCall } from 'lucide-react'
 import { getServices, getZone, getZones } from '@/lib/content'
 import { buildMetadata, jsonLdScript, zoneJsonLd } from '@/lib/seo'
 import { siteConfig } from '@/config/site.config'
+import { paragraphes } from '@/lib/text'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { Button } from '@/components/ui/Button'
 import { Faq } from '@/components/ui/Faq'
@@ -101,7 +102,11 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
               </span>
             </p>
             <h1 className="mt-5 text-titre-l text-calcaire-neige md:text-titre-xl">{zone.h1}</h1>
-            <p className="mt-5 max-w-lecture text-chapo text-calcaire-brume">{zone.intro}</p>
+            <div className="mt-5 max-w-lecture space-y-4 text-chapo text-calcaire-brume">
+              {paragraphes(zone.intro).map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))}
+            </div>
             <div className="mt-8">
               <Button href={`tel:${siteConfig.phone}`} variant="laiton" size="ample">
                 <PhoneCall size={18} strokeWidth={2.2} />

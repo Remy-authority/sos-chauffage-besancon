@@ -7,7 +7,7 @@
   "metaTitle": "Désembouage du circuit de chauffage à Besançon, nettoyage",
   "metaDescription": "Radiateurs froids et circuit qui chauffe mal à Besançon. Désembouage, nettoyage de circuit de chauffage et équilibrage par un chauffagiste.",
   "imageAlt": "Deux bocaux posés devant la pompe de désembouage, l'un d'eau chargée de boues brunes, l'autre d'eau redevenue claire, sur une bâche de protection",
-  "intro": "Quand des radiateurs restent froids alors que la chaudière fonctionne, la cause est rarement la chaudière : c'est le circuit qui ne laisse plus circuler l'eau correctement. Les boues, mélange d'oxydes de fer et de dépôts, s'accumulent au fil des années dans les émetteurs et les tuyauteries. Le désembouage rétablit la circulation et le rendement, sans toucher aux appareils.",
+  "intro": "Quand des radiateurs restent froids alors que la chaudière fonctionne, la cause est rarement la chaudière : c'est le circuit qui ne laisse plus circuler l'eau correctement.\n\nLes boues, mélange d'oxydes de fer et de dépôts, s'accumulent au fil des années dans les émetteurs et les tuyauteries. Le désembouage rétablit la circulation et le rendement, sans toucher aux appareils.",
   "bullets": [
     "Radiateurs froids malgré la chaudière",
     "Circuit nettoyé, rendement rétabli",
@@ -37,15 +37,15 @@
   "faq": [
     {
       "q": "À quoi sert le désembouage d'un circuit de chauffage ?",
-      "a": "Il retire les boues, oxydes de fer et dépôts accumulés dans les radiateurs et les tuyauteries. Ces boues réduisent la section de passage de l'eau et isolent les parois des émetteurs : le circuit chauffe moins bien et la chaudière compense en tournant plus longtemps. Le désembouage rétablit la circulation, donc le confort, et redonne à l'installation le rendement pour lequel elle a été dimensionnée."
+      "a": "Il retire les boues, oxydes de fer et dépôts accumulés dans les radiateurs et les tuyauteries. Ces boues réduisent la section de passage de l'eau et isolent les parois des émetteurs : le circuit chauffe moins bien et la chaudière compense en tournant plus longtemps.\n\nLe désembouage rétablit la circulation, donc le confort, et redonne à l'installation le rendement pour lequel elle a été dimensionnée."
     },
     {
       "q": "Mes radiateurs sont tièdes en bas et froids en haut, qu'est-ce que c'est ?",
-      "a": "Froid en haut et chaud en bas, de l'air s'est logé dans le radiateur, la purge règle généralement le problème. Chaud en haut et froid en bas, c'est de la boue déposée par gravité au fond de l'émetteur, et la purge n'y changera rien. Cette distinction est le premier tri du diagnostic, et vous pouvez la faire vous-même en passant la main sur chaque radiateur avant de nous appeler."
+      "a": "Froid en haut et chaud en bas, de l'air s'est logé dans le radiateur, la purge règle généralement le problème. Chaud en haut et froid en bas, c'est de la boue déposée par gravité au fond de l'émetteur, et la purge n'y changera rien.\n\nCette distinction est le premier tri du diagnostic, et vous pouvez la faire vous-même en passant la main sur chaque radiateur avant de nous appeler."
     },
     {
       "q": "À quelle fréquence faut-il désembouer un circuit de chauffage ?",
-      "a": "Il n'existe pas d'échéance réglementaire. En pratique, on désemboue lorsque les signes apparaissent, radiateurs froids en partie basse, circulateur bruyant, eau de purge noire, plutôt qu'à date fixe. Sur une installation ancienne dépourvue de filtre magnétique, l'opération revient régulièrement ; une fois le filtre posé, l'échéance s'éloigne nettement."
+      "a": "Il n'existe pas d'échéance réglementaire. En pratique, on désemboue lorsque les signes apparaissent, radiateurs froids en partie basse, circulateur bruyant, eau de purge noire, plutôt qu'à date fixe.\n\nSur une installation ancienne dépourvue de filtre magnétique, l'opération revient régulièrement ; une fois le filtre posé, l'échéance s'éloigne nettement."
     },
     {
       "q": "Combien coûte un désembouage à Besançon ?",
@@ -53,11 +53,11 @@
     },
     {
       "q": "Le désembouage peut-il créer des fuites ?",
-      "a": "Le risque existe mais reste très limité lorsque l'opération est menée correctement : le produit et la pression de circulation sont choisis en fonction de l'âge de l'installation et des métaux en présence, et le rinçage est complet. Sur une installation très ancienne dont l'étanchéité ne tenait déjà plus que par les dépôts, nous vous le signalons avant d'intervenir plutôt que de le découvrir en cours de route."
+      "a": "Le risque existe mais reste très limité lorsque l'opération est menée correctement : le produit et la pression de circulation sont choisis en fonction de l'âge de l'installation et des métaux en présence, et le rinçage est complet.\n\nSur une installation très ancienne dont l'étanchéité ne tenait déjà plus que par les dépôts, nous vous le signalons avant d'intervenir plutôt que de le découvrir en cours de route."
     },
     {
       "q": "Les produits de désembouage sont-ils sûrs pour l'installation ?",
-      "a": "Oui lorsqu'ils sont adaptés au circuit et surtout intégralement rincés à la fin de l'opération. C'est le rinçage qui fait la différence : un produit laissé en place continue d'agir sur les métaux et sur les joints. C'est aussi pourquoi les produits vendus au détail, versés dans le circuit sans machine ni rinçage, donnent des résultats limités et parfois contre-productifs."
+      "a": "Oui lorsqu'ils sont adaptés au circuit et surtout intégralement rincés à la fin de l'opération. C'est le rinçage qui fait la différence : un produit laissé en place continue d'agir sur les métaux et sur les joints.\n\nC'est aussi pourquoi les produits vendus au détail, versés dans le circuit sans machine ni rinçage, donnent des résultats limités et parfois contre-productifs."
     }
   ]
 }

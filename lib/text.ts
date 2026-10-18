@@ -35,3 +35,14 @@ export function extractNumberedSteps(body: string): NumberedSteps | null {
 
   return { lead, steps }
 }
+
+/**
+ * Paragraphes d'un texte : coupés sur une ligne vide (mise à jour n°1, 18/10/2026, #R67 :
+ * 45 mots par paragraphe sur les pages intérieures). Le texte lui-même n'est jamais modifié.
+ */
+export function paragraphes(texte: string): string[] {
+  return texte
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean)
+}

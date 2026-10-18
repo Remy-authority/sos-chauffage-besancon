@@ -540,8 +540,8 @@
 .carte-communes .carte-filet { stroke: theme('colors.fonte.abysse'); stroke-width: 1.5; fill: none; }
 .carte-communes .carte-point { fill: theme('colors.fonte.abysse'); }
 @media (max-width: 1023px) {
-  .carte-communes .carte-nom { font-size: 38px; stroke-width: 9px; }
-  .carte-communes .carte-nom-centre { font-size: 52px; }
+  .carte-communes .carte-nom { font-size: 30px; stroke-width: 7px; }
+  .carte-communes .carte-nom-centre { font-size: 44px; }
   .carte-communes .carte-filet { stroke-width: 2.5; }
 }
 
