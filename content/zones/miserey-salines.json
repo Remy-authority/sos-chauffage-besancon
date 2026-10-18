@@ -5,7 +5,7 @@
   "orientation": "Nord-ouest",
   "imageAlt": "Rue résidentielle bordée de maisons récentes en crépi clair, clocher du village et collines à l’arrière-plan",
   "context": "Commune du nord-ouest de l'agglomération, marquée par un habitat récent et des équipements de chauffage de génération moderne.",
-  "metaTitle": "Chauffagiste à Miserey-Salines, dépannage urgent",
+  "metaTitle": "Miserey-Salines, chauffagiste pour PAC, chaudière et ballon",
   "metaDescription": "Dépannage urgence chauffage à Miserey-Salines (25480) : chaudière à condensation, pompe à chaleur, ballon d'eau chaude, entretien annuel obligatoire.",
   "h1": "Dépannage urgence chauffage à Miserey-Salines",
   "intro": "Nous intervenons à Miserey-Salines (25480) pour le dépannage de chauffage et l'entretien annuel. Au nord-ouest de Besançon, la commune s'est largement développée avec des programmes résidentiels récents : le parc d'appareils y est plus moderne que la moyenne de l'agglomération, avec beaucoup de chaudières à condensation et une part croissante de pompes à chaleur. Les pannes n'y ont donc pas le même visage qu'ailleurs.",
@@ -45,5 +45,7 @@
       "q": "L'entretien est-il obligatoire sur un appareil récent ?",
       "a": "Oui. L'obligation d'entretien annuel s'applique aux chaudières de 4 à 400 kilowatts quel que soit leur âge, et elle conditionne le maintien de la garantie constructeur, ce qui compte particulièrement sur un appareil récent. Sur une pompe à chaleur, un contrôle annuel est également recommandé, avec un contrôle d'étanchéité réglementaire selon la quantité de fluide contenue dans la machine."
     }
-  ]
+  ],
+  "fait": "Miserey-Salines, au nord-ouest de Besançon, compte 2 661 habitants sur 6,2 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

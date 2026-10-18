@@ -4,8 +4,8 @@ import { buildMetadata } from '@/lib/seo'
 import { LegalPage } from '@/components/layout/LegalPage'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Conditions générales d'utilisation",
-  description: `Conditions générales d'utilisation du site ${siteConfig.businessName}.`,
+  title: "Conditions d'utilisation du site SOS Chauffage Besançon",
+  description: `Règles d'usage du site ${siteConfig.businessName} : accès, contenus, responsabilité, formulaire de demande et droit applicable, en français courant.`,
   path: '/cgu',
   noindex: true,
 })
@@ -53,14 +53,14 @@ export default function CGU() {
         <h2>5. Responsabilité</h2>
         <p>
           L&apos;éditeur met tout en oeuvre pour assurer l&apos;exactitude des informations
-          publiées, sans garantie d&apos;exhaustivité. Il ne peut être tenu responsable des dommages
-          indirects résultant de l&apos;utilisation du site ou d&apos;une interruption de service.
+          publiées, sans garantie d&apos;exhaustivité. Sa responsabilité ne saurait être engagée pour un dommage
+          indirect lié à l&apos;usage du site ou d&apos;une interruption de service.
         </p>
       </section>
       <section>
         <h2>6. Droit applicable</h2>
         <p>
-          Les présentes conditions sont régies par le droit français. Tout litige relève de la
+          Ces conditions relèvent du droit français. Tout litige relève de la
           compétence des tribunaux français.
         </p>
       </section>

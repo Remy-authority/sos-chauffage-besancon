@@ -16,7 +16,7 @@
   "blocks": [
     {
       "heading": "Reconnaître un circuit embouté",
-      "body": "Plusieurs signes se recoupent. Des radiateurs chauds en haut et froids en bas : la boue se dépose par gravité au fond de l'émetteur et bloque la circulation dans la partie basse. Attention, le symptôme inverse, froid en haut et chaud en bas, désigne de l'air et se règle par une simple purge. Des radiateurs éloignés de la chaudière qui ne montent jamais en température alors que les plus proches chauffent bien. Un circulateur qui force, devient bruyant ou tombe en panne prématurément parce qu'il pousse contre une résistance anormale. Une eau qui sort noire ou brunâtre lors d'une purge. Enfin, une consommation qui augmente sans changement d'usage, la chaudière compensant la mauvaise circulation en tournant plus longtemps."
+      "body": "Plusieurs signes se recoupent. Des radiateurs chauds en haut et froids en bas : la boue se dépose par gravité au fond de l'émetteur et bloque la circulation dans la partie basse.\n\nAttention, le symptôme inverse, froid en haut et chaud en bas, désigne de l'air et se règle par une simple purge. Des radiateurs éloignés de la chaudière qui ne montent jamais en température alors que les plus proches chauffent bien.\n\nUn circulateur qui force, devient bruyant ou tombe en panne prématurément parce qu'il pousse contre une résistance anormale. Une eau qui sort noire ou brunâtre lors d'une purge.\n\nEnfin, une consommation qui augmente sans changement d'usage, la chaudière compensant la mauvaise circulation en tournant plus longtemps."
     },
     {
       "heading": "Comment se déroule un désembouage",
@@ -24,7 +24,7 @@
     },
     {
       "heading": "Pourquoi les circuits s'emboutent, et plus vite ici",
-      "body": "L'emboue est un phénomène naturel : l'eau du circuit, même fermée, contient de l'oxygène résiduel qui attaque l'acier des radiateurs et des tuyauteries. Ce processus produit des oxydes qui se déposent aux points bas et dans les zones de faible circulation. Deux facteurs l'accélèrent localement. D'abord la durée de la saison de chauffe : plus le circuit tourne longtemps chaque année, plus les dépôts se forment. Ensuite l'hétérogénéité des installations bisontines, où l'on trouve fréquemment des radiateurs en fonte anciens raccordés à des tuyauteries plus récentes, un mélange de métaux qui favorise la corrosion galvanique. Un logement ancien avec une installation d'origine partiellement rénovée est le cas type."
+      "body": "L'emboue est un phénomène naturel : l'eau du circuit, même fermée, contient de l'oxygène résiduel qui attaque l'acier des radiateurs et des tuyauteries. Ce processus produit des oxydes qui se déposent aux points bas et dans les zones de faible circulation. Deux facteurs l'accélèrent localement.\n\nD'abord la durée de la saison de chauffe : plus le circuit tourne longtemps chaque année, plus les dépôts se forment.\n\nEnsuite l'hétérogénéité des installations bisontines, où l'on trouve fréquemment des radiateurs en fonte anciens raccordés à des tuyauteries plus récentes, un mélange de métaux qui favorise la corrosion galvanique. Un logement ancien avec une installation d'origine partiellement rénovée est le cas type."
     }
   ],
   "relatedServices": [
@@ -38,7 +38,7 @@
     },
     {
       "q": "Mes radiateurs sont tièdes en bas et froids en haut, qu'est-ce que c'est ?",
-      "a": "Froid en haut et chaud en bas, c'est de l'air : une purge suffit généralement. Chaud en haut et froid en bas, c'est de la boue déposée par gravité au fond de l'émetteur, et la purge n'y changera rien. Cette distinction est le premier tri du diagnostic, et vous pouvez la faire vous-même en passant la main sur chaque radiateur avant de nous appeler."
+      "a": "Froid en haut et chaud en bas, de l'air s'est logé dans le radiateur, la purge règle généralement le problème. Chaud en haut et froid en bas, c'est de la boue déposée par gravité au fond de l'émetteur, et la purge n'y changera rien. Cette distinction est le premier tri du diagnostic, et vous pouvez la faire vous-même en passant la main sur chaque radiateur avant de nous appeler."
     },
     {
       "q": "À quelle fréquence faut-il désembouer un circuit de chauffage ?",

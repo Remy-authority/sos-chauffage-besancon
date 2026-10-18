@@ -166,6 +166,16 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           )}
 
 
+          <AnimatedSection className="mt-12 border-l-2 border-laiton-franc bg-calcaire-voile px-6 py-5">
+            <p className="text-lecture text-fonte-nuit">
+              Les prix de déplacement, de diagnostic et des pièces les plus courantes sont réunis, avec leurs sources, sur{' '}
+              <Link href="/tarifs" className="font-semibold text-fonte-abysse underline decoration-laiton-franc decoration-2 underline-offset-4">
+                la page des tarifs
+              </Link>
+              . Le montant de votre intervention vous est annoncé au téléphone avant notre venue.
+            </p>
+          </AnimatedSection>
+
           {liees.length > 0 && (
             <AnimatedSection className="mt-16">
               <h2 className="text-titre-m">Prestations liées</h2>

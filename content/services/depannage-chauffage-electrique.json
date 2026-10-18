@@ -16,11 +16,11 @@
   "blocks": [
     {
       "heading": "Un seul radiateur en panne, ou tous",
-      "body": "La première question à se poser est celle du nombre. Si un seul appareil est concerné et que les autres chauffent normalement, la panne est dans l'appareil : résistance coupée, thermostat hors service, carte électronique défaillante sur un modèle programmable. Si plusieurs radiateurs s'arrêtent en même temps, la cause est en amont : disjoncteur divisionnaire déclenché, fil pilote coupé ou gestionnaire d'énergie qui impose un délestage. Cette distinction change complètement le diagnostic, et vous pouvez la faire vous-même avant de nous appeler : c'est autant de temps gagné."
+      "body": "La première question à se poser est celle du nombre. Si un seul appareil est concerné et que les autres chauffent normalement, la panne est dans l'appareil : résistance coupée, thermostat hors service, carte électronique défaillante sur un modèle programmable.\n\nSi plusieurs radiateurs s'arrêtent en même temps, la cause est en amont : disjoncteur divisionnaire déclenché, fil pilote coupé ou gestionnaire d'énergie qui impose un délestage.\n\nCette distinction change complètement le diagnostic, et vous pouvez la faire vous-même avant de nous appeler : c'est autant de temps gagné."
     },
     {
       "heading": "Le fil pilote, la panne qu'on ne soupçonne pas",
-      "body": "Sur une installation pilotée, chaque radiateur reçoit un ordre par un fil dédié : confort, éco, hors gel, arrêt. Quand ce fil est coupé, mal raccordé ou que le programmateur central se dérègle, les radiateurs restent en position éco ou hors gel en permanence. Ils fonctionnent, ils ne sont pas en panne, mais ils ne chauffent jamais vraiment. Le symptôme typique est un logement tiède malgré des consignes réglées au maximum sur les appareils. C'est une cause fréquente et rarement identifiée par les occupants, qui concluent souvent à tort que leurs radiateurs sont usés."
+      "body": "Sur une installation pilotée, chaque radiateur reçoit un ordre par un fil dédié : confort, éco, hors gel, arrêt. Quand ce fil est coupé, mal raccordé ou que le programmateur central se dérègle, les radiateurs restent en position éco ou hors gel en permanence.\n\nIls fonctionnent, ils ne sont pas en panne, mais ils ne chauffent jamais vraiment. Le symptôme typique est un logement tiède malgré des consignes réglées au maximum sur les appareils.\n\nC'est une cause fréquente et rarement identifiée par les occupants, qui concluent souvent à tort que leurs radiateurs sont usés."
     },
     {
       "heading": "Préparer ses radiateurs électriques avant l'hiver",

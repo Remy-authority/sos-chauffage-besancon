@@ -5,8 +5,8 @@
   "orientation": "Nord-est",
   "imageAlt": "Village aux toits de tuiles au bord d’une rivière, barques amarrées et brume accrochée aux coteaux boisés",
   "context": "Commune du nord-est de l'agglomération, connue pour son aérodrome, avec une nette dominante de maisons individuelles.",
-  "metaTitle": "Dépannage chauffage à Thise, chauffagiste urgence",
-  "metaDescription": "Chauffagiste à Thise (25220) : dépannage de chaudière, radiateurs froids, plus d'eau chaude, entretien annuel. Intervention 7j/7 sur le Grand Besançon.",
+  "metaTitle": "Thise, réparation de chaudière et de pompe à chaleur",
+  "metaDescription": "Thise (25220) : chauffagiste pour chaudière en panne, pompe à chaleur, ballon d'eau chaude et entretien annuel, sur tout le nord-est du Grand Besançon.",
   "h1": "Chauffagiste dépannage à Thise, urgence chauffage",
   "intro": "Nous intervenons à Thise (25220) pour toutes les pannes de chauffage et de production d'eau chaude, ainsi que pour l'entretien annuel obligatoire. Située au nord-est de Besançon, la commune est largement composée de maisons individuelles, avec un parc d'installations dont une partie a plusieurs décennies de service. C'est ce qui explique la nature des demandes que nous y recevons.",
   "blocks": [
@@ -45,5 +45,7 @@
       "q": "Intervenez-vous à Thise sur les pompes à chaleur ?",
       "a": "Oui, sur les pompes à chaleur air-eau comme air-air. Attention à un point : une PAC qui s'arrête quelques minutes en soufflant de l'air froid et en laissant s'écouler de l'eau sous l'unité extérieure est en train de dégivrer, ce qui est normal par temps froid et humide. C'est l'arrêt complet sans redémarrage, le code de défaut ou le bloc de glace persistant qui signalent une vraie panne."
     }
-  ]
+  ],
+  "fait": "Thise, au nord-est de Besançon, compte 2 994 habitants sur 8,9 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

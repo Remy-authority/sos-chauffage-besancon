@@ -141,7 +141,7 @@ export function LeadForm({ variante = 'normal' }: { variante?: 'normal' | 'compa
                 Qu’est-ce qui ne chauffe plus ?
               </h2>
               <p className="mt-2 text-legende text-calcaire-ombre">
-                Choisissez la situation la plus proche de la vôtre.
+                Dites-nous ce qui cloche, en un geste.
               </p>
 
               <div className={`mt-6 grid grid-cols-2 gap-2.5 ${compact ? '' : 'sm:grid-cols-4'}`}>

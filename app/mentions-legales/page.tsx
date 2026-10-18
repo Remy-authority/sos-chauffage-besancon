@@ -10,8 +10,8 @@ import { LegalPage } from '@/components/layout/LegalPage'
  * « À compléter », jamais une valeur inventée. Page indexable (signal E-E-A-T).
  */
 export const metadata: Metadata = buildMetadata({
-  title: 'Mentions légales',
-  description: `Mentions légales de ${siteConfig.businessName}.`,
+  title: 'Mentions légales du site SOS Chauffage Besançon',
+  description: `Éditeur, hébergeur, propriété des contenus et contact du site ${siteConfig.businessName}, chauffagiste à Besançon et dans le Grand Besançon.`,
   path: '/mentions-legales',
 })
 
@@ -84,8 +84,8 @@ export default function MentionsLegales() {
       <section>
         <h2>Propriété intellectuelle</h2>
         <p>
-          L&apos;ensemble des contenus de ce site (textes, visuels, identité graphique) est protégé
-          par le droit de la propriété intellectuelle. Toute reproduction, même partielle, est
+          Les textes, images et éléments graphiques publiés ici appartiennent à l&apos;éditeur du
+          site. Toute reproduction, même partielle, est
           interdite sans autorisation préalable écrite.
         </p>
       </section>

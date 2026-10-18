@@ -1,7 +1,7 @@
 /**
  * publish-next-draft.mjs — publie le plus ancien article en attente.
  *
- * Appelé par .github/workflows/publish-article.yml (lun/mer/ven).
+ * Appelé par .github/workflows/publish-article.yml (du lundi au vendredi, 5 articles par semaine).
  * Logique :
  *  1. Liste content/drafts/*.mdx, tri alphabétique (préfixes 001-, 002-… => le plus petit d'abord).
  *  2. Si vide : log un avertissement clair et sort en succès (exit 0), sans rien publier.
@@ -66,6 +66,29 @@ if (!fmMatch) {
   process.exit(1)
 }
 let fm = fmMatch[1]
+
+// Garde SEO (mise à jour n°1 du 18/10/2026) : un brouillon dont le title sort
+// de 30-60 caractères ou la description de 120-160 n'est PAS publié. Le
+// workflow s'arrête en erreur, le brouillon reste en place, à corriger.
+function champ(nom) {
+  const m = fm.match(new RegExp(`^${nom}:\\s*(.*)$`, 'm'))
+  if (!m) return ''
+  return m[1].trim().replace(/^(["'])(.*)\1$/, '$2').replace(/\\"/g, '"')
+}
+const titre = champ('title')
+const description = champ('description')
+const bornes = [
+  ['title', titre.length, 30, 60],
+  ['description', description.length, 120, 160],
+]
+const horsBornes = bornes.filter(([, n, min, max]) => n < min || n > max)
+if (horsBornes.length) {
+  for (const [nom, n, min, max] of horsBornes) {
+    console.error(`::error::${draftFile} : ${nom} de ${n} caractères, attendu entre ${min} et ${max}. Publication refusée.`)
+  }
+  process.exit(1)
+}
+
 if (/^date:.*$/m.test(fm)) {
   fm = fm.replace(/^date:.*$/m, `date: "${today}"`)
 } else {

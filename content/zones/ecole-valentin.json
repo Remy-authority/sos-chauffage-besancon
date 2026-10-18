@@ -5,7 +5,7 @@
   "orientation": "Nord",
   "imageAlt": "Rue de village un jour de pluie, voitures stationnées, maisons en pierre et petit collectif au pied d’un coteau boisé",
   "context": "Commune du nord de l'agglomération, sur l'axe de la RN57, où le résidentiel côtoie une importante zone de bureaux et de commerces.",
-  "metaTitle": "Dépannage chauffage à École-Valentin, urgence 24h/24",
+  "metaTitle": "École-Valentin, chauffagiste pour pannes et entretien",
   "metaDescription": "Chauffagiste urgence à École-Valentin (25480) : dépannage de chaudière, chauffage de locaux professionnels, entretien annuel. Ligne ouverte 7j/7.",
   "h1": "Chauffagiste urgence et dépannage à École-Valentin",
   "intro": "Nous intervenons à École-Valentin (25480) pour le dépannage de chauffage et l'entretien annuel, aussi bien chez les particuliers que dans les locaux professionnels. Située au nord de Besançon le long de la RN57, la commune a la particularité d'associer un tissu résidentiel à une zone d'activité tertiaire et commerciale importante, deux univers qui n'ont ni les mêmes contraintes ni les mêmes urgences.",
@@ -45,5 +45,7 @@
       "q": "Faites-vous l'entretien annuel pour un bailleur ou un gestionnaire ?",
       "a": "Oui. L'entretien annuel des chaudières de 4 à 400 kilowatts est obligatoire et donne lieu à une attestation, que nous remettons systématiquement après la visite. Pour un parc de plusieurs lots, les visites peuvent être groupées sur une même période, ce qui simplifie la coordination et sécurise le respect de l'obligation avant l'hiver."
     }
-  ]
+  ],
+  "fait": "École-Valentin, au nord-ouest de Besançon, compte 2 579 habitants sur 3,2 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

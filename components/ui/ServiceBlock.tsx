@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { extractNumberedSteps } from '@/lib/text'
 import type { ContentBlock } from '@/lib/content'
+import CoupeBallon from '@/components/ui/graphiques/CoupeBallon'
 
 /**
  * Bloc de contenu d'une page prestation ou commune.
@@ -41,7 +42,21 @@ export function ServiceBlock({ block, eager = false }: { block: ContentBlock; ea
           </ol>
         </>
       ) : (
-        <p>{block.body}</p>
+        block.body
+          .split(/\n\s*\n/)
+          .filter((p) => p.trim())
+          .map((p) => <p key={p.slice(0, 40)}>{p.trim()}</p>)
+      )}
+
+      {block.dessin === 'coupe-ballon' && (
+        <figure className="vivant mt-8">
+          <div className="rounded-bloc border border-calcaire-pierre bg-calcaire-neige p-4 shadow-pose sm:p-6">
+            <CoupeBallon className="block h-auto w-full" />
+          </div>
+          <figcaption className="mt-3 text-legende text-calcaire-roche">
+            Un ballon d’eau chaude en coupe, dessiné. En jaune miel, les pièces qui tombent en panne.
+          </figcaption>
+        </figure>
       )}
 
       {block.image && (

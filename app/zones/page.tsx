@@ -30,7 +30,7 @@ export default function ZonesHub() {
       a: `Nous intervenons à ${city}, dans tous les quartiers, et dans les communes du Grand Besançon qui disposent d'une page dédiée sur ce site : ${noms.join(', ')}. Notre zone réelle est un peu plus large que cette liste : en cas de doute sur votre secteur, appelez-nous, la réponse est immédiate.`,
     },
     {
-      q: 'Ma commune ne figure pas dans la liste, intervenez-vous quand même ?',
+      q: 'Vous n’êtes pas dans les communes listées, venez-vous quand même ?',
       a: `Probablement oui. La liste ci-dessus regroupe les communes qui ont une page dédiée, pas les limites de notre déplacement. Nous couvrons ${city} et son agglomération. Le plus simple reste de nous appeler en indiquant votre commune : nous vous disons tout de suite si nous venons.`,
     },
     {

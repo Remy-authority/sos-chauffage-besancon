@@ -3,32 +3,45 @@
   "order": 6,
   "icon": "ballon",
   "navTitle": "Dépannage ballon d'eau chaude",
-  "h1": "Dépannage de ballon d'eau chaude à Besançon",
-  "metaTitle": "Réparation ballon d'eau chaude et chauffe-eau Besançon",
-  "metaDescription": "Ballon d'eau chaude en panne à Besançon. Réparation de chauffe-eau, thermostat, résistance et anode, détartrage et remplacement.",
+  "h1": "Dépannage ballon d'eau chaude à Besançon, chauffe-eau en panne ou qui fuit",
+  "metaTitle": "Dépannage ballon d'eau chaude Besançon, chauffe-eau en panne",
+  "metaDescription": "Chauffe-eau en panne, fuite ou eau froide à Besançon. Réparation de ballon d'eau chaude, groupe de sécurité, résistance, thermostat, prix annoncé au téléphone.",
   "imageAlt": "Vidange d'un ballon d'eau chaude au flexible dans un seau, résistance entartrée déposée sur un linge au sol",
-  "intro": "Perdre l'eau chaude n'immobilise pas le chauffage, mais cela rend un logement difficilement habitable au quotidien. La panne vient presque toujours de trois pièces : le thermostat, la résistance et l'anode. Nous intervenons à Besançon et dans le Grand Besançon sur les chauffe-eau électriques, les ballons thermodynamiques et la production d'eau chaude intégrée aux chaudières.",
+  "intro": "Plus d'eau chaude, une flaque sous le ballon ou une eau tiède qui ne monte jamais. Nous dépannons les chauffe-eau électriques et thermodynamiques à Besançon et dans le Grand Besançon, sept jours sur sept, prix annoncé au téléphone.",
   "bullets": [
-    "Thermostat, résistance, anode",
-    "Détartrage et remise en service",
-    "Diagnostic avant remplacement"
+    "Chauffe-eau en panne, fuite, eau tiède",
+    "Résistance, thermostat, groupe de sécurité",
+    "Réparer ou remplacer, avis franc"
   ],
   "blocks": [
     {
-      "heading": "Eau froide ou eau tiède, deux diagnostics différents",
-      "body": "La nuance compte plus qu'il n'y paraît. Une eau totalement froide oriente vers une coupure d'alimentation, un disjoncteur déclenché, un contacteur jour et nuit resté en position basse ou une résistance coupée : l'appareil ne chauffe plus du tout. Une eau tiède, en revanche, indique que l'appareil chauffe mais mal, ce qui pointe le thermostat déréglé ou défaillant, une résistance entartrée qui ne transmet plus sa chaleur, ou un ballon devenu trop petit pour les besoins du foyer. Enfin, une eau chaude qui ne dure que quelques minutes signale souvent un problème de stratification ou un ballon dont le volume utile a été réduit par le tartre accumulé."
+      "heading": "Chauffe-eau en panne, eau froide ou eau tiède",
+      "dessin": "coupe-ballon",
+      "body": "Une eau franchement froide et une eau tiède ne racontent pas la même panne. Froide, le ballon ne chauffe plus du tout, le thermostat a coupé ou la résistance est morte.\n\nTiède, il chauffe mal. La résistance est prise dans le tartre, le thermostat est déréglé ou la cuve a perdu une partie de son volume utile sous les dépôts.\n\nAu téléphone, nous vous demandons l'âge du ballon, sa marque, si le disjoncteur a sauté et depuis quand l'eau manque. Nous arrivons avec les pièces qui tombent le plus souvent en panne."
     },
     {
-      "heading": "Le tartre, l'ennemi silencieux dans le Doubs",
-      "body": "L'eau du secteur bisontin est calcaire, et le tartre se dépose là où l'eau est chauffée, c'est-à-dire directement sur la résistance et au fond de la cuve. Deux conséquences. La première est énergétique : une couche de tartre isole la résistance et l'oblige à chauffer plus longtemps pour le même résultat, la consommation monte sans que rien ne le signale. La seconde est mécanique : le tartre finit par provoquer les claquements caractéristiques qu'on entend en fin de chauffe, puis la coupure de la résistance. Le détartrage n'est pas obligatoire, mais il prolonge nettement la vie d'un ballon et se pratique idéalement en même temps que le contrôle de l'anode."
+      "heading": "Fuite de chauffe-eau à Besançon, d'où vient l'eau",
+      "body": "Une flaque sous le ballon n'annonce pas forcément la fin de la cuve. Dans la plupart des cas, l'eau vient du groupe de sécurité, la petite pièce posée sur l'arrivée d'eau froide.\n\nCe groupe goutte normalement pendant la chauffe, quelques centilitres. S'il coule en continu, il est entartré ou la pression du réseau est trop forte, et il se remplace.\n\nUne fuite au raccord ou à la bride se reprend aussi. Une cuve percée, en revanche, ne se répare pas, le ballon se remplace. Coupez l'électricité et l'arrivée d'eau en attendant notre venue."
+    },
+    {
+      "heading": "Urgence chauffe-eau à Besançon",
+      "body": "Un ballon qui fuit sur un plancher en bois, un chauffe-eau sans eau chaude un soir d'hiver avec des enfants, une cuve qui coule sous les toits d'un immeuble bisontin. Ce sont des urgences, et nous les prenons comme telles.\n\nNous répondons sept jours sur sept, soirs et week-ends compris, à Besançon et dans les douze communes voisines. Le prix du déplacement et de la main-d'œuvre est annoncé au téléphone, majoration du soir ou du dimanche incluse.\n\nEn attendant, fermez le robinet d'arrêt du groupe de sécurité et coupez le disjoncteur du chauffe-eau. Un ballon qui chauffe à vide abîme sa résistance."
+    },
+    {
+      "heading": "Le tartre de l'eau du Doubs, l'ennemi silencieux",
+      "body": "L'eau distribuée dans le Grand Besançon vient d'un sous-sol calcaire. À chaque chauffe, une partie du calcaire se dépose sur la résistance et au fond de la cuve.\n\nUne résistance entartrée chauffe plus longtemps pour le même résultat, siffle ou claque, et finit par griller. Le dépôt au fond réduit le volume d'eau chaude disponible.\n\nUn détartrage régulier, dont la fréquence dépend de la dureté de l'eau et de la température de consigne, prolonge nettement la vie du ballon. Nous en profitons pour vérifier l'anode."
     },
     {
       "heading": "L'anode, la pièce qui décide de la durée de vie du ballon",
-      "body": "À l'intérieur de la cuve se trouve une anode, en magnésium sur la plupart des modèles ou à courant imposé sur les appareils plus récents. Son rôle est de se corroder à la place de la cuve : c'est une pièce sacrificielle. Quand elle est entièrement consommée et qu'elle n'est pas remplacée, c'est la cuve elle-même qui commence à se corroder, et à ce stade le ballon n'est plus réparable. Contrôler l'anode lors d'une visite d'entretien est ce qui distingue un ballon qui tient longtemps d'un ballon qu'on remplace prématurément. C'est un point que nous vérifions systématiquement lorsque nous ouvrons un appareil."
+      "body": "À l'intérieur de la cuve, une tige de magnésium se sacrifie à la place de l'acier. Elle attire la corrosion, se consume lentement et protège l'émail de la cuve pendant des années.\n\nUne anode entièrement consommée ne protège plus rien, et la cuve commence à rouiller de l'intérieur. Sa vérification fait partie de chaque détartrage, et son remplacement coûte peu au regard d'un ballon neuf.\n\nLes ballons à anode de titane, dite à courant imposé, n'ont pas cette usure, mais ils dépendent d'une alimentation électrique permanente."
+    },
+    {
+      "heading": "Réparation de chauffe-eau, ce que ça coûte",
+      "body": "Les fourchettes publiques que nous avons relevées donnent l'ordre de grandeur. Un groupe de sécurité remplacé se situe entre 132 et 200 €, une résistance entre 100 et 450 €, un thermostat entre 100 et 300 €.\n\nUn ballon neuf posé revient entre 500 et 1 700 € selon la capacité et la technologie, la pose seule entre 300 et 650 €. Le déplacement et le diagnostic s'ajoutent, ils sont détaillés sur la page des tarifs.\n\nVous connaissez le montant de votre intervention au téléphone, avant que nous partions. Si la pièce en cause n'est pas celle prévue, vous le savez sur place, pas à la facture."
     },
     {
       "heading": "Réparer ou remplacer un ballon",
-      "body": "Un thermostat, une résistance et une anode se remplacent : ces interventions sont courantes et redonnent plusieurs années de service à un appareil sain. En revanche, dès que la cuve est percée ou que la corrosion est visible, la réparation n'a plus de sens et un remplacement s'impose. Entre les deux, l'arbitrage se joue sur l'âge de l'appareil, l'adéquation de son volume aux besoins réels du foyer et le coût des pièces. Nous vous donnons cet arbitrage franchement, avant d'intervenir, et nous vous indiquons le cas échéant le volume qui correspondrait réellement à votre usage."
+      "body": "Un ballon de moins de dix ans dont la cuve est saine se répare presque toujours. Résistance, thermostat, groupe de sécurité et anode sont des pièces courantes, remplacées dans l'heure.\n\nAu-delà de douze à quinze ans, avec une cuve qui a déjà pris l'eau ou une anode jamais changée, le remplacement devient le choix raisonnable. Nous vous donnons notre avis sans détour.\n\nLe remplacement est l'occasion de revoir la capacité, souvent trop grande, et de choisir un modèle plus sobre, chauffe-eau thermodynamique compris."
     }
   ],
   "relatedServices": [
@@ -38,27 +51,35 @@
   "faq": [
     {
       "q": "Mon chauffe-eau ne produit plus d'eau chaude, que faire ?",
-      "a": "Vérifiez d'abord le disjoncteur dédié au ballon et la position du contacteur jour et nuit s'il en existe un, en le basculant en marche forcée pendant une heure ou deux. Si l'eau reste froide, la piste la plus probable est la résistance ou le thermostat, deux pièces qui se remplacent. N'ouvrez pas l'appareil vous-même : la résistance est sous tension et la cuve sous pression."
+      "a": "Vérifiez d'abord le disjoncteur du chauffe-eau et le contacteur heures creuses. S'ils sont en place et que l'eau reste froide après une nuit, le thermostat ou la résistance est en cause. Appelez-nous, nous venons avec les pièces."
+    },
+    {
+      "q": "Mon chauffe-eau fuit, est-ce une urgence ?",
+      "a": "Oui si l'eau coule en continu ou menace un plancher ou le voisin du dessous. Fermez l'arrivée d'eau au groupe de sécurité et coupez le disjoncteur. Une goutte pendant la chauffe, quelques centilitres par jour, est normale."
+    },
+    {
+      "q": "Combien coûte la réparation d'un chauffe-eau à Besançon ?",
+      "a": "D'après les fourchettes publiques relevées, un groupe de sécurité entre 132 et 200 €, une résistance entre 100 et 450 €, un thermostat entre 100 et 300 €, déplacement et diagnostic en plus. Le prix exact vous est annoncé au téléphone."
+    },
+    {
+      "q": "Intervenez-vous en urgence le soir ou le dimanche pour un chauffe-eau ?",
+      "a": "Oui, sept jours sur sept à Besançon et dans les communes du Grand Besançon. La majoration du soir, du dimanche ou des jours fériés est annoncée au téléphone avant notre déplacement."
     },
     {
       "q": "Mon chauffe-eau est bruyant, est-ce normal ?",
-      "a": "Des claquements ou un bruit de bouilloire en fin de chauffe signalent presque toujours du tartre déposé sur la résistance. Le phénomène n'est pas dangereux à court terme, mais il indique une perte de rendement et annonce la coupure de la résistance. Un détartrage, accompagné d'un contrôle de l'anode, règle le problème et prolonge la vie de l'appareil."
-    },
-    {
-      "q": "Le détartrage d'un chauffe-eau est-il obligatoire ?",
-      "a": "Non, aucune obligation réglementaire ne l'impose, contrairement à l'entretien annuel des chaudières. Il reste vivement recommandé dans un secteur où l'eau est calcaire comme celui de Besançon : un détartrage périodique, avec contrôle de l'anode, évite la surconsommation et repousse nettement l'échéance du remplacement."
+      "a": "Un sifflement ou des claquements pendant la chauffe signalent une résistance prise dans le tartre. L'appareil fonctionne encore, mais il consomme plus et la résistance finira par griller. Un détartrage règle le problème."
     },
     {
       "q": "Mon eau est tiède mais jamais vraiment chaude, pourquoi ?",
-      "a": "Trois causes reviennent : un thermostat déréglé ou en défaut, une résistance entartrée qui ne transmet plus correctement sa chaleur, ou un ballon dont le volume ne correspond plus aux besoins du foyer, par exemple après l'arrivée d'un enfant. Un mitigeur thermostatique mal réglé sur le point de puisage peut aussi produire ce symptôme sans que le ballon soit en cause."
+      "a": "Soit le thermostat est réglé trop bas ou déréglé, soit la résistance entartrée ne chauffe plus assez, soit le volume utile a diminué sous les dépôts. Le diagnostic sur place tranche entre ces trois causes."
     },
     {
       "q": "Qu'est-ce que l'anode d'un ballon d'eau chaude ?",
-      "a": "C'est une pièce sacrificielle placée dans la cuve, en magnésium sur la plupart des appareils. Elle se corrode à la place de la cuve et protège ainsi le ballon. Une fois entièrement consommée, elle ne protège plus rien et la corrosion attaque la cuve elle-même, ce qui rend l'appareil irréparable. Son contrôle, et son remplacement le cas échéant, font partie d'un entretien sérieux."
+      "a": "Une tige de magnésium placée dans la cuve, qui attire la corrosion à la place de l'acier. Elle se consume avec le temps et se remplace lors du détartrage. Sans elle, la cuve rouille de l'intérieur."
     },
     {
       "q": "Combien coûte le remplacement d'un ballon d'eau chaude ?",
-      "a": "Le prix dépend du volume, de la technologie, chauffe-eau électrique classique ou ballon thermodynamique, et des contraintes de pose, notamment l'accès et l'évacuation de l'ancien appareil. Nous établissons le tarif avant l'intervention, après avoir vérifié si une réparation reste possible : un thermostat ou une résistance se remplacent, une cuve percée non."
+      "a": "Entre 500 et 1 700 € posé selon la capacité et la technologie, d'après les fourchettes publiques relevées, la pose seule entre 300 et 650 €. Un chauffe-eau thermodynamique coûte plus à l'achat et moins à l'usage."
     }
   ]
 }

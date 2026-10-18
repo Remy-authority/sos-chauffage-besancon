@@ -6,8 +6,8 @@ import { LegalPage } from '@/components/layout/LegalPage'
 
 // Page utilitaire → noindex, follow.
 export const metadata: Metadata = buildMetadata({
-  title: 'Politique de confidentialité',
-  description: `Politique de confidentialité de ${siteConfig.businessName}.`,
+  title: 'Confidentialité, vos données chez SOS Chauffage Besançon',
+  description: `Données recueillies par le formulaire de ${siteConfig.businessName}, durée de conservation, destinataires et vos droits d'accès et d'effacement.`,
   path: '/politique-confidentialite',
   noindex: true,
 })

@@ -8,7 +8,7 @@ name: Publier un article (autoblog)
 
 on:
   schedule:
-    - cron: '31 5 * * 1,3,5' # lun / mer / ven à 05:31 UTC (minute décalée le 29/08/2026 : GitHub saute les crons à l'heure pile)
+    - cron: '31 5 * * 1-5' # du lundi au vendredi à 05:31 UTC (5 articles par semaine depuis le 18/10/2026) (minute décalée le 29/08/2026 : GitHub saute les crons à l'heure pile)
   workflow_dispatch: {} # déclenchement manuel (test immédiat, sans attendre lundi)
 
 # Le GITHUB_TOKEN doit pouvoir committer/pusher sur main.

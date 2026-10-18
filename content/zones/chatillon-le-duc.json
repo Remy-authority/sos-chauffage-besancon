@@ -6,9 +6,9 @@
   "imageAlt": "Route en courbe desservant des maisons récentes et de petits collectifs à flanc de coteau boisé",
   "context": "Commune du nord de l'agglomération, proche des grands axes A36 et RN57, où maisons individuelles et petit collectif se côtoient.",
   "metaTitle": "Dépannage chauffage à Châtillon-le-Duc, urgence 24h/24",
-  "metaDescription": "Chauffagiste urgence à Châtillon-le-Duc (25870) : panne de chaudière, chauffage collectif, radiateurs froids, entretien annuel obligatoire.",
+  "metaDescription": "Chaudière en panne ou chauffage collectif en défaut à Châtillon-le-Duc (25870) ? Chauffagiste en urgence, parties privatives comprises, entretien annuel.",
   "h1": "Chauffagiste urgence et dépannage à Châtillon-le-Duc",
-  "intro": "Nous intervenons à Châtillon-le-Duc (25870) pour le dépannage de chauffage et l'entretien annuel de chaudière. Au nord de Besançon, à proximité des grands axes, la commune associe des maisons individuelles à des ensembles de petit collectif. Cette double nature change la façon d'aborder une panne : dans un appartement, une partie de l'installation ne vous appartient pas.",
+  "intro": "À Châtillon-le-Duc (25870), nous dépannons le chauffage et assurons l'entretien annuel des chaudières. Au nord de Besançon, à proximité des grands axes, la commune associe des maisons individuelles à des ensembles de petit collectif. Cette double nature change la façon d'aborder une panne : dans un appartement, une partie de l'installation ne vous appartient pas.",
   "blocks": [
     {
       "heading": "En appartement, savoir ce qui vous concerne",
@@ -16,7 +16,7 @@
     },
     {
       "heading": "Le radiateur froid en appartement, dans l'ordre",
-      "body": "1. Vérifiez que le robinet thermostatique est bien ouvert et qu'il n'est pas grippé : une tête restée bloquée tout l'été est un grand classique de la remise en chauffe d'octobre. 2. Passez la main sur le radiateur. Froid en haut et chaud en bas, c'est de l'air, une purge suffit. Chaud en haut et froid en bas, c'est de la boue, et la purge n'y changera rien. 3. Purgez lentement, avec un récipient, jusqu'à ce que l'eau coule sans bulles. 4. Vérifiez ensuite la pression du circuit si vous avez une chaudière individuelle : une purge fait baisser la pression et peut mettre l'appareil en défaut. 5. Si le radiateur reste froid après ces vérifications, ou si plusieurs logements sont touchés, appelez-nous ou prévenez le syndic selon le cas."
+      "body": "1. Vérifiez que le robinet thermostatique est bien ouvert et qu'il n'est pas grippé : une tête restée bloquée tout l'été est un grand classique de la remise en chauffe d'octobre. 2. Passez la main sur le radiateur. Froid en haut, chaud en bas, c'est de l'air pris dans le radiateur, il faut purger. Chaud en haut et froid en bas, c'est de la boue, et la purge n'y changera rien. 3. Purgez lentement, avec un récipient, jusqu'à ce que l'eau coule sans bulles. 4. Vérifiez ensuite la pression du circuit si vous avez une chaudière individuelle : une purge fait baisser la pression et peut mettre l'appareil en défaut. 5. Si le radiateur reste froid après ces vérifications, ou si plusieurs logements sont touchés, appelez-nous ou prévenez le syndic selon le cas."
     },
     {
       "heading": "Maison individuelle, l'installation vous appartient en entier",
@@ -35,15 +35,17 @@
     },
     {
       "q": "Un seul de mes radiateurs est froid, que faire d'abord ?",
-      "a": "Vérifiez que le robinet thermostatique n'est pas grippé, puis passez la main sur le radiateur. Froid en haut et chaud en bas signale de l'air, une purge suffit. Chaud en haut et froid en bas indique des boues, et il faut traiter le circuit. Après une purge, contrôlez la pression si vous avez une chaudière individuelle : elle baisse et peut mettre l'appareil en sécurité."
+      "a": "Vérifiez que le robinet thermostatique n'est pas grippé, puis passez la main sur le radiateur. Froid en haut et chaud en bas, le radiateur a pris de l'air, purgez-le. Chaud en haut et froid en bas indique des boues, et il faut traiter le circuit. Après une purge, contrôlez la pression si vous avez une chaudière individuelle : elle baisse et peut mettre l'appareil en sécurité."
     },
     {
       "q": "Intervenez-vous en urgence à Châtillon-le-Duc le week-end ?",
-      "a": "Oui, notre ligne est ouverte 7j/7, week-ends et jours fériés compris. La commune est immédiatement au nord de Besançon, le déplacement n'est jamais le facteur limitant : c'est le planning en cours qui détermine le créneau, et nous vous l'annonçons au téléphone."
+      "a": "Oui, y compris le dimanche et les jours fériés, la ligne ne ferme pas. La commune est immédiatement au nord de Besançon, le déplacement n'est jamais le facteur limitant : c'est le planning en cours qui détermine le créneau, et nous vous l'annonçons au téléphone."
     },
     {
       "q": "Qui doit payer l'entretien de la chaudière en location ?",
       "a": "L'entretien courant de la chaudière fait partie des charges d'entretien qui incombent au locataire, sauf clause contraire du bail ou contrat souscrit par le propriétaire. Le remplacement de l'appareil et les réparations liées à sa vétusté restent à la charge du propriétaire. Conservez l'attestation d'entretien : c'est elle qui fait foi."
     }
-  ]
+  ],
+  "fait": "Châtillon-le-Duc, au nord de Besançon, compte 2 042 habitants sur 6,2 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

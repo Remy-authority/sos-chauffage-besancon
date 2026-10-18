@@ -5,10 +5,10 @@
   "orientation": "Sud-est",
   "imageAlt": "Ferme comtoise isolée sous la neige sur le plateau, moutons au pré et clocher du village au loin",
   "context": "Commune du sud-est, sur le premier plateau du Jura, où se mêlent habitat résidentiel et activité agricole.",
-  "metaTitle": "Chauffagiste à Mamirolle, dépannage chaudière urgence",
-  "metaDescription": "Dépannage urgence chauffage à Mamirolle (25620) : chaudière gaz ou fioul en panne, radiateurs froids, entretien annuel. Intervention 7j/7.",
+  "metaTitle": "Mamirolle, premier plateau, chauffagiste urgence chaudière",
+  "metaDescription": "Mamirolle (25620), sur le premier plateau, hivers rudes : chauffagiste pour chaudière gaz ou fioul en panne, radiateurs froids, visite annuelle. 7j/7.",
   "h1": "Dépannage urgence chauffage à Mamirolle",
-  "intro": "Nous intervenons à Mamirolle (25620) pour le dépannage de chauffage et l'entretien annuel de chaudière. Située au sud-est de Besançon sur le premier plateau du Jura, la commune associe habitat résidentiel et activité agricole, dans un environnement d'altitude où l'hiver est plus marqué que dans la vallée du Doubs. Le chauffage y est sollicité plus longtemps et plus fortement.",
+  "intro": "Mamirolle (25620) est desservie toute l'année pour le dépannage de chauffage comme pour l'entretien annuel de chaudière. Située au sud-est de Besançon sur le premier plateau du Jura, la commune associe habitat résidentiel et activité agricole, dans un environnement d'altitude où l'hiver est plus marqué que dans la vallée du Doubs. Le chauffage y est sollicité plus longtemps et plus fortement.",
   "blocks": [
     {
       "heading": "L'altitude change les besoins réels",
@@ -45,5 +45,7 @@
       "q": "Mon chauffage n'atteint jamais la température voulue, que faire ?",
       "a": "Si la chaudière tourne en continu et que les radiateurs sont chauds sans que le logement monte, il ne s'agit probablement pas d'une panne mais d'un problème de dimensionnement, de courbe de chauffe ou d'équilibrage, particulièrement fréquent en altitude. Nous relevons ces paramètres et vous disons ce qui peut se corriger par réglage et ce qui demanderait un renfort d'émetteurs."
     }
-  ]
+  ],
+  "fait": "Mamirolle, au sud-est de Besançon, sur le premier plateau, compte 1 988 habitants sur 14,5 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

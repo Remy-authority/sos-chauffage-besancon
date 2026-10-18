@@ -336,7 +336,7 @@ export const siteConfig = {
   contactFaq: [
     {
       q: 'Faut-il appeler ou remplir le formulaire ?',
-      a: "Si le logement est froid ou qu'il n'y a plus d'eau chaude, appelez. Le formulaire convient pour un entretien, un devis de remplacement ou une panne qui peut attendre quelques heures. Dans les deux cas, décrivez ce que fait l'appareil et notez le code affiché à l'écran.",
+      a: "Si le logement est froid ou qu'il n'y a plus d'eau chaude, appelez. Pour un entretien, un devis de remplacement ou une panne qui peut attendre quelques heures, le formulaire suffit. Dans les deux cas, décrivez ce que fait l'appareil et notez le code affiché à l'écran.",
     },
     {
       q: 'Que préparer avant notre venue ?',

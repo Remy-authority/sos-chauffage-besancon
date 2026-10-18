@@ -6,9 +6,9 @@
   "imageAlt": "Village groupé autour de son clocher à bulbe, entouré de champs enneigés",
   "context": "Commune nouvelle du nord-est de l'agglomération, à l'habitat dispersé, où le fioul reste répandu et la desserte en gaz partielle.",
   "metaTitle": "Chauffagiste à Marchaux-Chaudefontaine, dépannage",
-  "metaDescription": "Dépannage de chauffage à Marchaux-Chaudefontaine (25640) : chaudière fioul et gaz, radiateurs froids, entretien annuel obligatoire. Urgence 7j/7.",
+  "metaDescription": "Marchaux-Chaudefontaine (25640), au nord-est de Besançon : nous remettons en route chaudières fioul et gaz, radiateurs froids compris. Visite annuelle, 7j/7.",
   "h1": "Dépannage chauffage à Marchaux-Chaudefontaine",
-  "intro": "Nous intervenons à Marchaux-Chaudefontaine (25640) pour le dépannage de chauffage et l'entretien annuel de chaudière. Au nord-est de Besançon, la commune se caractérise par un habitat dispersé sur plusieurs secteurs, une desserte en gaz naturel partielle et une présence encore nette du fioul. C'est un profil qui demande de savoir travailler sur des installations autonomes.",
+  "intro": "Chauffage en panne à Marchaux-Chaudefontaine (25640) ? Nous dépannons, et nous assurons aussi l'entretien annuel de chaudière. Au nord-est de Besançon, la commune se caractérise par un habitat dispersé sur plusieurs secteurs, une desserte en gaz naturel partielle et une présence encore nette du fioul. C'est un profil qui demande de savoir travailler sur des installations autonomes.",
   "blocks": [
     {
       "heading": "Quand le réseau de gaz ne dessert pas tout",
@@ -45,5 +45,7 @@
       "q": "Quand faut-il programmer l'entretien annuel ici ?",
       "a": "Entre septembre et novembre, avant que l'installation ne tourne en continu. L'entretien est obligatoire pour les chaudières de 4 à 400 kilowatts et donne lieu à une attestation. Sur une chaudière fioul, la visite comprend le remplacement du gicleur et du filtre ainsi que le réglage du brûleur, ce qui écarte la majorité des pannes de la saison suivante."
     }
-  ]
+  ],
+  "fait": "Marchaux-Chaudefontaine, au nord-est de Besançon, compte 1 447 habitants sur 16,4 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

@@ -5,10 +5,10 @@
   "orientation": "Ouest",
   "imageAlt": "Grande ferme comtoise en pierre à l’entrée d’un village, bois de chauffage empilé et charrette contre le mur",
   "context": "Commune de l'ouest de l'agglomération, à l'habitat dispersé et au passé rural, où le fioul reste bien représenté.",
-  "metaTitle": "Dépannage chauffage à Franois, chauffagiste urgence",
-  "metaDescription": "Chauffagiste à Franois (25770) : dépannage de chaudière fioul et gaz, radiateurs froids, entretien annuel obligatoire. Intervention 7j/7.",
+  "metaTitle": "Dépanneur chauffage à Franois, chaudière fioul et gaz",
+  "metaDescription": "À Franois (25770), nous réparons les chaudières fioul et gaz qui ne démarrent plus, purgeons les radiateurs froids et faisons l'entretien obligatoire. 7j/7.",
   "h1": "Chauffagiste dépannage urgence à Franois",
-  "intro": "Nous intervenons à Franois (25770) pour le dépannage de chauffage et l'entretien annuel de chaudière. À l'ouest de Besançon, la commune conserve la trace de son passé rural dans son habitat dispersé et dans son parc d'équipements, où les chaudières fioul restent nettement plus présentes que dans le reste de l'agglomération. C'est une compétence spécifique, et nous la traitons comme telle.",
+  "intro": "Franois (25770) fait partie des communes où nous dépannons le chauffage et entretenons les chaudières chaque année. À l'ouest de Besançon, la commune conserve la trace de son passé rural dans son habitat dispersé et dans son parc d'équipements, où les chaudières fioul restent nettement plus présentes que dans le reste de l'agglomération. C'est une compétence spécifique, et nous la traitons comme telle.",
   "blocks": [
     {
       "heading": "Le fioul demande un autre diagnostic",
@@ -45,5 +45,7 @@
       "q": "Le délai est-il plus long à Franois qu'à Besançon ?",
       "a": "Non. La commune est à quelques minutes de Besançon et le déplacement n'est pas le facteur limitant : c'est le planning en cours qui détermine le créneau, et nous vous l'annonçons au téléphone. Les logements occupés totalement privés de chauffage passent en priorité pendant les épisodes de froid."
     }
-  ]
+  ],
+  "fait": "Franois, à l'ouest de Besançon, compte 2 257 habitants sur 7,3 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

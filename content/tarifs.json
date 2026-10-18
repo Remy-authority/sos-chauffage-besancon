@@ -1,0 +1,391 @@
+{
+  "metaTitle": "Tarifs chauffagiste à Besançon, prix dépannage et entretien",
+  "metaDescription": "Combien coûte un dépannage de chaudière, un entretien annuel ou une réparation de chauffe-eau à Besançon. Fourchettes sourcées, prix annoncé avant de venir.",
+  "h1": "Nos tarifs à Besançon, poste par poste",
+  "intro": "Tout ce qui est chiffré ici vient d'une source publique, nommée et datée sous chaque ligne. Le montant exact dépend de l'appareil, de la panne, de la pièce et de l'heure. Il vous est annoncé au téléphone avant notre venue.",
+  "miseAJour": "18 octobre 2026",
+  "groupes": [
+    {
+      "titre": "Avant même de réparer",
+      "lignes": [
+        {
+          "id": "deplacement",
+          "poste": "Déplacement jusque chez vous",
+          "prix": "30 à 70 €",
+          "unite": "par venue",
+          "note": "Compté une fois, quel que soit le nombre d'appareils regardés sur place.",
+          "source": {
+            "nom": "Chaudieregaz.com",
+            "url": "https://www.chaudieregaz.com/blog/prix-depannage-chaudiere-gaz/",
+            "date": "article du 28 décembre 2025"
+          }
+        },
+        {
+          "id": "diagnostic",
+          "poste": "Diagnostic de la panne",
+          "prix": "80 à 150 €",
+          "unite": "forfait",
+          "note": "Lecture du code erreur, pression, allumage, sondes. La cause est nommée avant toute réparation.",
+          "source": {
+            "nom": "Chaudieregaz.com",
+            "url": "https://www.chaudieregaz.com/blog/prix-depannage-chaudiere-gaz/",
+            "date": "article du 28 décembre 2025"
+          }
+        },
+        {
+          "id": "majoration",
+          "poste": "Soir, nuit, dimanche ou jour férié",
+          "prix": "+25 à 50 %",
+          "unite": "sur la main-d'œuvre",
+          "note": "Annoncé au téléphone. Si la panne peut attendre le matin, nous vous le disons.",
+          "source": {
+            "nom": "Chaudieregaz.com",
+            "url": "https://www.chaudieregaz.com/blog/prix-depannage-chaudiere-gaz/",
+            "date": "article du 28 décembre 2025"
+          }
+        }
+      ]
+    },
+    {
+      "titre": "Chaudière et pompe à chaleur en panne",
+      "lignes": [
+        {
+          "id": "depannage-gaz",
+          "poste": "Dépannage d'une chaudière gaz",
+          "prix": "100 à 300 €",
+          "unite": "déplacement et main-d'œuvre",
+          "note": "Hors pièce. Le plus souvent une remise en pression, un allumage ou une sonde.",
+          "source": {
+            "nom": "Chaudieregaz.com",
+            "url": "https://www.chaudieregaz.com/blog/prix-depannage-chaudiere-gaz/",
+            "date": "article du 28 décembre 2025"
+          }
+        },
+        {
+          "id": "depannage-fioul",
+          "poste": "Dépannage d'une chaudière fioul en journée",
+          "prix": "90 à 150 €",
+          "unite": "intervention simple",
+          "note": "Gicleur, cellule ou pompe fioul se paient en plus, de 120 à 400 € selon la pièce.",
+          "source": {
+            "nom": "Énergie Futée",
+            "url": "https://energiefutee.fr/chauffage/prix-depannage-chaudiere/",
+            "date": "article du 27 décembre 2025"
+          }
+        },
+        {
+          "id": "depannage-pac",
+          "poste": "Visite de dépannage d'une pompe à chaleur",
+          "prix": "100 à 300 €",
+          "unite": "déplacement et une heure",
+          "note": "Sans pièce lourde. Une sonde ou un thermostat se changent pour 150 à 450 €.",
+          "source": {
+            "nom": "La Prime Énergie",
+            "url": "https://www.laprimeenergie.fr/les-travaux/la-pompe-a-chaleur/depannage",
+            "date": "relevé le 18 octobre 2026"
+          }
+        },
+        {
+          "id": "piece-chaudiere",
+          "poste": "Réparation avec changement d'une pièce",
+          "prix": "250 à 600 €",
+          "unite": "pièce et pose",
+          "note": "Circulateur, carte électronique, vanne ou brûleur. Le prix de la pièce est donné avant la commande.",
+          "source": {
+            "nom": "Énergie Futée",
+            "url": "https://energiefutee.fr/chauffage/prix-depannage-chaudiere/",
+            "date": "article du 27 décembre 2025"
+          }
+        }
+      ]
+    },
+    {
+      "titre": "Plus d'eau chaude",
+      "lignes": [
+        {
+          "id": "groupe-securite",
+          "poste": "Groupe de sécurité du ballon qui goutte",
+          "prix": "132 à 200 €",
+          "unite": "pièce et pose",
+          "note": "La pièce la plus souvent changée sur un chauffe-eau. Un quart d'heure de travail, à la charge du propriétaire.",
+          "source": {
+            "nom": "Thermocom",
+            "url": "https://thermocom.fr/prix-remplacement-dun-groupe-de-securite-de-chauffe-eau/",
+            "date": "article du 25 mai 2022"
+          }
+        },
+        {
+          "id": "resistance",
+          "poste": "Résistance de chauffe-eau à remplacer",
+          "prix": "100 à 450 €",
+          "unite": "pièce et pose",
+          "note": "Le calcaire de l'eau bisontine use les résistances blindées plus vite qu'ailleurs.",
+          "source": {
+            "nom": "Prix Pose",
+            "url": "https://www.prix-pose.com/changement-chauffe-eau",
+            "date": "relevé le 18 octobre 2026"
+          }
+        },
+        {
+          "id": "thermostat-ballon",
+          "poste": "Thermostat de chauffe-eau",
+          "prix": "100 à 300 €",
+          "unite": "pièce et pose",
+          "note": "Eau tiède ou brûlante en continu, le thermostat est le premier suspect.",
+          "source": {
+            "nom": "Prix Pose",
+            "url": "https://www.prix-pose.com/changement-chauffe-eau",
+            "date": "relevé le 18 octobre 2026"
+          }
+        },
+        {
+          "id": "ballon-remplacement",
+          "poste": "Chauffe-eau neuf, fourni et posé",
+          "prix": "500 à 1 700 €",
+          "unite": "selon la capacité",
+          "note": "De 50 à 300 litres, ancien appareil enlevé. La pose seule se situe entre 300 et 650 €.",
+          "source": {
+            "nom": "Prix Pose",
+            "url": "https://www.prix-pose.com/changement-chauffe-eau",
+            "date": "relevé le 18 octobre 2026"
+          }
+        }
+      ]
+    },
+    {
+      "titre": "Entretien de l'année",
+      "lignes": [
+        {
+          "id": "entretien-gaz",
+          "poste": "Entretien d'une chaudière gaz classique",
+          "prix": "90 à 120 €",
+          "unite": "par visite",
+          "note": "Obligatoire chaque année. Attestation remise sur place.",
+          "source": {
+            "nom": "Hello Watt",
+            "url": "https://www.hellowatt.fr/chaudiere/entretien-chaudiere/prix-entretien-chaudiere",
+            "date": "mise à jour du 21 mai 2026"
+          }
+        },
+        {
+          "id": "entretien-condensation",
+          "poste": "Entretien d'une chaudière gaz à condensation",
+          "prix": "140 à 190 €",
+          "unite": "par visite",
+          "note": "Siphon des condensats et échangeur demandent plus de temps qu'un modèle classique.",
+          "source": {
+            "nom": "Hello Watt",
+            "url": "https://www.hellowatt.fr/chaudiere/entretien-chaudiere/prix-entretien-chaudiere",
+            "date": "mise à jour du 21 mai 2026"
+          }
+        },
+        {
+          "id": "entretien-fioul",
+          "poste": "Entretien d'une chaudière fioul",
+          "prix": "110 à 150 €",
+          "unite": "par visite",
+          "note": "Brûleur démonté, gicleur changé, réglage de combustion mesuré.",
+          "source": {
+            "nom": "Hello Watt",
+            "url": "https://www.hellowatt.fr/chaudiere/entretien-chaudiere/prix-entretien-chaudiere",
+            "date": "mise à jour du 21 mai 2026"
+          }
+        },
+        {
+          "id": "entretien-pac",
+          "poste": "Entretien d'une pompe à chaleur air-eau ou air-air",
+          "prix": "150 à 250 €",
+          "unite": "par visite",
+          "note": "Obligatoire tous les deux ans au-delà de 4 kW. Filtres, pression de fluide, échangeur extérieur.",
+          "source": {
+            "nom": "Effy",
+            "url": "https://www.effy.fr/travaux-energetique/chauffage/pompe-a-chaleur/assurance/depannage",
+            "date": "relevé le 18 octobre 2026"
+          }
+        }
+      ]
+    },
+    {
+      "titre": "Radiateurs et circuit",
+      "lignes": [
+        {
+          "id": "desembouage-radiateurs",
+          "poste": "Désembouage, moins de dix radiateurs",
+          "prix": "350 à 550 €",
+          "unite": "forfait",
+          "note": "Au-delà de dix radiateurs, comptez 600 à 1 000 €.",
+          "source": {
+            "nom": "Habitatpresto",
+            "url": "https://www.habitatpresto.com/mag/chauffage/desembouage-radiateur-plancher-chauffant-prix",
+            "date": "article du 10 octobre 2025"
+          }
+        },
+        {
+          "id": "desembouage-plancher",
+          "poste": "Désembouage d'un plancher chauffant",
+          "prix": "500 à 900 €",
+          "unite": "forfait",
+          "note": "Boucle par boucle, au collecteur. Une journée pour une maison.",
+          "source": {
+            "nom": "Habitatpresto",
+            "url": "https://www.habitatpresto.com/mag/chauffage/desembouage-radiateur-plancher-chauffant-prix",
+            "date": "article du 10 octobre 2025"
+          }
+        },
+        {
+          "id": "recherche-fuite",
+          "poste": "Recherche de fuite à la caméra thermique",
+          "prix": "250 à 375 €",
+          "unite": "par recherche",
+          "note": "Sans casser. Une pression qui baisse chaque semaine sans trace visible la justifie.",
+          "source": {
+            "nom": "Prodestravaux",
+            "url": "https://www.prodestravaux.com/devis-travaux/recherche-fuite",
+            "date": "relevé le 18 octobre 2026"
+          }
+        }
+      ]
+    },
+    {
+      "titre": "Climatisation réversible",
+      "lignes": [
+        {
+          "id": "clim-diagnostic",
+          "poste": "Déplacement et diagnostic d'une climatisation",
+          "prix": "100 à 200 €",
+          "unite": "hors réparation",
+          "note": "Une recharge de fluide R32 se chiffre ensuite entre 150 et 300 €.",
+          "source": {
+            "nom": "ViteMaClim",
+            "url": "https://vitemaclim.fr/guide/cout-depannage-climatisation",
+            "date": "guide actualisé en mai 2026"
+          }
+        },
+        {
+          "id": "clim-entretien",
+          "poste": "Entretien d'un monosplit",
+          "prix": "150 à 200 €",
+          "unite": "par visite",
+          "note": "Chaque unité intérieure en plus ajoute 30 à 60 €.",
+          "source": {
+            "nom": "MesDépanneurs.fr",
+            "url": "https://www.mesdepanneurs.fr/blog/prix-entretien-climatisation",
+            "date": "mise à jour du 8 avril 2026"
+          }
+        }
+      ]
+    },
+    {
+      "titre": "Tenir au chaud en attendant la pièce",
+      "lignes": [
+        {
+          "id": "appoint-location",
+          "poste": "Location d'un soufflant électrique 3,3 kW",
+          "prix": "25,80 à 33,62 €",
+          "unite": "par jour, dégressif",
+          "note": "Pour une pièce ou deux, le temps qu'une pièce arrive. Nous vous disons si cela en vaut la peine.",
+          "source": {
+            "nom": "Loxam",
+            "url": "https://www.loxam.fr/p/chauffage-electr-230v-3-3kw/036-0050-010597",
+            "date": "relevé le 18 octobre 2026"
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "heading": "Pourquoi une fourchette plutôt qu'un prix fixe",
+      "body": "Deux chaudières de la même marque ne tombent pas en panne pour la même raison. Une sonde se change en vingt minutes, une carte électronique demande une commande et une seconde venue. Le prix suit le travail réel, pas un catalogue.\n\nC'est pourquoi nous posons des questions avant de partir. Marque, âge, code affiché, pression lue au manomètre. Avec ces quatre réponses, l'estimation donnée au téléphone tient dans la grande majorité des cas."
+    },
+    {
+      "heading": "Ce qu'il y a sur la facture, et rien d'autre",
+      "body": "Une ligne de déplacement, une ligne de diagnostic, puis la main-d'œuvre et les pièces, chacune avec sa référence. La majoration du soir ou du dimanche apparaît séparément quand elle s'applique.\n\nLe diagnostic reste dû si vous décidez de ne pas réparer. Il a demandé un déplacement et du temps, et il vous laisse une cause nommée, utile pour un devis de remplacement."
+    },
+    {
+      "heading": "L'eau calcaire du Doubs pèse sur l'eau chaude",
+      "body": "Besançon boit l'eau du karst jurassien, riche en calcaire. Il se dépose sur la résistance et au fond de la cuve des chauffe-eau. Un ballon entartré chauffe lentement, consomme plus et finit par percer.\n\nUn détartrage au bon moment coûte une fraction d'un remplacement. Nous regardons la cuve et l'anode à chaque passage sur un ballon, même venus pour autre chose."
+    },
+    {
+      "heading": "Quelle TVA sur votre intervention",
+      "body": "Dans un logement achevé depuis plus de deux ans, l'entretien et le dépannage d'un chauffage relèvent de la TVA à 10 %. La pose d'une pompe à chaleur air-eau ou d'une chaudière performante peut bénéficier du taux de 5,5 %.\n\nUn logement plus récent, ou une pièce vendue sans pose, reste à 20 %. Le taux retenu figure sur le devis et sur la facture."
+    }
+  ],
+  "cas": [
+    {
+      "titre": "Chaudière gaz en défaut un mardi soir",
+      "situation": "Appel à 20 h, code erreur de pression, logement à 16 °C. Venue le soir même, remise en eau et purge du circuit.",
+      "lignes": [
+        [
+          "Déplacement",
+          "30 à 70 €"
+        ],
+        [
+          "Diagnostic et remise en pression",
+          "80 à 150 €"
+        ],
+        [
+          "Majoration soirée",
+          "+25 à 50 %"
+        ]
+      ],
+      "total": "140 à 330 €"
+    },
+    {
+      "titre": "Flaque sous le ballon d'eau chaude",
+      "situation": "Le groupe de sécurité goutte sans s'arrêter. Pièce changée sur place, en journée, cuve vérifiée au passage.",
+      "lignes": [
+        [
+          "Déplacement",
+          "30 à 70 €"
+        ],
+        [
+          "Groupe de sécurité, pièce et pose",
+          "132 à 200 €"
+        ]
+      ],
+      "total": "160 à 270 €"
+    },
+    {
+      "titre": "Entretien d'automne et radiateurs tièdes en haut",
+      "situation": "Chaudière à condensation entretenue avant l'hiver, puis désembouage des sept radiateurs d'une maison de Saint-Vit.",
+      "lignes": [
+        [
+          "Entretien chaudière à condensation",
+          "140 à 190 €"
+        ],
+        [
+          "Désembouage de sept radiateurs",
+          "350 à 550 €"
+        ]
+      ],
+      "total": "490 à 740 €"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Le prix annoncé au téléphone peut-il changer sur place ?",
+      "a": "Il change seulement si la panne n'est pas celle décrite, par exemple une carte électronique au lieu d'une sonde. Dans ce cas, le nouveau montant vous est donné avant que le travail continue, et vous pouvez refuser."
+    },
+    {
+      "q": "Un dépannage le dimanche coûte-t-il plus cher à Besançon ?",
+      "a": "Oui, la main-d'œuvre est majorée de 25 à 50 % le soir, la nuit, le dimanche et les jours fériés. Si la panne peut attendre le lundi matin sans risque, nous vous le disons au téléphone."
+    },
+    {
+      "q": "Locataire ou propriétaire, qui paie la réparation du chauffe-eau ?",
+      "a": "L'entretien courant et les petites pièces d'usure reviennent au locataire. Le remplacement d'un appareil hors d'usage, d'une résistance percée par le calcaire ou d'un groupe de sécurité revient au propriétaire, sauf faute d'usage."
+    },
+    {
+      "q": "Combien coûte l'entretien obligatoire d'une chaudière gaz ?",
+      "a": "Les sources publiques relevées donnent 90 à 120 € pour une chaudière gaz classique et 140 à 190 € pour une chaudière à condensation. La visite est annuelle et une attestation vous est remise."
+    },
+    {
+      "q": "Combien coûte le remplacement d'un chauffe-eau électrique ?",
+      "a": "Entre 500 et 1 700 € fourni et posé selon la capacité, ancien appareil enlevé. Avant de remplacer, nous regardons si une résistance, un thermostat ou un détartrage suffit, pour une fraction de ce prix."
+    },
+    {
+      "q": "Le diagnostic est-il dû si je ne fais pas réparer ?",
+      "a": "Oui. Le déplacement et le diagnostic correspondent à un travail fait, et vous repartez avec la cause de la panne écrite. Elle sert ensuite à comparer les devis de réparation ou de remplacement."
+    }
+  ]
+}

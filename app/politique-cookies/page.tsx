@@ -4,8 +4,8 @@ import { buildMetadata } from '@/lib/seo'
 import { LegalPage } from '@/components/layout/LegalPage'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Politique de cookies',
-  description: `Utilisation des cookies sur le site ${siteConfig.businessName}.`,
+  title: 'Cookies du site SOS Chauffage Besançon, ce qui est déposé',
+  description: `Quels cookies le site ${siteConfig.businessName} dépose sur votre appareil, à quoi ils servent et comment les refuser depuis votre navigateur.`,
   path: '/politique-cookies',
   noindex: true,
 })
@@ -19,15 +19,15 @@ export default function PolitiqueCookies() {
       <section>
         <h2>Qu&apos;est-ce qu&apos;un cookie</h2>
         <p>
-          Un cookie est un petit fichier texte déposé sur votre appareil lors de la consultation
-          d&apos;un site web. Il permet notamment de mémoriser une préférence ou de faire
-          fonctionner certaines fonctionnalités techniques.
+          Un cookie est un court fichier que le navigateur garde sur votre appareil quand vous
+          visitez un site. Il sert par exemple à retenir une préférence ou à faire tourner une
+          fonction technique.
         </p>
       </section>
       <section>
         <h2>Cookies utilisés sur ce site</h2>
         <p>
-          Seuls des cookies strictement nécessaires au fonctionnement du site peuvent être déposés.
+          Ce site ne pose que les cookies indispensables à son fonctionnement.
           <strong> Aucun cookie publicitaire, aucun traceur tiers, aucune mesure d&apos;audience</strong>{' '}
           n&apos;est utilisé en l&apos;état.
         </p>

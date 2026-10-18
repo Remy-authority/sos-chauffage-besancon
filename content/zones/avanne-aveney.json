@@ -45,5 +45,7 @@
       "q": "Faut-il remplacer une chaudière des années quatre-vingt-dix ?",
       "a": "Pas nécessairement, et surtout pas sans avoir vérifié l'état du circuit. Une chaudière remplacée sur un circuit embouté donne un résultat décevant, parce que le problème de confort n'était pas dans l'appareil. Nous diagnostiquons d'abord la circulation, ensuite seulement nous parlons de remplacement, et nous vous disons si la réparation tient encore quelques saisons."
     }
-  ]
+  ],
+  "fait": "Avanne-Aveney, à l'ouest de Besançon, sur la rive gauche du Doubs, compte 2 256 habitants sur 8,5 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

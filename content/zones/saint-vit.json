@@ -5,8 +5,8 @@
   "orientation": "Ouest",
   "imageAlt": "Rue en pente d’un bourg comtois bordée de maisons en pierre, ouverte sur les champs et les collines boisées",
   "context": "Deuxième commune du Grand Besançon, à l'ouest sur l'axe de Dole, avec un habitat qui mélange bâti ancien, lotissements récents et petit collectif.",
-  "metaTitle": "Chauffagiste à Saint-Vit, dépannage chauffage urgence",
-  "metaDescription": "Dépannage de chauffage et de chaudière à Saint-Vit (25410). Panne de chaudière gaz ou fioul, radiateurs froids, entretien annuel. Ligne ouverte 7j/7.",
+  "metaTitle": "Saint-Vit, réparation de chauffage et chaudière en urgence",
+  "metaDescription": "Saint-Vit (25410), à mi-chemin de Dole : réparation de chaudière gaz ou fioul, remise en route du chauffage, entretien annuel. Ligne ouverte 7j/7.",
   "h1": "Dépannage chauffage et chaudière à Saint-Vit",
   "intro": "Nous intervenons à Saint-Vit (25410) pour le dépannage de chauffage, la remise en service de chaudière et l'entretien annuel obligatoire. Deuxième commune du Grand Besançon par sa population, Saint-Vit s'étend à l'ouest de l'agglomération le long de l'axe qui file vers Dole, avec un parc de logements très varié : maisons anciennes du bourg, lotissements pavillonnaires plus récents et quelques ensembles collectifs.",
   "blocks": [
@@ -45,5 +45,7 @@
       "q": "Faites-vous l'entretien annuel obligatoire à Saint-Vit ?",
       "a": "Oui, sur chaudière gaz comme sur chaudière fioul, avec remise de l'attestation d'entretien à l'issue de la visite. La meilleure période va d'août à octobre : le chauffage ne tourne pas encore en continu, les défauts repérés peuvent être corrigés avant l'hiver et les délais de rendez-vous sont courts."
     }
-  ]
+  ],
+  "fait": "Saint-Vit, à l'ouest de Besançon, à mi-chemin de Dole, compte 5 133 habitants sur 16,5 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

@@ -6,9 +6,9 @@
   "imageAlt": "Rue principale d’un village comtois bordée de maisons en pierre, coteau boisé fermant la perspective",
   "context": "Commune du nord-est de l'agglomération, installée dans la vallée du Doubs, à dominante de maisons individuelles.",
   "metaTitle": "Chauffagiste à Roche-lez-Beaupré, dépannage 7j/7",
-  "metaDescription": "Dépannage de chauffage à Roche-lez-Beaupré (25220) : panne de chaudière, radiateurs froids, pompe à chaleur, entretien annuel obligatoire.",
+  "metaDescription": "Dépannage de chauffage à Roche-lez-Beaupré (25220), au bord du Doubs. Panne de chaudière, pompe à chaleur qui ne chauffe plus, radiateurs froids, entretien.",
   "h1": "Dépannage chauffage à Roche-lez-Beaupré, urgence",
-  "intro": "Nous intervenons à Roche-lez-Beaupré (25220) pour le dépannage de chauffage et l'entretien annuel de chaudière. Située au nord-est de Besançon dans la vallée du Doubs, la commune est composée principalement de maisons individuelles, avec des installations dont le dimensionnement doit tenir compte d'un environnement de fond de vallée, plus froid et plus humide que les plateaux voisins.",
+  "intro": "Dépannage de chauffage et entretien annuel de chaudière, nous intervenons à Roche-lez-Beaupré (25220). Située au nord-est de Besançon dans la vallée du Doubs, la commune est composée principalement de maisons individuelles, avec des installations dont le dimensionnement doit tenir compte d'un environnement de fond de vallée, plus froid et plus humide que les plateaux voisins.",
   "blocks": [
     {
       "heading": "Le dimensionnement, un sujet réel en fond de vallée",
@@ -45,5 +45,7 @@
       "q": "Que faire si le chauffage s'arrête pendant une vague de froid ?",
       "a": "Appelez sans attendre plutôt que de reporter au lendemain : un logement non chauffé se refroidit rapidement et le réseau d'eau devient vulnérable au gel. En attendant, fermez les pièces inutilisées, relevez le code affiché sur la chaudière et vérifiez la pression du circuit : ces deux informations nous font gagner un temps réel sur le diagnostic."
     }
-  ]
+  ],
+  "fait": "Roche-lez-Beaupré, au nord-est de Besançon, au bord du Doubs, compte 2 158 habitants sur 5,6 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }

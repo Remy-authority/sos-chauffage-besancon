@@ -29,6 +29,8 @@ export interface ContentBlock {
   image?: string
   imageAlt?: string
   imageCaption?: string
+  /** Schéma dessiné (SVG animé) rendu sous le texte du bloc. */
+  dessin?: 'coupe-ballon'
 }
 
 export interface Service {
@@ -114,6 +116,49 @@ export interface Article {
   content: string
 }
 
+/* ───────────────────────────── Tarifs ───────────────────────────── */
+
+/** Source publique d'un prix : nom, lien et mention de date telle qu'affichée. */
+export interface SourceRef {
+  nom: string
+  url?: string
+  /** Texte affiché tel quel (« article du 28 décembre 2025 », « relevé le 18 octobre 2026 »). */
+  date?: string
+}
+
+export interface TarifLigne {
+  id: string
+  poste: string
+  prix: string
+  unite?: string
+  note?: string
+  source: SourceRef
+}
+
+export interface TarifGroupe {
+  titre: string
+  lignes: TarifLigne[]
+}
+
+export interface CasConcret {
+  titre: string
+  situation: string
+  lignes: [string, string][]
+  total: string
+}
+
+export interface Tarifs {
+  metaTitle: string
+  metaDescription: string
+  h1: string
+  intro: string
+  miseAJour: string
+  groupes: TarifGroupe[]
+  blocks: ContentBlock[]
+  cas: CasConcret[]
+  faq: FaqItem[]
+}
+
 /* ─────────────────────── Helpers fs + validation ─────────────────────── */
 
 function readJsonDir<T>(dir: string, required: (keyof T)[]): T[] {
@@ -140,6 +185,23 @@ function readJsonDir<T>(dir: string, required: (keyof T)[]): T[] {
 }
 
 /* ───────────────────────────── Services ───────────────────────────── */
+
+function readJsonFile<T>(file: string): T | undefined {
+  const full = path.join(CONTENT_DIR, file)
+  if (!fs.existsSync(full)) return undefined
+  try {
+    return JSON.parse(fs.readFileSync(full, 'utf8')) as T
+  } catch (e) {
+    throw new Error(`content/${file} : JSON invalide, ${(e as Error).message}`)
+  }
+}
+
+/** Grille de prix sourcée de /tarifs (content/tarifs.json). Aucun prix n'en sort vers le JSON-LD. */
+export function getTarifs(): Tarifs | undefined {
+  const t = readJsonFile<Tarifs>('tarifs.json')
+  if (!t) return undefined
+  return { ...t, groupes: t.groupes || [], blocks: t.blocks || [], cas: t.cas || [], faq: t.faq || [] }
+}
 
 export function getServices(): Service[] {
   const items = readJsonDir<Service>('services', [

@@ -5,10 +5,10 @@
   "orientation": "Ouest",
   "imageAlt": "Maisons de pierre en lisière d’une forêt de sapins givrée, fumée aux cheminées un matin d’hiver",
   "context": "Commune résidentielle de l'ouest de l'agglomération, dans un secteur boisé où les hivers se font sentir plus tôt.",
-  "metaTitle": "Dépannage chauffage à Serre-les-Sapins, urgence",
-  "metaDescription": "Chauffagiste urgence à Serre-les-Sapins (25770) : dépannage de chaudière, pompe à chaleur, radiateurs froids, entretien annuel obligatoire.",
+  "metaTitle": "Urgence chauffage Serre-les-Sapins, réparation chaudière",
+  "metaDescription": "Serre-les-Sapins (25770) : pompe à chaleur qui givre, chaudière en sécurité, radiateurs froids, nous intervenons en urgence et assurons l'entretien annuel.",
   "h1": "Chauffagiste urgence à Serre-les-Sapins, dépannage",
-  "intro": "Nous intervenons à Serre-les-Sapins (25770) pour le dépannage de chauffage et l'entretien annuel de chaudière. À l'ouest de Besançon, dans un secteur résidentiel et boisé, la commune connaît des hivers qui se manifestent tôt et durent. C'est un contexte où une installation approximative se remarque immédiatement, et où l'anticipation vaut mieux que le dépannage.",
+  "intro": "Nous dépannons le chauffage à Serre-les-Sapins (25770) et y assurons l'entretien annuel des chaudières. À l'ouest de Besançon, dans un secteur résidentiel et boisé, la commune connaît des hivers qui se manifestent tôt et durent. C'est un contexte où une installation approximative se remarque immédiatement, et où l'anticipation vaut mieux que le dépannage.",
   "blocks": [
     {
       "heading": "Une saison de chauffe qui commence tôt",
@@ -43,7 +43,9 @@
     },
     {
       "q": "Intervenez-vous en urgence à Serre-les-Sapins ?",
-      "a": "Oui, notre ligne est ouverte 7j/7, week-ends et jours fériés compris. Nous priorisons les logements occupés qui ne sont plus chauffés du tout, en particulier pendant les épisodes de gel. Le créneau exact vous est annoncé au téléphone en fonction du planning réel du moment."
+      "a": "Oui. Samedi, dimanche ou jour férié, quelqu'un décroche et une tournée part. Les logements habités sans aucun chauffage passent en premier, surtout pendant les épisodes de gel. Le créneau exact vous est annoncé au téléphone en fonction du planning réel du moment."
     }
-  ]
+  ],
+  "fait": "Serre-les-Sapins, à l'ouest de Besançon, compte 2 004 habitants sur 5,3 km².",
+  "source": "Population et superficie : geo.api.gouv.fr (INSEE), relevé le 18 octobre 2026."
 }
