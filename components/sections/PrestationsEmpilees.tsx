@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import type { Service } from '@/lib/content'
@@ -6,7 +7,8 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 
 /**
  * Bloc 4 de l'accueil : les neuf prestations UNE PAR UNE, empilées (jamais un
- * carrousel, #R71), picto dessiné animé, une phrase de 15 mots au plus (#R67).
+ * carrousel, #R71), chacune avec la photo de la prestation (`public/services/<slug>.jpg`,
+ * la même que sa page), picto dessiné animé, une phrase de 15 mots au plus (#R67).
  * Le paragraphe des tarifs, en bas, est le SEUL lien vers /tarifs dans le corps
  * de l'accueil (#R46, #R50) : jamais au menu ni au bloc 1.
  */
@@ -44,29 +46,39 @@ export function PrestationsEmpilees({ services }: { services: Service[] }) {
           eyebrow="Ce que nous faisons"
           title="Nos prestations de chauffage à Besançon"
         />
-        <ol className="mx-auto mt-12 max-w-colonne divide-y divide-calcaire-pierre border-y border-calcaire-pierre lg:mt-16">
+        <ol className="mx-auto mt-12 grid max-w-colonne gap-5 sm:gap-4 lg:mt-16">
           {services.map((s, k) => (
             <li key={s.slug} className="entree" style={{ ['--decal' as string]: `${k * 0.06}s` }}>
               <Link
                 href={`/services/${s.slug}`}
-                className="group grid grid-cols-[3.25rem_1fr] items-start gap-4 py-6 transition-colors duration-300 hover:bg-calcaire-neige sm:grid-cols-[3.25rem_4rem_1fr_auto] sm:items-center sm:gap-6 lg:py-7"
+                className="group grid overflow-hidden rounded-plaque border border-calcaire-pierre bg-calcaire-neige transition-colors duration-300 hover:border-laiton-patine sm:grid-cols-[15rem_1fr_auto] sm:items-center"
               >
-                <span className="chiffre pt-1 font-titre text-sm text-laiton-patine sm:pt-0">{String(k + 1).padStart(2, '0')}</span>
-                <span className="hidden h-16 w-16 items-center justify-center rounded-plaque bg-fonte-abysse text-laiton-clair sm:inline-flex">
-                  <Picto nom={PICTOS[s.icon] ?? 'flamme'} className="h-9 w-9" delai={`${0.15 + k * 0.06}s`} />
+                <span className="relative block aspect-[16/9] overflow-hidden bg-fonte-abysse sm:aspect-[8/5] sm:h-full">
+                  <Image
+                    src={`/services/${s.slug}.jpg`}
+                    alt={s.imageAlt ?? ''}
+                    fill
+                    sizes="(min-width: 640px) 240px, (min-width: 520px) 480px, 100vw"
+                    quality={60}
+                    className="object-cover transition-transform duration-700 ease-thermique group-hover:scale-[1.04]"
+                  />
+                  <span className="absolute bottom-3 left-3 inline-flex h-11 w-11 items-center justify-center rounded-plaque bg-fonte-abysse/90 text-laiton-clair sm:hidden">
+                    <Picto nom={PICTOS[s.icon] ?? 'flamme'} className="h-6 w-6" />
+                  </span>
                 </span>
-                <span>
-                  <span className="flex items-center gap-3 sm:block">
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-plaque bg-fonte-abysse text-laiton-clair sm:hidden">
-                      <Picto nom={PICTOS[s.icon] ?? 'flamme'} className="h-6 w-6" />
+                <span className="block px-5 pb-6 pt-4 sm:px-6 sm:py-5">
+                  <span className="flex items-center gap-3">
+                    <span className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-plaque bg-fonte-abysse text-laiton-clair sm:inline-flex">
+                      <Picto nom={PICTOS[s.icon] ?? 'flamme'} className="h-6 w-6" delai={`${0.15 + k * 0.06}s`} />
                     </span>
+                    <span className="chiffre font-titre text-sm text-laiton-patine">{String(k + 1).padStart(2, '0')}</span>
                     <h3 className="font-titre text-titre-s text-fonte-abysse">{s.navTitle}</h3>
                   </span>
                   <p className="mt-2 text-lecture text-calcaire-basalte">{PHRASES[s.slug] ?? s.intro}</p>
                 </span>
                 <ArrowRight
                   size={18}
-                  className="hidden text-laiton-patine transition-transform duration-300 group-hover:translate-x-1 sm:block"
+                  className="mr-6 hidden text-laiton-patine transition-transform duration-300 group-hover:translate-x-1 sm:block"
                   aria-hidden="true"
                 />
               </Link>

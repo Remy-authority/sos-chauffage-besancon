@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowLeft,
@@ -41,6 +41,13 @@ const SITUATIONS: { id: string; label: string; Icone: LucideIcon }[] = [
   { id: 'Autre situation', label: 'Autre situation', Icone: CircleAlert },
 ]
 
+/** La carte du premier écran (téléphone) envoie la panne choisie aux vrais formulaires. */
+const EVENEMENT_PANNE = 'besancon:panne-choisie'
+/** Demande au bloc 1 d'installer sa séquence AVANT le saut, sinon la page s'allonge sous le visiteur. */
+export const EVENEMENT_INSTALLER = 'besancon:bloc1-installer'
+/** Choix en cours : la carte est recréée quand le bloc 1 s'installe, elle le garde allumé. */
+let choixEnCours = ''
+
 const URGENCES = ['C’est urgent', 'Dans la journée', 'Cette semaine', 'Je planifie']
 
 function Jauge({ etape }: { etape: Etape }) {
@@ -77,11 +84,19 @@ const variantesEtape = {
   sortie: { opacity: 0, x: -16 },
 }
 
-export function LeadForm({ variante = 'normal' }: { variante?: 'normal' | 'compact' } = {}) {
+export function LeadForm({
+  variante = 'normal',
+  ecran1 = false,
+}: {
+  variante?: 'normal' | 'compact'
+  /** Premier écran du téléphone (règle du 13/10/2026) : la seule question, le choix ouvre le
+   *  formulaire du bas de page (#devis) à l'étape 2, déjà rempli. */
+  ecran1?: boolean
+} = {}) {
   const compact = variante === 'compact'
   const [etape, setEtape] = useState<Etape>(1)
   const [champs, setChamps] = useState<Champs>({
-    probleme: '',
+    probleme: ecran1 ? choixEnCours : '',
     ville: '',
     urgence: '',
     nom: '',
@@ -90,6 +105,29 @@ export function LeadForm({ variante = 'normal' }: { variante?: 'normal' | 'compa
     message: '',
   })
   const [statut, setStatut] = useState<'repos' | 'envoi' | 'erreur'>('repos')
+
+  // Les vrais formulaires reçoivent la panne choisie sur la carte du premier écran : étape 2.
+  useEffect(() => {
+    if (ecran1) return
+    const recevoir = (e: Event) => {
+      setChamps((prec) => ({ ...prec, probleme: (e as CustomEvent<string>).detail }))
+      setEtape(2)
+    }
+    window.addEventListener(EVENEMENT_PANNE, recevoir)
+    return () => window.removeEventListener(EVENEMENT_PANNE, recevoir)
+  }, [ecran1])
+
+  /** Carte du premier écran : le choix s'allume, le bloc 1 s'installe, puis saut au formulaire. */
+  function versFormulaire(id: string) {
+    choixEnCours = id
+    definir('probleme', id)
+    window.dispatchEvent(new Event(EVENEMENT_INSTALLER))
+    window.setTimeout(() => {
+      window.dispatchEvent(new CustomEvent<string>(EVENEMENT_PANNE, { detail: id }))
+      document.getElementById('devis')?.scrollIntoView({ behavior: 'instant' as ScrollBehavior, block: 'start' })
+      choixEnCours = ''
+    }, 170)
+  }
 
   function definir<K extends keyof Champs>(cle: K, valeur: Champs[K]) {
     setChamps((prec) => ({ ...prec, [cle]: valeur }))
@@ -110,6 +148,44 @@ export function LeadForm({ variante = 'normal' }: { variante?: 'normal' | 'compa
     }
   }
 
+  if (ecran1)
+    return (
+      <div
+        className="grain relative overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-coulee p-4 shadow-releve"
+        role="region"
+        aria-label="Décrire votre panne"
+      >
+        <div aria-hidden="true" className="trame-graduee-fine absolute inset-0 opacity-60" />
+        <div className="relative">
+          <p className="whitespace-nowrap text-center font-titre text-[1.2rem] leading-tight text-calcaire-neige">Qu’est-ce qui ne chauffe plus ?</p>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            {SITUATIONS.map(({ id, label, Icone }) => {
+              const choisi = champs.probleme === id
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => versFormulaire(id)}
+                  aria-pressed={choisi}
+                  className={`flex min-h-[44px] items-center gap-2.5 rounded-module border px-3 py-2 text-left text-legende font-medium leading-tight transition-colors duration-200 ${
+                    choisi
+                      ? 'border-laiton-franc bg-laiton-franc/15 text-calcaire-neige'
+                      : 'border-calcaire-neige/10 bg-calcaire-neige/[0.03] text-calcaire-brume active:bg-calcaire-neige/[0.08]'
+                  }`}
+                >
+                  <Icone
+                    className={`h-[18px] w-[18px] shrink-0 ${choisi ? 'text-laiton-clair' : 'text-jura-mousse'}`}
+                    strokeWidth={1.7}
+                    aria-hidden="true"
+                  />
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    )
 
   return (
     <div

@@ -26,14 +26,30 @@ function visible(etape: number, de: number, a?: number) {
   return { 'data-de': de, style: { opacity: vu ? 1 : 0, transition: 'opacity .3s ease-out' } }
 }
 
-function Etiquette({ etape, k, x, y, texte, vers, ancre }: { etape: number; k: number; x: number; y: number; texte: string; vers: [number, number]; ancre?: 'start' | 'end' }) {
-  const gauche = ancre ? ancre === 'start' : vers[0] < x
+/**
+ * Étiquette d'un temps : cartouche net (fond crème, texte encre, angles 2 px) posé là où rien
+ * du dessin ne passe, trait jaune miel jusqu'au point montré (règle §2.2, Rémy 18/10/2026 :
+ * plus jamais une étiquette coupée par la loupe ni touchée par un tuyau).
+ * `x` est le bord gauche (`ancre` start) ou droit (end) du cartouche, `y` son haut.
+ */
+const POLICE = 30
+const INTERLIGNE = 36
+function Etiquette({ etape, k, x, y, lignes, vers, ancre = 'start' }: { etape: number; k: number; x: number; y: number; lignes: string[]; vers: [number, number]; ancre?: 'start' | 'end' }) {
+  const larg = Math.ceil(Math.max(...lignes.map((l) => l.length)) * 15.7) + 28
+  const haut = lignes.length * INTERLIGNE + 14
+  const g = ancre === 'start' ? x : x - larg
+  const de: [number, number] = [Math.min(Math.max(vers[0], g), g + larg), Math.min(Math.max(vers[1], y), y + haut)]
   return (
     <g className="cf-miel" data-k={k} {...visible(etape, k, k)}>
-      <path d={`M${vers[0]} ${vers[1]} L${x} ${y}`} stroke={MIEL} strokeWidth="3" strokeLinecap="round" />
-      <circle cx={vers[0]} cy={vers[1]} r="6" fill={MIEL} />
-      <text x={x} y={y - 12} fill={BORD} fontSize="26" fontWeight="600" textAnchor={gauche ? 'start' : 'end'} fontFamily="var(--police-texte), system-ui, sans-serif">
-        {texte}
+      <path d={`M${vers[0]} ${vers[1]} L${de[0]} ${de[1]}`} stroke={MIEL} strokeWidth="4" strokeLinecap="round" />
+      <circle cx={vers[0]} cy={vers[1]} r="7" fill={MIEL} stroke={BORD} strokeWidth="2" />
+      <rect x={g} y={y} width={larg} height={haut} rx="4" fill="#FBF8F2" stroke={BORD} strokeWidth="2.5" />
+      <text x={g + 14} y={y + 7 + POLICE} fill={BORD} fontSize={POLICE} fontWeight="600" fontFamily="var(--police-texte), system-ui, sans-serif">
+        {lignes.map((l, i) => (
+          <tspan key={l} x={g + 14} dy={i === 0 ? 0 : INTERLIGNE}>
+            {l}
+          </tspan>
+        ))}
       </text>
     </g>
   )
@@ -171,12 +187,12 @@ export default function CoupeIntervention({ serre = false, etape, ...props }: { 
       </g>
 
       {/* étiquettes jaune miel, une par temps */}
-      <Etiquette etape={t} k={0} x={845} y={300} texte="Le code erreur, lu au téléphone" vers={[880, 338]} />
-      <Etiquette etape={t} k={1} x={670} y={690} texte="Prix annoncé avant de partir" vers={[700, 592]} ancre="start" />
-      <Etiquette etape={t} k={2} x={405} y={540} texte="Pièces courantes à bord" vers={[270, 618]} />
-      <Etiquette etape={t} k={3} x={800} y={490} texte="Pression, allumage, échangeur" vers={[840, 420]} />
-      <Etiquette etape={t} k={4} x={870} y={600} texte="Pièce remplacée" vers={[900, 465]} />
-      <Etiquette etape={t} k={5} x={575} y={162} texte="Chauffage et eau chaude vérifiés" vers={[692, 272]} />
+      <Etiquette etape={t} k={0} x={845} y={226} ancre="end" lignes={['Le code erreur,', 'lu au téléphone']} vers={[880, 338]} />
+      <Etiquette etape={t} k={1} x={680} y={606} lignes={['Prix annoncé', 'avant de partir']} vers={[700, 592]} />
+      <Etiquette etape={t} k={2} x={160} y={490} lignes={['Les pièces', 'à bord']} vers={[270, 616]} />
+      <Etiquette etape={t} k={3} x={835} y={218} ancre="end" lignes={['Pression, allumage,', 'échangeur']} vers={[840, 388]} />
+      <Etiquette etape={t} k={4} x={700} y={580} lignes={['Pièce remplacée']} vers={[900, 462]} />
+      <Etiquette etape={t} k={5} x={165} y={80} lignes={['Chauffage et eau', 'chaude vérifiés']} vers={[686, 270]} />
     </svg>
   )
 }

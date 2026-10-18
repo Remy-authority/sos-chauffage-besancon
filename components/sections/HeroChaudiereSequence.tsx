@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { getImageProps } from 'next/image'
+import { EVENEMENT_INSTALLER } from '@/components/ui/LeadForm'
 import { EcorcheChaudiere, HAUTEUR_ECORCHE, LARGEUR_ECORCHE, animerEcorche, echelleEcorche } from '@/components/ui/EcorcheChaudiere'
 import { BANDE_MOBILE, CHAUDIERE, GRILLE_ORDI, HAUTEUR, LARGEUR, PHOTO_BLOC1, QUALITE_BLOC1, TAILLES_BLOC1, VOILE_MOBILE, VOILE_ORDI } from '@/components/sections/chaudiere-reglages'
 
@@ -142,7 +143,10 @@ export default function HeroChaudiereSequence({
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
     const GESTES = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'keydown'] as const
     let arme = false
-    const lancer = () => {
+    const lancer = (e?: Event) => {
+      // Un doigt posé sur la carte du premier écran : le clic doit atteindre la carte, la carte
+      // installe elle-même la séquence avant de sauter au formulaire.
+      if ((e?.target as Element | null)?.closest?.('[data-carte-ecran1]')) return
       retirer()
       setMode('B')
     }
@@ -159,10 +163,19 @@ export default function HeroChaudiereSequence({
       arme = true
       GESTES.forEach((g) => window.addEventListener(g, lancer, { passive: true }))
     }
+    // La carte du premier écran installe la séquence avant de sauter au formulaire, seulement en
+    // version A armée : jamais en repli (« réduire les animations », réseau lent).
+    const installer = () => {
+      if (!arme) return
+      retirer()
+      setMode('B')
+    }
     maj()
     mq.addEventListener('change', maj)
+    window.addEventListener(EVENEMENT_INSTALLER, installer)
     return () => {
       retirer()
+      window.removeEventListener(EVENEMENT_INSTALLER, installer)
       mq.removeEventListener('change', maj)
     }
   }, [])

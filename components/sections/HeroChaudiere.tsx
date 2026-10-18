@@ -206,9 +206,15 @@ export function HeroChaudiere() {
             <Phone size={18} strokeWidth={2.1} aria-hidden="true" />
             {siteConfig.phoneDisplay}
           </Button>
-          <Button href="#demande" variant="verre" size="ample" className="whitespace-nowrap">
+          <Button href="#demande" variant="verre" size="ample" className="whitespace-nowrap max-lg:hidden">
             Décrire ma panne
           </Button>
+        </div>
+
+        {/* Téléphone et tablette : la question du formulaire dès l'ouverture (règle du 13/10/2026),
+            elle s'efface avec le titre au défilement, et reste posée dans le repli sans animation. */}
+        <div data-carte-ecran1="" className="mt-5 w-full max-w-md text-left lg:hidden">
+          <LeadForm ecran1 />
         </div>
 
         {reassurance('vivant mt-8 hidden w-full max-w-[30rem] border-t border-calcaire-neige/15 pt-6 lg:grid')}
