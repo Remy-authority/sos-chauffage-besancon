@@ -1,7 +1,7 @@
 # TODO — SOS Chauffage Besançon
 
 ## Mise à jour n°1 (kickoff 18/10/2026, `docs/KICKOFF-MAJ-18-10.md`)
-État : GO Rémy (« ok go ») le 18/10 ; les 10 chantiers sont codés sur la branche `maj-1-18-10`, aperçu Vercel livré, série de contrôles CODE 0 sur le commit 7d13df4. RESTE : GO de Rémy sur la photo du bloc 1 (coût à valider), puis GO de mise en ligne, puis l'après-mise en ligne (test formulaire, fin de site, Rank OS).
+État : GO Rémy (« ok go ») le 18/10 ; les 10 chantiers sont codés sur la branche `maj-1-18-10`, aperçu Vercel livré, série de contrôles CODE 0 sur le commit c87c63e (relecture à froid faite, 6 corrections). RESTE : GO de Rémy sur les 13 images (bloc 1 + 12 communes, ≈ 0,75 $), puis GO de mise en ligne, puis l'après-mise en ligne (test formulaire, fin de site, Rank OS).
 Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 
 ### §0 État des lieux (18/10/2026, production, commit 3b3ef4d)
@@ -42,7 +42,7 @@ Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 - Interdits : téléphone inchangé (03 53 01 00 25, phoneIsDemo), jamais le 07, pas de RGE/avis/certif/chiffre inventé, pas de test formulaire sauf si modifié (1 envoi, signalé, effacé).
 
 ### Après le GO de Rémy sur l'aperçu (à faire dans l'ordre)
-- [ ] GO photo bloc 1 : générer 1 image (coût annoncé), recaler `CHAUDIERE` dans `chaudiere-reglages.ts`, refaire la bande téléphone, revoir le chevauchement à 1440.
+- [ ] GO images : photo du bloc 1 + 12 photos de prestation des communes (coût annoncé ≈ 0,75 $), recaler `CHAUDIERE` dans `chaudiere-reglages.ts`, refaire la bande téléphone, revoir le chevauchement à 1440.
 - [ ] Merge `maj-1-18-10` → main, production vérifiée au curl (title accueil).
 - [ ] Test du formulaire en production : UN envoi, signalé à Rémy, effacé après.
 - [ ] `python3 ../tasks/check-fin-de-site.py sos-chauffage-besancon.fr` CODE 0.
