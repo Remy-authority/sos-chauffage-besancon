@@ -19,11 +19,18 @@ import { CHAUDIERE } from '@/components/sections/chaudiere-reglages'
  * Traits et textes gardent une épaisseur en PIXELS D'ÉCRAN : `echelleEcorche(root, s)` les
  * convertit selon l'échelle d'affichage (attributs data-sw, data-fs, data-r).
  *
- * Repère : le cadre de la chaudière dans la photo (CHAUDIERE), 280 x 570 unités.
+ * Repère : le dessin est tracé en 280 x 570 unités (L0 x H0) ; il est réduit à l'échelle
+ * ECHELLE_DESSIN pour tenir dans le cadre réel de la chaudière sur la photo (CHAUDIERE), et
+ * centré dedans. La boîte extérieure (LARGEUR_ECORCHE x HAUTEUR_ECORCHE) fait la taille du cadre.
  */
 
 export const LARGEUR_ECORCHE = CHAUDIERE.largeur
 export const HAUTEUR_ECORCHE = CHAUDIERE.hauteur
+const L0 = 280
+const H0 = 570
+export const ECHELLE_DESSIN = Math.min(CHAUDIERE.largeur / L0, CHAUDIERE.hauteur / H0)
+const DECALAGE_X = (CHAUDIERE.largeur - L0 * ECHELLE_DESSIN) / 2
+const DECALAGE_Y = (CHAUDIERE.hauteur - H0 * ECHELLE_DESSIN) / 2
 
 const LAITON = 'rgb(var(--c-laiton-clair))'
 const LAITON_SOMBRE = 'rgb(var(--c-laiton-patine))'
@@ -63,7 +70,11 @@ export function EcorcheChaudiere({ className, style, boiteRef, fixe = false }: {
       style={{ width: L, height: H, ...style }}
       aria-hidden="true"
     >
-      <svg viewBox={`0 0 ${L} ${H}`} width={L} height={H} className="absolute left-0 top-0 overflow-visible" style={{ width: L, height: H }}>
+      <div
+        className="absolute left-0 top-0"
+        style={{ width: L0, height: H0, transform: `translate(${DECALAGE_X.toFixed(2)}px, ${DECALAGE_Y.toFixed(2)}px) scale(${ECHELLE_DESSIN.toFixed(5)})`, transformOrigin: '0 0' }}
+      >
+      <svg viewBox={`0 0 ${L0} ${H0}`} width={L0} height={H0} className="absolute left-0 top-0 overflow-visible" style={{ width: L0, height: H0 }}>
         {/* Fond de fonte translucide, posé derrière les pièces quand la façade s'ouvre. */}
         <rect data-fond="" x="10" y="10" width="260" height="550" rx="7" fill="rgb(var(--c-fonte-nuit))" opacity={fixe ? 0.94 : 0} />
 
@@ -193,6 +204,7 @@ export function EcorcheChaudiere({ className, style, boiteRef, fixe = false }: {
           </svg>
         </div>
       )}
+      </div>
     </div>
   )
 }
@@ -234,7 +246,8 @@ export function animerEcorche(root: HTMLElement, a: number, o: number, q: number
 
 /** Traits, rayons et textes en pixels d'écran : convertis selon l'échelle d'affichage s. */
 export function echelleEcorche(root: HTMLElement, s: number) {
-  const k = 1 / Math.max(0.05, s)
+  // `s` = pixels d'écran par unité de photo ; le dessin est en plus réduit à ECHELLE_DESSIN.
+  const k = 1 / Math.max(0.05, s * ECHELLE_DESSIN)
   root.querySelectorAll<SVGElement>('[data-sw],[data-fs],[data-r]').forEach((el) => {
     const d = el.dataset
     if (d.sw) el.setAttribute('stroke-width', (Number(d.sw) * k).toFixed(2))

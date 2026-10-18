@@ -19,21 +19,23 @@ export const QUALITE_BLOC1 = 70
 
 /**
  * Photo du téléphone et de la tablette : la bande verticale de la photo centrée sur la
- * chaudière (x 390 à 1 390 sur 1 600, centrée sur la chaudière à x 890), toute sa hauteur, agrandie puis ramenée à 2 700 px :
- * nette en densité 3, elle couvre tout le premier écran.
+ * chaudière (x 309 à 1 309 sur 1 600, centrée sur la chaudière à x 809), toute sa hauteur,
+ * découpée dans la source 2 752 px (1 720 px de large) puis ramenée à 2 700 px : nette en
+ * densité 3, elle couvre tout le premier écran.
  */
 export const BANDE_MOBILE = {
   src: '/accueil/chaudiere-murale-cuisine-telephone.webp',
-  x0: 390,
+  x0: 309,
   largeur: 1000,
   fichier: { largeur: 2700, hauteur: 2412 },
 }
 
 /**
  * La chaudière dans la photo (pixels à 1 600 px) : le cadre où le dessin en écorché se pose.
- * Recalé après la génération de la photo, sur la photo réelle.
+ * Mesuré le 18/10/2026 sur la photo générée (façade blanche : x 712 à 905, y 133 à 512) ;
+ * le dessin, tracé en 280 x 570 unités, se réduit tout seul à ce cadre (ECHELLE_DESSIN).
  */
-export const CHAUDIERE = { x0: 750, y0: 150, largeur: 280, hauteur: 570 }
+export const CHAUDIERE = { x0: 712, y0: 133, largeur: 193, hauteur: 379 }
 
 /**
  * `sizes` = la largeur réelle de l'image à l'écran, jamais celle de l'écran : la bande couvre le
@@ -42,12 +44,13 @@ export const CHAUDIERE = { x0: 750, y0: 150, largeur: 280, hauteur: 570 }
 export const TAILLES_BLOC1 = { ordi: '100vw', mobile: '(min-width: 768px) 1250px, 880px' }
 
 /**
- * Voile de l'ordinateur : il part de la gauche, sous le texte, et s'éteint avant la chaudière ;
+ * Voile de l'ordinateur : il part de la gauche, sous le texte (0,74 : la pierre et le chêne restent
+ * perceptibles derrière le titre, contrôle 3 du design), et s'éteint avant la chaudière ;
  * le formulaire, opaque, n'en a pas besoin. Paliers comptés depuis le bord de la grille (80rem
  * centrée), pas depuis l'écran.
  */
 export const VOILE_ORDI =
-  'bg-[linear-gradient(90deg,rgb(var(--c-fonte-nuit)/0.84)_calc(max(0px,50%_-_640px)_+_0px),rgb(var(--c-fonte-nuit)/0.78)_calc(max(0px,50%_-_640px)_+_300px),rgb(var(--c-fonte-nuit)/0.62)_calc(max(0px,50%_-_640px)_+_470px),rgb(var(--c-fonte-nuit)/0.34)_calc(max(0px,50%_-_640px)_+_570px),rgb(var(--c-fonte-nuit)/0.06)_calc(max(0px,50%_-_640px)_+_640px),rgb(var(--c-fonte-nuit)/0)_calc(max(0px,50%_-_640px)_+_720px))]'
+  'bg-[linear-gradient(90deg,rgb(var(--c-fonte-nuit)/0.74)_calc(max(0px,50%_-_640px)_+_0px),rgb(var(--c-fonte-nuit)/0.68)_calc(max(0px,50%_-_640px)_+_300px),rgb(var(--c-fonte-nuit)/0.56)_calc(max(0px,50%_-_640px)_+_470px),rgb(var(--c-fonte-nuit)/0.34)_calc(max(0px,50%_-_640px)_+_570px),rgb(var(--c-fonte-nuit)/0.06)_calc(max(0px,50%_-_640px)_+_640px),rgb(var(--c-fonte-nuit)/0)_calc(max(0px,50%_-_640px)_+_720px))]'
 /**
  * Voile du téléphone : une ombre douce derrière le texte, centrée, le haut et le bas assombris ;
  * jamais un aplat, la chaudière et la cuisine restent visibles.

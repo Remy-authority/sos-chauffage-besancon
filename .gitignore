@@ -33,3 +33,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# photos brutes de génération (16 Mo, gardées en local seulement)
+/docs/data/photos-18-10/brut/
