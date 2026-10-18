@@ -32,6 +32,12 @@
 - [18/10/2026] | Le contrôle design point 3 HERO mesure la texture derrière le TITRE (à gauche à 1440) : déplacer la chaudière vers la droite a laissé un dégradé plat derrière le H1 (écart-type 3,48 < 12) | Toute image de bloc 1 doit porter du relief à gauche, sous le voile, et se vérifie par le point 3 sur l'aperçu, pas seulement par l'œil.
 - [18/10/2026] | 126 champs de pages intérieures dépassaient 45 mots par paragraphe (règle #R67) sans que le texte soit mauvais | Découper par `\n\n` sans changer un mot, rendre par `paragraphes()` ; une phrase unique de plus de 45 mots se laisse telle quelle, les pages protégées ne se touchent pas.
 
+- [18/10/2026] | Le dessin provisoire du bloc 1 était ignoré par Chrome (image trop uniforme), la vitesse semblait intacte ; la vraie photo est devenue l'élément mesuré et la vitesse a chuté | Remesurer la vitesse APRÈS la pose de la vraie photo, jamais sur un gabarit provisoire.
+- [18/10/2026] | La séquence animée recréait la photo à l'hydratation et devenait l'élément mesuré, tard | Une séquence de bloc 1 s'installe au premier geste du visiteur, la version fixe servie par le serveur démarre au même cadre (écart mesuré au basculement).
+- [18/10/2026] | Aperçu Vercel 87 contre domaine 97 : l'aperçu charge une barre d'outils Vercel que la production n'a pas | Mesurer à armes égales : publier le code en ligne comme second aperçu (commit vide sur une branche temporaire, supprimée après) et comparer aperçu contre aperçu.
+- [18/10/2026] | check-serie rendait ECHEC : le contrôle avait été journalisé sous le nom `audit-design` | Le nom attendu est `design` ; le garde-fou des textes lisibles exige FAL_KEY exporté depuis `../.ops.env` (jamais affiché).
+- [18/10/2026] | Un écorché dessiné à taille fixe ne suivait pas la photo recadrée | Envelopper le dessin dans une échelle (`ECHELLE_DESSIN`) calculée sur la boîte de la photo.
+
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
 - [héritée] | Sites indexés trop tôt | SEO_NOINDEX=1 dès le tout premier déploiement, levé uniquement sur validation Rémy.
