@@ -133,12 +133,38 @@ export default function HeroChaudiereSequence({
   const fonduRef = useRef<HTMLDivElement>(null)
   const conclusionRef = useRef<HTMLParagraphElement>(null)
 
+  // La séquence s'installe au PREMIER GESTE du visiteur (défilement, molette, doigt, clic, touche),
+  // pas à l'hydratation : la version A rendue par le serveur porte déjà la même photo, au même
+  // cadre. Installée à l'hydratation, la séquence recréait la photo trois secondes plus tard
+  // (téléphone bridé) et Google la comptait comme le plus grand élément affiché (vitesse 94 → 86,
+  // mesuré le 18/10/2026). Après un geste, Google ne compte plus rien.
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const maj = () => setMode(mq.matches || reseauLent() ? 'F' : 'B')
+    const GESTES = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'keydown'] as const
+    let arme = false
+    const lancer = () => {
+      retirer()
+      setMode('B')
+    }
+    const retirer = () => {
+      if (!arme) return
+      arme = false
+      GESTES.forEach((g) => window.removeEventListener(g, lancer))
+    }
+    const maj = () => {
+      retirer()
+      if (mq.matches || reseauLent()) return setMode('F')
+      if (window.scrollY > 0) return setMode('B')
+      setMode((m) => (m === 'F' ? 'A' : m))
+      arme = true
+      GESTES.forEach((g) => window.addEventListener(g, lancer, { passive: true }))
+    }
     maj()
     mq.addEventListener('change', maj)
-    return () => mq.removeEventListener('change', maj)
+    return () => {
+      retirer()
+      mq.removeEventListener('change', maj)
+    }
   }, [])
 
   useEffetAvantPeinture(() => {

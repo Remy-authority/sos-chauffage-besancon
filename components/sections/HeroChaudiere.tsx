@@ -229,19 +229,23 @@ export function HeroChaudiere() {
 
   /* Téléphone et tablette : la photo couvre tout le premier écran, le texte est centré entre
      l'en-tête (64 px) et la barre du bas (72 px, téléphone seul). */
+  /* Même cadre que le départ de la séquence animée (HeroChaudiereSequence) : la photo commence
+     sous l'en-tête (69 px téléphone et tablette, 65 px ordinateur, hauteurs mesurées le
+     18/10/2026), la séquence remplace cette version au premier geste sans que l'écran bouge. */
   const versionA = (
     <section
       id="haut"
       data-sans-apparition=""
-      className="relative isolate overflow-hidden bg-fonte-nuit lg:flex lg:min-h-[max(calc(100svh-64px),640px)] lg:items-center lg:py-14"
+      className="relative isolate bg-fonte-nuit pt-[69px] lg:pt-[65px]"
       aria-labelledby="titre-hero"
     >
+      <div className="relative isolate overflow-hidden lg:flex lg:min-h-[max(calc(100vh-65px),640px)] lg:items-center lg:py-14">
       <div className="pointer-events-none absolute inset-0 -z-10 hidden lg:block" aria-hidden="true">
         <PhotoBloc1 mobile={false} />
         <div className={`absolute inset-0 ${VOILE_ORDI}`} />
       </div>
       <div className={`relative ${GRILLE_ORDI}`}>
-        <div className="relative isolate flex min-h-[max(calc(100svh-64px),540px)] flex-col justify-center pb-[calc(72px+1.5rem)] pt-6 md:pb-6 lg:col-start-1 lg:min-h-0 lg:p-0">
+        <div className="relative isolate flex min-h-[max(calc(100svh-69px),540px)] flex-col justify-center pb-[calc(72px+1.5rem)] pt-6 md:pb-6 lg:col-start-1 lg:min-h-0 lg:p-0">
           <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden lg:hidden" aria-hidden="true">
             <PhotoBloc1 mobile />
             <div className={`absolute inset-0 ${VOILE_MOBILE}`} />
@@ -251,6 +255,7 @@ export function HeroChaudiere() {
         <div id="demande" className="scroll-mt-20 pb-10 pt-8 lg:col-start-3 lg:flex lg:flex-col lg:justify-center lg:p-0">
           {formulaire}
         </div>
+      </div>
       </div>
     </section>
   )
