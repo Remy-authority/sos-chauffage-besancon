@@ -1,7 +1,7 @@
 # TODO — SOS Chauffage Besançon
 
 ## Mise à jour n°1 (kickoff 18/10/2026, `docs/KICKOFF-MAJ-18-10.md`)
-État : GO Rémy (« ok go ») le 18/10 ; les 10 chantiers sont codés sur la branche `maj-1-18-10`, aperçu Vercel livré, série de contrôles CODE 0 sur le commit c87c63e (relecture à froid faite, 6 corrections). RESTE : GO de mise en ligne (images faites le 18/10, série CODE 0 sur 03179cc), puis l'après-mise en ligne (test formulaire, fin de site, Rank OS).
+État : GO Rémy (« ok go ») le 18/10 ; les 10 chantiers sont codés sur la branche `maj-1-18-10`, aperçu Vercel livré, série de contrôles CODE 0 sur le commit c87c63e (relecture à froid faite, 6 corrections). EN LIGNE le 18/10 (main 7d12bb6), fin de site CODE 0, note 0 → 9. RESTE : Rémy demande l'indexation de l'accueil.
 Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 
 ### §0 État des lieux (18/10/2026, production, commit 3b3ef4d)
@@ -44,10 +44,10 @@ Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 ### Après le GO de Rémy sur l'aperçu (à faire dans l'ordre)
 - [x] GO images (« ok go ») : photo du bloc 1 + 12 communes, ≈ 0,54 $ fal.ai, `CHAUDIERE` recalé, bande téléphone refaite, vitesse rattrapée (perte 2 points à armes égales), série CODE 0 sur 03179cc.
 - [x] Retour de Rémy sur l'aperçu (formulaire absent du 1er écran téléphone, étiquettes du bloc 3 coupées, aucune photo de prestation) : carte au 1er écran, étiquettes dégagées, 9 prestations avec photo dont 5 refaites (≈ 0,18 $, GO « Oui va y »), repli sans animation corrigé ; commits 53d2447 et a61f24e ; série CODE 0 sur a61f24e.
-- [ ] GO de mise en ligne de Rémy.
-- [ ] Merge `maj-1-18-10` → main, production vérifiée au curl (title accueil).
-- [ ] Test du formulaire en production : UN envoi, signalé à Rémy, effacé après.
-- [ ] `python3 ../tasks/check-fin-de-site.py sos-chauffage-besancon.fr` CODE 0.
-- [ ] `gsc-indexation-pages.py --site` puis Rank OS › Tâches › Indexation : accueil refait + pages NON indexées seulement.
-- [ ] Fiche Rank OS : parSemaine 5, releveLe, autoblogEndsAt, entrée travaux, capture `cockpit/public/screens/sos-chauffage-besancon.png`, note APRÈS.
-- [ ] docs/ETAT.md et tasks/lessons.md à jour, compte rendu final (lien du site en 1re ligne).
+- [x] GO de mise en ligne de Rémy (« oui met en ligne strp », 18/10).
+- [x] Merge `maj-1-18-10` → main (89e9db4), production vérifiée au curl (title accueil).
+- [x] Test du formulaire en production : UN envoi (TEST, reçu Gmail 13:26 UTC) ; effacement Gmail refusé (droit manquant), demandé à Rémy.
+- [x] `python3 ../tasks/check-fin-de-site.py sos-chauffage-besancon.fr` CODE 0 (après « urgence » dans 6 titles de communes, 7d12bb6).
+- [x] `gsc-indexation-pages.py --site` puis Rank OS › Tâches › Indexation : accueil refait + pages NON indexées seulement.
+- [x] Fiche Rank OS (cockpit 0c93e392) : parSemaine 5, releveLe, autoblogEndsAt, entrée travaux, capture `cockpit/public/screens/sos-chauffage-besancon.png`, note APRÈS.
+- [x] docs/ETAT.md et tasks/lessons.md à jour, compte rendu final (lien du site en 1re ligne).

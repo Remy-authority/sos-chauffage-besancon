@@ -387,3 +387,10 @@ Décision Rémy : lancement SANS attendre le 09 Twilio (précédent Reims, numé
 - Aperçu : https://sos-chauffage-besancon-4w5w9isje-remy-2817s-projects.vercel.app (a61f24e), noindex vérifié.
 - Série sur a61f24e : blocs-pages (22 pages), design « AUCUN DÉFAUT » (points 11 et 12 verts), navigation (12 contrôles), footprint, visuels-articles CODE 0 ; check-serie « série complète (5 contrôles) passée sur le commit a61f24e6 » ; check-texte « OK : texte court » (762/800, 19/25).
 - Vitesse mobile à armes égales (code en ligne republié en aperçu, branche `mesure-en-ligne` supprimée) : en ligne 86/93/90 médiane 90, nouveau 88/94/88 médiane 88, perte 2 points (limite 3).
+
+### Mise en ligne du 18/10 (GO Rémy « oui met en ligne strp »)
+- main 89e9db4 (merge de `maj-1-18-10`), puis 7d12bb6 : « urgence » dans 6 titles de communes (besancon, ecole-valentin, franois, marchaux-chaudefontaine, miserey-salines, thise ; roche-lez-beaupre et avanne-aveney protégées, inchangées) et requête d'argent « urgence chaudière besançon » déclarée dans CLAUDE.md. Footprint CODE 0, audit-similarite-zones « TOUT EST CARRÉ ».
+- Formulaire : UN envoi test (nom TEST, filtré par Rank OS : ni fiche ni SMS), reçu dans Gmail à 13:26:53 UTC ; effacement Gmail refusé faute de droit, demandé à Rémy. check-resend CODE 0.
+- `check-fin-de-site.py sos-chauffage-besancon.fr` : CODE 0, « OK : contrôle SEO et GEO complet, aucun défaut ».
+- Indexation (gsc-indexation-pages : 44/74) : posées dans Rank OS l'accueil refait, /tarifs, /zones/besancon (depuis 18/10), /zones/miserey-salines et /zones/serre-les-sapins (en double) ; les 25 articles non indexés sont ignorés par Rank OS (règle du fichier).
+- Rank OS (cockpit 0c93e392) : travaux 18/10 note 0 → 9 (point 9 à moitié : vitesse 88 sous les 91 visés), autoblog 5/semaine relevé le 18/10, fin 14/01/2027, capture refaite et regardée.
