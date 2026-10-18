@@ -15,7 +15,7 @@ export const PHOTO_BLOC1 = {
   largeur: 2400,
   hauteur: 1340,
 }
-export const QUALITE_BLOC1 = 70
+export const QUALITE_BLOC1 = 50
 
 /**
  * Photo du téléphone et de la tablette : la bande verticale de la photo centrée sur la
