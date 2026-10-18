@@ -22,6 +22,10 @@
 
 - [30/07/2026] | Cover du pilote images validée par le Builder PUIS par le CEO alors qu'un lavabo était posé au ras du sol (aberration de génération) ; c'est Rémy qui l'a vue | Le contrôle des images générées ne s'arrête pas à l'anatomie : vérifier aussi la PLAUSIBILITÉ PHYSIQUE de la scène, en listant les objets un par un et en se demandant pour chacun « est-il à une hauteur/position/taille normale ? » (lavabo, prises, fenêtres, robinets, meubles). Une scène « belle » n'est pas une scène juste. Dans les prompts : limiter le nombre d'objets secondaires, les générateurs ratent surtout le mobilier périphérique.
 
+- [18/10/2026] | Le contrôle `check-blocs-pages.mjs` refuse toute adresse hors `*.vercel.app` (code 2) : impossible en local, et un `| tail` aurait masqué le code | Le lancer seulement sur l'aperçu Vercel, après le push, via `controle.sh` ; en local, se contenter de compter les `<img` au curl.
+- [18/10/2026] | Un dessin SVG posé « en place » sur une page cachait une pièce (filtre fioul derrière le brûleur), un tuyau passait sous le sol, un repère s'arrêtait à 50 px de sa cible : rien ne le dit au build | Rendre les SVG en planche-contact PNG (Playwright, SVG inline, jamais `file://`) et les REGARDER un par un avant de les relier ; un visuel dessiné se juge comme une photo.
+- [18/10/2026] | La légende automatique d'une couverture de commune donnait « Besançon, centre de Besançon » | Toute légende construite à partir de données prévoit le cas de la commune centre ; relire les légendes générées sur la page, pas seulement le gabarit.
+
 ## Leçons héritées du portefeuille (sites 1-5)
 - [héritée] | Leads perdus sur les premiers sites faute d'infra | Twilio 09 (VoiceUrl vérifié) + Resend testé (lead reçu) AVANT toute mise en ligne.
 - [héritée] | Sites indexés trop tôt | SEO_NOINDEX=1 dès le tout premier déploiement, levé uniquement sur validation Rémy.

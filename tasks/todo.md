@@ -1,7 +1,7 @@
 # TODO — SOS Chauffage Besançon
 
 ## Mise à jour n°1 (kickoff 18/10/2026, `docs/KICKOFF-MAJ-18-10.md`)
-État : §0 fait le 18/10, PLAN remis à Rémy, RIEN n'est codé avant son GO.
+État : GO Rémy (« ok go ») le 18/10 ; les 10 chantiers sont codés sur la branche `maj-1-18-10`, aperçu Vercel livré, série de contrôles CODE 0 sur le commit 7d13df4. RESTE : GO de Rémy sur la photo du bloc 1 (coût à valider), puis GO de mise en ligne, puis l'après-mise en ligne (test formulaire, fin de site, Rank OS).
 Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 
 ### §0 État des lieux (18/10/2026, production, commit 3b3ef4d)
@@ -29,14 +29,23 @@ Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 - Seul geste autorisé sur ces pages : description ramenée à 120-160 SANS changer le title ni le corps (expressions vérifiées au curl avant/après).
 
 ### Plan des 10 chantiers (après GO)
-- [ ] 1 Accueil : title ≤ 60 avec « urgence chaudière Besançon », H1, description 120-160, ≤ 800 mots.
-- [ ] 2 /tarifs sourcée, liée pied de page + prestations + un paragraphe ; pas de priceRange.
-- [ ] 3 Pilier chauffe-eau : page ballon réécrite (title, H1, intro, FAQ, schéma dessiné) ; page urgence chauffe-eau si la mesure le justifie.
-- [ ] 4 Zones : fait sourcé geo.api.gouv.fr × 12, titles « métier + commune », carte dessinée du Grand Besançon bloc 7/8, page Besançon.
-- [ ] 5 Pages vues sans clic réécrites (gaz, PAC, fioul, climatisation renforcée, contact) ; titles/descriptions des 72 pages + 43 brouillons.
-- [ ] 6 Maillage : 2 sous-menus de 3 + voir tout, /zones relié, contact = formulaire + FAQ + prestations.
-- [ ] 7 Bloc 1 : photo plein écran chaudière murale posée, scrollytelling si GO, formulaire noir à étapes qui avance au clic, 2 lignes max.
-- [ ] 8 Accueil : icônes dessinées animées, prestations empilées, formulaire à la fin, persona fictif retiré (QuiIntervient, SignatureArtisan, JSON-LD employee, artisan.jpg), FAQ fermée après zones, bloc 3 schéma.
-- [ ] 9 Pied de page : volets téléphone, colonnes alignées 1440, logo centré au pixel ; vitesse ≥ 91.
-- [ ] 10 Contrôles : script publication refuse hors bornes, série CODE 0 sur aperçu, 2 passes + 1 relecture Opus, autoblog selon décision Rémy.
+- [x] 1 Accueil : title ≤ 60 avec « urgence chaudière Besançon », H1, description 120-160, ≤ 800 mots.
+- [x] 2 /tarifs sourcée, liée pied de page + prestations + un paragraphe ; pas de priceRange.
+- [x] 3 Pilier chauffe-eau : page ballon réécrite (title, H1, intro, FAQ, schéma dessiné) ; page urgence chauffe-eau si la mesure le justifie.
+- [x] 4 Zones : fait sourcé geo.api.gouv.fr × 12, titles « métier + commune », carte dessinée du Grand Besançon bloc 7/8, page Besançon.
+- [x] 5 Pages vues sans clic réécrites (gaz, PAC, fioul, climatisation renforcée, contact) ; titles/descriptions des 72 pages + 43 brouillons.
+- [x] 6 Maillage : 2 sous-menus de 3 + voir tout, /zones relié, contact = formulaire + FAQ + prestations.
+- [~] 7 Bloc 1 (photo en attente du GO, dessin provisoire en place) : photo plein écran chaudière murale posée, scrollytelling si GO, formulaire noir à étapes qui avance au clic, 2 lignes max.
+- [x] 8 Accueil : icônes dessinées animées, prestations empilées, formulaire à la fin, persona fictif retiré (QuiIntervient, SignatureArtisan, JSON-LD employee, artisan.jpg), FAQ fermée après zones, bloc 3 schéma.
+- [x] 9 Pied de page : volets téléphone, colonnes alignées 1440, logo centré au pixel ; vitesse ≥ 91.
+- [x] 10 Contrôles : script publication refuse hors bornes, série CODE 0 sur aperçu, 2 passes + 1 relecture Opus, autoblog selon décision Rémy.
 - Interdits : téléphone inchangé (03 53 01 00 25, phoneIsDemo), jamais le 07, pas de RGE/avis/certif/chiffre inventé, pas de test formulaire sauf si modifié (1 envoi, signalé, effacé).
+
+### Après le GO de Rémy sur l'aperçu (à faire dans l'ordre)
+- [ ] GO photo bloc 1 : générer 1 image (coût annoncé), recaler `CHAUDIERE` dans `chaudiere-reglages.ts`, refaire la bande téléphone, revoir le chevauchement à 1440.
+- [ ] Merge `maj-1-18-10` → main, production vérifiée au curl (title accueil).
+- [ ] Test du formulaire en production : UN envoi, signalé à Rémy, effacé après.
+- [ ] `python3 ../tasks/check-fin-de-site.py sos-chauffage-besancon.fr` CODE 0.
+- [ ] `gsc-indexation-pages.py --site` puis Rank OS › Tâches › Indexation : accueil refait + pages NON indexées seulement.
+- [ ] Fiche Rank OS : parSemaine 5, releveLe, autoblogEndsAt, entrée travaux, capture `cockpit/public/screens/sos-chauffage-besancon.png`, note APRÈS.
+- [ ] docs/ETAT.md et tasks/lessons.md à jour, compte rendu final (lien du site en 1re ligne).
