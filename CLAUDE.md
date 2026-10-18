@@ -73,6 +73,10 @@
 
 ## 3. DOCTRINE SEO
 
+- **Requête d'argent (mise à jour n°1, 18/10/2026) : « urgence chaudière besançon »**, dans le title
+  et le H1 de l'accueil. Volume DataForSEO non publié dans la zone (trop faible pour l'outil) ;
+  en France, « urgence chaudière », 210 recherches/mois, CPC 12,04 € ; Search Console : 131 vues
+  sur 90 j, 22e place. Mesure : `docs/data/bloc1-sequence-18-10/mesure-dataforseo.json`.
 - **Pas de fiche Google Business, pas d'avis clients.** Tout repose sur le **SEO organique**
   et le **GEO** (être cité par les IA : ChatGPT, Perplexity, AI Overviews).
 - **Structure du site :** 1 accueil, 1 page par service, 1 page par commune voisine,
