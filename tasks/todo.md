@@ -51,3 +51,4 @@ Ancien todo (juillet-août 2026) : `tasks/todo-archive.md` (grep ciblé).
 - [x] `gsc-indexation-pages.py --site` puis Rank OS › Tâches › Indexation : accueil refait + pages NON indexées seulement.
 - [x] Fiche Rank OS (cockpit 0c93e392) : parSemaine 5, releveLe, autoblogEndsAt, entrée travaux, capture `cockpit/public/screens/sos-chauffage-besancon.png`, note APRÈS.
 - [x] docs/ETAT.md et tasks/lessons.md à jour, compte rendu final (lien du site en 1re ligne).
+- [x] Vitesse (« oui vas y ») : photos AVIF en ligne (3980e70), domaine médiane 92, Rank OS 0 → 10 (cockpit ed2eb46b).

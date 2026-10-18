@@ -394,3 +394,9 @@ Décision Rémy : lancement SANS attendre le 09 Twilio (précédent Reims, numé
 - `check-fin-de-site.py sos-chauffage-besancon.fr` : CODE 0, « OK : contrôle SEO et GEO complet, aucun défaut ».
 - Indexation (gsc-indexation-pages : 44/74) : posées dans Rank OS l'accueil refait, /tarifs, /zones/besancon (depuis 18/10), /zones/miserey-salines et /zones/serre-les-sapins (en double) ; les 25 articles non indexés sont ignorés par Rank OS (règle du fichier).
 - Rank OS (cockpit 0c93e392) : travaux 18/10 note 0 → 9 (point 9 à moitié : vitesse 88 sous les 91 visés), autoblog 5/semaine relevé le 18/10, fin 14/01/2027, capture refaite et regardée.
+
+### Vitesse sur téléphone (18/10, « oui vas y » de Rémy)
+- Photos servies en AVIF d'abord, WebP en repli (`next.config.js`, main 3980e70) : photo du bloc 1 de 16 Ko à 9 Ko en 1080 px, netteté identique zoomée.
+- Écarté : `content-visibility` sur le bas de l'accueil (zéro point gagné, sections blanches dans les captures pleine page).
+- Aperçu contre aperçu de l'ancienne version, en alternance : 88 contre 88. Série check-serie CODE 0 sur 3980e70 (design, navigation, blocs, footprint, visuels).
+- Domaine après mise en ligne : 97, 92, 90, médiane 92 (91 avant). Point 9 atteint : Rank OS travaux 0 → 10 (cockpit ed2eb46b).
