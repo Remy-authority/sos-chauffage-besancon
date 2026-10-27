@@ -102,7 +102,7 @@
 ## 4. INFRA OBLIGATOIRE AVANT MISE EN LIGNE (leçon des sites 1-4)
 
 Suivre `RENT & RANK/docs/INFRA-NOUVEAU-SITE.md` :
-1. **Téléphone (état au 18/10/2026)** : le site affiche `03 53 01 00 25` avec `phoneIsDemo: true`.
+1. **Téléphone (27/10/2026)** : 09 39 24 89 60, 09 Twilio dédié (règle 09), renvoi par Rank OS.
    Le 09 Twilio n'est PAS décidé : on ne l'achète pas, on ne change ni la logique ni le numéro
    (kickoff mise à jour n°1 du 18/10/2026). JAMAIS le 07 de Rémy.
 2. **Resend actif** sur le projet Vercel (`RESEND_API_KEY` + `RESEND_FROM`) + redéploiement
