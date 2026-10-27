@@ -28,11 +28,9 @@ export const siteConfig = {
   department: '25',
 
   /* ── Contact ── */
-  // DEMO – numéro hérité du socle. À remplacer par le 09 Twilio dédié au site
-  // (voir RENT & RANK/docs/INFRA-NOUVEAU-SITE.md) avant toute mise en ligne.
-  phone: '+33353010025',
-  phoneDisplay: '03 53 01 00 25',
-  phoneIsDemo: true,
+  // 09 Twilio dédié acheté le 27/10/2026 (règle 09, Rémy), renvoi géré par Rank OS.
+  phone: '+33939248960',
+  phoneDisplay: '09 39 24 89 60',
   email: 'contact@sos-chauffage-besancon.fr',
 
   /* ── Branding ── */
