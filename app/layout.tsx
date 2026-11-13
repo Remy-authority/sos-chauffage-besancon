@@ -8,6 +8,7 @@ import { getServices, getZones } from '@/lib/content'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StickyCTA } from '@/components/layout/StickyCTA'
+import SuiviVisite from '@/components/ui/SuiviVisite'
 import Apparitions from '@/components/ui/Apparitions'
 
 /**
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <StickyCTA />
+        <SuiviVisite />
       </body>
     </html>
   )

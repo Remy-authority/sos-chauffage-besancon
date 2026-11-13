@@ -117,6 +117,11 @@ export function LeadForm({
     return () => window.removeEventListener(EVENEMENT_PANNE, recevoir)
   }, [ecran1])
 
+  // Étape atteinte, comptée par `SuiviVisite` (Rémy 13/11/2026 : savoir à quelle étape on abandonne).
+  useEffect(() => {
+    if (etape > 1) window.dispatchEvent(new CustomEvent('rr-etape', { detail: etape }))
+  }, [etape])
+
   /** Carte du premier écran : le choix s'allume, le bloc 1 s'installe, puis saut au formulaire. */
   function versFormulaire(id: string) {
     choixEnCours = id
@@ -151,6 +156,7 @@ export function LeadForm({
   if (ecran1)
     return (
       <div
+        data-clic-formulaire
         className="grain relative overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-coulee p-4 shadow-releve"
         role="region"
         aria-label="Décrire votre panne"
@@ -189,6 +195,7 @@ export function LeadForm({
 
   return (
     <div
+      data-clic-formulaire
       className={`grain relative overflow-hidden rounded-socle border border-calcaire-neige/10 bg-fonte-coulee shadow-releve ${compact ? 'p-5 md:p-6' : 'p-6 md:p-9'}`}
       role="region"
       aria-label="Formulaire de demande"
