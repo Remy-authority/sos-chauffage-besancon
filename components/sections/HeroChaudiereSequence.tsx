@@ -146,7 +146,12 @@ export default function HeroChaudiereSequence({
     const lancer = (e?: Event) => {
       // Un doigt posé sur la carte du premier écran : le clic doit atteindre la carte, la carte
       // installe elle-même la séquence avant de sauter au formulaire.
-      if ((e?.target as Element | null)?.closest?.('[data-carte-ecran1]')) return
+      const cible = e?.target as Element | null
+      if (cible?.closest?.('[data-carte-ecran1]')) return
+      // Premier geste DANS le formulaire de la version A (ordinateur) : formulaire touché =
+      // animation annulée (#R84). Installer la séquence ici recréait le formulaire sous le doigt
+      // et le premier clic était perdu (mesuré le 13/11/2026 : deux clics pour choisir).
+      if (cible?.closest?.('#demande')) return retirer()
       retirer()
       setMode('B')
     }
