@@ -9,6 +9,15 @@
   voir CLAUDE.md §2). Cluster T2 plein (Metz/Dijon/Reims), interdiction d'y ressembler.
 - Échéance : EN LIGNE avant fin septembre 2026 (saison de chauffe).
 
+## Dernier état : formulaire court EN LIGNE (16/11/2026, GO Rémy « Oui met en ligne parfait ! »)
+- Main 3c2e4c7 (avance rapide depuis `formulaire-court`) en production : curl 200, `GET /api/contact` = `{"envoi":true}`, aucun noindex.
+- Formulaire #R84 en 3 étapes : « Quel est votre projet ? » (chaudière gaz, chaudière fioul, pompe à chaleur, radiateurs froids), question du métier au clic, Nom | Prénom, Téléphone | Code postal (commune via `public/cp/`), « Précisions (facultatif) ». Corps envoyé, sujet, piège `company`, repères et compteur INCHANGÉS. Aperçu Vercel n'envoie rien (`VERCEL_ENV === 'preview'`).
+- Logo texte SVG (`components/ui/Logo.tsx`), en-tête clair opaque, animation du bloc 1 annulée dès que le formulaire est touché.
+- Titre du bloc 1 raccourci à la demande de Rémy : H1 « Urgence chaudière à Besançon, 24h/24 » (requête d'argent gardée) ; « dépannage chauffage » au sur-titre (« Chauffagiste, dépannage chauffage 7j/7 ») et dans le title inchangé. Expressions Search Console comptées avant/après : aucune perdue. 2 lignes au plus de 320 à 1279 px.
+- Contrôles sur 3c2e4c7 : audit-design CODE 0 « AUCUN DÉFAUT », check-texte CODE 0, check-navigation CODE 0, footprint --depuis origin/main CODE 0, check-fin-de-site CODE 0 « OK : contrôle SEO et GEO complet, aucun défaut ».
+- Rank OS : `formulaireCourtLe` 2026-11-16 + entrée `travaux` (note 4 → 9), cockpit ff1f5fea9. Aucune tâche Rank OS liée à cocher. Aucune page à indexer, aucun test d'envoi demandé.
+- À faire : mesure à 2 semaines le 30/11 (formulaires commencés contre envoyés).
+
 ## État courant (28/07/2026, fin de session 1 CEO site)
 - [x] Opportunité validée par Rémy (BENCHMARK-VAGUE-3.md : verdict boulevard).
 - [x] Dossier créé par duplication du socle Metz (sans .git). ⚠️ Contenu Metz encore présent.
