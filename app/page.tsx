@@ -48,7 +48,7 @@ export default function HomePage() {
       />
 
       <section id="devis" className="plage bg-calcaire-voile" aria-labelledby="devis-titre">
-        <div className="enceinte grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="enceinte grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
           {/* Centré au téléphone et à la tablette, comme la carte du formulaire ; à gauche sur ordinateur. */}
           <div className="mx-auto max-w-xl text-center lg:col-span-5 lg:mx-0 lg:max-w-none lg:text-left">
             <p className="surtitre mb-5 flex items-center justify-center gap-3 text-laiton-patine lg:justify-start">

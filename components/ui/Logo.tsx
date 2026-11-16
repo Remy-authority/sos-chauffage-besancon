@@ -53,30 +53,41 @@ export function LogoMark({ className = 'h-10 w-10' }: { className?: string }) {
  * LOGO EN TEXTE (formulaire court, regle-formulaire.md §3.4, Rémy 13 et 14/11/2026) :
  * une ligne, police des titres (Bricolage Grotesque), en minuscules, le métier
  * « sos chauffage » en 800, la ville en couleur d'accent (laiton). Aucune capitale
- * étirée. 24 px de haut au téléphone, 28 px à l'ordinateur. Le cadran `LogoMark`
- * ne sert plus qu'au favicon. Le nom déclaré à Google ne change pas.
+ * étirée. Le cadran `LogoMark` ne sert plus qu'au favicon. Le nom déclaré à Google
+ * ne change pas.
+ *
+ * Le texte est posé dans un SVG (modèle abri-anti-atomique.fr) : 24 px de haut au
+ * téléphone, 28 px à l'ordinateur, mesurables par le contrôle de design (point 1),
+ * et un viewBox serré sur les lettres (252 px mesurés à 22 px dans la police du site)
+ * pour que le pied de page le centre au pixel (#R53). Sous 360 px, 22 px de haut.
  */
 export function Logo({
   tone = 'dark',
   className = '',
-  empile = false,
 }: {
-  /** Pied de page au téléphone : nom centré au pixel (#R53). */
-  empile?: boolean
   /** `dark` : texte fonte sur fond clair. `light` : texte calcaire sur fond sombre. */
   tone?: 'dark' | 'light'
   className?: string
 }) {
   const clair = tone === 'light'
   return (
-    <span
-      className={`inline-block whitespace-nowrap font-titre text-[1.25rem] leading-6 tracking-[-0.02em] min-[360px]:text-[1.375rem] lg:text-[1.625rem] lg:leading-7 ${
-        empile ? 'text-center lg:text-left' : ''
-      } ${className}`}
+    <svg
+      viewBox="0 0 253 24"
+      overflow="visible"
+      aria-hidden="true"
+      focusable="false"
+      className={`block h-[22px] w-auto font-titre min-[360px]:h-6 lg:h-7 ${className}`}
     >
-      <span className={`font-extrabold ${clair ? 'text-calcaire-neige' : 'text-fonte-abysse'}`}>sos chauffage</span>{' '}
-      <span className={`font-bold ${clair ? 'text-laiton-clair' : 'text-laiton-patine'}`}>{siteConfig.city.toLowerCase()}</span>
-    </span>
+      <text x="0" y="18.5" fontSize="22" letterSpacing="-0.44">
+        <tspan fontWeight="800" className={clair ? 'fill-calcaire-neige' : 'fill-fonte-abysse'}>
+          sos chauffage
+        </tspan>
+        <tspan fontWeight="700" className={clair ? 'fill-laiton-clair' : 'fill-laiton-patine'}>
+          {' '}
+          {siteConfig.city.toLowerCase()}
+        </tspan>
+      </text>
+    </svg>
   )
 }
 
