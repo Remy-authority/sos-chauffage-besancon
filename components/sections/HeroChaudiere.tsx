@@ -55,12 +55,12 @@ function PhotoBloc1({ mobile }: { mobile: boolean }) {
 /**
  * Titre et accroche, deux lignes chacun à toute largeur (#R70) : une ligne par <span> insécable,
  * taille en cqi (largeur de la colonne). La requête d'argent « urgence chaudière Besançon » est
- * dans le H1.
+ * dans le H1, raccourci le 16/11/2026 (Rémy) ; « dépannage chauffage » passe au sur-titre et au title.
  */
 const TITRE = [
-  <>Urgence chaudière à Besançon</>,
+  <>Urgence chaudière</>,
   <>
-    Dépannage chauffage <span className="mot-laiton">24h/24</span>
+    à Besançon, <span className="mot-laiton">24h/24</span>
   </>,
 ]
 const ACCROCHE = ['La panne se cerne au téléphone.', 'Le tarif est annoncé avant de venir.']
@@ -178,12 +178,12 @@ export function HeroChaudiere() {
       <div className="mx-auto flex w-full max-w-xl flex-col items-center text-center [container-type:inline-size] lg:mx-0 lg:max-w-none lg:items-start lg:text-left">
         <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-laiton-clair [text-shadow:0_1px_8px_rgb(0_0_0_/_0.5)] max-[359px]:tracking-[0.06em] sm:text-xs sm:tracking-[0.18em]">
           <span className="hidden h-px w-8 shrink-0 bg-laiton-clair/70 lg:block" aria-hidden="true" />
-          Chauffagiste à {siteConfig.city}, ligne ouverte {siteConfig.availability}
+          Chauffagiste, dépannage chauffage 7j/7
         </p>
 
         <h1
           id="titre-hero"
-          className="mt-4 [@media(max-height:640px)]:mt-2.5 font-titre text-[min(7.4cqi,2.75rem)] font-semibold leading-[1.08] tracking-[-0.025em] text-calcaire-neige [text-shadow:0_2px_16px_rgb(0_0_0_/_0.45)] lg:mt-5 lg:text-[min(7.4cqi,3.1rem)]"
+          className="mt-4 [@media(max-height:640px)]:mt-2.5 font-titre text-[min(9.6cqi,2.75rem)] font-semibold leading-[1.08] tracking-[-0.025em] text-calcaire-neige [text-shadow:0_2px_16px_rgb(0_0_0_/_0.45)] lg:mt-5 lg:text-[min(9.6cqi,3.5rem)]"
         >
           {TITRE.map((ligne, i) => (
             <span key={i} className="block whitespace-nowrap">
