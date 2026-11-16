@@ -17,6 +17,17 @@ import { siteConfig } from '@/config/site.config'
  */
 export const dynamic = 'force-dynamic'
 
+/**
+ * Aperçu Vercel (formulaire court, 16/11/2026) : RIEN ne part, ni mail ni SMS, jamais de
+ * fausse demande. La production n'est pas touchée (VERCEL_ENV === 'production').
+ * `GET /api/contact` le prouve : { envoi: false } sur l'aperçu.
+ */
+const APERCU = process.env.VERCEL_ENV === 'preview'
+
+export function GET() {
+  return NextResponse.json({ envoi: !APERCU })
+}
+
 type Lead = {
   nom?: string
   telephone?: string
@@ -166,8 +177,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ ok: false, error: 'Nom et téléphone requis.' }, { status: 400 })
     }
 
-    await deliver(lead)
-    await alerterSms(lead)
+    if (APERCU) {
+      console.log('[APERCU] demande non envoyée', JSON.stringify(lead))
+    } else {
+      await deliver(lead)
+      await alerterSms(lead)
+    }
 
     return formPost
       ? NextResponse.redirect(new URL('/merci', request.url), 303)

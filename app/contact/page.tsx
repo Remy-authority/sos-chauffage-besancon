@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Clock, Mail, MapPin, PhoneCall } from 'lucide-react'
 import { siteConfig } from '@/config/site.config'
 import { buildMetadata } from '@/lib/seo'
-import { PageHeader } from '@/components/layout/PageHeader'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { Button } from '@/components/ui/Button'
 import { LeadForm } from '@/components/ui/LeadForm'
@@ -39,34 +38,34 @@ export default function ContactPage() {
   const services = getServices()
   return (
     <>
-      <PageHeader
-        eyebrow="Contact"
-        title={
-          <>
-            Dites-nous ce que
-            <br />
-            <span className="mot-laiton">fait votre installation</span>
-          </>
-        }
-        subtitle="Par téléphone si le chauffage est à l’arrêt, par le formulaire si cela peut attendre quelques heures."
-      />
+      {/*
+        Formulaire court (16/11/2026, regle-formulaire.md §3.3) : le formulaire D'ABORD, carte
+        noire sur fond clair, aucune photo. Titre et phrase courte, puis les coordonnées : sous le
+        titre à l'ordinateur, sous le formulaire au téléphone. Ensuite prestations et FAQ.
+      */}
+      <section className="bg-calcaire-neige pb-14 pt-[calc(69px+1.75rem)] lg:pb-20 lg:pt-36">
+        <div className="enceinte grid gap-8 lg:grid-cols-12 lg:gap-x-14 lg:gap-y-8">
+          <div className="text-center lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:text-left">
+            <p className="surtitre flex items-center justify-center gap-3 text-jura-franc lg:justify-start">
+              <span aria-hidden="true" className="h-px w-8 bg-laiton-franc" />
+              Contact
+            </p>
+            <h1 className="mt-4 font-titre text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-fonte-abysse [text-wrap:balance] sm:text-titre-l lg:text-titre-xl">
+              Dites-nous ce que <span className="mot-laiton-clair">fait votre installation</span>
+            </h1>
+            <p className="mx-auto mt-3 max-w-md text-base text-calcaire-basalte [text-wrap:balance] lg:mx-0 lg:mt-5 lg:text-chapo">
+              Trois écrans, puis nous vous rappelons. Logement froid ? Appelez, c’est plus rapide.
+            </p>
+          </div>
 
-      <section className="bg-calcaire-neige py-14 lg:py-20">
-        <div className="enceinte grid gap-12 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-5">
-            <AnimatedSection>
-              <h2 className="text-titre-m">Nous joindre</h2>
-              <p className="mt-4 max-w-lecture text-lecture text-calcaire-basalte">
-                Une panne de chauffage se décrit mal par écrit. Si le logement est froid, appelez,
-                c’est plus rapide. Nous vous indiquons tout de suite ce qu’il faut vérifier en
-                attendant, code erreur, pression du circuit, position du thermostat.
-              </p>
-            </AnimatedSection>
+          <div className="lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1 lg:self-center">
+            <div id="formulaire" className="mx-auto max-w-xl scroll-mt-24 lg:max-w-none">
+              <LeadForm />
+            </div>
+          </div>
 
-            <AnimatedSection
-              delay={0.08}
-              className="mt-8 divide-y divide-calcaire-pierre border-y border-calcaire-pierre"
-            >
+          <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2">
+            <AnimatedSection className="divide-y divide-calcaire-pierre border-y border-calcaire-pierre">
               {COORDONNEES.map(({ icone: Icone, intitule, valeur, href }) => (
                 <div key={intitule} className="flex items-start gap-4 py-4">
                   <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-module border border-calcaire-brume text-jura-franc">
@@ -89,23 +88,16 @@ export default function ContactPage() {
               ))}
             </AnimatedSection>
 
-            <AnimatedSection delay={0.16} className="mt-8">
-              <Button
-                href={`tel:${siteConfig.phone}`}
-                variant="laiton"
-                size="ample"
-                className="w-full"
-              >
+            <AnimatedSection delay={0.08} className="mt-6">
+              <p className="text-legende text-calcaire-basalte">
+                Au téléphone, nous vous disons tout de suite quoi vérifier en attendant : code
+                erreur, pression du circuit, thermostat.
+              </p>
+              <Button href={`tel:${siteConfig.phone}`} variant="laiton" size="ample" className="mt-4 w-full">
                 <PhoneCall size={18} strokeWidth={2.2} />
                 Appeler maintenant
               </Button>
             </AnimatedSection>
-          </div>
-
-          <div className="lg:col-span-7">
-            <div id="formulaire" className="scroll-mt-28">
-              <LeadForm />
-            </div>
           </div>
         </div>
       </section>

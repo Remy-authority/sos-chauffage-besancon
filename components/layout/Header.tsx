@@ -22,24 +22,17 @@ type Menu = { cle: string; libelle: string; liens: { href: string; label: string
 /**
  * En-tête fixe, template T3 (réécrit à la mise à jour n°1, 18/10/2026, #R33).
  *
- * Deux états : transparent sur les en-têtes sombres, puis « posé » au scroll.
+ * En-tête clair et OPAQUE à toute hauteur de page, accueil compris (formulaire court,
+ * Rémy 14/11/2026, regle-formulaire.md §3.4 : jamais gris ni translucide). Logo en texte seul.
  * Deux menus déroulants, Prestations et Communes, trois liens + « voir tout »
  * chacun, sur ordinateur (survol) ET au téléphone (accordéons). Le bouton
  * téléphone garde la logique du site (numéro de démonstration), il n'est pas touché.
  */
 export function Header({ services, zones }: { services: NavService[]; zones: NavZone[] }) {
-  const [defile, setDefile] = useState(false)
   const [mobileOuvert, setMobileOuvert] = useState(false)
   const [ouvert, setOuvert] = useState<string | null>(null)
   const [deplies, setDeplies] = useState<Record<string, boolean>>({})
   const chemin = usePathname()
-
-  useEffect(() => {
-    const auScroll = () => setDefile(window.scrollY > 24)
-    auScroll()
-    window.addEventListener('scroll', auScroll, { passive: true })
-    return () => window.removeEventListener('scroll', auScroll)
-  }, [])
 
   useEffect(() => {
     setMobileOuvert(false)
@@ -70,20 +63,15 @@ export function Header({ services, zones }: { services: NavService[]; zones: Nav
     { href: '/contact', label: 'Contact' },
   ]
 
-  const hautClair = /^\/(zones|services|conseils|tarifs|contact)(\/[^/]+)?\/?$/.test(chemin)
-  const pose = defile || mobileOuvert || hautClair
-
-  const tonLien = pose ? 'text-fonte-nuit hover:text-jura-franc' : 'text-calcaire-brume hover:text-laiton-clair'
+  const tonLien = 'text-fonte-nuit hover:text-jura-franc'
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-thermique ${
-        pose ? 'bg-calcaire-neige/90 backdrop-blur-xl' : 'bg-gradient-to-b from-fonte-abysse/70 to-transparent'
-      }`}
+      className="fixed inset-x-0 top-0 z-50 bg-calcaire-neige"
     >
       <div className="enceinte flex items-center justify-between gap-6 py-3">
         <Link href="/" aria-label={`${siteConfig.businessName}, accueil`} className="transition-opacity hover:opacity-80">
-          <Logo tone={pose ? 'dark' : 'light'} />
+          <Logo tone="dark" />
         </Link>
 
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Navigation principale">
@@ -150,9 +138,7 @@ export function Header({ services, zones }: { services: NavService[]; zones: Nav
           aria-label={mobileOuvert ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={mobileOuvert}
           onClick={() => setMobileOuvert((v) => !v)}
-          className={`flex h-11 w-11 items-center justify-center rounded-module transition-colors lg:hidden ${
-            pose ? 'bg-fonte-abysse text-calcaire-neige' : 'bg-calcaire-neige/10 text-calcaire-neige'
-          }`}
+          className="flex h-11 w-11 items-center justify-center rounded-module bg-fonte-abysse text-calcaire-neige lg:hidden"
         >
           {mobileOuvert ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -160,7 +146,7 @@ export function Header({ services, zones }: { services: NavService[]; zones: Nav
 
       <span
         aria-hidden="true"
-        className={`block h-px w-full bg-gradient-to-r from-transparent via-laiton-franc/45 to-transparent transition-opacity duration-500 ${pose ? 'opacity-100' : 'opacity-0'}`}
+        className="block h-px w-full bg-gradient-to-r from-transparent via-laiton-franc/45 to-transparent"
       />
 
       {/* Menu mobile : deux accordéons + liens simples + téléphone */}

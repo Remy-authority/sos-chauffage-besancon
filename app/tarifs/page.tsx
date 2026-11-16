@@ -169,16 +169,16 @@ export default function TarifsPage() {
       <Faq items={t.faq} eyebrow="Tarifs" title={<>Ce qu’on nous demande sur les prix</>} />
 
       <section className="plage bg-calcaire-voile" aria-labelledby="demande-prix">
-        <div className="enceinte grid gap-12 lg:grid-cols-12">
+        <div className="enceinte grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="text-center lg:col-span-5 lg:text-left">
             <h2 id="demande-prix" className="text-titre-l text-fonte-abysse">
               Le prix de votre panne, avant tout déplacement
             </h2>
             <p className="mt-5 max-w-lecture text-lecture text-calcaire-basalte lg:mx-0">
-              Donnez-nous la marque et le code affiché, vous recevez une estimation en retour.
+              Choisissez l’appareil et ce qu’il fait, nous vous rappelons pour chiffrer.
               Maison déjà froide ? Le téléphone va plus vite.
             </p>
-            <div className="mt-7 flex justify-center lg:justify-start">
+            <div className="mt-7 flex justify-center max-lg:hidden lg:justify-start">
               <Button href={`tel:${siteConfig.phone}`} variant="laiton" size="ample">
                 <PhoneCall size={18} strokeWidth={2.2} />
                 {siteConfig.phoneDisplay}
@@ -186,7 +186,7 @@ export default function TarifsPage() {
             </div>
           </div>
           <div className="lg:col-span-7">
-            <div id="formulaire" className="scroll-mt-28">
+            <div id="formulaire" className="mx-auto max-w-xl scroll-mt-24 lg:max-w-none">
               <LeadForm />
             </div>
           </div>

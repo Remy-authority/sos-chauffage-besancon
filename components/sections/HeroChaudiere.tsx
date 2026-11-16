@@ -21,8 +21,8 @@ import {
  * Ordinateur : la photo en fond plein cadre, le texte à gauche et le formulaire noir à étapes à
  * droite, tous deux centrés en hauteur, la chaudière entre les deux. Téléphone et tablette : la
  * photo couvre tout le premier écran (bande centrée sur la chaudière), sur-titre, titre, texte et
- * boutons posés dessus, centrés entre l'en-tête et la barre du bas, jamais de bandeau noir ; le
- * formulaire vient après. Au défilement, HeroChaudiereSequence prend le relais (avancée vers la
+ * boutons posés dessus, centrés entre l'en-tête et la barre du bas, jamais de bandeau noir, et la
+ * carte du formulaire court juste dessous, sur la photo (formulaire court, 16/11/2026). Au défilement, HeroChaudiereSequence prend le relais (avancée vers la
  * chaudière, façade qui s'ouvre, les pièces une à une). « Réduire les animations » : ce bloc tel
  * quel, puis l'écorché complet, fixe, dessous.
  */
@@ -176,14 +176,14 @@ export function HeroChaudiere() {
   const texte = (
     <div className="enceinte w-full lg:max-w-none lg:px-0">
       <div className="mx-auto flex w-full max-w-xl flex-col items-center text-center [container-type:inline-size] lg:mx-0 lg:max-w-none lg:items-start lg:text-left">
-        <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-laiton-clair [text-shadow:0_1px_8px_rgb(0_0_0_/_0.5)] sm:text-xs sm:tracking-[0.18em]">
+        <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-laiton-clair [text-shadow:0_1px_8px_rgb(0_0_0_/_0.5)] max-[359px]:tracking-[0.06em] sm:text-xs sm:tracking-[0.18em]">
           <span className="hidden h-px w-8 shrink-0 bg-laiton-clair/70 lg:block" aria-hidden="true" />
           Chauffagiste à {siteConfig.city}, ligne ouverte {siteConfig.availability}
         </p>
 
         <h1
           id="titre-hero"
-          className="mt-4 font-titre text-[min(7.4cqi,2.75rem)] font-semibold leading-[1.08] tracking-[-0.025em] text-calcaire-neige [text-shadow:0_2px_16px_rgb(0_0_0_/_0.45)] lg:mt-5 lg:text-[min(7.4cqi,3.1rem)]"
+          className="mt-4 [@media(max-height:640px)]:mt-2.5 font-titre text-[min(7.4cqi,2.75rem)] font-semibold leading-[1.08] tracking-[-0.025em] text-calcaire-neige [text-shadow:0_2px_16px_rgb(0_0_0_/_0.45)] lg:mt-5 lg:text-[min(7.4cqi,3.1rem)]"
         >
           {TITRE.map((ligne, i) => (
             <span key={i} className="block whitespace-nowrap">
@@ -193,7 +193,7 @@ export function HeroChaudiere() {
           ))}
         </h1>
 
-        <p className="mt-4 text-[min(4.9cqi,1.125rem)] leading-relaxed text-calcaire-neige/95 [text-shadow:0_1px_10px_rgb(0_0_0_/_0.5)] lg:mt-5 lg:text-[min(3.5cqi,1.125rem)]">
+        <p className="mt-4 [@media(max-height:640px)]:mt-2 [@media(max-height:640px)]:leading-snug text-[min(4.9cqi,1.125rem)] leading-relaxed text-calcaire-neige/95 [text-shadow:0_1px_10px_rgb(0_0_0_/_0.5)] lg:mt-5 lg:text-[min(3.5cqi,1.125rem)]">
           {ACCROCHE.map((l) => (
             <span key={l} className="block whitespace-nowrap">
               {l}
@@ -201,8 +201,8 @@ export function HeroChaudiere() {
           ))}
         </p>
 
-        <div className="mt-7 flex w-full max-w-xs flex-col items-stretch gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:items-center">
-          <Button href={`tel:${siteConfig.phone}`} variant="laiton" size="ample" className="chiffre whitespace-nowrap">
+        <div className="mt-7 [@media(max-height:640px)]:mt-4 flex w-full max-w-xs flex-col items-stretch gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:items-center">
+          <Button href={`tel:${siteConfig.phone}`} variant="laiton" size="ample" className="chiffre whitespace-nowrap [@media(max-height:640px)]:h-12">
             <Phone size={18} strokeWidth={2.1} aria-hidden="true" />
             {siteConfig.phoneDisplay}
           </Button>
@@ -211,10 +211,11 @@ export function HeroChaudiere() {
           </Button>
         </div>
 
-        {/* Téléphone et tablette : la question du formulaire dès l'ouverture (règle du 13/10/2026),
-            elle s'efface avec le titre au défilement, et reste posée dans le repli sans animation. */}
-        <div data-carte-ecran1="" className="mt-5 w-full max-w-md text-left lg:hidden">
-          <LeadForm ecran1 />
+        {/* Téléphone et tablette : LE formulaire, posé sur la photo sous le titre (formulaire court,
+            16/11/2026) ; il s'efface avec le titre au défilement et revient avec lui à la fin du film.
+            Un choix touché = animation annulée (EVENEMENT_TOUCHE, HeroChaudiereSequence). */}
+        <div className="mt-5 [@media(max-height:640px)]:mt-3 w-full max-w-md lg:hidden">
+          <LeadForm ecran1 memoire idPrefix="ecran1-" />
         </div>
 
         {reassurance('vivant mt-8 hidden w-full max-w-[30rem] border-t border-calcaire-neige/15 pt-6 lg:grid')}
@@ -225,16 +226,17 @@ export function HeroChaudiere() {
   const formulaire = (
     <div className="w-full">
       <div className="enceinte lg:max-w-none lg:px-0">
-        <div className="mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
-          <LeadForm variante="compact" />
+        {/* Ordinateur seulement : au téléphone, le formulaire est déjà sur la photo (un seul). */}
+        <div className="mx-auto w-full max-w-lg max-lg:hidden lg:mx-0 lg:max-w-none">
+          <LeadForm ecran1 memoire idPrefix="hero-" />
         </div>
-        {reassurance('vivant mx-auto mt-8 w-full max-w-lg border-t border-calcaire-neige/15 pt-6 lg:hidden')}
+        {reassurance('vivant mx-auto w-full max-w-lg border-t border-calcaire-neige/15 pt-6 lg:hidden')}
       </div>
     </div>
   )
 
-  /* Téléphone et tablette : la photo couvre tout le premier écran, le texte est centré entre
-     l'en-tête (64 px) et la barre du bas (72 px, téléphone seul). */
+  /* Téléphone et tablette : la photo couvre tout le premier écran, le texte et la carte du
+     formulaire sont centrés sous l'en-tête (la barre du bas n'apparaît qu'après 600 px de défilement). */
   /* Même cadre que le départ de la séquence animée (HeroChaudiereSequence) : la photo commence
      sous l'en-tête (69 px téléphone et tablette, 65 px ordinateur, hauteurs mesurées le
      18/10/2026), la séquence remplace cette version au premier geste sans que l'écran bouge. */
@@ -251,14 +253,14 @@ export function HeroChaudiere() {
         <div className={`absolute inset-0 ${VOILE_ORDI}`} />
       </div>
       <div className={`relative ${GRILLE_ORDI}`}>
-        <div className="relative isolate flex min-h-[max(calc(100svh-69px),540px)] flex-col justify-center pb-[calc(72px+1.5rem)] pt-6 md:pb-6 lg:col-start-1 lg:min-h-0 lg:p-0">
+        <div className="relative isolate flex min-h-[max(calc(100svh-69px),540px)] [@media(max-height:640px)]:min-h-[calc(100svh-69px)] flex-col justify-center py-6 [@media(max-height:640px)]:py-3 lg:col-start-1 lg:min-h-0 lg:p-0">
           <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden lg:hidden" aria-hidden="true">
             <PhotoBloc1 mobile />
             <div className={`absolute inset-0 ${VOILE_MOBILE}`} />
           </div>
           {texte}
         </div>
-        <div id="demande" className="scroll-mt-20 pb-10 pt-8 lg:col-start-3 lg:flex lg:flex-col lg:justify-center lg:p-0">
+        <div id="demande" className="scroll-mt-20 max-lg:hidden lg:col-start-3 lg:flex lg:flex-col lg:justify-center">
           {formulaire}
         </div>
       </div>

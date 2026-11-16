@@ -8,7 +8,6 @@ import { SequenceIntervention } from '@/components/sections/SequenceIntervention
 import { PrestationsEmpilees } from '@/components/sections/PrestationsEmpilees'
 import { PourquoiNous } from '@/components/sections/PourquoiNous'
 import { CarteGrandBesancon } from '@/components/sections/CarteGrandBesancon'
-import { SectionHeader } from '@/components/ui/SectionHeader'
 import { LeadForm } from '@/components/ui/LeadForm'
 import { Faq } from '@/components/ui/Faq'
 
@@ -49,23 +48,25 @@ export default function HomePage() {
       />
 
       <section id="devis" className="plage bg-calcaire-voile" aria-labelledby="devis-titre">
-        <div className="enceinte grid gap-10 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-5">
-            <SectionHeader
-              id="devis-titre"
-              eyebrow="Décrire ma panne"
-              title={
-                <>
-                  Trois questions,
-                  <br />
-                  et nous vous rappelons.
-                </>
-              }
-              subtitle="Dites ce que fait l’appareil et depuis quand. Pour une urgence, l’appel reste le plus rapide."
-            />
+        <div className="enceinte grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+          {/* Centré au téléphone et à la tablette, comme la carte du formulaire ; à gauche sur ordinateur. */}
+          <div className="mx-auto max-w-xl text-center lg:col-span-5 lg:mx-0 lg:max-w-none lg:text-left">
+            <p className="surtitre mb-5 flex items-center justify-center gap-3 text-laiton-patine lg:justify-start">
+              <span aria-hidden="true" className="h-px w-8 bg-laiton-franc" />
+              Décrire ma panne
+            </p>
+            <h2 id="devis-titre" className="text-titre-l text-fonte-abysse md:text-titre-xl">
+              Votre appareil,
+              <br />
+              nous vous rappelons.
+            </h2>
+            <p className="mt-5 text-chapo text-calcaire-basalte">
+              Choisissez l’appareil, dites ce qu’il fait, laissez votre numéro. Pour une urgence,
+              l’appel reste le plus rapide.
+            </p>
           </div>
-          <div className="lg:col-span-7">
-            <LeadForm />
+          <div className="mx-auto w-full max-w-xl lg:col-span-7 lg:max-w-none">
+            <LeadForm idPrefix="fin-" />
           </div>
         </div>
       </section>

@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
+import { flushSync } from 'react-dom'
 import { getImageProps } from 'next/image'
-import { EVENEMENT_INSTALLER } from '@/components/ui/LeadForm'
+import { EVENEMENT_TOUCHE } from '@/components/ui/LeadForm'
 import { EcorcheChaudiere, HAUTEUR_ECORCHE, LARGEUR_ECORCHE, animerEcorche, echelleEcorche } from '@/components/ui/EcorcheChaudiere'
 import { BANDE_MOBILE, CHAUDIERE, GRILLE_ORDI, HAUTEUR, LARGEUR, PHOTO_BLOC1, QUALITE_BLOC1, TAILLES_BLOC1, VOILE_MOBILE, VOILE_ORDI } from '@/components/sections/chaudiere-reglages'
 
@@ -24,6 +25,11 @@ import { BANDE_MOBILE, CHAUDIERE, GRILLE_ORDI, HAUTEUR, LARGEUR, PHOTO_BLOC1, QU
  *             suivie de son étiquette ; une dernière ligne conclut.
  *  FORMULAIRE (ordinateur, f0 à f1, pendant l'ouverture) le formulaire noir de l'écran 1 revient
  *             depuis la droite et reste utilisable pendant tout le reste.
+ *  RETOUR     (formulaire court, 16/11/2026, règle formulaire §3.1) la caméra recule jusqu'au cadre
+ *             de l'écran 1, l'écorché s'efface, titre, texte et formulaire reviennent sur la même
+ *             photo ; puis le bloc 2. Les limites ci-dessus sont en temps du FILM (t = p / FILM).
+ *  TOUCHÉ     un choix fait dans le formulaire du bloc 1 = animation annulée pour de bon : retour à
+ *             la version fixe, le formulaire garde son état et sa place, plus bas c'est le bloc 2.
  *
  * Moteur : un seul requestAnimationFrame par défilement (écouteur passif), styles écrits dans le
  * DOM, aucun rendu React par image. La photo est déplacée par transform seul, à sa pleine
@@ -45,6 +51,10 @@ const LIMITES: Record<Cle, { p1: number; p2: number; e1: number; f0: number; f1:
   mobile: { p1: 0.18, p2: 0.34, e1: 0.93, f0: 2, f1: 3 },
 }
 const H = HAUTEUR
+/** Part de la course jouée par le film ; le reste ramène l'écran 1 (RETOUR à FIN). */
+const FILM = 0.84
+const RETOUR = 0.84
+const FIN = 0.97
 /** GIF transparent de 1 px : la source « rien à charger » des <picture> (même valeur que HeroChaudiere). */
 const RIEN = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
 
@@ -92,17 +102,17 @@ const fondu = (d0: number, d1: number) => {
 
 /** Mise en page : hauteurs qui dépendent de celle de l'en-tête (mesurée) et de la barre du bas. */
 const CSS = `
-.plg{--entete:64px;--barre:72px}
-.plg-piste{position:relative;height:380svh}
+.plg{--entete:64px;--barre:0px}
+.plg-piste{position:relative;height:450svh}
 .plg-panneau{position:sticky;top:var(--entete);height:max(calc(100svh - var(--entete)),540px);overflow:hidden}
 .plg-texte{position:sticky;top:var(--entete);height:0;z-index:10;pointer-events:none}
 .plg-plein{min-height:calc(max(calc(100svh - var(--entete)),540px) - var(--barre))}
-@media (min-width:768px){.plg{--barre:0px}}
+@media (max-height:640px){.plg-plein{min-height:calc(100svh - var(--entete))}}
 @media (min-width:1024px){
 .plg-plein{min-height:0}
-.plg-piste{height:450vh}
+.plg-piste{height:535vh}
 .plg-panneau{height:max(calc(100vh - var(--entete)),640px)}
-.plg-calque{position:absolute;left:0;right:0;top:0;z-index:10;pointer-events:none;height:calc(450vh - max(calc(100vh - var(--entete)),640px))}
+.plg-calque{position:absolute;left:0;right:0;top:0;z-index:10;pointer-events:none;height:calc(535vh - max(calc(100vh - var(--entete)),640px))}
 .plg-colle{position:sticky;top:var(--entete);height:0}
 .plg-cadre{height:max(calc(100vh - var(--entete)),640px)}
 .plg-texte{position:static;height:auto;pointer-events:auto}
@@ -139,19 +149,21 @@ export default function HeroChaudiereSequence({
   // cadre. Installée à l'hydratation, la séquence recréait la photo trois secondes plus tard
   // (téléphone bridé) et Google la comptait comme le plus grand élément affiché (vitesse 94 → 86,
   // mesuré le 18/10/2026). Après un geste, Google ne compte plus rien.
+  // FORMULAIRE TOUCHÉ = ANIMATION ANNULÉE pour de bon (#R84) : au premier choix fait dans le
+  // formulaire du bloc 1, retour à la version fixe, sans film ni écorché ; le formulaire garde son
+  // état (`memoire`) et sa place à l'écran (défilement compensé). Plus bas, c'est le bloc 2.
+  const touche = useRef(false)
+
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
     const GESTES = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'keydown'] as const
     let arme = false
     const lancer = (e?: Event) => {
-      // Un doigt posé sur la carte du premier écran : le clic doit atteindre la carte, la carte
-      // installe elle-même la séquence avant de sauter au formulaire.
+      // Un geste DANS un formulaire n'installe jamais le film : la carte reste sous le doigt et le
+      // premier clic compte (deux clics pour choisir, mesuré le 13/11/2026). Le choix fait annule
+      // le film (EVENEMENT_TOUCHE) ; un défilement de la page, lui, le lance.
       const cible = e?.target as Element | null
-      if (cible?.closest?.('[data-carte-ecran1]')) return
-      // Premier geste DANS le formulaire de la version A (ordinateur) : formulaire touché =
-      // animation annulée (#R84). Installer la séquence ici recréait le formulaire sous le doigt
-      // et le premier clic était perdu (mesuré le 13/11/2026 : deux clics pour choisir).
-      if (cible?.closest?.('#demande')) return retirer()
+      if (cible?.closest?.('[data-lead-form]')) return
       retirer()
       setMode('B')
     }
@@ -162,25 +174,34 @@ export default function HeroChaudiereSequence({
     }
     const maj = () => {
       retirer()
+      if (touche.current) return setMode('A')
       if (mq.matches || reseauLent()) return setMode('F')
       if (window.scrollY > 0) return setMode('B')
       setMode((m) => (m === 'F' ? 'A' : m))
       arme = true
       GESTES.forEach((g) => window.addEventListener(g, lancer, { passive: true }))
     }
-    // La carte du premier écran installe la séquence avant de sauter au formulaire, seulement en
-    // version A armée : jamais en repli (« réduire les animations », réseau lent).
-    const installer = () => {
-      if (!arme) return
+    const surTouche = (e: Event) => {
+      if (touche.current) return
+      touche.current = true
       retirer()
-      setMode('B')
+      const cible = `[data-lead-form="${String((e as CustomEvent).detail)}"]`
+      // Hors du rendu en cours : l'étape 2 est d'abord peinte, puis le bloc change sous elle.
+      window.setTimeout(() => {
+        const avant = document.querySelector(cible)?.getBoundingClientRect().top
+        flushSync(() => setMode('A'))
+        const apres = document.querySelector(cible)?.getBoundingClientRect().top
+        if (avant !== undefined && apres !== undefined && Math.abs(apres - avant) > 1) {
+          window.scrollBy({ top: apres - avant, behavior: 'instant' as ScrollBehavior })
+        }
+      }, 0)
     }
     maj()
     mq.addEventListener('change', maj)
-    window.addEventListener(EVENEMENT_INSTALLER, installer)
+    window.addEventListener(EVENEMENT_TOUCHE, surTouche)
     return () => {
       retirer()
-      window.removeEventListener(EVENEMENT_INSTALLER, installer)
+      window.removeEventListener(EVENEMENT_TOUCHE, surTouche)
       mq.removeEventListener('change', maj)
     }
   }, [])
@@ -280,6 +301,7 @@ export default function HeroChaudiereSequence({
     let dernierA = -1
     let dernierO = -1
     let dernierQ = -1
+    let dernierD = -1
     const rendre = () => {
       raf = 0
       const rpiste = pisteEl.getBoundingClientRect()
@@ -289,25 +311,39 @@ export default function HeroChaudiereSequence({
       const y = -rpiste.top
       const course = Math.max(1, rpiste.height - Hp - entete)
       const p = clamp(y / course)
-      if (p === dernier) return
+      // Téléphone : le texte (formulaire compris) colle à la section, pas au panneau ; une fois le
+      // panneau décollé, il le suit au pixel (jamais posé sur le bloc suivant).
+      const depasse = cle === 'mobile' ? Math.max(0, y - course) : 0
+      if (p === dernier && depasse === dernierD) return
       dernier = p
+      dernierD = depasse
       const L = LIMITES[cle]
 
+      // Temps du film, puis RETOUR à l'écran 1 : la caméra recule, l'écorché s'efface, titre, texte
+      // et formulaire reviennent sur la même photo.
+      const t = clamp(p / FILM)
+      const u = clamp((p - RETOUR) / (FIN - RETOUR))
+      const eR = lisse(clamp(u / 0.75))
+      const revenu = lisse(clamp((u - 0.68) / 0.32))
+      const efface = 1 - lisse(clamp(u / 0.45))
+
       // Texte, voile (et formulaire sur ordinateur) : au repos tout est plein et cliquable ; le fondu
-      // ne commence qu'après 12 px de défilement et s'achève à 100 px, le texte monte un peu en s'effaçant.
+      // ne commence qu'après 12 px de défilement et s'achève à 100 px, le texte monte un peu en
+      // s'effaçant ; il revient à la fin du film.
       const f = clamp((y - 12) / 88)
-      const opa = 1 - lisse(f)
-      const formGlisse = cle === 'ordi' && p >= L.f0
+      const opa = Math.max(1 - lisse(f), revenu)
+      const formGlisse = cle === 'ordi' && t >= L.f0
       for (const el of cle === 'ordi' && !formGlisse ? [texteRef.current, formRef.current] : [texteRef.current]) {
         if (!el) continue
-        el.style.opacity = opa.toFixed(3)
-        el.style.transform = f > 0 ? `translateY(${(-18 * lisse(f)).toFixed(1)}px)` : ''
+        el.style.opacity = (opa < 0.02 ? 0 : opa).toFixed(3)
+        const dy = (u > 0 ? (1 - revenu) * 18 : -18 * lisse(f)) - depasse
+        el.style.transform = Math.abs(dy) > 0.05 ? `translateY(${dy.toFixed(1)}px)` : ''
         el.style.visibility = opa < 0.02 ? 'hidden' : ''
         el.style.pointerEvents = opa < 0.6 ? 'none' : ''
       }
       if (cle === 'mobile' && formRef.current) formRef.current.removeAttribute('style')
       if (formGlisse && formRef.current) {
-        const g = lisse(clamp((p - L.f0) / (L.f1 - L.f0)))
+        const g = lisse(clamp((t - L.f0) / (L.f1 - L.f0)))
         const el = formRef.current
         el.style.opacity = g.toFixed(3)
         el.style.transform = g < 1 ? `translateX(${((1 - g) * (W - gaucheForm + 24)).toFixed(1)}px)` : ''
@@ -316,8 +352,10 @@ export default function HeroChaudiereSequence({
       }
       if (voileRef.current) voileRef.current.style.opacity = opa.toFixed(3)
 
-      // Caméra : avancée vers la chaudière, puis immobile.
-      const cam: Camera = p <= L.p1 ? entre(s0, sE, hermite(p / L.p1, 0.4, 0)) : sE
+      // Caméra : avancée vers la chaudière, immobile pendant l'ouverture, puis recul par le même
+      // chemin jusqu'au cadre de l'écran 1 (la photo couvre toujours le panneau).
+      const cam: Camera =
+        p > RETOUR ? entre(s0, sE, 1 - eR) : t <= L.p1 ? entre(s0, sE, hermite(t / L.p1, 0.4, 0)) : sE
       poser(photoRef.current, cam, 0, 0, LARGEUR, PHOTO_BLOC1.largeur)
       poser(photoMobileRef.current, cam, BANDE_MOBILE.x0, 0, BANDE_MOBILE.largeur, BANDE_MOBILE.largeur)
       poser(boiteRef.current, cam, CHAUDIERE.x0, CHAUDIERE.y0, LARGEUR_ECORCHE, LARGEUR_ECORCHE)
@@ -326,11 +364,15 @@ export default function HeroChaudiereSequence({
         if (boiteRef.current) echelleEcorche(boiteRef.current, cam.s)
       }
 
-      // L'écorché : a = le trait se pose pendant la fin de l'avancée, o = ouverture, q = pièces.
-      const a = clamp((p - L.p1 * 0.55) / (L.p1 * 0.45))
-      const o = clamp((p - L.p1) / (L.p2 - L.p1))
-      const q = clamp((p - L.p2) / (L.e1 - L.p2))
-      if (boiteRef.current) boiteRef.current.style.visibility = p > L.p1 * 0.5 ? 'visible' : 'hidden'
+      // L'écorché : a = le trait se pose pendant la fin de l'avancée, o = ouverture, q = pièces ;
+      // au retour il s'efface en entier, tel quel.
+      const a = clamp((t - L.p1 * 0.55) / (L.p1 * 0.45))
+      const o = clamp((t - L.p1) / (L.p2 - L.p1))
+      const q = clamp((t - L.p2) / (L.e1 - L.p2))
+      if (boiteRef.current) {
+        boiteRef.current.style.visibility = t > L.p1 * 0.5 && efface > 0.01 ? 'visible' : 'hidden'
+        boiteRef.current.style.opacity = efface < 1 ? efface.toFixed(3) : ''
+      }
       const aa = Math.round(a * 300) / 300
       const oo = Math.round(o * 400) / 400
       const qq = Math.round(q * 500) / 500
@@ -342,13 +384,13 @@ export default function HeroChaudiereSequence({
       }
 
       if (fonduRef.current) {
-        const v = cle === 'ordi' ? lisse(clamp((p - L.p1 * 0.6) / (L.p1 * 0.4))) : 0
+        const v = cle === 'ordi' ? lisse(clamp((t - L.p1 * 0.6) / (L.p1 * 0.4))) * efface : 0
         fonduRef.current.style.opacity = v.toFixed(3)
       }
       if (conclusionRef.current) {
-        const v = lisse(clamp((q - 0.86) / 0.12))
+        const v = lisse(clamp((q - 0.86) / 0.12)) * lisse(clamp(1 - u / 0.3))
         conclusionRef.current.style.opacity = v.toFixed(3)
-        conclusionRef.current.style.transform = v < 1 ? `translateY(${(8 * (1 - v)).toFixed(1)}px)` : ''
+        conclusionRef.current.style.transform = v < 1 && u === 0 ? `translateY(${(8 * (1 - v)).toFixed(1)}px)` : ''
       }
     }
     const planifier = () => {
@@ -412,15 +454,15 @@ export default function HeroChaudiereSequence({
           <div className="plg-cadre contents lg:flex lg:items-center lg:py-14">
             <div className={`contents ${GRILLE_ORDI}`}>
               <div className="plg-texte order-1 lg:col-start-1 lg:flex lg:flex-col lg:justify-center">
-                <div ref={texteRef} className="plg-plein pointer-events-auto relative flex flex-col justify-center py-6 will-change-[opacity] lg:block lg:py-0">
+                <div ref={texteRef} className="plg-plein pointer-events-auto relative flex flex-col justify-center py-6 [@media(max-height:640px)]:py-3 will-change-[opacity] lg:block lg:py-0">
                   {texte}
                 </div>
               </div>
-              {/* Téléphone : le haut du formulaire glisse sous la bande réservée à la barre du bas. */}
+              {/* Ordinateur seul : au téléphone, le formulaire est dans le texte, sur la photo. */}
               <div
                 ref={formRef}
                 id="demande"
-                className="relative z-10 order-3 -mt-14 scroll-mt-20 bg-fonte-nuit pb-10 pt-6 md:mt-0 md:pt-8 lg:pointer-events-auto lg:col-start-3 lg:flex lg:flex-col lg:justify-center lg:bg-transparent lg:p-0"
+                className="relative z-10 order-3 scroll-mt-20 max-lg:hidden lg:pointer-events-auto lg:col-start-3 lg:flex lg:flex-col lg:justify-center"
               >
                 {formulaire}
               </div>
