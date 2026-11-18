@@ -34,6 +34,8 @@ export type PictoNom =
   | 'climatisation'
   | 'local'
   | 'loupe'
+  | 'maison'
+  | 'immeuble'
 
 type Props = {
   nom: PictoNom
@@ -207,6 +209,23 @@ const DESSINS: Record<PictoNom, JSX.Element> = {
     <>
       <path className="trait" d="M2.5 21.5h19M4 21.5v-7l3-2v9M9 21.5V9l4-2.5v15M15 21.5V12l5-1.5v11" />
       <path className="rebond" d="M8 2a3 3 0 0 1 3 3c0 2-3 5-3 5S5 7 5 5a3 3 0 0 1 3-3Z" />
+    </>
+  ),
+  // Formulaire, « propriétaire ou locataire ? » (Rémy 18/11/2026) : la maison et sa clé, l'immeuble.
+  maison: (
+    <>
+      <path className="trait" d="M2.5 11.5 11 4.5l8.5 7M4.5 10v11.5h13V10M9 21.5v-5.5h4v5.5" />
+      <g className="rebond">
+        <circle cx="19" cy="4.5" r="1.9" />
+        <path d="M20.3 5.9 22.5 8.1M21.4 7l-.9.9" />
+      </g>
+    </>
+  ),
+  immeuble: (
+    <>
+      <path className="trait" d="M2.5 21.5h19M5.5 21.5v-18h13v18M10.5 21.5v-3.5h3v3.5" />
+      <path className="trait" d="M8.5 7h2M13.5 7h2M8.5 10.5h2M8.5 14h2M13.5 14h2" />
+      <path className="clignote" d="M13.5 10.5h2" />
     </>
   ),
   loupe: (
