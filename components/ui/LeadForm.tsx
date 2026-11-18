@@ -494,8 +494,8 @@ export function LeadForm({
           </div>
           {occupant === 'Locataire' && (
             <p role="status" className={avis}>
-              Merci de contacter directement votre propriétaire et de lui transmettre notre site : il pourra
-              nous faire sa demande. Rien n’a été envoyé.
+              Une panne de chaudière se règle avec le propriétaire du logement : prévenez-le et donnez-lui
+              l’adresse de notre site, c’est lui qui nous fera la demande. Rien n’a été envoyé.
             </p>
           )}
         </>
