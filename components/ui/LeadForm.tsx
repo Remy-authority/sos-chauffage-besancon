@@ -14,7 +14,7 @@ import { Picto, type PictoNom } from './Picto'
  *  ci-dessous, puis `company`), les valeurs des pannes AU CARACTÈRE PRÈS, le piège
  *  `company`, `data-clic-formulaire` et `data-lead-form` (compteur `SuiviVisite`).
  *
- *   - Étape 1 : « Quel est votre projet ? », 4 pannes en 2 x 2, un clic avance. Les autres
+ *   - Étape 1 : « Quelle est votre urgence ? » (Rémy 18/11), 4 pannes en 2 x 2, un clic avance. Les autres
  *     valeurs d'avant (« Plus d'eau chaude », « Autre situation »…) ne sont plus proposées,
  *     la route les accepte toujours.
  *   - Étape 2 : « Que fait l'appareil ? », 4 réponses en 2 x 2, un clic avance ; la réponse
@@ -129,7 +129,7 @@ const SYMPTOMES: readonly { id: string; picto: PictoNom | null }[] = [
 ]
 
 const TITRES: Record<Etape, { titre: string; aide: string }> = {
-  1: { titre: 'Quel est votre projet ?', aide: 'Devis gratuit en 30 secondes.' },
+  1: { titre: 'Quelle est votre urgence ?', aide: 'Devis gratuit en 30 secondes.' },
   2: { titre: 'Que fait l’appareil ?', aide: 'Le technicien saura quoi apporter.' },
   3: { titre: 'Où vous rappeler ?', aide: 'Nous vous rappelons au plus vite.' },
 }
