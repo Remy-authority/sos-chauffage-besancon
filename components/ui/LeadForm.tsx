@@ -29,6 +29,16 @@ import { Picto, type PictoNom } from './Picto'
  *   - Chaque étape atteinte (2 puis 3) envoie `rr-etape`, compté par `SuiviVisite`.
  *   - `memoire` (bloc 1 de l'accueil) : l'état survit au passage du film à l'écran fixe, et
  *     le premier choix envoie `leadform:touche` pour que le film s'arrête pour de bon.
+ *
+ *  Chauffage David, signé le 18/11/2026 (Rémy) : chaudières gaz, fioul et électrique, dépannage
+ *  et entretien, PAS de pompe à chaleur ; 30 km autour de Besançon ; 8 h-18 h, 7 jours sur 7.
+ *   - Étape 1 : gaz, fioul, électrique, entretien (pompe à chaleur et radiateurs retirés).
+ *   - Étape 2, panne : « propriétaire ou locataire ? » d'abord (modèle SOS Chauffage Reims) ;
+ *     un locataire est arrêté, rien n'est envoyé ; puis ce que fait l'appareil.
+ *     Étape 2, entretien : quelle chaudière (l'entretien est à la charge de l'occupant).
+ *   - Étape 3 : commune hors des 30 km (public/zone-30km.json, scripts/zone-30km.py) = arrêtée,
+ *     rien n'est envoyé ; avant 8 h ou après 18 h, le rappel à 8 h est annoncé et écrit dans
+ *     `message` pour le technicien.
  */
 
 type Etape = 1 | 2 | 3
@@ -58,9 +68,49 @@ const VIDE: Champs = {
 const PANNES: readonly { id: string; label: string; picto: PictoNom }[] = [
   { id: 'Chaudière gaz en panne', label: 'Chaudière gaz', picto: 'chaudiere' },
   { id: 'Chaudière fioul en panne', label: 'Chaudière fioul', picto: 'fioul' },
-  { id: 'Pompe à chaleur en panne', label: 'Pompe à chaleur', picto: 'ventilateur' },
-  { id: 'Radiateurs froids', label: 'Radiateurs froids', picto: 'radiateur' },
+  { id: 'Chaudière électrique en panne', label: 'Chaudière électrique', picto: 'eclair' },
+  { id: 'Entretien de chaudière', label: 'Entretien', picto: 'entretien' },
 ]
+
+/** L'entretien n'a pas de symptôme : on demande la chaudière (« Entretien… » en tête, lu par Rank OS). */
+const ENTRETIEN = 'Entretien de chaudière'
+const CHAUDIERES: readonly { id: string; picto: PictoNom | null }[] = [
+  { id: 'Gaz', picto: 'chaudiere' },
+  { id: 'Fioul', picto: 'fioul' },
+  { id: 'Électrique', picto: 'eclair' },
+  { id: 'Je ne sais pas', picto: null },
+]
+
+/** Une panne n'est commandée que par le propriétaire (Rémy 18/11/2026, comme à Reims). */
+const OCCUPANTS: readonly { id: string; label: string; picto: PictoNom }[] = [
+  { id: 'Propriétaire', label: 'Je suis propriétaire', picto: 'maison' },
+  { id: 'Locataire', label: 'Je suis locataire', picto: 'immeuble' },
+]
+
+/** Horaires du technicien, à l'heure de Paris : 8 h-18 h, 7 jours sur 7. */
+const OUVERTURE_MINUTES = 8 * 60
+const FERMETURE_MINUTES = 18 * 60
+
+/** `null` pendant les horaires ; sinon le jour du rappel. */
+function rappelHorsHoraires(maintenant = new Date()): "aujourd'hui" | 'demain' | null {
+  const [h, m] = maintenant
+    .toLocaleTimeString('fr-FR', { timeZone: 'Europe/Paris', hour: '2-digit', minute: '2-digit', hour12: false })
+    .split(':')
+    .map(Number)
+  const minutes = h * 60 + m
+  if (minutes < OUVERTURE_MINUTES) return "aujourd'hui"
+  if (minutes >= FERMETURE_MINUTES) return 'demain'
+  return null
+}
+
+/** Communes à 30 km au plus de Besançon, par code postal (lu une fois, à l'étape 3). */
+let ZONE: Promise<Record<string, string[]>> | null = null
+function zone(): Promise<Record<string, string[]>> {
+  ZONE ??= fetch('/zone-30km.json')
+    .then((r) => (r.ok ? (r.json() as Promise<Record<string, string[]>>) : {}))
+    .catch(() => ({}))
+  return ZONE
+}
 
 const INCONNU: ReactNode = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -84,11 +134,14 @@ const TITRES: Record<Etape, { titre: string; aide: string }> = {
   3: { titre: 'Où vous rappeler ?', aide: 'Nous vous rappelons au plus vite.' },
 }
 
+const TITRE_OCCUPANT = { titre: 'Propriétaire ou locataire ?', aide: 'Seul le propriétaire commande un dépannage.' }
+const TITRE_CHAUDIERE = { titre: 'Quelle chaudière ?', aide: 'Le technicien saura quoi apporter.' }
+
 type Manque = 'nom' | 'telephone' | 'lieu'
 const NOM_DU_MANQUE: Record<Manque, string> = {
   nom: 'votre nom',
   telephone: 'un téléphone valide',
-  lieu: 'votre code postal',
+  lieu: 'votre code postal et votre commune',
 }
 
 /** Évènement du premier choix (bloc 1 de l'accueil) : le film s'arrête pour de bon. */
@@ -113,6 +166,7 @@ function communesDuDepartement(deux: string): Promise<Record<string, string[]>> 
 interface Etat {
   etape: Etape
   probleme: string
+  occupant: string
   symptome: string
   nom: string
   prenom: string
@@ -141,6 +195,7 @@ export function LeadForm({
   const depart = memoire ? MEMOIRE.get(cle) : undefined
   const [etape, setEtape] = useState<Etape>(depart?.etape ?? 1)
   const [probleme, setProbleme] = useState(depart?.probleme ?? '')
+  const [occupant, setOccupant] = useState(depart?.occupant ?? '')
   const [symptome, setSymptome] = useState(depart?.symptome ?? '')
   const [nom, setNom] = useState(depart?.nom ?? '')
   const [prenom, setPrenom] = useState(depart?.prenom ?? '')
@@ -151,12 +206,36 @@ export function LeadForm({
   const [propositions, setPropositions] = useState<string[]>([])
   const [manques, setManques] = useState<Manque[]>([])
   const [statut, setStatut] = useState<'repos' | 'envoi' | 'erreur'>('repos')
+  const [horsHoraires, setHorsHoraires] = useState<"aujourd'hui" | 'demain' | null>(null)
+  const [horsZone, setHorsZone] = useState(false)
+  const entretien = probleme === ENTRETIEN
+  const demandeOccupant = etape === 2 && !entretien && occupant !== 'Propriétaire'
 
   // Bloc 1 : l'état est recopié à chaque changement, AVANT l'effet d'étape ci-dessous (ordre
   // des effets) ; le film peut donc remonter le formulaire juste après le premier choix.
   useEffect(() => {
-    if (memoire) MEMOIRE.set(cle, { etape, probleme, symptome, nom, prenom, telephone, lieu, precision, commune })
-  }, [memoire, cle, etape, probleme, symptome, nom, prenom, telephone, lieu, precision, commune])
+    if (memoire) MEMOIRE.set(cle, { etape, probleme, occupant, symptome, nom, prenom, telephone, lieu, precision, commune })
+  }, [memoire, cle, etape, probleme, occupant, symptome, nom, prenom, telephone, lieu, precision, commune])
+
+  // L'heure se lit dans le navigateur (jamais au rendu serveur : la page est statique).
+  useEffect(() => {
+    if (etape === 3) setHorsHoraires(rappelHorsHoraires())
+  }, [etape])
+
+  // Secteur de 30 km : code postal hors liste = dehors ; code postal mixte = jugé sur la commune.
+  useEffect(() => {
+    if (lieu.length !== 5) return setHorsZone(false)
+    let annule = false
+    zone().then((z) => {
+      if (annule) return
+      const dedans = z[lieu] ?? []
+      const nomCommune = commune ? commune.slice(0, -6) : ''
+      setHorsZone(dedans.length === 0 || (nomCommune !== '' && !dedans.includes(nomCommune)))
+    })
+    return () => {
+      annule = true
+    }
+  }, [lieu, commune])
 
   // À chaque étape : le titre reçoit le focus (lecteurs d'écran) sans faire défiler, l'étape
   // atteinte est comptée (`rr-etape`), et la carte revient entière à l'écran si elle en sort.
@@ -179,7 +258,7 @@ export function LeadForm({
     if (r.top < 64 || r.bottom > window.innerHeight - barreDuBas) {
       carte.scrollIntoView({ behavior: 'instant' as ScrollBehavior, block: 'nearest' })
     }
-  }, [etape, manques.length, propositions.length, commune])
+  }, [etape, occupant, manques.length, propositions.length, commune, horsZone])
 
   function allerA(n: Etape) {
     aBouge.current = true
@@ -205,8 +284,15 @@ export function LeadForm({
   const id = (c: string) => `${idPrefix}${c}`
 
   function choisirPanne(valeur: string) {
+    if (valeur !== probleme) setSymptome('')
+    setOccupant('')
     setProbleme(valeur)
     allerA(2)
+  }
+
+  function choisirOccupant(valeur: string) {
+    aBouge.current = true
+    setOccupant(valeur)
   }
 
   function choisirSymptome(valeur: string) {
@@ -235,14 +321,17 @@ export function LeadForm({
     const oublis: Manque[] = []
     if (!nom.trim()) oublis.push('nom')
     if (telephone.replace(/\D/g, '').length < 8) oublis.push('telephone')
-    if (saisie.length !== 5) oublis.push('lieu')
+    // Code postal à plusieurs communes : la commune se touche (le secteur se juge sur elle).
+    if (saisie.length !== 5 || (!commune && propositions.length > 1)) oublis.push('lieu')
     setManques(oublis)
     if (oublis.length > 0) {
       document.getElementById(id(oublis[0]))?.focus()
       return
     }
     if (!probleme) return allerA(1)
+    if (!entretien && occupant !== 'Propriétaire') return allerA(2)
     if (!symptome) return allerA(2)
+    if (horsZone) return
 
     const champs: Champs = {
       ...VIDE,
@@ -250,7 +339,15 @@ export function LeadForm({
       ville: commune || saisie,
       nom: [prenom.trim(), nom.trim()].filter(Boolean).join(' '),
       telephone: telephone.trim(),
-      message: [`Ce que fait l'appareil : ${symptome}`, precision.trim()].filter(Boolean).join('. '),
+      // Tout voyage dans `message` (le technicien lit cette ligne), comme à Reims.
+      message: [
+        entretien ? `Chaudière : ${symptome}` : `Ce que fait l'appareil : ${symptome}`,
+        entretien ? '' : 'Propriétaire',
+        horsHoraires ? `envoyée hors horaires, rappel ${horsHoraires} à partir de 8 h` : '',
+        precision.trim(),
+      ]
+        .filter(Boolean)
+        .join('. '),
     }
 
     setStatut('envoi')
@@ -293,6 +390,8 @@ export function LeadForm({
     }`
   const libelleClasse = 'font-semibold leading-tight text-[clamp(12.5px,3.7vw,14.5px)] [text-wrap:balance]'
   const pictoClasse = 'h-[26px] w-[26px] text-laiton-clair sm:h-7 sm:w-7'
+  const titres = etape !== 2 ? TITRES[etape] : entretien ? TITRE_CHAUDIERE : demandeOccupant ? TITRE_OCCUPANT : TITRES[2]
+  const avis = 'mt-4 rounded-plaque border border-laiton-franc/35 bg-laiton-franc/10 p-4 text-left text-[14px] leading-relaxed text-calcaire-neige'
 
   return (
     <div
@@ -313,7 +412,11 @@ export function LeadForm({
         {etape > 1 && (
           <button
             type="button"
-            onClick={() => allerA((etape - 1) as Etape)}
+            onClick={() => {
+              if (etape === 2 && !entretien && occupant === 'Propriétaire') return choisirOccupant('')
+              if (etape === 3 && !entretien) setOccupant('Propriétaire')
+              allerA((etape - 1) as Etape)
+            }}
             className="-my-2 -ml-1 inline-flex shrink-0 items-center gap-1 rounded-plaque py-2 pl-1 pr-1.5 text-[13px] font-semibold text-calcaire-brume transition-colors hover:text-calcaire-neige"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" aria-hidden="true">
@@ -342,9 +445,9 @@ export function LeadForm({
           etape === 1 ? 'whitespace-nowrap' : '[text-wrap:balance]'
         }`}
       >
-        {TITRES[etape].titre}
+        {titres.titre}
       </h3>
-      <p className="mt-1 whitespace-nowrap text-[13.5px] text-calcaire-brume">{TITRES[etape].aide}</p>
+      <p className="mt-1 text-[13.5px] text-calcaire-brume [text-wrap:balance]">{titres.aide}</p>
 
       {/* ── Étape 1 : la panne, un clic avance ──────────────────────────────── */}
       {etape === 1 && (
@@ -369,9 +472,38 @@ export function LeadForm({
       )}
 
       {/* ── Étape 2 : ce que fait l'appareil, un clic avance ────────────────── */}
-      {etape === 2 && (
-        <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5 sm:gap-2.5" role="group" aria-label="Ce que fait l’appareil">
-          {SYMPTOMES.map((s) => {
+      {demandeOccupant && (
+        <>
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5 sm:gap-2.5" role="group" aria-label="Propriétaire ou locataire">
+            {OCCUPANTS.map((o) => {
+              const choisi = occupant === o.id
+              return (
+                <button
+                  data-clic-formulaire
+                  key={o.id}
+                  type="button"
+                  onClick={() => choisirOccupant(o.id)}
+                  aria-pressed={choisi}
+                  className={tuile(choisi)}
+                >
+                  <Picto nom={o.picto} className={pictoClasse} />
+                  <span className={libelleClasse}>{o.label}</span>
+                </button>
+              )
+            })}
+          </div>
+          {occupant === 'Locataire' && (
+            <p role="status" className={avis}>
+              Merci de contacter directement votre propriétaire et de lui transmettre notre site : il pourra
+              nous faire sa demande. Rien n’a été envoyé.
+            </p>
+          )}
+        </>
+      )}
+
+      {etape === 2 && !demandeOccupant && (
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5 sm:gap-2.5" role="group" aria-label={entretien ? 'Votre chaudière' : 'Ce que fait l’appareil'}>
+          {(entretien ? CHAUDIERES : SYMPTOMES).map((s) => {
             const choisi = symptome === s.id
             return (
               <button
@@ -397,6 +529,12 @@ export function LeadForm({
       {/* ── Étape 3 : deux champs par ligne, deux lignes, puis l'envoi ──────── */}
       {etape === 3 && (
         <div className="mt-4 sm:mt-5">
+          {horsHoraires && (
+            <p role="status" className={`${avis} mb-4 mt-0`}>
+              Notre technicien reprend {horsHoraires} à 8&nbsp;h. Votre demande sera bien enregistrée et il vous
+              rappelle dès 8&nbsp;h.
+            </p>
+          )}
           <div className="grid grid-cols-2 gap-x-2.5 gap-y-3">
             <div>
               <label htmlFor={id('nom')} className={labelClasse}>
@@ -499,6 +637,13 @@ export function LeadForm({
             </div>
           )}
 
+          {horsZone && (
+            <p role="status" className={avis}>
+              Nous intervenons à 30&nbsp;km autour de Besançon : votre commune est hors de notre secteur. Rien
+              n’a été envoyé.
+            </p>
+          )}
+
           <div className="mt-3">
             <label htmlFor={id('precision')} className={labelClasse}>
               Précisions <span className="font-normal text-calcaire-ombre">(facultatif)</span>
@@ -529,7 +674,7 @@ export function LeadForm({
           <button
             type="button"
             onClick={envoyer}
-            disabled={statut === 'envoi'}
+            disabled={statut === 'envoi' || horsZone}
             className="mt-4 inline-flex min-h-[52px] w-full items-center justify-center whitespace-nowrap rounded-plaque bg-laiton-franc px-6 font-semibold text-fonte-abysse transition-colors hover:bg-laiton-clair disabled:opacity-70"
             data-cta={ecran1 ? 'devis-hero-carte' : 'devis-envoi'}
           >
