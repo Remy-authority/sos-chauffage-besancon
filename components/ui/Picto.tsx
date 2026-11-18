@@ -36,6 +36,7 @@ export type PictoNom =
   | 'loupe'
   | 'maison'
   | 'immeuble'
+  | 'agence'
 
 type Props = {
   nom: PictoNom
@@ -226,6 +227,16 @@ const DESSINS: Record<PictoNom, JSX.Element> = {
       <path className="trait" d="M2.5 21.5h19M5.5 21.5v-18h13v18M10.5 21.5v-3.5h3v3.5" />
       <path className="trait" d="M8.5 7h2M13.5 7h2M8.5 10.5h2M8.5 14h2M13.5 14h2" />
       <path className="clignote" d="M13.5 10.5h2" />
+    </>
+  ),
+  // Formulaire, agence immobilière (Rémy 18/11/2026) : le panneau « à louer » qui se balance.
+  agence: (
+    <>
+      <path className="trait" d="M2.5 21.5h19M5 21.5v-18M5 4.5h14M9.5 4.5v3M16.5 4.5v3" />
+      <g className="rebond">
+        <path className="trait" d="M8 7.5h10v7H8Z" />
+        <path d="M10.5 11h5" />
+      </g>
     </>
   ),
   loupe: (

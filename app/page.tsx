@@ -11,9 +11,9 @@ import { CarteGrandBesancon } from '@/components/sections/CarteGrandBesancon'
 import { LeadForm } from '@/components/ui/LeadForm'
 import { Faq } from '@/components/ui/Faq'
 
-const TITRE_ACCUEIL = 'Urgence chaudière Besançon, dépannage chauffage 24h/24'
+const TITRE_ACCUEIL = 'Urgence chaudière Besançon, dépannage chauffage 7j/7'
 const DESCRIPTION_ACCUEIL =
-  'Chaudière en panne, radiateurs froids, plus d’eau chaude à Besançon ? Chauffagiste 24h/24, tarif annoncé avant de venir, pièces courantes à bord.'
+  'Chaudière en panne, radiateurs froids, plus d’eau chaude à Besançon ? Chauffagiste 7j/7, tarif annoncé avant de venir, pièces courantes à bord.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITRE_ACCUEIL,

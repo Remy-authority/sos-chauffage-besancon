@@ -96,7 +96,7 @@ export const siteConfig = {
   },
 
   /* ── Réassurance / preuve ── */
-  availability: '24h/24 · 7j/7',
+  availability: '7j/7, de 8 h à 18 h',
   responseTime: 'Intervention rapide sur Besançon et le Grand Besançon',
   usps: [
     'Devis avant intervention',
@@ -305,8 +305,8 @@ export const siteConfig = {
   /* ── FAQ accueil ── */
   homeFaq: [
     {
-      q: 'Intervenez-vous en urgence le soir, le week-end et les jours fériés à Besançon ?',
-      a: "Oui. Une chaudière à l'arrêt en plein hiver dans un logement occupé ne peut pas attendre le lundi, surtout avec les températures de Franche-Comté. Notre ligne est ouverte 7j/7, week-ends et jours fériés compris, pour Besançon et les communes du Grand Besançon. Le créneau vous est annoncé au téléphone en fonction du planning réel du moment.",
+      q: 'Intervenez-vous en urgence le week-end et les jours fériés à Besançon ?',
+      a: "Oui. Une chaudière à l'arrêt en plein hiver dans un logement occupé ne peut pas attendre le lundi, surtout avec les températures de Franche-Comté. Notre ligne est ouverte 7j/7 de 8 h à 18 h, week-ends et jours fériés compris, pour Besançon et les communes du Grand Besançon. Le créneau vous est annoncé au téléphone en fonction du planning réel du moment.",
     },
     {
       q: "L'entretien annuel de la chaudière est-il vraiment obligatoire ?",

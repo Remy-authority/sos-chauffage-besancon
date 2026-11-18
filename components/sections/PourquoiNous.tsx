@@ -9,7 +9,7 @@ const RAISONS: { picto: PictoNom; titre: string; texte: string }[] = [
   { picto: 'telephone', titre: 'La panne se cerne au téléphone', texte: 'Trois questions sur ce que fait l’appareil, et la pièce probable part avec nous.' },
   { picto: 'devis', titre: 'Le tarif avant de venir', texte: 'Déplacement et diagnostic annoncés à l’appel, le reste confirmé sur place avant de commencer.' },
   { picto: 'local', titre: 'Un chauffagiste de Besançon', texte: 'Nous connaissons les immeubles de la Boucle comme les pavillons de Saint-Ferjeux.' },
-  { picto: 'horloge', titre: 'Ouvert quand il fait froid', texte: 'Soir, week-end et jours fériés aussi, une chaudière qui lâche en janvier n’attend pas lundi.' },
+  { picto: 'horloge', titre: 'Ouvert quand il fait froid', texte: 'Week-ends et jours fériés aussi, une chaudière qui lâche en janvier n’attend pas lundi.' },
 ]
 
 export function PourquoiNous() {

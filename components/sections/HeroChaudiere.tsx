@@ -60,7 +60,7 @@ function PhotoBloc1({ mobile }: { mobile: boolean }) {
 const TITRE = [
   <>Urgence chaudière</>,
   <>
-    à Besançon, <span className="mot-laiton">24h/24</span>
+    à Besançon, <span className="mot-laiton">7j/7</span>
   </>,
 ]
 const ACCROCHE = ['La panne se cerne au téléphone.', 'Le tarif est annoncé avant de venir.']

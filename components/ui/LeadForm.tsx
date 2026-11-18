@@ -81,11 +81,18 @@ const CHAUDIERES: readonly { id: string; picto: PictoNom | null }[] = [
   { id: 'Je ne sais pas', picto: null },
 ]
 
-/** Une panne n'est commandée que par le propriétaire (Rémy 18/11/2026, comme à Reims). */
+/**
+ * Une panne n'est commandée que par le propriétaire (Rémy 18/11/2026, comme à Reims), ou par
+ * l'agence immobilière qui gère le logement (Rémy 18/11/2026, la 1re demande de Nicolas David).
+ */
 const OCCUPANTS: readonly { id: string; label: string; picto: PictoNom }[] = [
   { id: 'Propriétaire', label: 'Je suis propriétaire', picto: 'maison' },
   { id: 'Locataire', label: 'Je suis locataire', picto: 'immeuble' },
+  { id: 'Agence immobilière', label: 'Agence immobilière', picto: 'agence' },
 ]
+
+/** Le propriétaire et l'agence passent ; le locataire est arrêté. */
+const peutCommander = (o: string) => o === 'Propriétaire' || o === 'Agence immobilière'
 
 /** Horaires du technicien, à l'heure de Paris : 8 h-18 h, 7 jours sur 7. */
 const OUVERTURE_MINUTES = 8 * 60
@@ -134,7 +141,7 @@ const TITRES: Record<Etape, { titre: string; aide: string }> = {
   3: { titre: 'Où vous rappeler ?', aide: 'Nous vous rappelons au plus vite.' },
 }
 
-const TITRE_OCCUPANT = { titre: 'Propriétaire ou locataire ?', aide: 'Seul le propriétaire commande un dépannage.' }
+const TITRE_OCCUPANT = { titre: 'Qui fait la demande ?', aide: 'Le propriétaire ou son agence commande le dépannage.' }
 const TITRE_CHAUDIERE = { titre: 'Quelle chaudière ?', aide: 'Le technicien saura quoi apporter.' }
 
 type Manque = 'nom' | 'telephone' | 'lieu'
@@ -209,7 +216,7 @@ export function LeadForm({
   const [horsHoraires, setHorsHoraires] = useState<"aujourd'hui" | 'demain' | null>(null)
   const [horsZone, setHorsZone] = useState(false)
   const entretien = probleme === ENTRETIEN
-  const demandeOccupant = etape === 2 && !entretien && occupant !== 'Propriétaire'
+  const demandeOccupant = etape === 2 && !entretien && !peutCommander(occupant)
 
   // Bloc 1 : l'état est recopié à chaque changement, AVANT l'effet d'étape ci-dessous (ordre
   // des effets) ; le film peut donc remonter le formulaire juste après le premier choix.
@@ -329,7 +336,7 @@ export function LeadForm({
       return
     }
     if (!probleme) return allerA(1)
-    if (!entretien && occupant !== 'Propriétaire') return allerA(2)
+    if (!entretien && !peutCommander(occupant)) return allerA(2)
     if (!symptome) return allerA(2)
     if (horsZone) return
 
@@ -342,7 +349,7 @@ export function LeadForm({
       // Tout voyage dans `message` (le technicien lit cette ligne), comme à Reims.
       message: [
         entretien ? `Chaudière : ${symptome}` : `Ce que fait l'appareil : ${symptome}`,
-        entretien ? '' : 'Propriétaire',
+        entretien ? '' : occupant,
         horsHoraires ? `envoyée hors horaires, rappel ${horsHoraires} à partir de 8 h` : '',
         precision.trim(),
       ]
@@ -413,8 +420,8 @@ export function LeadForm({
           <button
             type="button"
             onClick={() => {
-              if (etape === 2 && !entretien && occupant === 'Propriétaire') return choisirOccupant('')
-              if (etape === 3 && !entretien) setOccupant('Propriétaire')
+              if (etape === 2 && !entretien && peutCommander(occupant)) return choisirOccupant('')
+              if (etape === 3 && !entretien && !peutCommander(occupant)) setOccupant('Propriétaire')
               allerA((etape - 1) as Etape)
             }}
             className="-my-2 -ml-1 inline-flex shrink-0 items-center gap-1 rounded-plaque py-2 pl-1 pr-1.5 text-[13px] font-semibold text-calcaire-brume transition-colors hover:text-calcaire-neige"
@@ -474,7 +481,7 @@ export function LeadForm({
       {/* ── Étape 2 : ce que fait l'appareil, un clic avance ────────────────── */}
       {demandeOccupant && (
         <>
-          <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5 sm:gap-2.5" role="group" aria-label="Propriétaire ou locataire">
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5 sm:gap-2.5" role="group" aria-label="Qui fait la demande">
             {OCCUPANTS.map((o) => {
               const choisi = occupant === o.id
               return (
@@ -484,7 +491,7 @@ export function LeadForm({
                   type="button"
                   onClick={() => choisirOccupant(o.id)}
                   aria-pressed={choisi}
-                  className={tuile(choisi)}
+                  className={`${tuile(choisi)}${o.picto === 'agence' ? ' col-span-2' : ''}`}
                 >
                   <Picto nom={o.picto} className={pictoClasse} />
                   <span className={libelleClasse}>{o.label}</span>

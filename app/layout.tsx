@@ -38,9 +38,9 @@ const policeTexte = IBM_Plex_Sans({
   weight: ['400', '500', '600'],
 })
 
-const titreAccueil = 'Urgence chaudière Besançon, dépannage chauffage 24h/24'
+const titreAccueil = 'Urgence chaudière Besançon, dépannage chauffage 7j/7'
 const descriptionAccueil =
-  'Chaudière en panne, radiateurs froids, plus d’eau chaude à Besançon ? Chauffagiste 24h/24, tarif annoncé avant de venir, pièces courantes à bord.'
+  'Chaudière en panne, radiateurs froids, plus d’eau chaude à Besançon ? Chauffagiste 7j/7, tarif annoncé avant de venir, pièces courantes à bord.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.canonicalBase),
